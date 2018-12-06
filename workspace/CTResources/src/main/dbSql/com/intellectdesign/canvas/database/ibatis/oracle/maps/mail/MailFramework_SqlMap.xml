@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<!-- ResultMap for fetching the mails to be delivered -->
+	<resultMap id="PENDING_EMAIL_RESULT" class="java.util.HashMap">
+		<result property="OD_TO_ID" nullValue="" column="OD_TO_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_MAIL_BODY" nullValue="" column="OD_MAIL_BODY" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_FROM_ID" nullValue="" column="OD_FROM_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_MAIL_SUBJECT" nullValue="" column="OD_MAIL_SUBJECT" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_REPLY_TO" nullValue="" column="OD_REPLY_TO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_CC_TO" nullValue="" column="OD_CC_TO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_BCC_TO" nullValue="" column="OD_BCC_TO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_REF_ID" nullValue="" column="OD_REF_ID" javaType="java.lang.String" jdbcType="NUMBER"/>
+		<result property="OD_PATH" nullValue="" column="OD_PATH" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		 <!--  CHG0001_OT0138_INFO_RPT_FW - PASSWORD_PROTECTED field is added -->
+		<result property="PASSWORD_PROTECTED" nullValue="" column="PASSWORD_PROTECTED" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<!--  Query for getting  the mails to be delivered -->
+	<!--  CHG0001_OT0138_INFO_RPT_FW - PASSWORD_PROTECTED field is added -->
+	<select id="MAIL_FRMWRK_MNT_SELECT_PENDING_EMAIL_DELIVERED" parameterClass ="java.util.HashMap" resultMap="PENDING_EMAIL_RESULT">
+	SELECT 
+		OD_TO_ID,
+		OD_MAIL_BODY,
+		OD_FROM_ID,
+		OD_MAIL_SUBJECT,
+		OD_REPLY_TO,
+		OD_CC_TO,
+		OD_BCC_TO,
+		OD_REF_ID,
+		OD_PATH,
+		PASSWORD_PROTECTED
+	FROM
+		OD_PENDING_MAIL
+	WHERE 
+		OD_MAIL_STATUS='N'
+	AND
+		OD_RETRY_CNT &lt; 10
+	</select>
+
+	<!-- This query is used to update the mail success for the given message id -->
+	<update id="MAIL_FRMWRK_MNT_UPDATE_MAIL_EXT_STATUS_UPDATE" parameterClass="java.util.HashMap">
+	UPDATE
+		OD_PENDING_MAIL
+	SET
+		OD_MAIL_STATUS=#OD_MAIL_STATUS# 
+	WHERE
+		OD_REF_ID = #OD_REF_ID#
+	</update>
+
+	<!-- This query is used to update the Delivery Failure status with comments for the given message id -->
+	<update id="MAIL_FRMWRK_MNT_UPDATE_MAIL_FAIL_STATUS_UPDATE" parameterClass="java.util.HashMap">
+	UPDATE
+		OD_PENDING_MAIL
+	SET
+		OD_FAIL_REASON=#OD_FAIL_REASON#,
+		OD_RETRY_CNT=OD_RETRY_CNT+1 
+	WHERE
+		OD_REF_ID = #OD_REF_ID#
+	</update>
+	
+	<!-- Moving mail details to history table -->
+	<insert id="MAIL_FRMWRK_MNT_INSERT_MAIL_MOVE_HISTORY" parameterClass="java.util.HashMap">
+		INSERT 
+			INTO 
+				OD_PENDING_MAIL_HB
+		 SELECT * FROM
+		 	OD_PENDING_MAIL
+		 WHERE
+		 	OD_REF_ID=#OD_REF_ID#
+	</insert>
+
+	<!-- Delete from OD_PENDING_MAIL table after the mail send -->
+	<delete id="MAIL_FRMWRK_MNT_DELETE_SUCCESS_MAIL" parameterClass="java.util.HashMap">
+		DELETE FROM 
+			OD_PENDING_MAIL
+		WHERE 
+			OD_REF_ID=#OD_REF_ID#
+	</delete>
+	
+	<!-- The parameter map for inserting into the OD_PENDING_MAIL table -->
+	<parameterMap id="ADD_TO_OD_PENDING_MAIL_PARAM_MAP" class="java.util.HashMap">
+		<parameter property="OD_TO_ID" 		jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_MAIL_BODY" 		jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_FROM_ID" 		jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_MAIL_SUBJECT" 		jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_REPLY_TO" 	jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_CC_TO" jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_BCC_TO" jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_PATH" jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<parameter property="OD_BULK_MAIL" jdbcType="VARCHAR" 	javaType="java.lang.String" />
+		<!--  CHG0001_OT0138_INFO_RPT_FW - PASSWORD_PROTECTED field is added -->
+		<parameter property="PASSWORD_PROTECTED" jdbcType="VARCHAR" 	javaType="java.lang.String" />
+	</parameterMap>
+	
+	<!--  CHG0001_OT0138_INFO_RPT_FW - PASSWORD_PROTECTED field is added -->
+	<insert id="MAIL_FRMWRK_MNT_INSERT_ADD_TO_PENDING_MAIL" parameterMap="ADD_TO_OD_PENDING_MAIL_PARAM_MAP">
+		INSERT INTO OD_PENDING_MAIL (
+		OD_TO_ID,
+		OD_MAIL_BODY,
+		OD_FROM_ID,
+		OD_MAIL_SUBJECT,
+		OD_REPLY_TO,
+		OD_MAIL_STATUS,
+		OD_REF_ID,
+		OD_CC_TO,
+		OD_BCC_TO,
+		OD_PATH,
+		OD_DATE,
+		OD_RETRY_CNT,
+		OD_BULK_MAIL,
+		PASSWORD_PROTECTED
+		)  values (
+		? ,? ,? ,? ,? ,'N' ,BATCHSEQ.NEXTVAL ,? ,? ,? ,sysdate ,1 ,? ,?
+		)
+	</insert>
+	
+	<resultMap id="RETRIEVE_SUBSCRIBED_REPORT_RESULT_MAP" class="java.util.HashMap">
+		<result property="REP_SEQUENCE_NO" nullValue="" column="REP_SEQUENCE_NO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="REP_NAME" nullValue="" column="REP_NAME" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="REP_PATH" nullValue="" column="REP_PATH" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_USER_NO" nullValue="" column="OD_USER_NO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="EMAIL_ID" nullValue="" column="EMAIL_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="OD_REPORT_NAME" nullValue="" column="OD_REPORT_NAME" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="MAIL_FRMWRK_MNT_SELECT_RETRIEVE_SUBSCRIBED_REPORT" parameterClass ="java.util.HashMap" resultMap="RETRIEVE_SUBSCRIBED_REPORT_RESULT_MAP">
+		SELECT 
+		  A.REP_SEQUENCE_NO      ,
+		  A.REP_NAME             ,
+		  A.REP_PATH             ,
+		  B.OD_USER_NO           ,
+		  C.EMAIL_ID             ,
+		  E.OD_REPORT_NAME
+		FROM OD_REPORT_INSTANCE_DETAILS A   ,
+		  OD_REPORT_USER_MAP B              ,
+		  OD_USERS_MB C                     ,
+		  OD_REPORT_SUBSCRIPTION_MB D       ,
+		  OD_HOSTREPORT_METADATA E
+		WHERE 
+		    A.REP_SEQUENCE_NO     = B.REP_SEQ_NO
+		AND C.OD_USER_NO          = B.OD_USER_NO
+		AND D.OD_USER_NO          = C.OD_USER_NO
+		AND A.REP_ID              = E.OD_REPORT_ID
+		AND E.OD_FUNCTION_CODE    = D.REPORT_ID
+		AND D.ENABLE_EMAIL        = 'Y'
+    	AND A.REP_SEQUENCE_NO    &gt;  #lastCount#
+	</select>
+	
+	
+	<resultMap id="RETRIEVE_LAST_SEQUENCE" class="java.util.HashMap">
+		<result property="LAST_SEQUENCE_NO" nullValue="" column="LAST_SEQUENCE_NO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="MAIL_FRMWRK_MNT_SELECT_RETRIEVE_LAST_SEQUENCE" parameterClass ="java.util.HashMap" resultMap="RETRIEVE_LAST_SEQUENCE">
+		SELECT LAST_SEQUENCE_NO FROM OD_REPORT_MAINTENANCE WHERE PROCESS = 'REPORT_MAIL'
+	</select>
+	
+	<update id="MAIL_FRMWRK_MNT_UPDATE_LAST_SEQUENCE" parameterClass="java.util.HashMap">
+		UPDATE OD_REPORT_MAINTENANCE
+		SET LAST_EXECUTION_DATE	= SYSDATE,
+		LAST_SEQUENCE_NO    	=
+		(SELECT MAX(REP_SEQUENCE_NO) AS MAX_COUNT FROM OD_REPORT_INSTANCE_DETAILS
+		)
+		WHERE PROCESS = 'REPORT_MAIL'
+	</update>
+	
+	<resultMap id="ENCRPT_KEY_MAP" class="java.util.HashMap">
+		<result property="ENCRYPT" nullValue="" column="OD_UDF2" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!--  Query for getting the EncryptKey for a corporate-->
+	<select id="ENCRPT_KEY_SELECT_RETRIEVAL" parameterClass ="java.util.HashMap" resultMap="ENCRPT_KEY_MAP">
+		SELECT OD_UDF2
+   			FROM OD_CORPORATE_PROFILE_MB
+  		WHERE OD_GCIF =
+  			(SELECT OD_GCIF FROM od_users_mb WHERE email_id = #EMAIL_ID#)
+	</select>
+	<!--  CHG0001_OT0138_INFO_RPT_FW Email deliver management enhancement starts -->
+	<update id="MAIL_FRMWRK_MNT_UPDATE_MAIL" parameterClass="java.util.HashMap">
+		UPDATE OD_PENDING_MAIL SET OD_MAIL_STATUS = 'Y' WHERE OD_REF_ID = #OD_REF_ID#
+	</update>
+	<!--  CHG0001_OT0138_INFO_RPT_FW Email deliver management enhancement ends -->
+</sqlMap>

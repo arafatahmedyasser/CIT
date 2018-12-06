@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<resultMap id="LOGIN_CHECK_USER_EXISTENCE" class="java.util.HashMap">
+		<result property="USER_NO" nullValue="" column="USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LOGIN_ID" nullValue="" column="LOGIN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="STATUS_FLAG" nullValue="" column="STATUS_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="AUTHENTICATION_TYPE" nullValue=""
+			column="AUTHENTICATION_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF_COUNT" nullValue="" column="GCIF_COUNT"
+			javaType="int" jdbcType="NUMERIC" />
+		<result property="USER_NAME" nullValue="" column="USER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_GCIF" nullValue="" column="OD_GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF" nullValue="" column="GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="CURR_DATE" nullValue="" column="CURR_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DISPLAY_DATE" nullValue="" column="DISPLAY_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOMER_TYPE" nullValue="" column="CUSTOMER_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CERT_SERIAL_NUMBER" nullValue=""
+			column="CERT_SERIAL_NUMBER" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COD_CIF" nullValue="" column="COD_CIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FIRST_NAME" nullValue="" column="FIRST_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MIDDLE_NAME" nullValue="" column="MIDDLE_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAST_NAME" nullValue="" column="LAST_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAST_LOGIN_DATE" nullValue="" column="LAST_LOGIN_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_UDF16" nullValue="" column="OD_UDF16"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_UDF15" nullValue="" column="OD_UDF15"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="LOGIN_CHECK_USER_EXISTENCE_SELECT_NICKNAME_MASTER"
+		parameterClass="java.util.HashMap" resultMap="LOGIN_CHECK_USER_EXISTENCE">
+		SELECT
+		DISTINCT A.USER_NO USER_NO,A.LOGIN_ID,A.STATUS_FLAG,
+		A.AUTHENTICATION_TYPE,A.GCIF_COUNT,
+		CONCAT(IFNULL(G.OD_FIRST_NAME, '') , ' ' , IFNULL(G.OD_MIDDLE_NAME, '') , ' ' , IFNULL(G.OD_LAST_NAME, '')) USER_NAME,
+		G.OD_GCIF,A.GCIF,DATE_FORMAT(SYSDATE(),'DAY, %d MONTH %Y')
+		CURR_DATE,DATE_FORMAT(SYSDATE(),'%d/%m/%Y') DISPLAY_DATE,
+		A.CUSTOMER_TYPE,A.CERT_SERIAL_NUMBER,G.COD_CIF,
+		C.FIRST_NAME,C.MIDDLE_NAME,C.LAST_NAME,
+		CASE  WHEN  C.LAST_LOGIN_DATE IS NULL THEN  '' ELSE  DATE_FORMAT(C.LAST_LOGIN_DATE,'%Y-%m-%d %H:%i:%s') END
+		LAST_LOGIN_DATE ,
+		C.OD_UDF16 OD_UDF16,
+		C.OD_UDF15 OD_UDF15
+		FROM
+		ORBIIBS_NICKNAME A ,OD_USER_ATTRIBUTE B,OD_CUSTOMER_MASTER_TBL G, OD_USERS_MB C
+		WHERE
+		A.USER_NO=B.USER_NO AND A.GCIF = G.OD_GCIF AND
+		C.OD_USER_NO = A.USER_NO AND C.OD_GCIF = A.GCIF AND
+		(A.LOGIN_ID = #LOGIN_ID#)
+	</select>
+
+
+	<resultMap id="CHECK_USER_SESSION" class="java.util.HashMap">
+		<result property="CT_JSESSION_ID" nullValue="" column="CT_JSESSION_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="CHECK_SELECT_USER_SESSION" parameterClass="java.util.HashMap"
+		resultMap="CHECK_USER_SESSION">
+
+		SELECT CT_JSESSION_ID FROM OD_SESSION_LOG WHERE CT_USER_NO = #CT_USER_NO#
+
+	</select>
+
+
+	<delete id="ADD_OD_SESSION_LOG_DELETE_OD_SESSION_LOG"
+		parameterClass="java.util.HashMap">
+		DELETE
+		FROM
+		OD_SESSION_LOG
+		WHERE CT_USER_NO = #CT_USER_NO# AND CT_JSESSION_ID=#CT_JSESSION_ID#
+	</delete>
+
+
+	<parameterMap id="SESSION_LOG_MAP_HB" class="java.util.HashMap">
+		<parameter property="CT_JSESSION_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CT_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CT_LOGIN_STATUS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ACTION_TIME" jdbcType="DATE" javaType="java.sql.Date" />
+
+	</parameterMap>
+
+	<insert id="ADD_OD_SESSION_LOG_HB_INSERT_OD_SESSION_LOG"
+		parameterMap="SESSION_LOG_MAP_HB">
+		INSERT INTO OD_SESSION_LOG_HB
+		(CT_JSESSION_ID,CT_USER_NO,CT_LOGIN_STATUS,ACTION_TIME) values(
+		?,?,?,?
+		)
+	</insert>
+
+	<parameterMap id="SESSION_LOG_MAP" class="java.util.HashMap">
+		<parameter property="CT_JSESSION_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CT_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CT_LOGIN_STATUS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+
+	</parameterMap>
+
+	<insert id="ADD_OD_SESSION_LOG_INSERT_OD_SESSION_LOG"
+		parameterMap="SESSION_LOG_MAP">
+		INSERT INTO OD_SESSION_LOG
+		(CT_JSESSION_ID,CT_USER_NO,CT_LOGIN_STATUS) values(?,?,? )
+	</insert>
+
+	<resultMap id="GET_PWD_COUNT" class="java.util.HashMap">
+		<result property="COUNT" nullValue="" column="COUNT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="USER_PWD_CHECK_SELECT_ENCRYPT" parameterClass="java.util.HashMap"
+		resultMap="GET_PWD_COUNT">
+		select count(*) count from OD_PIN_INFO OPI , OD_USERS_MB OUB
+		where OPI.od_encrypted_pin = #OD_USER_PWD# and OUB.OD_LOGIN_ID =
+		#OD_LOGIN_ID# and OUB.OD_USER_NO=OPI.od_user_no
+	</select>
+
+	<update id="UPDATE_USER_STATUS_UPDATE_REGISTER" parameterClass="java.util.HashMap">
+
+		UPDATE ORBIIBS_NICKNAME SET STATUS_FLAG=#STATUS_FLAG# WHERE
+		USER_NO=#USER_NO#
+
+	</update>
+
+	<update id="UPDATE_USER_LOGIN_TIME_UPDATE" parameterClass="java.util.HashMap">
+		UPDATE
+		OD_USERS_MB
+		SET
+		LAST_LOGIN_DATE = #LAST_LOGIN_DATE#
+		WHERE
+		OD_USER_NO = #USER_NO#
+	</update>
+
+</sqlMap>

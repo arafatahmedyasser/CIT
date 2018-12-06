@@ -1,0 +1,24 @@
+package com.ccp.sample.coll;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class employeeList {
+	
+	static List<Employee> dd=new ArrayList<Employee>();
+	static String date1="25/11/2017";
+	static SimpleDateFormat sf= new SimpleDateFormat("dd/MM/yyyy");
+	static{
+	dd=Arrays.asList(
+			new Employee("one", 1, sf.parse(date1), 1000.00)
+			);	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

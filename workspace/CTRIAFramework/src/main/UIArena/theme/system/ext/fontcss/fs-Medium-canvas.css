@@ -1,0 +1,159 @@
+/*** Medium font.css **/
+
+.workspacetitle {
+    font-size:14px;
+    font-weight:bold;
+}
+.cardusername {
+    font-size: 12px;
+	font-weight:normal;
+	line-height:20px;
+}
+.carduserdetails-con{
+	vertical-align: middle;
+}
+.cardlastlogin {
+    font-size:12px;
+	font-weight:normal;
+}
+.cardlogouttext {
+    font-size: 12px;
+    font-weight:bold;
+	line-height:15px;
+}
+
+.appusername {
+    font-size:12px;
+	font-weight:normal;
+	line-height:20px;
+}
+.applastlogin {
+    font-size:12px;
+	font-weight:normal;
+}
+.tabusername{
+	font-size: 12px;
+	font-weight:normal;
+	line-height:20px;
+}
+.tablastlogin{
+	font-size:12px;
+	font-weight:normal;
+}
+.menulayoutusername{
+    font-size: 12px;
+	font-weight:normal;
+	line-height:20px;
+}
+.menulayoutlastlogin{
+    font-size:12px;
+	font-weight:normal;
+}
+.tabletopusername{
+	font-size: 12px;
+	font-weight:normal;
+	line-height:20px;
+}
+.tabletoplastlogin{
+	font-size:12px;
+	font-weight:normal;
+}
+/*XXX*/
+.tabletopwslabel {
+    font-size: 11px;
+    font-weight:bold;
+}
+.INIT_PAY {
+    font-size: 12px !important;
+}
+.MESSAGES {
+	font-size: 12px !important;
+}
+.x-tab-strip span.x-tab-strip-text {
+    font-size: 11px;
+}
+.x-grid3-hd-row td {
+    font-size: 11px;
+	line-height:15px;
+}
+.x-grid3-row td, .x-grid3-summary-row td {
+    font-size: 11px;
+}
+.x-panel-header {
+    font-size: 11px;
+}
+.x-menu-list-item {
+    font-size: 11px;	
+}
+.catalog_icon_text {
+    font-size: 11px;
+}
+.x-window-tl .x-window-header {
+    font-size:11px;
+    font-weight:bold;
+}
+.x-form-item {
+    font-size: 12px;
+}
+.x-box-inner .x-form-item {
+    font-size: 11px;
+}
+.x-fieldset legend {
+    font-size:11px;
+    font-weight:bold;
+}
+.x-btn-noicon .x-btn-small .x-btn-text {
+    font-size: 10px;
+}
+.x-tree-node {
+    font-size: 11px;
+}
+.appwslabel {
+    font-size: 11px;
+    font-weight:bold;
+}
+.cardworkspacetitle, .workspacetitle {
+    font-size: 14px;
+    font-weight:bold;
+}
+.cardws_text {
+    font-size: 12px;
+    font-weight: bold;
+}
+.x-list-body dt em {
+    font-size: 10px;
+}
+.x-combo-list {
+    font-size: 11px!important;
+}
+.x-form-field {
+    font-size: 12px;
+}
+.excardwslabel {
+    font-size: 12px;
+}
+a.ux-fisheye-menu-item, a.app-ux-fisheye-menu-item {
+   font-size: 12px;
+   font-weight:bold;
+}
+.copyrighttext {
+    font-size: 12px;
+}
+.x-grid-group-hd div.x-grid-group-title {
+    font-size: 11px;
+    font-weight:bold;
+}
+.menulayoutws_text {
+    font-size: 14px;
+}
+.menulayoutusername {
+    font-size: 12px;
+    line-height:20px;
+}
+.menulayoutlastlogin {
+    font-size: 12px;
+}
+.cardworkspacetitle, .workspacetitle{
+	 font-size: 14px;
+	 font-weight:bold;
+}

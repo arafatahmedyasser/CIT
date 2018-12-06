@@ -1,0 +1,44 @@
+<span>{{field_Name}} </span>
+{{#if between}}
+{{!-- form-group begins --}}
+<div class="form-group ct-mobile-filter-padd">
+	{{!-- input-group datepicker begins --}}
+	<div>
+		<div class="input-group date " data-enableCalender="true" data-item-id="datepicker" id="datepicker">
+			<span class="input-group-addon">From</span>
+			<input type="text" class="input-sm form-control" name="date_from" />
+			<span class="input-group-addon"><i class="flaticon-table-grid"></i></span>
+		</div>
+		<div class="input-group date" data-enableCalender="true" data-item-id="datepicker" id="datepicker">
+			<span class="input-group-addon">To</span>
+			<input type="text" class="input-sm form-control" name="date_to" />
+			<span class="input-group-addon"><i class="flaticon-table-grid"></i></span>
+		</div>
+		<span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_default">
+	  		<span type="Error_Msg" class="ct-form__err hidden" data-item-id="errorMsgListForm">  
+	   		<i class="flaticon-alert"></i>
+	  	</span>
+	  	</span>
+	</div>
+	{{!-- input-group datepicker ends --}}
+</div>
+{{!-- form-group ends --}}
+{{else}}
+{{!-- input-group date begins --}}
+<div class="input-group date input-dateon-error" data-item-id="dateOnError" {{#if calenderEnabled}}data-enableCalender="true" {{/if}}>
+
+	<input type="text" class="form-control ct-mobile-filter-padd" name="{{inputName}}"{{#unless calenderEnabled}}vtype="numeric"{{/unless}} placeholder=""/>
+	{{#if calenderEnabled}}
+		<span class="input-group-addon"><i class="flaticon-table-grid"></i></span>
+	{{/if}}
+	<span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_position ct_err_default">
+	  		<span type="Error_Msg" class="ct-form__err hidden">  
+	   		<i class="flaticon-alert"></i>
+	 </span>
+	 </span>
+</div>
+{{!-- input-group date ends --}}
+{{/if}}
+<button type="button" data-action="submit" class="btn ct_btn">{{btnSearch}}</button>
+<button type="button" data-action="cancel" class="btn ct_btn">{{btnCancel}}</button>
+<span class="input-datepicker-error"></span>

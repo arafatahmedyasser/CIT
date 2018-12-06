@@ -1,0 +1,28 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.appicon-default{
+    background-image: url("../images/appicons/contextapp-icon-sprite.png") !important;
+    background-position:0px 0px;
+}
+.app-container-display-msg{
+	color:#000!important;
+	font-weight:bold;
+	font-style:italic;
+}
+.div-ab-wrap{
+	color:#000!important;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+	line-height:15px;
+}
+.removeapp{
+  	background: url("../images/appicons/remove.png") no-repeat scroll 0 0px transparent !important;
+}
+ .scroll-left-icon {
+	background: url("../images/appicons/fav-panel-nav-arrow-left.png") no-repeat scroll 0 0px transparent !important;
+}
+.scroll-right-icon{ 
+	background: url("../images/appicons/fav-panel-nav-arrow-right.png") no-repeat scroll 0 0px transparent !important;
+}

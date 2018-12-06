@@ -1,0 +1,57 @@
+{{!-- row begins --}}{{!--missing ct class--}}
+<div class="row">
+	{{!--leftBBARContainer begins --}}
+	<div data-item-id="leftBBARContainer" class="col-md-6 leftBBarBtnCont">
+		{{#each LEFT_BBAR_BUTTONS}}
+		<div class=" ct-btnCont  pull-left {{FLD_BBAR_BTN_ID}}_outerCont">
+			<div class=" ct-btnCont {{FLD_BBAR_BTN_ID}}_innerCont">
+				<a data-item-id={{FLD_BBAR_BTN_ID}} data-item-type="BBAR_left_button" system_btn_ind="{{FLD_IS_SYS_BUTTON}}" class="{{BBAR_CLASS}} ct_btn">{{FLD_BTN_DISPLAY_NM}}</a>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+	{{!--leftBBARContainer ends --}} {{!--rightBBARContainer begins --}}
+	<div data-item-id="rightBBARContainer" class="col-md-6 rightBBarBtnCont">
+		{{#each RIGHT_BBAR_BUTTONS}}
+		<div class=" ct-btnCont  pull-right {{FLD_BBAR_BTN_ID}}_outerCont">
+			<div class=" ct-btnCont {{FLD_BBAR_BTN_ID}}_innerCont">
+				<a data-item-id={{FLD_BBAR_BTN_ID}} data-item-type="BBAR_right_button" system_btn_ind="{{FLD_IS_SYS_BUTTON}}" class="{{BBAR_CLASS}} ct_btn_neg">{{FLD_BTN_DISPLAY_NM}}</a>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+	{{!--rightBBARContainer ends --}}
+</div>
+{{!-- row ends --}}
+
+   <div class="row">
+   
+	<div class="ct__btn_bbarCont pull-right">
+	<div class="tool" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PIN}}">
+		<div class="dropdown ct-dropdown">
+			<a data-target="#" href="javascript:void(0)" data-toggle="dropdown" role="button" aria-expanded="true"> 
+								<span class="flaticon-more-icon flaticon-Bbar-moreBtn"></span>
+			</a>
+			<ul class="dropdown-menu pull-right ct-dropdown-menu ct-portlet_icon_dropdown">
+			{{#each LEFT_BBAR_BUTTONS}}
+			<li>
+		 <div class=" ct-btnCont ct-mob-btn {{FLD_BBAR_BTN_ID}}_outerCont">
+			<div class=" ct-btnCont ct-mob-btn {{FLD_BBAR_BTN_ID}}_innerCont">
+				<a data-item-id={{FLD_BBAR_BTN_ID}} data-item-type="BBAR_left_button" system_btn_ind="{{FLD_IS_SYS_BUTTON}}" class="{{BBAR_CLASS}} ct_btn">{{FLD_BTN_DISPLAY_NM}}</a>
+			</div>
+			</div>
+			</li>
+			{{/each}}
+			<li>
+			{{#each RIGHT_BBAR_BUTTONS}}
+		<div class=" ct-btnCont ct-mob-btn {{FLD_BBAR_BTN_ID}}_outerCont">
+			<div class=" ct-btnCont ct-mob-btn {{FLD_BBAR_BTN_ID}}_innerCont">
+				<a data-item-id={{FLD_BBAR_BTN_ID}} data-item-type="BBAR_right_button" system_btn_ind="{{FLD_IS_SYS_BUTTON}}" class="{{BBAR_CLASS}} ct_btn_neg">{{FLD_BTN_DISPLAY_NM}}</a>
+			</div>
+		</div>
+		{{/each}}
+		</li>
+			</ul>
+		</div>
+	</div>	
+   </div>

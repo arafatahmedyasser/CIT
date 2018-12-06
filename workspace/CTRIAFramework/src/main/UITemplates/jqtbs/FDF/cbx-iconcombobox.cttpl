@@ -1,0 +1,79 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	{{#if hideLabel}} {{#unless onlyInput}}
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} {{/unless}}
+		<div class="input-group"{{anchorStyle}}>
+			{{!--input-group--}} {{else}} {{#condchk labelAlignType 'TOP'}}
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+				{{!--col-sm-12 begins--}} 
+				<label class="ct-form__label"> 
+					<span class="ct-form__label-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}}
+				<div class="input-group"{{anchorStyle}}>
+					{{!--input-group--}} {{else}}
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						{{!--col-sm-2 begins--}} 
+						<label for="text" class="ct-form__label">
+							{{!--control-label begins--}} 
+							<span class="ct-form__label-val" data-item-type='ct-fieldlabel'> {{{fieldLabel}}} </span>
+						</label> {{!--control-label ends--}}
+					</div>
+					{{!--col-sm-2 ends--}}
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						{{!--col-sm-10 begins--}}
+						<div class="input-group"{{anchorStyle}}>
+							{{!--input-group--}} {{/condchk}} {{/if}}
+							<div class="btn-group select col-lg-12 no-pad">
+								<button type="button" name={{itemId}} id ="select1" class="btn ct_btn dropdown-toggle form-control ct-form__ip ct-form__ip-icon-combo" data-toggle="dropdown">
+									<a href="javascript:void(0)" class="ct-form__static">
+										<span class="ct-icon-combo__icon"></span>
+										<span class="ct-icon-combo__val" data-item-id="-1">{{selectLbl}}</span>
+									</a>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu col-lg-12" role="menu">
+									{{#condchk includeSelectInd 'Y'}}
+									<li class="ct-icon-combo-each" data-item-id="-1">
+										<a href="javascript:void(0)">
+											<span class="ct-icon-combo__icon"></span>
+											<span class="ct-icon-combo__val" data-item-id="-1">{{selectLbl}}</span>
+										</a>
+									</li>
+									{{/condchk}} {{#each data}}
+									<li class="ct-icon-combo-each" data-item-id="{{getOf ../keys @index}}">
+										<a href="javascript:void(0)">
+											<span class="ct-icon-combo__icon comboIcon-{{../parentId}}-{{../itemId}}-{{getOf ../keys @index}}"></span>
+											<span class="ct-icon-combo__val" data-item-id="{{getOf ../keys @index}}">{{this}}</span>
+										</a>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+							<span type="error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container">
+								{{!--error_Msg_Container begins--}} 
+								<span type="error_Msg" class="ct-form__err hidden"> 
+								{{!--error_Msg begins--}} 
+									<i class="flaticon-warning11"></i>
+								</span> 
+								{{!--error_Msg ends--}}
+							</span> 
+							{{!--error_Msg_Container ends--}} 
+							{{#if helpInd}}
+							<span class="input-group-addon ct-form__addon">
+								<i class="flaticon-alert"></i>
+							</span>
+							{{/if}}
+						</div>
+						{{!--input-group ends--}} {{#unless onlyInput}}
+					</div>
+					{{!--col-sm-12 ends--}} {{!--col-sm-10 ends--}} {{/unless}}
+					<div class='clearfix'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+				

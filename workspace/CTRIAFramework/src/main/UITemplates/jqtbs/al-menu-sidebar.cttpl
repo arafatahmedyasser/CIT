@@ -1,0 +1,47 @@
+{{!--ct-al__menu-sidebar begins--}}
+<div class="ct-al__menu-sidebar" data-item-id="ct-al__menu-sidebar">
+	{{!--ct-user ct-user-info begins--}}
+	<div class="visible-sm visible-xs ct-user ct-menu-mobile__ws-user-info" data-item-id="ct-menu-mobile__ws-user-info">
+		{{!--ct-user-img begins--}} 
+		<span class="ct-user-img ct-menu-mobile__ws-user-img"> 
+			<img data-item-id='ct_picedit' src='{{USR_IMG_PATH}}' alt='user_image' class='media-object' data-toggle='tooltip' data-placement='bottom' data-original-title='{{PIC_TOOL_TIP}}' />
+		</span> 
+		{{!--ct-user-img ends--}} 
+		{{!--ct-user-snippet begins--}} 
+		<span class='ct-user-snippet ct-menu__ws-user-snippet ct-menu__ws-user-snippet-mobile'>
+			<span class="ct-user__name ct-menu__ws-user-name ct-menu__ws-user-name-mobile">{{USR_INFO}}</span>
+			<span class="ct-user__login-text">{{LAST_LOGIN_TEXT}} 
+				<span class="ct-user__login-time">{{USR_LOGIN}}</span>
+			</span> 
+			<span>
+				<a href="javascript:void(0)" data-item-id='ct_pref' class="btn flaticon-pref_settings ct_pref">&nbsp;{{HEADER_PREF}}</a>
+			</span>
+			<span>
+				<a href="javascript:void(0)" data-item-id='ct_logout' class="btn flaticon-logout ct_logout">&nbsp;{{HEADER_LOGOUT}}</a>
+			</span>
+		</span> 
+		{{!--ct-user-snippet ends--}}
+	</div>
+	{{!--ct-user ct-user-info ends--}} 
+	{{!--ct-al__menu-ws-list begins--}}
+	<div class="ct-al__menu-ws-list mCustomScrollbar" data-item-id="ct-al__menu-ws-list" data-mcs-theme="dark">
+		{{!--ct-al__wslink-container begins --}}
+		<div class="ct-al__wslink-container ct-al__menu-wslink-container" data-item-id='ct-al__menu-wslink-container'>
+			{{#each MENU_WORKSPACES}} {{!--ct-al__menu-each begins --}}
+			<div class="ct-al__menu-each ct-al__menu-each-js" data-selection-id="{{WORKSPACE_ID}}">
+				{{!--ct-al__wslink-tm begins --}}
+				<div class="ct-al__wslink ct-al__wslink-tm ct-menu__ws-{{@index}}">
+					<div class="ct-al__wslink-each ct-al__wslink-each-tm">
+						<a href="javascript:void(0)" class="flaticon-default flaticon-{{WORKSPACE_ID}} ct-al__wslink-txt ct-al-menu__wslink-txt ct-al-menu__wslink-txt-js" data-item-id='{{WORKSPACE_ID}}'>{{WORKSPACE_DISPLAY_NM}}</a>
+					</div>
+				</div>
+				{{!--ct-al__wslink-tm ends --}}
+			</div>
+			{{!--ct-al__menu-each ends --}} {{/each}}
+		</div>
+		{{!--ct-al__wslink-container ends --}}
+	</div>
+	{{!--ct-al__menu-ws-list ends--}}
+</div>
+{{!--ct-al__menu-sidebar ends--}}
+<div data-item-id="ct-al__menu-sidebar-overlay" class="ct-al__menu-sidebar-overlay"></div>

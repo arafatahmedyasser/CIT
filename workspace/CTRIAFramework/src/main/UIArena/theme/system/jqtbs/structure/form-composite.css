@@ -1,0 +1,22 @@
+/* composite component css */
+
+
+.ct-form__composite-each {
+  margin-right: 15px;
+}
+
+.ct-form__composite-each:first-child {
+  margin-left: 15px;
+}
+
+.ct-form__composite-each:last-child {
+  margin-left: 15px;
+}
+.ct-form__composite-error-indicator{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.ct-form__composite-error-indicator{
+  background: initial;
+}

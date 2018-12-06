@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+
+
+	<resultMap id="GET_LANGUAGE_LIST_SELECT_LANGUAGE_DETAILS_MAP"
+		class="java.util.HashMap">
+		<result property="LANG_ID" nullValue="" column="LANG_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_LANGUAGE_LIST_SELECT_LANGUAGE_DETAILS"
+		parameterClass="java.util.HashMap" resultMap="GET_LANGUAGE_LIST_SELECT_LANGUAGE_DETAILS_MAP">
+		SELECT
+		LANG_ID
+		FROM
+		LANGUAGEMASTER
+	</select>
+
+
+	<resultMap id="GET_DATEFORMAT_LIST_SELECT_DATEFORMAT_DTLS_MAP"
+		class="java.util.HashMap">
+		<result property="DATE_ID" nullValue="" column="DATE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_DATEFORMAT_LIST_SELECT_DATEFORMAT_DTLS"
+		parameterClass="java.util.HashMap" resultMap="GET_DATEFORMAT_LIST_SELECT_DATEFORMAT_DTLS_MAP">
+		SELECT
+		DATE_ID
+		FROM
+		DATEMASTER
+	</select>
+	
+	<resultMap id="GET_TIMEFORMAT_LIST_SELECT_TIMEFORMAT_DTLS_MAP"
+		class="java.util.HashMap">
+		<result property="TIME_FORMAT_ID" nullValue="" column="TIME_FORMAT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_TIMEFORMAT_LIST_SELECT_TIMEFORMAT_DTLS"
+		parameterClass="java.util.HashMap" resultMap="GET_TIMEFORMAT_LIST_SELECT_TIMEFORMAT_DTLS_MAP">
+		SELECT
+		TIME_FORMAT_ID
+		FROM
+		TIMEFORMATMASTER
+	</select>
+	
+
+
+	<resultMap id="GET_AMOUNTFORMAT_LIST_SELECT_AMOUNTFORMAT_DTLS_MAP"
+		class="java.util.HashMap">
+		<result property="AMOUNT_ID" nullValue="" column="AMOUNT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_AMOUNTFORMAT_LIST_SELECT_AMOUNTFORMAT_DTLS"
+		parameterClass="java.util.HashMap" resultMap="GET_AMOUNTFORMAT_LIST_SELECT_AMOUNTFORMAT_DTLS_MAP">
+		SELECT
+		AMOUNT_ID
+		FROM
+		AMOUNTMASTER
+	</select>
+
+
+	<resultMap id="GET_DATEFORMAT_DISPLAY_SELECT_DATEID_MAP"
+		class="java.util.HashMap">
+		<result property="DATE_FORMAT" nullValue="" column="DATE_FORMAT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_DATEFORMAT_DISPLAY_SELECT_DATEID"
+		parameterClass="java.util.HashMap" resultMap="GET_DATEFORMAT_DISPLAY_SELECT_DATEID_MAP">
+		SELECT
+		DATE_FORMAT
+		FROM
+		DATEMASTER
+		WHERE
+		DATE_ID = #DATEID#
+	</select>
+
+	<resultMap id="GET_DATEID_DISPLAY_SELECT_DATEFORMAT_MAP"
+		class="java.util.HashMap">
+		<result property="DATE_ID" nullValue="" column="DATE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_DATEID_DISPLAY_SELECT_DATEFORMAT"
+		parameterClass="java.util.HashMap" resultMap="GET_DATEID_DISPLAY_SELECT_DATEFORMAT_MAP">
+		SELECT
+		DATE_ID
+		FROM
+		DATEMASTER
+		WHERE
+		DATE_FORMAT = #DATE_FORMAT#
+	</select>
+
+	
+	
+	
+	
+	<resultMap id="GET_TIMEFORMAT_DISPLAY_SELECT_TIMEID_MAP"
+		class="java.util.HashMap">
+		<result property="TIME_FORMAT" nullValue="" column="TIME_FORMAT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_TIMEFORMAT_DISPLAY_SELECT_TIMEID"
+		parameterClass="java.util.HashMap" resultMap="GET_TIMEFORMAT_DISPLAY_SELECT_TIMEID_MAP">
+		SELECT
+		TIME_FORMAT
+		FROM
+		TIMEFORMATMASTER
+		WHERE
+		TIME_FORMAT_ID = #TIMEFORMATID#
+	</select>
+
+	<resultMap id="GET_TIMEID_DISPLAY_SELECT_TIMEFORMAT_MAP"
+		class="java.util.HashMap">
+		<result property="TIME_FORMAT_ID" nullValue="" column="TIME_FORMAT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_TIMEID_DISPLAY_SELECT_TIMEFORMAT"
+		parameterClass="java.util.HashMap" resultMap="GET_TIMEID_DISPLAY_SELECT_TIMEFORMAT_MAP">
+		SELECT
+		TIME_FORMAT_ID
+		FROM
+		TIMEFORMATMASTER
+		WHERE
+		TIME_FORMAT = #TIME_FORMAT#
+	</select>
+	
+	
+
+	<resultMap id="GET_ALL_DATA_SELECT_TIMEZONECODE_RESULT"
+		class="java.util.HashMap">
+		<result property="REGIONCODE" nullValue="" column="REGIONCODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CODE" nullValue="" column="CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="NICKNAME" nullValue="" column="NICKNAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DESCRIPTION" nullValue="" column="DESCRIPTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GMTOFFSET" nullValue="" column="GMTOFFSET"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_ALL_DATA_SELECT_TIMEZONECODE" resultMap="GET_ALL_DATA_SELECT_TIMEZONECODE_RESULT">
+		SELECT
+		CODE,
+		GMTOFFSET REGIONCODE,
+		REGIONCODE GMTOFFSET,
+		NICKNAME,
+		DESCRIPTION
+		FROM
+		TIMEZONEMASTER
+		ORDER BY CODE
+	</select>
+
+
+
+	<!-- Query to get Direction of the given language -->
+
+	<resultMap id="GET_LANGUAGE_DIRECTION_MAP" class="java.util.HashMap">
+		<result property="DIRECTION" nullValue="" column="DIRECTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GET_LANGUAGE_DIRECTION_SELECT_DIRECTION"
+		parameterClass="java.util.HashMap" resultMap="GET_LANGUAGE_DIRECTION_MAP">
+		SELECT
+		LM.DIRECTION
+		FROM
+		LANGUAGEMASTER LM
+		WHERE
+		LM.LANG_ID = #LANG_ID#
+	</select>
+
+	<resultMap id="CORPORATE_DTLS_MAP" class="java.util.HashMap">
+		<result property="OD_GCIF" nullValue="" column="OD_GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_FIRST_NAME" nullValue="" column="OD_FIRST_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- <select id="CORPORATE_DTLS_SELECT" parameterClass ="java.util.HashMap" 
+		resultMap="CORPORATE_DTLS_MAP"> SELECT A.OD_GCIF, A.OD_FIRST_NAME||A.OD_MIDDLE_NAME||A.OD_LAST_NAME 
+		NAME, A.OD_PARENT_GCIF FROM OD_CUSTOMER_MASTER_TBL A, OD_CORPORATE_PROFILE_MB 
+		Z WHERE A.OD_PARENT_GCIF=#GCIF# AND Z.OD_GCIF=A.OD_GCIF </select> -->
+	<select id="CORPORATE_DTLS_SELECT" parameterClass="java.util.HashMap"
+		resultMap="CORPORATE_DTLS_MAP">
+		SELECT custmast.OD_GCIF, custmast.OD_FIRST_NAME
+		FROM OD_CUSTOMER_MASTER_TBL custmast, OD_USER_ROLES_MAP_MB rolesmap
+		where custmast.OD_GCIF = rolesmap.OD_GCIF and rolesmap.OD_USER_NO
+		=#USER_NO#
+	</select>
+
+	<!-- Add the queries related to Preference Criteria management -->
+
+	<!-- This is the result map definition for the user preference selection 
+		query -->
+	<resultMap id="ALL_USER_PREFS_RESULT_MAP_PREF_FRMK" class="com.intellectdesign.canvas.value.ListValue">
+		<result property="code" nullValue="" column="ATTRIBUTE_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="desc" nullValue="" column="ATTRIBUTE_VALUE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- This query fetches all the user preference criteria from the User preference 
+		table. -->
+	<select id="GET_ALL_USER_PREFERENCES_SELECT_PREF_FRMK"
+		parameterClass="java.util.HashMap" resultMap="ALL_USER_PREFS_RESULT_MAP_PREF_FRMK">
+		SELECT
+		ATTRIBUTE_TYPE, ATTRIBUTE_VALUE
+		FROM
+		OD_USER_ATTRIBUTE
+		WHERE
+		USER_NO = #USER_NO#
+		<dynamic>
+			<isNotEmpty property="PREF_TYPE" prepend=" AND ">
+				ATTRIBUTE_TYPE = #PREF_TYPE#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<!-- This query fetches all the corporate preference criteria from the corporate 
+		preference table. Expects either GCIF or USER_NO as a filter -->
+	<select id="GET_ALL_CORP_PREFERENCES_SELECT_PREF_FRMK"
+		parameterClass="java.util.HashMap" resultMap="ALL_USER_PREFS_RESULT_MAP_PREF_FRMK">
+		SELECT
+		ATTRIBUTE_TYPE, ATTRIBUTE_VALUE
+		FROM
+		OD_CUSTOMER_ATTRIBUTE
+		WHERE
+		<dynamic>
+			<isNotEmpty property="GCIF" prepend=" ">
+				OD_GCIF = #GCIF#
+			</isNotEmpty>
+			<isNotEmpty property="USER_NO" prepend=" ">
+				OD_GCIF = (SELECT OD_GCIF FROM OD_USERS_MB WHERE OD_USER_NO = #USER_NO#)
+			</isNotEmpty>
+			<isNotEmpty property="PREF_TYPE" prepend=" AND ">
+				ATTRIBUTE_TYPE = #PREF_TYPE#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<!-- This is the result map definition for the system preference selection 
+		query -->
+	<resultMap id="ALL_SYSTEM_PREFERENCE_DEFINITIONS_RESULT_MAP_PREF_FRMK"
+		class="com.intellectdesign.canvas.preferences.SystemPreferenceDefinition">
+		<result property="attributeType" nullValue="" column="ATTRIBUTE_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="attributeDescription" nullValue=""
+			column="ATTRIBUTE_DESC" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sourceType" nullValue="" column="SOURCE_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sourceValue" nullValue="" column="SOURCE_VALUE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="visibleInd" nullValue="" column="VISIBLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- This query fetches the definition of all preference criteria. -->
+	<select id="GET_ALL_SYSTEM_PREFERENCE_DEFINITIONS_SELECT_PREF_FRMK"
+		resultMap="ALL_SYSTEM_PREFERENCE_DEFINITIONS_RESULT_MAP_PREF_FRMK">
+		SELECT
+		ATTRIBUTE_TYPE, ATTRIBUTE_DESC, SOURCE_VALUE, SOURCE_TYPE, VISIBLE_IND
+		FROM
+		ORBIIBS_ATTRIBUTE
+	</select>
+
+	<!-- This is used to execute a particular preference criteria source query 
+		and return the entire result set as a Map -->
+
+	<select id="GET_A_PREFERENCE_DATA_SELECT_PREF_FRMK" resultClass="java.util.HashMap"
+		remapResults="true">
+		SELECT * FROM ( $PREF_QUERY$ )
+	</select>
+
+
+	<delete id="PREF_FRMK_DELETE_DELETE_USER_PREFERENCES"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		OD_USER_ATTRIBUTE
+		WHERE
+		USER_NO=#USER_NO#
+	</delete>
+
+	<parameterMap id="PREFERENCE_MAP" class="java.util.HashMap">
+		<parameter property="USER_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="ATTRIBUTE_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ATTRIBUTE_VALUE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="PREF_FRMK_BATCH_INSERT_INSERT_USER_PREFERENCES"
+		parameterMap="PREFERENCE_MAP">
+		INSERT INTO OD_USER_ATTRIBUTE
+		(
+		USER_NO,
+		ATTRIBUTE_TYPE,
+		ATTRIBUTE_VALUE
+		)
+		VALUES(
+		?,
+		?,
+		?
+		)
+	</insert>
+	
+	<select id="PREF_FRMK_SELECT_ROLES_BY_USER" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+		SELECT 
+			USER_ROLE 
+		FROM 
+			CT_USER_ROLE_PLAY_MAP CURPM,
+			CT_ROLE_PLAY_MASTER CRPM,
+			OD_USERS_MB OUM
+		WHERE
+			CURPM.CT_USER_NO = #USER_NO#
+		AND CURPM.CT_GCIF = #GCIF#
+		AND	CURPM.USER_ROLE = CRPM.ROLE_ID			
+		AND CURPM.CT_USER_NO = OUM.OD_USER_NO
+		AND CURPM.CT_GCIF = OUM.OD_GCIF
+	</select>
+	
+</sqlMap>

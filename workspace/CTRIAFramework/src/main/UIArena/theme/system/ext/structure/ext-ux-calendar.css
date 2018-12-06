@@ -1,0 +1,72 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.ux-cal
+{
+
+	margin:20px 10px 10px 20px;
+	width:84%;
+	height:155px;
+
+}
+
+.ux-cal .ux-cal-weekday
+{
+    height:5px;
+}
+
+.ux-cal .ux-cal-header
+{
+	background:transparent url(../images/default/shared/hd-sprite.gif) repeat-x scroll 0 -83px;
+    height:5px;
+}
+
+.ux-cal .ux-cal-header .ux-cal-monthTitle
+{
+    text-align:center;
+
+}
+.ux-cal td
+{
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.ux-cal .ux-cal-row td:hover
+{
+    background:none;
+}
+
+.ux-cal .otherMonth
+{
+    color: #AAAAAA;
+}
+
+.ux-cal .disable
+{
+    color: #AAAAAA;
+}
+
+
+.ux-cal-weekday td
+{
+    cursor:default;
+}
+.x-date-Year
+{
+/*
+margin-left:20px;
+margin-top:10px;
+padding:2px;
+background-color:red;
+height:10px; */
+'background: repeat-x 0 -83px;
+'overflow:hidden;
+margin-left:20px;
+width:18px;
+height:16px;
+display:block;height:16px;
+background-position: center;
+}
+

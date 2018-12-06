@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<sqlMap>
+
+
+	<resultMap id="AUDIT_CONFIGURATION_DATA_MAP" class="java.util.HashMap">
+		<result property="AUDIT_ID" nullValue="" column="AUDIT_ID"
+			jdbcType="NUMERIC" javaType="java.lang.Long" />
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID"
+			jdbcType="NUMERIC" javaType="java.lang.Long" />
+		<result property="FIELD_NAME" nullValue="" column="FIELD_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="REQUIRED_IND" nullValue="" column="REQUIRED_IND"
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler" />
+		<result property="AUDIT_FORMATTER_CLASS" nullValue=""
+			column="AUDIT_FORMATTER_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TRANS_FIELD_IND" nullValue="" column="TRANS_FIELD_IND"
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler" />
+		<result property="LABLE_PREFIX" nullValue="" column="LABLE_PREFIX"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FIELD_RESOURCE_BUNDLE" nullValue=""
+			column="FIELD_RESOURCE_BUNDLE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="USED_FOR_DSA" nullValue="" column="USED_FOR_DSA"
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler" />
+		<result property="COLLECTION_FIELD_IND" nullValue=""
+			column="COLLECTION_FIELD_IND" typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler" />
+		<result property="COLLECTION_REF_FIELD" nullValue=""
+			column="COLLECTION_REF_FIELD" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FIELD_LABEL" nullValue="" column="FIELD_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COUNT_LABEL" nullValue="" column="COUNT_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COLLECTION_ELEM_LBL" nullValue=""
+			column="COLLECTION_ELEM_LBL" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="RESOURCE_BUNDLE" nullValue="" column="RESOURCE_BUNDLE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DATA_TRANSLATOR_CLASS" nullValue=""
+			column="DATA_TRANSLATOR_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="AUDIT_FRMK_MNT_SELECT_AUDIT_CONFIGURATION_DATA"
+		resultMap="AUDIT_CONFIGURATION_DATA_MAP">
+		SELECT
+		ADM.AUDIT_ID,
+		ADM.EVENT_ID,
+		ADM.FIELD_NAME,
+		ADM.REQUIRED_IND,
+		ADM.TRANS_FIELD_IND,
+		ADM.LABLE_PREFIX,
+		ADM.FIELD_RESOURCE_BUNDLE,
+		ADM.USED_FOR_DSA,
+		ADM.COLLECTION_FIELD_IND,
+		ADM.COLLECTION_REF_FIELD,
+		ADM.FIELD_LABEL,
+		ADM.COUNT_LABEL,
+		ADM.COLLECTION_ELEM_LBL,
+		AM.AUDIT_FORMATTER_CLASS,
+		EM.RESOURCE_BUNDLE,
+		EM.DATA_TRANSLATOR_CLASS
+		FROM
+		AUDIT_DATA_MASTER ADM
+		LEFT JOIN
+		AUDIT_MASTER AM
+		ON
+		ADM.EVENT_ID=AM.EVENT_ID AND ADM.AUDIT_ID=AM.AUDIT_ID
+		LEFT JOIN
+		EVENT_MASTER EM
+		ON
+		ADM.EVENT_ID=EM.EVENT_ID
+
+		ORDER BY
+		AM.AUDIT_ID
+
+	</select>
+
+	<parameterMap id="AUDIT_FRMK_MNT_INSERT_METADATA" class="java.util.HashMap">
+		<parameter property="AUDIT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="EVENT_ID" jdbcType="NUMBER" javaType="java.lang.String" />
+		<parameter property="APP_SERVER" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CLIENT_IP_ADDR" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WEB_SERVER" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REFERENCE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="SESSION_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_LOGIN_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="USER_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_PARENT_GCIF" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SIMULATION_MODE"
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler" />
+		<parameter property="CHANNEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="BROWSER_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="AUDIT_DATA" jdbcType="CLOB" javaType="java.lang.String" />
+		<parameter property="DSA_DATA" jdbcType="CLOB" javaType="java.lang.String" />
+		<parameter property="DEVICE_BAND_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="USER_AGENT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WORKSPACE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LAYOUT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="GEO_LOCATION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REQUEST_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REQUEST_URI" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="UDF1" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF2" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF3" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF4" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF5" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF6" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF7" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF8" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF9" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="UDF10" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="REFERENCE_KEY" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+
+
+	<insert id="AUDIT_FRMK_MNT_INSERT_AUDIT_METADATA" parameterMap="AUDIT_FRMK_MNT_INSERT_METADATA">
+		INSERT INTO OD_AUDIT
+		(
+		AUDIT_ID,
+		EVENT_ID,
+		APP_SERVER,
+		CLIENT_IP_ADDR,
+		WEB_SERVER,
+		AUDIT_DATE,
+		REFERENCE,
+		SESSION_ID,
+		OD_LOGIN_ID,
+		USER_NO,
+		OD_GCIF,
+		OD_PARENT_GCIF,
+		SIMULATION_MODE,
+		CHANNEL,
+		BROWSER_NAME,
+		AUDIT_DATA,
+		DSA_DATA,
+		DEVICE_BAND_ID,
+		USER_AGENT,
+		WORKSPACE_ID,
+		LAYOUT_ID,
+		WIDGET_ID,
+		GEO_LOCATION,
+		REQUEST_ID,
+		REQUEST_URI,
+		UDF1,
+		UDF2,
+		UDF3,
+		UDF4,
+		UDF5,
+		UDF6,
+		UDF7,
+		UDF8,
+		UDF9,
+		UDF10,
+		REFERENCE_KEY
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		SYSDATE,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<resultMap id="ORG_ACC_MAP" class="java.util.HashMap">
+		<result property="OD_ACC_NO" nullValue="" column="OD_ACC_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_PORTAL_ACC_ID" nullValue=""
+			column="OD_PORTAL_ACC_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="AUDIT_FRMK_MNT_SELECT_GET_ORG_ACC_NO" resultMap="ORG_ACC_MAP">
+		SELECT OD_ACC_NO, OD_PORTAL_ACC_ID FROM OD_PORTAL_ACCT_MASTER_VW WHERE
+		OD_PORTAL_ACC_ID = #OD_PORTAL_ACC_ID#
+	</select>
+	<resultMap id="GET_BANK_NETMAIL_ID_MAP" class="java.util.HashMap">
+		<result property="OD_VALUE1" nullValue="" column="OD_VALUE1"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="GET_BANK_NETMAIL_ID_SELECT_TXN_MAIL_EXT" resultMap="GET_BANK_NETMAIL_ID_MAP">
+		SELECT OD_VALUE1 FROM OD_SYSTEM_PARAMETER_MB WHERE OD_CODE='SMTP_MAIL'
+		AND OD_LANG_ID = #OD_LANG_ID#
+	</select>
+	<resultMap id="AUDIT_DATA_MAP" class="com.intellectdesign.canvas.audit.handler.AuditData">
+		<result property="nAuditId" nullValue="" column="AUDIT_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="nEventId" nullValue="" column="EVENT_ID" javaType="long" jdbcType="NUMBER"/>
+		<result property="sClientIP" nullValue="" column="CLIENT_IP_ADDR" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sWebserverIP" nullValue="" column="WEB_SERVER" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="dtAuditDateTime" nullValue="" column="AUDIT_DATE" javaType="Date" jdbcType="DATE"/>
+		<result property="sReferenceNo" nullValue="" column="REFERENCE" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sSessionId" nullValue="" column="SESSION_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sLoginId" nullValue="" column="OD_LOGIN_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sUserNo" nullValue="" column="USER_NO" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sGCIF" nullValue="" column="OD_GCIF" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sParentGCIF" nullValue="" column="OD_PARENT_GCIF" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="bSimulationMode" nullValue="" column="SIMULATION_MODE" typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.YorNBooleanTypeHandler"/>
+		<result property="sChannel" nullValue="" column="CHANNEL" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sBrowserName" nullValue="" column="BROWSER_NAME" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="sAuditData" nullValue="" column="AUDIT_DATA" javaType="java.lang.String" jdbcType="CLOB"/>
+		<result property="sDSAData" nullValue="" column="DSA_DATA" javaType="java.lang.String" jdbcType="CLOB"/>
+	</resultMap>	
+	
+	<!-- Select query for getting the next sequence number for audit -->
+	<select id="AUDIT_FRMK_MNT_SELECT_AUDIT_DATA" resultMap="AUDIT_DATA_MAP">
+		SELECT
+			 AUDIT_ID,
+			 EVENT_ID,
+			 APP_SERVER,
+			 CLIENT_IP_ADDR,
+			 WEB_SERVER,
+			 AUDIT_DATE,
+			 REFERENCE,
+			 SESSION_ID,
+			 OD_LOGIN_ID,
+			 USER_NO,
+			 OD_GCIF,
+			 OD_PARENT_GCIF,
+			 SIMULATION_MODE,
+			 CHANNEL,
+			 BROWSER_NAME,
+			 AUDIT_DATA,
+			 DSA_DATA
+		FROM 
+			OD_AUDIT
+		WHERE AUDIT_ID=#AUDIT_ID#	
+	</select>	
+
+</sqlMap>

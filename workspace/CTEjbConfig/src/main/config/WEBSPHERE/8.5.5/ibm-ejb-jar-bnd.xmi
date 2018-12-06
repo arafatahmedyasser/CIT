@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.ejs.models.base.bindings.ejbbnd:EJBJarBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.ejs.models.base.bindings.ejbbnd="ejbbnd.xmi" xmlns:org.eclipse.jst.j2ee.ejb="ejb.xmi" xmi:id="EJBJarBinding_1375159524539">
+  <ejbJar href="META-INF/ejb-jar.xml#EJBJar_1323164193766"/>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1375159524540" jndiName="CacheDelegateEJB">
+    <enterpriseBean xmi:type="org.eclipse.jst.j2ee.ejb:Session" href="META-INF/ejb-jar.xml#Session_1323164193769"/>
+  </ejbBindings>
+</com.ibm.ejs.models.base.bindings.ejbbnd:EJBJarBinding>

@@ -1,0 +1,18 @@
+package com.ccjp.creditmanagement;
+
+import java.util.Date;
+
+public class creditVO {
+    
+	private String creditcardNumber;
+	private String payment;
+	private Date paymentDate;
+	private Date dueDate;
+	private double fine;
+	private char rank;
+	private String name;
+	public creditVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

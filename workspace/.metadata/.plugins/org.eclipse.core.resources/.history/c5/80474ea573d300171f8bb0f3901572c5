@@ -1,0 +1,63 @@
+package com.ccp.sample;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class fileStreamReaderWriter {
+
+	public static void main(String[] args) throws smleException {
+		// TODO Auto-generated method stub
+		File ff=new File("/home"+File.separator+"ahmed"+"/mysupply.txt");
+		File ff1=new File("/home"+File.separator+"ahmed"+File.separator+"mysupply1.txt");
+		System.out.println(ff.getAbsolutePath());
+		BufferedReader bufferedReader=null;
+		BufferedWriter bufferedWriter=null;
+		String h=null;
+		try {
+			bufferedReader=new BufferedReader(new FileReader(ff));
+			 bufferedWriter=new BufferedWriter(new FileWriter(ff1));
+			try {
+				while((h=bufferedReader.readLine())!=null){
+					System.out.println(h);
+					bufferedWriter.write(h);
+				}
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new smleException(e.getMessage(), e);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new smleException(e.getMessage(), e);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new smleException(e.getMessage(), e);
+		}
+		finally{
+			if(bufferedReader!=null)
+				try {
+					bufferedReader.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			if(bufferedWriter!=null)
+				try {
+					bufferedWriter.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+
+	}
+
+}

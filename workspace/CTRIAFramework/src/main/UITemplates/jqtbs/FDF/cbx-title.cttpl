@@ -1,0 +1,12 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{else}}{{#if hideLabel}}hidden{{/if}}{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} 
+		<strong>
+			<h3>
+				<label class="form-ct-label" data-item-type='ct-fieldlabel' name="{{itemId}}"{{anchorStyle}}> {{{fieldLabel}}} </label>
+			</h3>
+		</strong>
+	</div>
+	<div class='clearfix'></div>
+</div>
+

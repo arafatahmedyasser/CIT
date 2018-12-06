@@ -1,0 +1,66 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.applogo{
+	float:right;
+}
+.applogo{
+	height:60px;
+	width:180px;
+}
+.applogout-con{
+  padding: 20px 0 0;
+}
+.applogout{
+	height:20px;
+	width:20px;
+	display:inline-block;
+}
+.appuserdetails-con{
+	display: table-cell;
+	height:60px;
+	vertical-align: middle;
+	padding:0px 0px 0px 0px;
+}
+.workspacetitle{
+	display: table-cell;	
+	vertical-align: middle; 
+}
+a.ux-fisheye-menu-item, a.app-ux-fisheye-menu-item{
+	display: block;
+	text-decoration: none;
+}
+a.ux-fisheye-menu-item span {
+	display: block;
+}
+a.ux-fisheye-menu-item img, a.app-ux-fisheye-menu-item img {
+	border: none;
+}
+a.app-ux-fisheye-menu-item .appwslabel {
+	 display: inline-block;
+	 width:70px;
+}
+.appwsiconDefault{
+ 	background-position: -45px 2px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+.appwsiconholder{
+	width:90px!important;
+}
+.appwsiconholder:hover .appwsiconDefault, .activeWS .appwsiconDefault {
+    background-position: 0px 0px;
+    height: 45px;
+    width: 45px!important;
+}
+.appwsicon-CT_TWO_CLM_WSPACE{
+	 background-position: -45px -45px;
+}
+.appwsiconholder:hover  .appwsicon-CT_TWO_CLM_WSPACE, .activeWS .appwsicon-CT_TWO_CLM_WSPACE{
+	background-position: 0 -50px; 
+    height: 50px;
+    width: 45px!important;
+}

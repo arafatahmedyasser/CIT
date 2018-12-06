@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<resultMap id="GLOBAL_CCY_DECIMAL_PLACES_RESULTMAP" class="java.util.HashMap">
+		<result property="CURRENCY" nullValue="" column="CURRENCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="NBR_DECIMAL" nullValue="" column="NBR_DECIMAL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="GLOBAL_CCY_SELECT_DECIMAL_PLACES" parameterClass="java.util.HashMap"
+		resultMap="GLOBAL_CCY_DECIMAL_PLACES_RESULTMAP">
+		SELECT COD_CCY CURRENCY,NBR_DECIMAL FROM
+		CIB_ORBICASH_CURRENCY order by NBR_DECIMAL
+	</select>
+
+</sqlMap>

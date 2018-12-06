@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS//EN" "http://www.jboss.org/j2ee/dtd/jboss.dtd">
+
+<jboss>
+	<enterprise-beans>
+	<session>
+			<ejb-name>LoginEJB</ejb-name>
+			<jndi-name>CanvasLoginEJBHome</jndi-name>
+		</session>
+		<session>
+			<ejb-name>CacheDelegateEJB</ejb-name>
+			<jndi-name>CacheDelegateHome</jndi-name>
+		</session>
+		<session>
+			<ejb-name>HAResolver</ejb-name>
+			<jndi-name>HAResolverRemoteHome</jndi-name>
+		</session>
+		<session>
+			<ejb-name>RequestHandlerInvokerEJB</ejb-name>
+			<jndi-name>CTRequestHandlerBean</jndi-name>
+		</session>
+		<message-driven>
+			<ejb-name>AlertMessageListener</ejb-name>
+			<destination-jndi-name>queue/AlertMsgQueue</destination-jndi-name>
+		</message-driven>
+		<message-driven>
+			<ejb-name>InfoReportsAsyncMessageListener</ejb-name>
+			<destination-jndi-name>queue/ASYNC_REPORT_QUEUE</destination-jndi-name>
+		</message-driven>
+		<message-driven>
+			<ejb-name>InfoReportsSyncMessageListener</ejb-name>
+			<destination-jndi-name>queue/SYNC_REPORT_QUEUE</destination-jndi-name>
+		</message-driven>
+        <message-driven>
+            <ejb-name>AsyncMDBListener</ejb-name>
+            <destination-jndi-name>queue/ASYNC_ACTIVITY_QUEUE</destination-jndi-name>
+        </message-driven>
+	</enterprise-beans>
+	
+	<container-configuration>
+		<container-name>Standard Stateless SessionBean</container-name>
+		<call-logging>false</call-logging>
+		<invoker-proxy-binding-name>stateless-unified-invoker</invoker-proxy-binding-name>
+		<container-interceptors>
+			<interceptor>org.jboss.ejb.plugins.ProxyFactoryFinderInterceptor</interceptor>
+			<interceptor>org.jboss.ejb.plugins.LogInterceptor</interceptor>
+			<interceptor>org.jboss.ejb.plugins.SecurityInterceptor</interceptor>
+			
+			<interceptor transaction="Bean">org.jboss.ejb.plugins.StatelessSessionInstanceInterceptor</interceptor>
+			<interceptor transaction="Bean">org.jboss.ejb.plugins.TxInterceptorBMT</interceptor>
+			<interceptor transaction="Bean">org.jboss.ejb.plugins.CallValidationInterceptor</interceptor>
+			<interceptor>org.jboss.resource.connectionmanager.CachedConnectionInterceptor</interceptor>
+		</container-interceptors>
+		<instance-pool>org.jboss.ejb.plugins.StatelessSessionInstancePool</instance-pool>
+		<instance-cache></instance-cache>
+		<persistence-manager></persistence-manager>
+		<container-pool-conf>
+			<MaximumSize>200</MaximumSize>
+		</container-pool-conf>
+	</container-configuration>
+</jboss>
+

@@ -1,0 +1,35 @@
+/*! * Copyright 2014. Intellect Design Arena Limited. All rights reserved. *//* Tiny Carousel */
+#earnings-slider { height: 1%; overflow:hidden; padding: 10px 0 10px;   }
+#earnings-slider .viewport { float: down; width: 100%; height: 200px; overflow: hidden; position: relative; }
+#earnings-slider .buttons { background:url("../images/containers/components/carousel/arrow-previous.png") no-repeat; /* margin: 40px 0px 10px 100px;  */ text-indent: -999em;background-position: 0 -76px;  width: 39px; height: 37px; overflow: hidden; position: relative; }
+#earnings-slider .next, #earnings-slider .prev { background-position: 0 -112px;/*  margin: 10px 0px 0px 100px; */  }
+/* #earnings-slider .disable { visibility: vi; } */
+#earnings-slider .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 100%; left: 0 top: 0; }
+#earnings-slider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 65px; border: 1px solid #dcdcdc; width: 99%;}
+
+
+/* Tiny Carousel */
+#preferred-slider { height: 1%; overflow:hidden; padding: 10px 0 10px;   }
+#preferred-slider .viewport { float: down; width: 100%; height: 200px; overflow: hidden; position: relative; }
+#preferred-slider .buttons { background:url("../images/containers/components/carousel/arrow-previous.png") no-repeat; /* margin: 40px 0px 10px 100px;  */ text-indent: -999em;background-position: 0 -76px;  width: 39px; height: 37px; overflow: hidden; position: relative; }
+#preferred-slider .next, #preferred-slider .prev { background-position: 0 -112px;/*  margin: 10px 0px 0px 100px; */  }
+/* #preferred-slider .disable { visibility: vi; } */
+#preferred-slider .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 100%; left: 0 top: 0; }
+#preferred-slider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 65px; border: 1px solid #dcdcdc; width: 99%;}
+
+.swiper-slide{ text-align:left !important; float: left; margin: 0 20px 0 0; padding: 1px; height: 65px; /*border-bottom: 1px solid #dcdcdc;*/ width: 99%;}/*
+#ssm-ticker .swiper-slide{	height:30px;	width:auto;	background: none repeat scroll 0 0 #F5F4EE;	padding: 5px;}#ssm-ticker .swiper-slide-active{	 background-color: #AF0B1C !important;	 color: #FFFFFF !important;}*/.ssm-ticker .select2-container .select2-choice {    display: block;    height: 26px;    padding: 0 0 0 8px;    overflow: hidden;    position: relative;    border: 1px solid #CCCCCC;    white-space: nowrap;    line-height: 26px;    text-decoration: none;    border-radius: 4px;    background-clip: padding-box;    -webkit-touch-callout: none;      -webkit-user-select: none;         -moz-user-select: none;          -ms-user-select: none;              user-select: none;    background-color: #F5F4EE;    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(0.5, #F5F4EE));    background-image: -webkit-linear-gradient(center bottom, #FFFFFF 0%, #F5F4EE 50%);    background-image: -moz-linear-gradient(center bottom, #FFFFFF 0%, #F5F4EE 50%);    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#F5F4EE', endColorstr = '#FFFFFF', GradientType = 0);    background-image: linear-gradient(top, #F5F4EE 0%, #FFFFFF 50%);}.select2-drop {    border: 1px solid #CCCCCC !important;    border-top: none !important;}.ssm-ticker{	margin-bottom:3px;	}.ssm-ticker  .select2-container .select2-choice .select2-arrow {    display: inline-block;    width: 18px;    height: 100%;    position: absolute;    right: 0;    top: 0;    border-left: 1px solid #AF0B1C;    border-radius: 0 4px 4px 0;    background-clip: padding-box;    background: #ccc;    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #7C0713), color-stop(0.6, #AF0B1C));    background-image: -webkit-linear-gradient(center bottom, #7C0713 0%, #AF0B1C 60%);    background-image: -moz-linear-gradient(center bottom, #7C0713 0%, #AF0B1C 60%);    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#AF0B1C', endColorstr = '#7C0713', GradientType = 0);    background-image: linear-gradient(top, #7C0713 0%, #AF0B1C 60%);}
+.swiper-slide{ 
+/*	margin: 4px 20px 0px 4px;*/
+	padding: 1px;
+	padding-bottom: 4px;
+	/*height: 55px;*/
+}
+
+.swiper-slide img {
+    width: 56px !important;
+    margin-top:2px;
+}
+.swiper-container{
+	height:200px
+}

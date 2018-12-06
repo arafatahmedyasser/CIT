@@ -1,0 +1,35 @@
+/*! * Copyright 2014. Intellect Design Arena Limited. All rights reserved. *//* HTML RESET
+///////////////////////////////////////////// */
+
+/* Column code based on work from cssgrid.net: 
+The 1140px Grid by Andy Taylor â€“ http://cssgrid.net â€“ http://www.twitter.com/andytlr â€“ http://www.catchingzebra.com */
+
+
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12, .col13, .col14, .col15, .col16, .col17, .col18, .col19, .col20 {
+	vertical-align: top;
+}
+
+.col1{display: inline-block; *display:inline; width:5% !important;}
+.col2{display: inline-block; *display:inline; width:10% !important;}
+.col3{display: inline-block; *display:inline; width:15% !important;}
+.col4{display: inline-block; *display:inline; width:20% !important;}
+.col5{display: inline-block; *display:inline; width:25% !important;}
+
+.col6{display: inline-block; *display:inline; width:30% !important;}
+.col7{display: inline-block; *display:inline; width:35% !important;}
+.col8{display: inline-block; *display:inline; width:40% !important;}
+.col9{display: inline-block; *display:inline; width:45% !important;}
+.col10{display: inline-block; *display:inline; width:52% !important;}
+
+.col11{display: inline-block; *display:inline; width:55% !important;}
+.col12{display: inline-block; *display:inline; width:59% !important;}
+.col13{display: inline-block; *display:inline; width:65% !important;}
+.col14{display: inline-block; *display:inline; width:67% !important;}
+.col15{display: inline-block; *display:inline; width:75% !important;}
+
+.col16{display: inline-block; *display:inline; width:79% !important;}
+.col17{display: inline-block; *display:inline; width:85% !important;}
+.col18{display: inline-block; *display:inline; width:90% !important;}
+.col19{display: inline-block; *display:inline; width:95% !important;}
+.col20{display: inline-block; *display:inline; width:100% !important;}
+

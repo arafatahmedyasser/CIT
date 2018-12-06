@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<weblogic-ejb-jar xmlns="http://www.bea.com/ns/weblogic/10.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.bea.com/ns/weblogic/10.0 http://www.bea.com/ns/weblogic/10.0/weblogic-ejb-jar.xsd">
+	
+
+<weblogic-enterprise-bean>
+		<ejb-name>LoginEJB</ejb-name>
+		<stateless-session-descriptor>
+			<pool>
+				<initial-beans-in-free-pool>200</initial-beans-in-free-pool>
+			</pool>
+			
+			<stateless-clustering>
+				<home-is-clusterable>true</home-is-clusterable>
+				<home-load-algorithm>RoundRobin</home-load-algorithm>
+				<stateless-bean-is-clusterable>true</stateless-bean-is-clusterable>
+				<stateless-bean-load-algorithm>RoundRobin</stateless-bean-load-algorithm>
+			</stateless-clustering>
+		</stateless-session-descriptor>
+		<enable-call-by-reference>True</enable-call-by-reference>
+		<jndi-name>CanvasLoginEJBHome</jndi-name>
+	</weblogic-enterprise-bean>
+	
+	<weblogic-enterprise-bean>
+		<ejb-name>CacheDelegateEJB</ejb-name>
+		<stateless-session-descriptor>
+			<pool>
+				<initial-beans-in-free-pool>200</initial-beans-in-free-pool>
+			</pool>
+			
+			<stateless-clustering>
+				<home-is-clusterable>true</home-is-clusterable>
+				<home-load-algorithm>RoundRobin</home-load-algorithm>
+				<stateless-bean-is-clusterable>true</stateless-bean-is-clusterable>
+				<stateless-bean-load-algorithm>RoundRobin</stateless-bean-load-algorithm>
+			</stateless-clustering>
+		</stateless-session-descriptor>
+		<enable-call-by-reference>True</enable-call-by-reference>
+		<jndi-name>CacheDelegateHome</jndi-name>
+	</weblogic-enterprise-bean>
+	
+	
+	<weblogic-enterprise-bean>
+		<ejb-name>RequestHandlerInvokerEJB</ejb-name>
+		<stateless-session-descriptor>
+			<pool>
+				<initial-beans-in-free-pool>200</initial-beans-in-free-pool>
+			</pool>
+			<stateless-clustering>
+				<home-is-clusterable>true</home-is-clusterable>
+				<home-load-algorithm>RoundRobin</home-load-algorithm>
+				<stateless-bean-is-clusterable>true</stateless-bean-is-clusterable>
+				<stateless-bean-load-algorithm>RoundRobin</stateless-bean-load-algorithm>
+			</stateless-clustering>
+		</stateless-session-descriptor>
+		<enable-call-by-reference>True</enable-call-by-reference>
+		<jndi-name>CTRequestHandlerBean</jndi-name>
+	</weblogic-enterprise-bean>
+	
+	<weblogic-enterprise-bean>
+		<ejb-name>HAResolver</ejb-name>
+		<stateless-session-descriptor>
+			<pool>
+				<initial-beans-in-free-pool>500</initial-beans-in-free-pool>
+			</pool>
+			<stateless-clustering>
+				<home-is-clusterable>true</home-is-clusterable>
+				<home-load-algorithm>RoundRobin</home-load-algorithm>
+				<stateless-bean-is-clusterable>true</stateless-bean-is-clusterable>
+				<stateless-bean-load-algorithm>RoundRobin</stateless-bean-load-algorithm>
+			</stateless-clustering>
+		</stateless-session-descriptor>
+		<transaction-descriptor>
+			<trans-timeout-seconds>100</trans-timeout-seconds>
+		</transaction-descriptor>
+		<enable-call-by-reference>True</enable-call-by-reference>
+		<jndi-name>HAResolverRemoteHome</jndi-name>
+		<local-jndi-name>HAResolverLocalHome</local-jndi-name>
+	</weblogic-enterprise-bean>
+	
+	<weblogic-enterprise-bean>
+		<ejb-name>AlertMessageListener</ejb-name>
+		<message-driven-descriptor>
+			<pool>
+				<max-beans-in-free-pool>500</max-beans-in-free-pool>
+				<initial-beans-in-free-pool>50</initial-beans-in-free-pool>
+			</pool>
+			<destination-jndi-name>AlertMsgQueue</destination-jndi-name>
+		</message-driven-descriptor>
+	</weblogic-enterprise-bean>
+	
+	<weblogic-enterprise-bean>
+		<ejb-name>InfoReportsAsyncMessageListener</ejb-name>
+		<message-driven-descriptor>
+			<destination-jndi-name>ASYNC_REPORT_QUEUE</destination-jndi-name>
+		</message-driven-descriptor>
+	</weblogic-enterprise-bean>
+
+	<weblogic-enterprise-bean>
+		<ejb-name>InfoReportsSyncMessageListener</ejb-name>
+		<message-driven-descriptor>
+			<destination-jndi-name>SYNC_REPORT_QUEUE</destination-jndi-name>
+		</message-driven-descriptor>
+	</weblogic-enterprise-bean>
+    
+    <weblogic-enterprise-bean>
+        <ejb-name>AsyncMDBListener</ejb-name>
+        <message-driven-descriptor>
+            <pool>
+                <max-beans-in-free-pool>500</max-beans-in-free-pool>
+                <initial-beans-in-free-pool>50</initial-beans-in-free-pool>
+            </pool>
+            <destination-jndi-name>ASYNC_ACTIVITY_QUEUE</destination-jndi-name>
+        </message-driven-descriptor>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+

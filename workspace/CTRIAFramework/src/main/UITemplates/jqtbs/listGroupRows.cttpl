@@ -1,0 +1,22 @@
+{{#each this}}
+	<tr class="group_collapsed{{#if isLeaf}} is_leaf{{/if}}" data-grouped-header="true"  data-group-index ="{{index}}" data-col-id="{{COLID}}" data-row-index="{{row_index}}" data-type="{{data_type}}">
+			
+			<td class="row_spacer" colspan="{{colspace}}"></td>
+	        <td data-header-data colspan="{{colLen}}">
+	         		{{{label}}}
+	         		<!-- <div class="group_Summary pull-right">{{{summmarylbl}}}</div> -->
+	        </td>
+<!-- 	    {{#if ROWSELECTION}}
+         	<td class="rowselection-col_spacer"></dh>
+		{{/if}}
+		{{#if ACTION_COLUMN}}
+			<td class="actionselection-col_spacer"></td>
+		{{/if}}
+         	<td class="rowsexpand-col_spacer"></td> -->
+        {{#each HEADER_COLS}}
+         	<td class="{{this.cssClass}}">
+         		<span data-lbl="{{COL_ID}}" class="ct-listview__summary-title">{{SUMMARY_LBL}} </span>
+         	</td>
+        {{/each}}
+    </tr>
+{{/each}}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+	<!-- This is the result map for fetching all the HAL definitions configured -->
+	<resultMap id="HAL_FW_GET_ALL_DEFINITIONS_RESULT_MAP" class="java.util.HashMap">
+		<result property="APPID" nullValue="" column="APPID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="HNDLR_CLS_NAME" nullValue="" column="HNDLR_CLS_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ERR_HNDLR_CLS_NAME" nullValue=""
+			column="ERR_HNDLR_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SRC_TBL_NAME" nullValue="" column="SRC_TBL_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DEST_TBL_NAME" nullValue="" column="DEST_TBL_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INTELLECT_PROCESSOR" nullValue=""
+			column="INTELLECT_PROCESSOR" javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="HOST_CLS_NAME" nullValue="" column="HOST_CLS_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORMATTER_CLS_NAME" nullValue=""
+			column="FORMATTER_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PROD_HOME_CLS_NAME" nullValue=""
+			column="PROD_HOME_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OI_HOME_CLS_NAME" nullValue=""
+			column="OI_HOME_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ASYNC_HOME_CLS_NAME" nullValue=""
+			column="ASYNC_HOME_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COMMUNICATION_TYPE" nullValue=""
+			column="COMMUNICATION_TYPE" javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="COMMUNICATOR_CLS_NAME" nullValue=""
+			column="COMMUNICATOR_CLS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FAILOVER_MOVE_ASYNC" nullValue=""
+			column="FAILOVER_MOVE_ASYNC" javaType="java.lang.String" jdbcType="CHAR" />
+	</resultMap>
+
+	<!-- This query is used for the cache CT_HAL_APP_ID_LIST for fetching all 
+		the HAL definitions configured -->
+	<select id="HAL_FW_SELECT_GET_ALL_DEFINITIONS" parameterClass="java.util.HashMap"
+		resultMap="HAL_FW_GET_ALL_DEFINITIONS_RESULT_MAP">
+		SELECT
+		APPID,
+		HNDLR_CLS_NAME,
+		ERR_HNDLR_CLS_NAME,
+		SRC_TBL_NAME,
+		DEST_TBL_NAME,
+		INTELLECT_PROCESSOR,
+		HOST_CLS_NAME,
+		FORMATTER_CLS_NAME,
+		PROD_HOME_CLS_NAME,
+		OI_HOME_CLS_NAME,
+		ASYNC_HOME_CLS_NAME,
+		COMMUNICATION_TYPE,
+		COMMUNICATOR_CLS_NAME,
+		FAILOVER_MOVE_ASYNC
+		FROM
+		MST_CIB_APPID_HANDLER_MAP
+	</select>
+</sqlMap>

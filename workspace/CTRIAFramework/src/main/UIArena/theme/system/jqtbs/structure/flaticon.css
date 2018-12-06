@@ -1,0 +1,824 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("../fonts/flaticon.eot");
+	src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"),
+	url("../fonts/flaticon.woff") format("woff"),
+	url("../fonts/flaticon.ttf") format("truetype"),
+	url("../fonts/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+	/* font-size: 20px; */
+	font-style: normal;
+/* 	margin: 0 10px; */
+}
+
+.flaticon-default.flaticon-ACC_SERV_WSPACE:before {
+	content: "\e000";
+}
+.flaticon-default.flaticon-CFF_WSPACE:before {
+	content: "\e001";
+}
+.flaticon-default.flaticon-CT_CHART_WS:before {
+	content: "\e002";
+}
+.flaticon-default.flaticon-DASHBOARD_WS:before {
+	content: "\e003";
+}
+.flaticon-default.flaticon-LIQUIDITY_WS:before {
+	content: "\e004";
+}
+.flaticon-default.flaticon-PAYMENT_WS:before {
+	content: "\e005";
+}
+.flaticon-default.flaticon-REC_WS:before {
+	content: "\e006";
+}
+.flaticon-default.flaticon-CT_TAB_WSPACE:before {
+	content: "\e009";
+}
+.flaticon-default.flaticon-WS_TEST:before{
+content: "\e012";
+}
+.flaticon-default.flaticon-FORM_WS_NIVE:before{
+content: "\e088";
+}
+.flaticon-default.flaticon-FORM_COMP:before{
+content: "\e012";
+}
+.flaticon-default.flaticon-ADVGROUP_TEST:before{
+content: "\e099";
+}
+.flaticon-default.flaticon-WS_TEST_FORM-3:before{
+content: "\e043";
+}
+.flaticon-default.flaticon-CM_WSPACE:before{
+content: "\e041";
+}
+.flaticon-default.flaticon-WS_TEST:before{
+content: "\e053";
+}
+.flaticon-default.flaticon-WS_LR_MENU:before{
+content: "\e028";
+}
+.flaticon-default.flaticon-WS_TEST_FORM:before{
+content: "\e030";
+}
+.flaticon-default.flaticon-DYC:before {
+	content: "\e030";
+}
+.flaticon-add:before {
+	content: "\e007";
+}
+.flaticon-alert:before {
+	content: "\e008";
+}
+.flaticon-apps-icon:before {
+	content: "\e009";
+}
+.flaticon-automated:before {
+	content: "\e00a";
+}
+.flaticon-bar_graph:before {
+	content: "\e00b";
+}
+.flaticon-bars-graphic-chart:before {
+	content: "\e00c";
+}
+.flaticon-bars_new:before {
+	content: "\e00d";
+}
+.flaticon-barsgraphic:before {
+	content: "\e00e";
+}
+.flaticon-bat-chart_up:before {
+	content: "\e00f";
+}
+.flaticon-bold:before {
+	content: "\e010";
+}
+.flaticon-bullet_list1:before {
+	content: "\e011";
+}
+.flaticon-buy-card:before {
+	content: "\e012";
+}
+.flaticon-calendar-new:before {
+	content: "\e013";
+}
+.flaticon-calendar1:before {
+	content: "\e014";
+}
+.flaticon-calendar2:before {
+	content: "\e015";
+}
+.flaticon-card-new1:before {
+	content: "\e016";
+}
+.flaticon-cascade:before {
+	content: "\e017";
+}
+.flaticon-cash-new-stack:before {
+	content: "\e018";
+}
+.flaticon-center-alignment:before {
+	content: "\e019";
+}
+.flaticon-checked:before {
+	content: "\e01a";
+}
+.flaticon-circle_tick:before {
+	content: "\e01b";
+}
+.flaticon-close:before {
+	content: "\e01c";
+	margin-right: 10px;
+	font-size: 11px;
+}
+.flaticon-cloud-upload:before {
+	content: "\e01d";
+}
+.flaticon-coin-stack:before {
+	content: "\e01e";
+}
+.flaticon-database:before {
+	content: "\e01f";
+}
+.flaticon-collapse:before {
+	content: "\e020";
+}
+.flaticon-credit-card1:before {
+	content: "\e021";
+}
+.flaticon-credit-card2:before {
+	content: "\e022";
+}
+.flaticon-credit-card3:before {
+	content: "\e023";
+}
+.flaticon-close2:before {
+	content: "\e024";
+}
+.flaticon-csv:before {
+	content: "\e025";
+}
+.flaticon-currency-new-stack:before {
+	content: "\e026";
+}
+.flaticon-currency_1:before {
+	content: "\e027";
+}
+.flaticon-report_new1:before {
+	content: "\e028";
+}
+.flaticon-undo:before {
+	content: "\e029";
+}
+.flaticon-data-grid:before {
+	content: "\e02a";
+}
+.flaticon-date-cal-new:before {
+	content: "\e02b";
+}
+.flaticon-default:before {
+	content: "\e02c";
+}
+.flaticon-default_a:before {
+	content: "\e02d";
+}
+.flaticon-default_grid:before {
+	content: "\e02e";
+}
+.flaticon-default_icon_gr:before {
+	content: "\e02f";
+}
+
+.flaticon-direction2:before {
+	content: "\e031";
+}
+.flaticon-donot-chart:before {
+	content: "\e032";
+}
+.flaticon-down-arrow:before {
+	content: "\e033";
+}
+.flaticon-down-arrow2:before {
+	content: "\e034";
+}
+.flaticon-down-arrow_new:before {
+	content: "\e035";
+}
+.flaticon-email:before {
+	content: "\e036";
+}
+.flaticon-envelope-mail:before {
+	content: "\e037";
+}
+.flaticon-expand:before {
+	content: "\e038";
+}
+.flaticon-expand2:before {
+	content: "\e039";
+}
+.flaticon-expand_down:before {
+	content: "\e03a";
+}
+.flaticon-expand_up:before {
+	content: "\e03b";
+}
+.flaticon-export:before {
+	content: "\e03c";
+}
+.flaticon-file-icon:before {
+	content: "\e03d";
+}
+.flaticon-filter-o:before {
+	content: "\e03e";
+}
+.flaticon-filter-sort:before {
+	content: "\e03f";
+}
+.flaticon-filter:before {
+	content: "\e040";
+}
+.flaticon-finance-and-business:before {
+	content: "\e041";
+}
+.flaticon-funnel-chart:before {
+	content: "\e042";
+}
+.flaticon-gauge-icon2:before {
+	content: "\e043";
+}
+.flaticon-gauge_icon:before {
+	content: "\e044";
+}
+.flaticon-home-icon:before {
+	content: "\e045";
+}
+.flaticon-home-icon2:before {
+	content: "\e046";
+}
+.flaticon-horizontal-bar:before {
+	content: "\e047";
+}
+.flaticon-image_1:before {
+	content: "\e048";
+}
+.flaticon-image_2:before {
+	content: "\e049";
+}
+.flaticon-image_3:before {
+	content: "\e04a";
+}
+.flaticon-increasing-chart:before {
+	content: "\e04b";
+}
+.flaticon-indent-left:before {
+	content: "\e04c";
+}
+.flaticon-indent-rght:before {
+	content: "\e04d";
+}
+.flaticon-info2:before {
+	content: "\e04e";
+}
+.flaticon-info:before {
+	content: "\e04f";
+}
+.flaticon-italics:before {
+	content: "\e050";
+}
+.flaticon-jpg:before {
+	content: "\e051";
+}
+.flaticon-justify:before {
+	content: "\e052";
+}
+.flaticon-left-alignment:before {
+	content: "\e053";
+}
+.flaticon-levels:before {
+	content: "\e054";
+}
+.flaticon-line-chart-new:before {
+	content: "\e055";
+}
+.flaticon-line-chart_new:before {
+	content: "\e056";
+}
+.flaticon-line_chart:before {
+	content: "\e057";
+}
+.flaticon-linked:before {
+	content: "\e058";
+}
+.flaticon-bullet_list2:before {
+	content: "\e059";
+}
+.flaticon-logout:before {
+	content: "\e05a";
+}
+.flaticon-magnifying-glass:before {
+	content: "\e05b";
+}
+.flaticon-magnifying-glass2:before {
+	content: "\e05c";
+}
+.flaticon-main-menu:before {
+	content: "\e05d";
+}
+.flaticon-maps:before {
+	content: "\e05e";
+}
+.flaticon-maximize5:before {
+	content: "\e05f";
+}
+.flaticon-maximize_2:before {
+	content: "\e060";
+}
+.flaticon-maximize_3:before {
+	content: "\e061";
+}
+.flaticon-maxmize:before {
+	content: "\e062";
+}
+.flaticon-minus:before {
+	content: "\e063";
+}
+.flaticon-money-stack-new:before {
+	content: "\e064";
+}
+.flaticon-money-trans:before {
+	content: "\e065";
+}
+.flaticon-money_trans:before {
+	content: "\e066";
+}
+.flaticon-money_trans2:before {
+	content: "\e067";
+}
+.flaticon-more-icon-3:before {
+	content: "\e068";
+}
+.flaticon-more-icon:before {
+	content: "\e069";
+}
+.flaticon-more-icon2:before {
+	content: "\e06a";
+}
+.flaticon-next:before {
+	content: "\e06b";
+}
+.flaticon-next_2:before {
+	content: "\e06c";
+}
+.flaticon-notifications:before {
+	content: "\e06d";
+}
+.flaticon-number_list2:before {
+	content: "\e06e";
+}
+.flaticon-payments:before {
+	content: "\e06f";
+}
+.flaticon-pdf:before {
+	content: "\e070";
+}
+.flaticon-play_icon:before {
+	content: "\e071";
+}
+.flaticon-logoff_2:before {
+	content: "\e072";
+}
+.flaticon-pref_settings:before {
+	content: "\e073";
+}
+.flaticon-preview:before {
+	content: "\e074";
+}
+.flaticon-preview2:before {
+	content: "\e075";
+}
+.flaticon-previous:before {
+	content: "\e076";
+}
+.flaticon-previous_2:before {
+	content: "\e077";
+}
+.flaticon-print:before {
+	content: "\e078";
+}
+.flaticon-pyramid-chart:before {
+	content: "\e079";
+}
+.flaticon-questions:before {
+	content: "\e07a";
+}
+.flaticon-recycle-icon:before {
+	content: "\e07b";
+}
+.flaticon-refresh_3:before {
+	content: "\e07c";
+}
+.flaticon-refresh_icon:before {
+	content: "\e07d";
+}
+.flaticon-report:before {
+	content: "\e07e";
+}
+.flaticon-report_2:before {
+	content: "\e07f";
+}
+.flaticon-undo2:before {
+	content: "\e080";
+}
+.flaticon-right-alignment:before {
+	content: "\e081";
+}
+.flaticon-right_click:before {
+	content: "\e082";
+	margin-right: 5px;
+}
+.flaticon-rtf:before {
+	content: "\e083";
+}
+.flaticon-save-file:before {
+	content: "\e084";
+}
+.flaticon-save-file1:before {
+	content: "\e085";
+}
+.flaticon-save-icon:before {
+	content: "\e086";
+}
+.flaticon-save_money:before {
+	content: "\e087";
+}
+.flaticon-savings_account:before {
+	content: "\e088";
+}
+.flaticon-scheme:before {
+	content: "\e089";
+}
+.flaticon-search_file:before {
+	content: "\e08a";
+}
+.flaticon-settings-new:before {
+	content: "\e08b";
+}
+.flaticon-settings_wheel:before {
+	content: "\e08c";
+}
+.flaticon-sort-asc:before {
+	content: "\e08d";
+}
+.flaticon-sort-desc:before {
+	content: "\e08e";
+}
+.flaticon-sort:before {
+	content: "\e08f";
+}
+.flaticon-sort36:before {
+	content: "\e090";
+}
+.flaticon-stack:before {
+	content: "\e091";
+}
+.flaticon-stacked-chart:before {
+	content: "\e092";
+}
+.flaticon-stacked:before {
+	content: "\e093";
+}
+.flaticon-statistics:before {
+	content: "\e094";
+}
+.flaticon-switch:before {
+	content: "\e095";
+}
+.flaticon-sync:before {
+	content: "\e096";
+}
+.flaticon-sync2:before {
+	content: "\e097";
+}
+.flaticon-table-grid:before {
+	content: "\e098";
+}
+.flaticon-tables-grid-new:before {
+	content: "\e099";
+}
+.flaticon-tools-settings:before {
+	content: "\e09a";
+}
+.flaticon-trans-coins:before {
+	content: "\e09b";
+}
+.flaticon-trnsaction:before {
+	content: "\e09c";
+}
+.flaticon-underlined:before {
+	content: "\e09d";
+}
+.flaticon-up-arrow:before {
+	content: "\e09e";
+}
+.flaticon-up-arrow2:before {
+	content: "\e09f";
+}
+.flaticon-up-arrow_new:before {
+	content: "\e0a0";
+}
+.flaticon-up-down-arrow:before {
+	content: "\e0a1";
+}
+.flaticon-up-down-arrow1:before {
+	content: "\e0a2";
+}
+.flaticon-up-down-arrow2:before {
+	content: "\e0a3";
+}
+.flaticon-up_down-arrows:before {
+	content: "\e0a4";
+}
+.flaticon-upload-file:before {
+	content: "\e0a5";
+}
+.flaticon-upload_3:before {
+	content: "\e0a6";
+}
+.flaticon-uploading:before {
+	content: "\e0a7";
+}
+.flaticon-uploading_new:before {
+	content: "\e0a8";
+}
+.flaticon-url:before {
+	content: "\e0a9";
+}
+.flaticon-warning:before {
+	content: "\e0aa";
+}
+.flaticon-warning3:before {
+	content: "\e0ab";
+}
+.flaticon-xlsx:before {
+	content: "\e0ac";
+}
+.flaticon-zoom-chart:before {
+	content: "\e0ad";
+}
+
+
+/* 	Flat icon overrides  */
+
+.flaticon-colorpicker:before {
+	content: "\e003";
+	font-size: 16px !important;
+}
+
+
+.flaticon-stack
+{
+	font-size:22px !important;
+	font-weight: bold;	
+}
+
+.flat
+{
+	font-size: 15px;
+	cursor:pointer;
+	float: left;
+	margin-right: 10px;
+	
+}
+
+.flaticon-default:before, 
+.flaticon-DASHBOARD_WS:before,
+.flaticon-PAYMENT_WS:before,
+.flaticon-CT_CHART_WS:before,
+.flaticon-LIQUIDITY_WS:before,
+.flaticon-REC_WS:before,
+.flaticon-ACC_SERV_WSPACE:before,
+.flaticon-CFF_WSPACE:before,
+.flaticon-CT_TAB_WSPACE:before,
+.flaticon-WS_TEST:before,
+.flaticon-FORM_COMP:before,
+.flaticon-WS_LR_MENU:before,
+.flaticon-ADVGROUP_TEST:before,
+.flaticon-WS_TEST_FORM:before,
+.flaticon-CM_WSPACE:before,
+.flaticon-FORM_WS_NIVE:before,
+.flaticon-FORM_COMP:before,
+.flaticon-WS_TEST_FORM-3:before{
+	padding-right: 10px;
+	font-size: 18px;
+	margin-left: 5px !important;
+}
+
+.flaticon_widget_header
+{
+	font-size: 13px;
+	cursor:pointer;
+	float: left;
+	margin-left: 10px;
+	margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.flaticon_widget_header:hover
+.flaticon_widget_header:FOCUS
+{
+	text-decoration: none;
+	
+}
+/*overide for hover*/
+.flat a:hover,
+.flat a:focus {
+  text-decoration: none;
+  
+}
+
+.flaticon_clearfilter {
+	  font-weight: bold;
+      margin-left: -4px;
+      font-size: 10px;
+      cursor: pointer;
+  
+}
+
+
+/*for show as linear*/
+.flaticon_showAsLinear
+{
+	font-size: 15px;
+	margin-left: 14px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	
+}
+.flaticon_showAsLinear:hover
+{
+	
+	text-decoration: none;
+}
+.flaticon-main-menu
+{
+	
+	font-size: 20px;
+	
+}
+
+.flaticon-menuLayout-mob-moreicon
+{
+	
+	font-size: 21px;
+}
+
+
+.flaticon-levels
+{
+	  margin-right: 15px;
+}
+
+.flaticon-up-down-arrow2,
+.flaticon-up-arrow,
+.flaticon-down-arrow
+{
+		font-size: 15px;
+}
+
+.flaticon-stackAppdock
+{
+	  margin: 0 10px;
+	  cursor: pointer;
+	
+}
+
+.flaticon-modal-close
+{
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    font-size: 10px;
+    float: right;
+    width: 3%;
+    margin-top: 19px;
+    margin-right: 30px;
+    }
+
+/*Icon for carosul*/
+
+.flaticon-Carousel{
+	
+font-size: 40px; 
+font-weight: bold;
+cursor: pointer;
+	
+}
+
+
+/*Alignment for appdock close*/
+.flaticon-appdock-close
+{
+	
+  float: left;
+  width: 23px;
+  margin-top: -13px;
+}
+
+.flaticon-warning3{
+	font-size: 40px;
+}
+
+.flaticon-down-arrow
+{
+  font-size: 11px;
+  position: relative;
+  top: 4px;
+}
+.flaticon-up-arrow
+{
+	
+  font-size: 11px;
+  position: relative;
+  top: -4px;
+}
+
+
+.flaticon-filter-o :HOVER
+{
+	text-decoration: none;
+	
+}
+.flaticon-fliter-align
+{
+	
+  margin-left: 10px;	
+	
+}
+
+.flaticon-fliter-align:hover {
+  text-decoration: none;
+}
+
+
+.flaticon-leftmenu-expclps
+{
+	cursor: pointer;	
+}
+.flaticon-magnifying-glass2
+{
+	cursor: pointer;
+}
+.flaticon-load::before 
+{
+  	margin: 8px;
+}
+
+.flaticon-excard,.flaticon-tableTop{
+	color: #fff;
+	text-align:center;	
+	height :22px;
+}
+
+.flaticon-tableTop {
+	padding-top: 5px;
+	height : 30px;
+}
+
+.flaticon-appLayout-footer {
+	padding-top: 10px;
+	height : 50px;
+}
+
+.flaticon-appLayout-footer:before {
+	margin-left: 0px !important;
+}
+
+.flaticon-excard-main-menu,.flaticon-tabletop-main-menu,.flaticon-app-main-menu,.flaticon-tab-main-menu{
+	font-size: 20px;
+    background: none;
+    float: left;
+    padding-top: 23px;
+    padding-right: 11px;
+    cursor: pointer;
+}
+.flaticon-calendar-clearbtn
+{
+	font-size: 16px;
+}
+
+.flaticon-Bbar-moreBtn
+{
+	font-size: 18px;
+	
+}
+
+.flaticon-default {
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.menu-wrap-top {
+	position: relative;
+}
+.menu-wrap-bottom {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.menu-align-top {
+	top: 0;
+	bottom: auto;
+	position:absolute;
+}
+.menu-align-bottom {
+	bottom: 0;
+	top: auto;
+}
+
+
+/* for app layout */
+

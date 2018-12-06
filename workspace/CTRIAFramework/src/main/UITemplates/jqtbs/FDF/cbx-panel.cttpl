@@ -1,0 +1,18 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}}
+		<section class="panel panel-default ct-form__fieldset  ct-form__fieldset-tm"{{anchorStyle}}>
+			{{#if isHideLabel}} {{else}}
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<span class="ct-form__panel-title-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+				</h3>
+			</div>
+			{{/if}}
+			<div class="panel-body form-control ct-form__ip ct-form__ip-panel" name="{{itemId}}">{{{html}}}</div>
+			<div class="panel-footer"></div>
+		</section>
+	</div>
+	{{!--col-sm-12 ends--}}
+	<div class='clearfix'></div>
+</div>

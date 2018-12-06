@@ -1,0 +1,90 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.ux-cal
+{
+    font-size:0.917em;
+	font-family:Arial;
+	border:1px solid #ccc;
+}
+
+.ux-cal .ux-cal-weekday
+{
+    background:#dfecfb url(images/glass-bg.gif) repeat-x scroll left top;
+    font-weight:bold;
+}
+
+.ux-cal .ux-cal-header
+{
+	background: #9CD2E4 url(../images/default/shared/hd-sprite.gif) repeat-x scroll 0 -83px;
+}
+
+.ux-cal .ux-cal-header .ux-cal-monthTitle
+{
+    color:#000;
+    font-weight:bold;
+}
+.ux-cal td
+{
+    border:solid 1px white;
+    cursor:pointer;
+}
+
+.ux-cal .ux-cal-row td:hover
+{
+    background: #d8d8d8;
+}
+
+.ux-cal .otherMonth
+{
+    color: #AAAAAA;
+}
+
+.ux-cal .disable
+{
+    color: #AAAAAA;
+}
+
+
+.ux-cal-weekday td
+{
+    cursor:default;
+}
+.x-date-Year
+{
+	display:block;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	background-color:red;
+	-moz-opacity: 0.6;
+	opacity:.6;
+	filter: alpha(opacity=60);
+}
+.x-date-leftyear a
+{
+	text-decoration:none;
+	color:#ffffff;
+}
+.x-date-leftyear a:hover
+{
+	text-decoration:none;
+	color:#ffffff;
+}
+
+.x-date-rightyear a
+{
+	text-decoration:none;
+	color:#ffffff;
+}
+.x-date-rightyear a:hover
+{
+	text-decoration:none;
+	color:#ffffff;
+}
+.ux-cal-highlight { background-color: gray; }
+.ux-cal-highlight1, .ux-cal .ux-cal-row td.ux-cal-highlight1:hover  { background-color: teal; border: 1px gray solid;}
+.ux-cal-WeekEnd { background-color: silver;}
+.ux-cal-activity { background-color: yellow;}
+.ux-cal-WeekEndHoliday{background-color:#F5F5DC;}
+
+.ux-cal-sun-highlight{color: red;} 

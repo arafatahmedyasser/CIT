@@ -1,0 +1,28 @@
+/*
+
+Purpose : File contains  bootstrap drag & drop css.
+Contains: This contains styles and behaviour of element during drag and drop                  
+ 
+ NOTE: Don't Commit this styles without get proper approvel from respective UI personal */
+*/
+.dragableModelWidget {
+	padding: 15px;
+	margin-bottom: 6px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px #000;
+	-ms-box-shadow: inset 0 0 3px #000;
+	box-shadow: inset 0 0 3px #000;
+	cursor: move;
+}
+
+.dragdrop-ghost {
+  opacity: 0.4;
+}
+
+/* .dragdrop-chosen {
+  color: #fff;
+  background-color: #c00;
+} */

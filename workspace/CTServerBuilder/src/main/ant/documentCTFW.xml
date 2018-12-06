@@ -1,0 +1,146 @@
+<project name="Canvas Java / JS Doc Preparation" default="build_CT_Documentation" basedir=".">
+	<!-- Invoke the common script for validation of server configuration and defining  -->
+	<include file="../../../../../../canvas-common.xml" as="canvas" />
+	<property name="javaFilesPack" value="src/main/java" />
+
+	<!-- In case this build is invoked as part of central build, change the properties as per the central build. -->
+	<target name="-setCentralBuildProps" if="CANVAS_CENTRAL_BUILD">
+		<property name="CT_BUILD_FOLDER" value="${CANVAS_BUILD_FOLDER}" />
+		<property name="CT_SVN_HOME" value="${CANVAS_SVN_HOME}" />
+		<property name="product.name" value="${canvas.product.name}" />
+	</target>
+	
+	<!-- In case this build is direcly invoked then import the settings from the local build properties. -->
+	<target name="-setLocalBuildProps" unless="CANVAS_CENTRAL_BUILD">
+		<property file="buildCTFW.properties" />
+	</target>
+
+	<target name="-setProperties" depends="-setCentralBuildProps, -setLocalBuildProps">
+		<echo message="Canvas Build Source folder : ${CT_SVN_HOME}" />
+		<property name="docsrootFolder" value="${CT_BUILD_FOLDER}/dist/docs" />
+		<property name="build" value="${CT_BUILD_FOLDER}/build/docs_build" />
+		<property name="javadocsrootFolder" value="${build}/java" />
+		<property name="jsdocsrootFolder" value="${docsrootFolder}/js" />
+		<property name="jsdocstempFolder" value="${build}/js" />
+		<property name="CT_SOURCES" value="${CT_SVN_HOME}/CT/Sources" />
+		<property name="srcJavaRoot" value="${CT_SOURCES}" />
+		<property name="srcJavascriptRoot" value="${CT_SOURCES}/CTRIAFramework/src/main/javascript" />
+	</target>
+	
+	<!-- This task validates the server configuration settings provided and establishes the default paths -->
+	<target name="-checkDependencies" depends="-setProperties">
+		<antcall target="canvas.validateServer" />
+	</target>
+
+
+	<target name="-cleanup_Docs">
+		<echo message="Deleting Java doc folder." />
+		<delete includeemptydirs="true">
+			<fileset dir="${build}" includes="**/*" erroronmissingdir="false" />
+		</delete>
+		<delete includeemptydirs="true">
+			<fileset dir="${docsrootFolder}" includes="**/*" erroronmissingdir="false" />
+		</delete>
+	</target>
+
+	<!-- Creates the output folder structure within the build folder -->
+	<target name="-create.Folder.Structure" depends="-cleanup_Docs">
+		<mkdir dir="${build}" />
+		<mkdir dir="${docsrootFolder}" />
+		<mkdir dir="${javadocsrootFolder}" />
+		<mkdir dir="${jsdocsrootFolder}" />
+		<mkdir dir="${jsdocstempFolder}" />
+	</target>
+
+	<!-- Class path for the JSDoc Ant task -->
+	<path id="jsdoc.task.classpath">
+		<fileset dir="${CT_JSDOC_DEPENDENCY}">
+			<include name="**/jsdoc3-ant-task-1.0.jar" />
+			<include name="**/js-1.7r3_jsdoc.jar" />
+		</fileset>
+	</path>
+
+	<target name="build_CT_Documentation" depends="-checkDependencies, -create.Folder.Structure">
+		<antcall target="build_CT_Java_Documentation" />
+		<!-- <antcall target="build_CT_JS_Documentation" /> -->
+		<antcall target="canvas.createChecksumReport">
+			<param name="SOURCE_DIR" value="${docsrootFolder}" />
+		</antcall>
+	</target>
+
+	<target name="build_CT_JS_Documentation">
+		<echo message="Building CT Javascript documentation from ${srcJavaRoot}" />
+		<!-- Step 1: Unzip the JSDOC lib into the working folder -->
+		<unzip src="${CT_JSDOC_DEPENDENCY}/JSDOC3_LIBRARY.zip" dest="${jsdocstempFolder}" />
+		<!-- Step 2: Define the task -->
+		<taskdef name="jsdoc3" classname="net.jannon.ant.tasks.JsDoc3">
+			<classpath>
+				<path refid="jsdoc.task.classpath" />
+			</classpath>
+		</taskdef>
+		<!-- Step 3: Execute the task -->
+		<jsdoc3 jsdochome="${jsdocstempFolder}/JSDOC3_LIBRARY" template="default" to="${jsdocsrootFolder}">
+			<fileset dir="${srcJavascriptRoot}/core" defaultexcludes="yes">
+				<include name="**/cbx*.js" />
+				<include name="**/canvas*.js" />
+				<include name="**/browser*.js" />
+			</fileset>
+			<fileset dir="${srcJavascriptRoot}/controller" defaultexcludes="yes">
+				<include name="**/cbx*.js" />
+				<include name="**/canvas*.js" />
+				<include name="**/iportal*.js" />
+			</fileset>
+			<fileset dir="${srcJavascriptRoot}/model/metadata" defaultexcludes="yes">
+				<include name="**/canvas*.js" />
+			</fileset>
+			<fileset dir="${srcJavascriptRoot}/properties" defaultexcludes="yes">
+				<include name="**/canvas*.js" />
+			</fileset>
+			<fileset dir="${srcJavascriptRoot}/user/preferences" defaultexcludes="yes">
+				<include name="**/canvas*.js" />
+			</fileset>
+			<fileset dir="${srcJavascriptRoot}/controller" defaultexcludes="yes">
+				<include name="**/cbx*.js" />
+				<include name="**/canvas*.js" />
+				<include name="**/iportal*.js" />
+			</fileset>
+		</jsdoc3>
+		<echo message="CT Javascript documentation generation completed at ${jsdocsrootFolder}" />
+	</target>
+
+	<target name="build_CT_Java_Documentation">
+		<echo message="Building CT Java documentation from ${srcJavaRoot}" />
+		<javadoc destdir="${javadocsrootFolder}" author="false" version="true" use="true" windowTitle="${product.name} - ${product.version}" useexternalfile="yes">
+			<fileset dir="${srcJavaRoot}" defaultexcludes="yes">
+				<include name="CTAlertsLib/${javaFilesPack}/**/*.java" />
+				<include name="CTAuditLib/{javaFilesPack}/**/*.java" />
+				<include name="CTBaseLib/${javaFilesPack}/**/*.java" />
+				<include name="CTCacheLib/${javaFilesPack}/**/*.java" />
+				<include name="CTCommonLib/${javaFilesPack}/**/*.java" />
+				<include name="CTDBLib/${javaFilesPack}/**/*.java" />
+				<include name="CTEntitlementLib/${javaFilesPack}/**/*.java" />
+				<include name="CTEventLib/${javaFilesPack}/**/*.java" />
+				<include name="CTExportServiceLib/${javaFilesPack}/**/*.java" />
+				<include name="CTFormDefinitionLib/${javaFilesPack}/**/*.java" />
+				<include name="CTHalLib/${javaFilesPack}/**/*.java" />
+				<include name="CTLoggingLib/${javaFilesPack}/**/*.java" />
+				<include name="CTLoginLib/${javaFilesPack}/**/*.java" />
+				<include name="CTPropertyReaderUtilLib/${javaFilesPack}/**/*.java" />
+				<include name="CTRemoteLib/${javaFilesPack}/**/*.java" />
+				<include name="CTRenderLib/${javaFilesPack}/**/*.java" />
+				<include name="CTReportingFW/${javaFilesPack}/**/*.java" />
+				<include name="CTValidationLib/${javaFilesPack}/**/*.java" />
+				<include name="CTViewDefinitionLib/${javaFilesPack}/**/*.java" />
+			</fileset>
+			<doctitle><![CDATA[<h1>${product.name}</h1> <h2> ${product.version}</h2>]]></doctitle>
+				<bottom>
+					<![CDATA[<i>Copyright &#169; 2015 ${company.name}. All Rights Reserved.</i>]]></bottom>
+			<link href="http://docs.oracle.com/javase/7/docs/api/" />
+			<link href="https://logging.apache.org/log4j/1.2/apidocs/" />
+		</javadoc>
+		<!-- Zip up the Java doc -->
+		<zip destfile="${docsrootFolder}/java-doc-${product.name}-${product.version}.zip" basedir="${javadocsrootFolder}" compress="true" comment="Java docs generated for ${product.name}-${product.version}" />
+		<!-- delete the generated folder -->
+		<delete dir="${javadocsrootFolder}" failonerror="false" deleteonexit="true" includeemptydirs="true" />
+	</target>
+</project>

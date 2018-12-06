@@ -1,0 +1,9 @@
+<div data-item-id="iframecontainer" class="ct-{{VIEW_TYPE}}">
+	{{!-- ct-iframe__container begins --}}
+	<div class="ct-iframe__container">
+		{{!-- ct-iframe begins --}}
+		<iframe src={{FLD_DATA_SRC_ID}} data-item-id="iframe-element" class="ct-iframe-src"> </iframe>
+		{{!-- ct-iframe ends --}}
+	</div>
+	{{!-- ct-iframe__container ends --}}
+</div>

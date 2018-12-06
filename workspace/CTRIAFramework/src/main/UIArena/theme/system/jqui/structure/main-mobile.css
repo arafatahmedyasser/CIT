@@ -1,0 +1,417 @@
+/*! * Copyright 2014. Intellect Design Arena Limited. All rights reserved. *//**
+ * <pre>
+ * ===============================================================================================================
+ * CHANGE CODE 		    AUTHOR 				DESCRIPTION 														DATE 
+ * ===============================================================================================================
+ * SIT_ISSUES_FIX_001	Srinivasan.Swamy	Add class for display negative value of comp variance in red color 	14/05/2014
+ * SIT_ISSUES_FIX_002	Srinivasan.Swamy	Add specific class with column id for align the column value in-	21/05/2014 
+ 											-center of cell		
+ * ===============================================================================================================
+ * </pre>
+ */
+html {
+    font-size: 70%;
+    -webkit-text-size-adjust: 80%;
+    -ms-text-size-adjust: 80%;
+}
+#header-holder, #nav-list, #footer-print-block, #footer-menu, .navigation, .optional-mobile, .secondary2, .secondary1  {
+	display: none !important;
+}
+
+#copyrightmsg {
+	text-align: center;
+}
+
+#footer-contrast-block, #footer-resize-block {
+	float: none;
+}
+
+#mobile-header-holder, #footer-options {
+	display: block !important;
+}
+#content{
+width:98%;
+}
+
+.content-left, .content-right {
+	display: block !important;
+	width: 100% !important;
+}
+.bx-viewport {
+	/*height: 105px !important;*/
+}
+
+.col4, .col8, .col12, .col16, .col14 {
+	vertical-align: top;
+	width: 100% !important;
+}
+
+.slider-content {
+	width: 320px;
+}
+.content-right {
+
+	margin-left: 0px !important;
+
+	margin-top: 0px !important;
+
+}
+#footer {
+	margin: 0 1% !important;
+	width: 98% !important;
+}
+#footer-options {
+	float: none !important;
+	text-align: right;
+}
+#footer #footer-accessibility #footer-contrast-block {
+	display: block;
+	clear: both;
+	margin: 0;
+	float: left;
+	margin-top: 12px;
+}
+#footer p {
+	margin-bottom: 1.5em !important;
+}
+.mobile-menus {
+	max-height: 350px;
+	overflow: auto;
+	white-space: nowrap;
+	right: 0;
+}
+.quantScore li.firstChild {
+	display: block;
+	width: 90%;
+	padding-left: 0.5em;
+	margin-bottom: 1em;
+	text-align: left;
+}
+.quantScore li span {
+	width: 6px;
+	height: 6px;
+	margin: 0 1px;
+}
+.quantScore li {
+	width: 31.5% !important;
+}
+.relatedCompanies, .histAnalyst, .earningsOutlook {
+	overflow: auto;
+}
+
+/* #header-logo img {
+	width: 80% !important;
+} */
+/* #mobile-header-logo img {
+	width: 80%;
+} */
+.carousel-img img {
+	width: 70%;
+	padding-left:10px;
+
+}
+
+/*.carousel-items-container {
+	position: absolute !important;
+	top: -9999px;
+}*/
+
+.carousel-img-span {
+	text-align:left;
+
+	width:100%;
+
+}
+.carousel-img, .carousel-details, .carousel-img-span , .carousel-brand-details {
+ height: auto !important;
+}
+.vert-carousel-item-left img {
+	/*width: 100%;*/
+}
+.mobile-only{
+	display:block !important;
+}
+.arrow-right, .arrow-left{
+	display:none !important;
+}
+
+.carousel-items-container {
+	border: solid 0px #c1c1c1;
+	/*text-align: center;*/
+}
+.carousel-center-content {
+	width: 98%;
+}
+
+.mobile-only {
+	display: block !important;
+}
+.no-mobile {
+	display: none !important;
+}
+.analyst-profiles li {
+	/* width: 100%; /* nice 3 columns */ */
+	
+}
+.analyst-list-wrapper {
+	margin: 0;
+	margin-bottom: 2%;
+}
+.analyst-profiles li:nth-child(even) .analyst-list-wrapper{
+		background: #F5F4EF;
+}
+input[type="checkbox"] {
+
+	/*width:	22px !important;*/
+	width:	15px !important;
+
+}
+
+#horizontalTab ,.earnings-mobile {
+	display: block !important;
+}
+.Presentations-Profile li {
+	list-style: none;
+	width: 100%;
+	float: left;
+	padding: 0;
+	margin: 0;
+	background: #ffffff;
+}
+.sectorPresent-list {
+	margin-left: 5px;
+}
+.sectorPresent-list li {
+	width: 100%;
+}
+.sortby {
+	text-align: left;
+}
+
+.filterDiv  li {
+	padding-bottom: 15px;
+}.carousel-items-container{	padding:0px;}.swiper-wrapper {	width: 100% !important;}
+
+/*Primesoft - ticker tape changes - START*/
+
+.doubleSlider-1 .slider .item {
+	height: 180px !important;
+}
+
+.doubleSlider-1{
+	height: 180px !important;
+	width: 100% !important;
+}
+
+
+.doubleSlider-2 {
+
+	width: 64% !important;
+
+}
+
+.slidercontainer {
+	width: 100% !important;
+	border: solid 1px #ccc;
+}
+
+.doubleSlider-2 .button {
+	width:10% !important;
+}
+.doubleSlider-2 .button .border {
+
+	width: 75% !important; 
+
+}
+/*Primesoft - ticker tape changes - END*/
+
+/* my-profile Manage Email Alert Styles - START */
+#editAlertDiv {
+	display: none !important;
+}
+.alertName,.reportContentType,.attachContent,.msgtype,.deliveryTime,.myprofileIndustry,.myprofileAnalyst,.myprofileAnalyst,.myprofileTicker,.reportCategory,.reportType,.myprofileButtons {
+	padding-bottom: 15px;
+}
+.alertName .col9 {
+	width: 100% !important;
+}
+.reportContentType .col9 {
+	width: 100% !important;
+}
+.attachContent .col9 {
+	width: 100% !important;
+}
+.msgtype .col9 {
+	width: 100% !important;
+}
+.deliveryTime .col9 {
+	width: 100% !important;
+}
+.myprofileIndustry .col9 {
+	width: 100% !important;
+}
+.myprofileAnalyst .col9 {
+	width: 100% !important;
+}
+.myprofileTicker .col9 {
+	width: 100% !important;
+}
+.reportCategory .col9 {
+	width: 100% !important;
+}
+.reportType .col9 {
+	width: 100% !important;
+}
+.myprofileButtons .col9 {
+	width: 100% !important;
+}
+.advSearchBtn input {
+	margin: 0 5px;
+	color: #333;
+	width: 20%;
+	text-align: center;
+}
+.form-element {
+	padding-top: 10px !important;
+	padding-bottom: 0px !important;
+	
+	width: 100% !important;
+}
+/*Primesoft - ticker tape changes - END*/
+img.header-expand-collapse{
+	float:right;
+	display:inline;
+	margin-right: 1em;
+}
+.page-title h1 {
+    color: #af0b1c;
+	width:85%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
+}
+
+
+
+/* my-profile Manage Email Alert Styles - END */
+
+/* advanced-search Styles - START */
+#wrapper {
+    width: 100%;
+}
+/* advanced-search Styles - END */
+
+/* user-registration Styles - START */
+.usrRegOuterDiv {
+	padding-bottom: 15px;
+	width: 100%;
+}
+.txtCaptcha {
+	width: 40% !important;
+}
+.usrRegOuterDiv .buttonContainer {
+    width: 100% !important;
+    text-align: center;
+}
+.buttonContainer input {
+    margin: 0px 5px 0px 5px;
+}
+/* user-registration Styles - END *//* my-profile General Information Styles - START */.usrProfOuterDiv {   width: 100% !important;}.usrProfOuterDiv {	padding-bottom: 15px;	width: 100%;}.usrProfOuterDiv .buttonContainer {    width: 100% !important;    text-align: center;}.buttonContainer input {    margin: 0px 5px 0px 5px;}/* my-profile General Information Styles - END */
+.chartPopUp img {
+    width:100%;
+}
+
+.content-left-analysis {
+   width : 100% !important;
+}
+
+.content-right-analysis {
+  width : 100% !important;
+  margin-left: 0px !important;
+}
+
+#StatisticsTable {
+  width: 100% !important;
+}
+.select2-search-choice-close {
+	display: inline-block;
+}
+table.treetable tr.collapsed span.indenter a {
+    padding-top: 1px; /* Solution for style issue for collapsible icon */
+}
+.pagination {
+	display: inline-block; /* Solution for pagination style issue */
+}
+.secPresDiv {
+	width: 59% !important;
+}
+/*Registration page - START*/
+.usrRegOuterDiv {
+   width: 100% !important;
+}
+.GenProfileInfo .col13 {
+	width: 100% !important;
+}
+.GenProfileInfo .col3 {
+	width: 100% !important;
+}
+.GenProfileInfo .col16 {
+	width: 100% !important;
+}
+/*Registration page - END*/
+/*Primesoft:advanced search save button -- START*/
+.advSearchForm-content .saveSearchAs_input  input[type="button"]{
+	width: 48px !important;
+}
+/*Primesoft:advanced search save button -- END*/
+
+/* Login page - START */
+.fluidHeight {
+	height: 246px !important;
+	width: 315px !important;
+}
+.iosSlider {
+	width: 315px !important;
+}
+#loginSSMContainer {
+	width: 100% !important;
+	margin-left: 0px;
+}
+#loginSSMContainer #page-title {
+	width: 50% !important;
+}
+.loginRightContainer {
+	margin-bottom: 15px !important;
+}
+.loginSliderContainer {
+    width: 100% !important;
+}
+
+#streetSmartContainer {
+	width: 100% !important;
+	padding-bottom: 15px;
+}
+.loginLeftContainer .iosSlider .slider .item .inner img {
+	width: 100%;
+}
+/* Login page - END */
+/* Quant Score Widget Start*/
+.score-items li {
+	width: 31.5% !important;
+}
+.score-items li span {
+	width: 6px;
+	height: 6px;
+	margin: 0 1px;
+}
+/* Quant Score Widget End */
+/*SIT_ISSUES_FIX_001 starts */
+.negativeAmt {
+	color: red !important;
+}
+/*SIT_ISSUES_FIX_001 Ends*/
+/*SIT_ISSUES_FIX_002 starts*/
+.col_VW_COV_COMPANIES_RATING {
+	text-align: center !important; 
+}
+/*SIT_ISSUES_FIX_002 ends*/

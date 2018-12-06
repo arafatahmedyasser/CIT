@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas-formats type="date">
+	<format Id="MM/dd/yyyy" description="MM/dd/yyyy" javaDateFormat="MM/dd/yyyy"
+		    formatter-class="com.intellectdesign.canvas.pref.date.CanvasDateFormatter"
+		    canOverride="true" isEnabled="true"/>
+	<format Id="dd/MM/yyyy" description="dd/MM/yyyy" javaDateFormat = "dd/MM/yyyy"
+			canOverride="true" isEnabled="true"/>
+	<format Id="dd-MM-yyyy" description="dd-MM-yyyy" javaDateFormat = "dd-MM-yyyy"
+			canOverride="true" isEnabled="true"/>
+	<format Id="MM-dd-yyyy" description="MM-dd-yyyy" javaDateFormat = "MM-dd-yyyy"
+			canOverride="true" isEnabled="true"/>
+</canvas-formats>

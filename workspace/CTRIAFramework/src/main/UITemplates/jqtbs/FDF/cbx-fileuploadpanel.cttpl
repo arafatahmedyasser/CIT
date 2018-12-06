@@ -1,0 +1,60 @@
+<div
+	class="form-group  ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	{{#if hideLabel}} {{#unless onlyInput}}
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} {{/unless}}
+		<div class="ct-fileUpload-panel" {{anchorStyle}}>
+			{{!--input-group--}} {{else}} {{#condchk labelAlignType 'TOP'}}
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}} 
+				<label class="ct-form__label"> 
+					<span class="ct-form__label-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}}
+				<div class="ct-fileUpload-panel" {{anchorStyle}}>
+					{{!--input-group--}} {{else}}
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						{{!--col-sm-2 begins--}} 
+						<label for="file" class="ct-form__label">
+							{{!--control-label begins--}} 
+							<span class="ct-form__label-val" data-item-type='ct-fieldlabel'> {{{fieldLabel}}} </span>
+						</label> {{!--control-label ends--}}
+					</div>
+					{{!--col-sm-2 ends--}}
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						{{!--col-sm-10 begins--}}
+						<div class="ct-fileUpload-panel" {{anchorStyle}}>
+							{{!--input-group--}} {{/condchk}} {{/if}}
+							<form data-item-id="ct-uploadForm"></form>
+							<button type="button" class="btn start" data-item-id='ct-addFile'>
+								<i class="flaticon-expand f_up_ad"></i> 
+								<span>Add Files</span>
+							</button>
+							<button type="button" class="btn start disabled" data-item-id='ct-uploadFile'>
+								<i class="flaticon-upload_3"></i> 
+								<span>Upload</span>
+							</button>
+							<div class="filenames" data-item-id='ct-fileList'></div>
+							<div class="fileupload-loading"></div>
+							<div class="progress hidden">
+								<div data-item-id="ctUpload-progress-bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+							</div>
+							 
+							{{#if helpInd}}
+							<span class="input-group-addon ct-form__addon">
+								<i class="flaticon-alert"></i>
+							</span>
+							{{/if}}
+						</div>
+						{{!--input-group ends--}} {{#unless onlyInput}}
+					</div>
+					{{!--col-sm-12 ends--}} {{!--col-sm-10 ends--}} {{/unless}}
+					<div class='clearfix'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			

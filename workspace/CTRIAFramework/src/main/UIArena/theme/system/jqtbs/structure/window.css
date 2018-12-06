@@ -1,0 +1,104 @@
+/*
+  Purpose : File contains all styles releated to Modal[modal window, alert, etc] layout.
+  Contains: Section 1 --> modal window
+            Section 2 --> portlet modal window
+            Section 3 --> [add title]
+            Section 4 --> [add title]  
+            It reprsents model dialog for scrolling.                    
+*/
+/* 
+==========Section 1==========
+======== MODAL WINDOW =======
+============================= 
+*/
+.modal {
+	display: block !important;
+}
+
+.modal-body {
+	max-height: 100px;
+}
+/* 
+========section 2================
+===== portlet modal window ======
+=================================
+*/
+
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+  bottom: 0;
+  left: 0;
+  position: absolute; /* Changed from "absolute" to "fixed" to get desire fullscreen backdrop  [12-03-2015] */
+  right: 0;
+  top: 0;
+  overflow:auto; /* Added to get the overflow content [12-03-2015]*/
+}
+.modal.modal-fullscreen .modal-dialog {
+  margin: 0;
+  width: 100%;
+}
+
+
+.modal.modal-fullscreen.force-fullscreen {
+  overflow:hidden;/* Remove the scroll inside the body */
+  padding-right: 0px;/* Remove the padding inside the body */
+}
+.modal.modal-fullscreen.force-fullscreen .modal-body {
+  padding: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header,
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  left: 0;
+  position: relative;
+  right: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header {
+  top: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  bottom: 0;
+}
+/*
+========================================
+===Spacing the App in Model & close ====
+========================================
+*/
+
+.ct-modal__max .ct-modal-content__container{
+	width:95%;
+	margin:10px auto;
+}
+
+.ct-modal__max .modal-header{
+	border-bottom:0;
+}
+
+
+.ct-modal__max .close{
+padding: 0 7px 0 7px;
+	margin-top: -10px;
+}
+
+
+/* 
+=============================
+====== MODAL OPEN FLAG=======
+=============================  
+*/
+.ct-al__modalopen-header{
+	padding-right: 15px;
+}
+.ct-al__modalopen-footer{
+	padding-right: 25px;
+}
+
+
+/*
+=================================
+===== Hide Icon On Maximize  ====
+=================================
+*/
+
+.ct-modal__max li.ct-app__tools-close-con,.ct-modal__max li.ct-app__tools-max-con,.ct-modal__max li.ct-app__tools-minus-con {
+display: none !important;
+}

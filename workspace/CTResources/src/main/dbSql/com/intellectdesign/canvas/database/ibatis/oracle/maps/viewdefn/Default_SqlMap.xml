@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+
+	<sql id="PAGINATION_BEGINS">
+		<dynamic>
+			<isPropertyAvailable property="PAGINATION_MODEL">	 <!-- to add the pagination query only if pagination params are present -->
+				SELECT * FROM ( SELECT PAGINATED_TBL.*, ROWNUM RNUM FROM (
+			</isPropertyAvailable>
+		</dynamic>
+	</sql>
+
+	<sql id="PAGINATION_ENDS">
+		<dynamic>
+			<isPropertyAvailable property="PAGINATION_MODEL">	 <!-- to add the pagination query only if pagination params are present -->
+				) PAGINATED_TBL WHERE ROWNUM &lt;= $PAGINATION_MODEL.endRowOfPage$ )
+				WHERE RNUM &gt;= $PAGINATION_MODEL.startRowOfPage$
+			</isPropertyAvailable>
+		</dynamic>
+	</sql>
+
+	<sql id="DEFAULT_ORDERBY_CLAUSE">
+		<dynamic>
+			<isNotEmpty property="SORTING_MODEL" prepend="ORDER BY">
+				$SORTING_MODEL.sortField$ $SORTING_MODEL.sortOrder$
+				<isNotEmpty property="SORTING_MODEL.uniqueSortField"
+					prepend=",">
+					$SORTING_MODEL.uniqueSortField$ $SORTING_MODEL.uniqueFieldSortOrder$
+				</isNotEmpty>
+			</isNotEmpty>
+		</dynamic>
+	</sql>
+
+
+	<select id="DEFAULT_SELECT" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		SELECT
+		1
+		FROM
+		DUAL
+
+	</select>
+
+	<!-- TOTAL_ROWS column will have the total no of records in each records 
+		and It is used in Pagination -->
+	<sql id="TOTALROWS_FOR_PAGINATION">
+		COUNT (*) OVER () AS TOTAL_ROWS
+	</sql>
+
+
+
+	<sql id="NEW_PAGINATION_BEGINS">
+
+		<dynamic>
+
+			<isPropertyAvailable property="PAGINATION_MODEL">	 <!-- to add the pagination query only if pagination params are present -->
+
+				SELECT * FROM (
+
+			</isPropertyAvailable>
+
+		</dynamic>
+
+	</sql>
+
+
+	<sql id="NEW_PAGINATION_ENDS">
+
+		<dynamic>
+
+			<isPropertyAvailable property="PAGINATION_MODEL">	 <!-- to add the pagination query only if pagination params are present -->
+
+				) WHERE ROWNM &lt;= $PAGINATION_MODEL.endRowOfPage$ AND ROWNM &gt;=
+				$PAGINATION_MODEL.startRowOfPage$
+
+				ORDER BY ROWNM
+
+			</isPropertyAvailable>
+
+
+
+		</dynamic>
+
+	</sql>
+
+
+	<sql id="NEW_DEFAULT_ORDERBY_CLAUSE">
+
+		<dynamic>
+			, ROW_NUMBER () OVER (
+			<isNotEmpty property="SORTFIELDS" prepend="ORDER BY">
+				<iterate property="SORTFIELDS" conjunction=",">
+					$SORTFIELDS[].columnID$ $SORTFIELDS[].sortOrder$
+				</iterate>
+			</isNotEmpty>
+			) ROWNM
+		</dynamic>
+
+	</sql>
+
+
+	<sql id="NEW_ORDERBY_CLAUSE">
+
+		<dynamic>
+
+			, ROW_NUMBER () OVER (
+			<isNotEmpty property="SORTING_MODEL" prepend="ORDER BY">
+
+				$SORTING_MODEL.sortField$ $SORTING_MODEL.sortOrder$
+
+				<isNotEmpty property="SORTING_MODEL.uniqueSortField"
+					prepend=",">
+
+					$SORTING_MODEL.uniqueSortField$ $SORTING_MODEL.uniqueFieldSortOrder$
+
+				</isNotEmpty>
+
+			</isNotEmpty>
+			) ROWNM
+
+		</dynamic>
+
+	</sql>
+
+	<sql id="FILTER_CLAUSE_FOR_STRING">
+		<!-- If the data type is String -->
+		<isEqual property="FILTERS[].dataType" compareValue="string">
+			<!-- If the filter type is 'startsWith', the possible filters are 'startsWith', 
+				'endsWith', 'contains', 'strEquals', 'in' -->
+			<isEqual property="FILTERS[].filterType" compareValue="startsWith">
+				<iterate property="FILTERS[].filterValues">
+					UPPER(TRIM($FILTERS[].columnID$))
+					LIKE
+					UPPER(TRIM(#FILTERS[].filterValues[]#)) ||'%'
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'endsWith' -->
+			<isEqual property="FILTERS[].filterType" compareValue="endsWith">
+				<iterate property="FILTERS[].filterValues">
+					UPPER(TRIM($FILTERS[].columnID$))
+					LIKE
+					'%' || UPPER(TRIM(#FILTERS[].filterValues[]#))
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'contains' -->
+			<isEqual property="FILTERS[].filterType" compareValue="contains">
+				<iterate property="FILTERS[].filterValues">
+					UPPER(TRIM($FILTERS[].columnID$))
+					LIKE
+					'%' || UPPER(TRIM(#FILTERS[].filterValues[]#)) ||'%'
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'equals' -->
+			<isEqual property="FILTERS[].filterType" compareValue="strEquals">
+				<iterate property="FILTERS[].filterValues">
+					UPPER(TRIM($FILTERS[].columnID$))
+					=
+					UPPER(TRIM(#FILTERS[].filterValues[]#))
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'in' -->
+			<isEqual property="FILTERS[].filterType" compareValue="in">
+				UPPER(TRIM($FILTERS[].columnID$))
+				IN
+				<iterate property="FILTERS[].filterValues" open="(" close=")"
+					conjunction=",">
+					UPPER(TRIM(#FILTERS[].filterValues[]#))
+				</iterate>
+			</isEqual>
+		</isEqual>
+	</sql>
+
+	<sql id="FILTER_CLAUSE_FOR_NUMSTR">
+		<!-- If the data type is String -->
+		<isEqual property="FILTERS[].dataType" compareValue="numstr">
+			<isEqual property="FILTERS[].filterType" compareValue="contains">
+				<iterate property="FILTERS[].filterValues">
+					UPPER(TRIM($FILTERS[].columnID$))
+					LIKE
+					'%' || UPPER(TRIM(#FILTERS[].filterValues[]#)) ||'%'
+				</iterate>
+			</isEqual>
+
+		</isEqual>
+	</sql>
+
+	<sql id="FILTER_CLAUSE_FOR_TIME">
+		<!-- If the data type is 'Date', the possible filter types are 'range', 
+			'dtEquals', 'lt', 'gt', 'ltEqualTo', 'gtEqualTo', 'notEqualTo', equalsSysdate, 
+			ltSysdate, gtSysdate, ltEqualToSysdate, gtEqualToSysdate, notEqualToSysdate -->
+		<isEqual property="FILTERS[].dataType" compareValue="time">
+			<!-- If the filter type is 'range' -->
+			<isEqual property="FILTERS[].filterType" compareValue="range">
+				<!-- Modified to remove time -->
+				trunc($FILTERS[].columnID$)
+				BETWEEN
+				<iterate property="FILTERS[].filterValues" conjunction="AND">
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'equalsSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="equalsSysdate">
+				$FILTERS[].columnID$
+				=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'lessThanSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltSysdate">
+				$FILTERS[].columnID$
+				&lt;
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'greaterThanSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtSysdate">
+				$FILTERS[].columnID$
+				&gt;=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'lessThanOrEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltEqualToSysdate">
+				$FILTERS[].columnID$
+				&lt;=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'greaterThanOrEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtEqualToSysdate">
+				$FILTERS[].columnID$
+				&gt;=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'notEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="notEqualToSysdate">
+				$FILTERS[].columnID$
+				&lt;&gt;
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'equals' -->
+			<isEqual property="FILTERS[].filterType" compareValue="dtEquals">
+				<iterate property="FILTERS[].filterValues">
+					trunc($FILTERS[].columnID$)
+					=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<' -->
+			<isEqual property="FILTERS[].filterType" compareValue="lt">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&lt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '>' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gt">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&gt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<=' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					<!-- Modified to remove time -->
+					trunc($FILTERS[].columnID$)
+					&lt;=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '>=' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					<!-- Modified to remove time -->
+					trunc($FILTERS[].columnID$)
+					&gt;=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<>' -->
+			<isEqual property="FILTERS[].filterType" compareValue="notEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&lt;&gt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy HH:mi AM')
+				</iterate>
+			</isEqual>
+		</isEqual>
+	</sql>
+
+	<sql id="FILTER_CLAUSE_FOR_DATE">
+		<!-- If the data type is 'Date', the possible filter types are 'range', 
+			'dtEquals', 'lt', 'gt', 'ltEqualTo', 'gtEqualTo', 'notEqualTo', equalsSysdate, 
+			ltSysdate, gtSysdate, ltEqualToSysdate, gtEqualToSysdate, notEqualToSysdate -->
+		<isEqual property="FILTERS[].dataType" compareValue="date">
+			<!-- If the filter type is 'range' -->
+			<isEqual property="FILTERS[].filterType" compareValue="range">
+				<!-- Modified to remove time -->
+				trunc($FILTERS[].columnID$)
+				BETWEEN
+				<iterate property="FILTERS[].filterValues" conjunction="AND">
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is 'equalsSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="equalsSysdate">
+				$FILTERS[].columnID$
+				=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'lessThanSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltSysdate">
+				$FILTERS[].columnID$
+				&lt;
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'greaterThanSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtSysdate">
+				$FILTERS[].columnID$
+				&gt;
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'lessThanOrEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltEqualToSysdate">
+				$FILTERS[].columnID$
+				&lt;=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'greaterThanOrEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtEqualToSysdate">
+				$FILTERS[].columnID$
+				&gt;=
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'notEqualToSysdate' -->
+			<isEqual property="FILTERS[].filterType" compareValue="notEqualToSysdate">
+				$FILTERS[].columnID$
+				&lt;&gt;
+				SYSDATE
+			</isEqual>
+			<!-- If the filter type is 'equals' -->
+			<isEqual property="FILTERS[].filterType" compareValue="dtEquals">
+				<iterate property="FILTERS[].filterValues">
+					trunc($FILTERS[].columnID$)
+					=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<' -->
+			<isEqual property="FILTERS[].filterType" compareValue="lt">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&lt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '>' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gt">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&gt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<=' -->
+			<isEqual property="FILTERS[].filterType" compareValue="ltEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					<!-- Modified to remove time -->
+					trunc($FILTERS[].columnID$)
+					&lt;=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '>=' -->
+			<isEqual property="FILTERS[].filterType" compareValue="gtEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					trunc($FILTERS[].columnID$)
+					&gt;=
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+			<!-- If the filter type is '<>' -->
+			<isEqual property="FILTERS[].filterType" compareValue="notEqualTo">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$
+					&lt;&gt;
+					TO_DATE(#FILTERS[].filterValues[]#, 'dd/MM/yyyy')
+				</iterate>
+			</isEqual>
+		</isEqual>
+	</sql>
+
+
+	<sql id="FILTER_CLAUSE_FOR_NUMBER">
+		<!-- If the data type is 'Number', the possible filter types are '=', '<', 
+			'>', '<=', '>=', '<>' -->
+		<isEqual property="FILTERS[].dataType" compareValue="float">
+			<iterate property="FILTERS[].filterValues">
+				$FILTERS[].columnID$
+				$FILTERS[].filterType$
+				#FILTERS[].filterValues[]#
+			</iterate>
+		</isEqual>
+	</sql>
+
+
+	<sql id="FILTER_CLAUSE_FOR_RATE">
+		<isEqual property="FILTERS[].dataType" compareValue="rate">
+			<isEqual property="FILTERS[].filterType" compareValue="equalTo">
+				$FILTERS[].columnID$ = #FILTERS[].filterValues[]#
+			</isEqual>
+			<isEqual property="FILTERS[].filterType" compareValue="=">
+				$FILTERS[].columnID$ &gt; #FILTERS[].filterValues[0]#
+				AND
+				$FILTERS[].columnID$ &lt;= #FILTERS[].filterValues[1]#
+			</isEqual>
+			<isEqual property="FILTERS[].filterType" compareValue="&gt;">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$ &gt; #FILTERS[].filterValues[]#
+				</iterate>
+			</isEqual>
+			<isEqual property="FILTERS[].filterType" compareValue="&lt;">
+				<iterate property="FILTERS[].filterValues">
+					$FILTERS[].columnID$ &lt; #FILTERS[].filterValues[]#
+				</iterate>
+			</isEqual>
+		</isEqual>
+	</sql>
+	<sql id="FILTER_CLAUSE">
+		<dynamic>
+			<isNotEmpty property="FILTERS" prepend="AND">
+				<iterate property="FILTERS" open="(" close=")" conjunction="AND">
+					(
+					<include refid="FILTER_CLAUSE_FOR_STRING" />
+					<include refid="FILTER_CLAUSE_FOR_NUMSTR" />
+					<include refid="FILTER_CLAUSE_FOR_DATE" />
+					<include refid="FILTER_CLAUSE_FOR_TIME" />
+					<include refid="FILTER_CLAUSE_FOR_NUMBER" />
+					<include refid="FILTER_CLAUSE_FOR_RATE" />
+					)
+				</iterate>
+			</isNotEmpty>
+		</dynamic>
+	</sql>
+
+	<!--Performance change for livegrid -->
+
+	<sql id="TOTALCOUNT_FOR_PAGINATION">
+		COUNT (*) OVER () AS TOTAL_COUNT
+	</sql>
+
+	<sql id="DEFAULT_VIEW_DATA">
+		SELECT
+		$COLUMN_IDS$,
+		<include refid="TOTALCOUNT_FOR_PAGINATION" />
+		<include refid="NEW_DEFAULT_ORDERBY_CLAUSE" />
+		FROM
+		$TABLE_NAMES$
+		WHERE
+		1=1
+		<isEqual property="CT_ENTIL_ENABLED" compareValue="Y">
+			<isNotEmpty property="CT_INPUT_PRODUCT">
+				<isNotEmpty property="CT_INPUT_SUB_PRODUCT">
+					<isNotEmpty property="CT_INPUT_FUNCTION_CODE" prepend="AND">
+						CRITERIA_VALUE in (SELECT OD_ACC_NO FROM OD_USER_FUNCTION_MB
+						WHERE OD_PRODUCT_CODE=#CT_INPUT_PRODUCT# AND
+						OD_SUBPROD_CODE=#CT_INPUT_SUB_PRODUCT#
+						AND OD_FUNCTION_CODE =#CT_INPUT_FUNCTION_CODE# AND
+						OD_USER_NO = #INPUT_USER_NO# AND OD_GCIF = #INPUT_GCIF#
+						<isNotEmpty property="INPUT_USER_ROLE"  prepend="AND" > 
+							<isNotEqual property="INPUT_USER_ROLE" compareValue="ALL">
+								USER_ROLE = #INPUT_USER_ROLE#
+							</isNotEqual >
+						</isNotEmpty>
+						AND CRITERIA_TYPE in (select CRITERIA_TYPE from
+						OO_CRITERIA_TYPE_MASTER
+						WHERE PRODUCT_CODE = #CT_INPUT_PRODUCT# AND SUBPRODUCT_CODE =
+						#CT_INPUT_SUB_PRODUCT#)
+						)
+					</isNotEmpty>
+				</isNotEmpty>
+			</isNotEmpty>
+		</isEqual>
+		<isNotEmpty property="WHERE_CLAUSE" prepend="AND">
+			$WHERE_CLAUSE$
+		</isNotEmpty>
+		<isNotEmpty property="ADDL_FILTERS" prepend="AND">
+			$ADDL_FILTERS$
+		</isNotEmpty>
+		<isNotEmpty property="GROUPBY_COLUMN_IDS" prepend="GROUP BY">
+			$GROUPBY_COLUMN_IDS$
+		</isNotEmpty>
+	</sql>
+
+	<!-- <sql id ="DEFAULT_VIEW_DATA"> $DEFAULT_VIEW_DATA_QUERY$ </sql> -->
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_DEFAULT_VIEW_DATA"
+		resultClass="java.util.HashMap" remapResults="true">
+		<include refid="NEW_PAGINATION_BEGINS" />
+		<include refid="DEFAULT_VIEW_DATA" />
+		<include refid="FILTER_CLAUSE" />
+		<include refid="NEW_PAGINATION_ENDS" />
+	</select>
+
+
+</sqlMap>

@@ -1,0 +1,9 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.x-form-field-wrap .x-form-spinner-trigger {
+    background: url("../images/form/spinner.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.x-form-field-wrap .x-form-spinner-splitter {
+	background: transparent url('../images/form/spinner-split.gif') no-repeat 0 0;
+}

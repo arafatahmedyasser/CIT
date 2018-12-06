@@ -1,0 +1,61 @@
+/*
+  Purpose : File contains user image css.
+  Contains: This contain all structures related to user image which is component of apllication header
+ using which we are rendering user image with the best look and feel.                   
+*/
+/* 
+=============================
+====== USER IMAGE ==========
+=============================  
+*/
+.ct-user {
+	
+}
+
+.ct-user-img {
+	padding: 1px;
+	cursor:pointer;
+	margin-right: 5px;
+}
+
+.ct-user-img img {
+  width: 70px;
+  height: 70px;
+}
+
+.ct-nav-minimal .ct-user-img img {
+  height: 60px;
+  width: 60px;
+}
+
+
+.ct-user__snippet {
+	
+}
+
+.ct-user__name {
+	display: block;
+}
+
+.ct-user__time {
+	display: block;
+}
+
+.ct-userpref,.ct-logout {
+	margin-top: 22px;
+}
+
+.ct-logo img {
+	
+}
+
+.ct-user-snippet {
+	float: left;
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+
+.ct-al__header{
+	padding: 8px 0;
+}

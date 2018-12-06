@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themeConfig>
+	<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+		* -->
+
+
+
+
+	<theme id="structure" mode="jqm"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqm/structure/">
+		<css name="jquery.mobile-1.3.0.css" />
+		<css name="scrollbar.css" />
+		<css name="listview.css" />
+		<css name="jqm-custom.css" />
+		<css name="jquery-ui-datepicker.css" />
+		<css name="jqm-datebox.css" />
+		<css name="easy-responsive-tabs.css" />
+		<css name="jquery.mobile.iscrollview.css" />
+		<css name="jquery.mobile.iscrollview-pull.css" />
+		<css name="footable.core.css" />
+		<css name="footable.jqm.css" />
+		<css name="responsive.css" />
+		<css name="file-upload.css" />
+		<css name="jquery.dd.css" />
+		<css name="font-awesome.css" />
+		<css name="navtransform-style.css" />
+	</theme>
+
+	<theme id="canvas" mode="jqm"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqm/style/">
+		<css name="theme.css" />
+	</theme>
+
+	<theme id="structure" mode="jqtbs"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqtbs/structure/">
+		<css name="browser-hack.css" />
+		<css name="bootstrap.css" />
+		<css name="bootstrap-override.css" />
+		<css name="app-dock.css" />
+		<css name="application-header.css" />
+		<css name="calendar.css" />
+		<css name="card-master.css" />
+		<css name="ct-helper.css" />
+		<css name="bootstrap-datetimepicker.css" />
+		<css name="portlet.css" />
+		<css name="al-excard.css" />
+		<css name="al-menu.css" />
+		<css name="al-app.css" />
+		<css name="tabletop-al.css" />
+		<css name="global.css" />
+		<css name="flaticon.css" />
+		<css name="listview.css" />
+		<css name="navigationbar.css" />
+		<css name="subws-layout.css" />
+		<css name="tab-ws.css" />
+		<css name="tabdrop.css" />
+		<css name="window.css" />
+		<css name="workspace.css" />
+		<css name="forms.css" />
+		<css name="html-editor.css" />
+		<css name="treeview.css" />
+		<css name="loadmask.css" />
+		<!-- <css name="bootstrap-colorpicker.css" /> -->
+		<css name="form-composite.css" />
+		<css name="favourite.css" />
+		<css name="dragDrop.css" />
+		<css name="dyc.css" />
+	</theme>
+	<theme id="canvas" mode="jqtbs"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqtbs/style/">
+		<css name="bootstrap-theme.css" />
+		<css name="theme.css" />
+		<css name="teal.css" />
+		<css name="preferences.css" />
+		<css name="jquery.mCustomScrollbar.css" />
+		<css name="animation.css" />
+	</theme>
+
+	<theme id="structure" mode="jqui"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqui/structure/">
+		<css name="jquery-ui.css" />
+		<css name="select2.css" />
+		<css name="main-mobile.css" />
+		<css name="magnific-popup.css" />
+		<css name="easy-responsive-tabs.css" />
+		<css name="footable.core.css" />
+		<css name="footable-0.1.css" />
+		<css name="main-ipad.css" />
+		<css name="website.css" />
+		<css name="jquery.bxslider.css" />
+		<css name="idangerous.swiper.css" />
+		<css name="columnal.css" />
+		<css name="map.css" />
+		<css name="paginate.css" />
+		<css name="menu.css" />
+		<css name="jquery.loadmask.css" />
+		<css name="footable.sortable-0.1.css" />
+		<css name="footable.paginate.css" />
+		<css name="jquery.mobile-1.3.0.css" />
+		<css name="scrollbar.css" />
+		<css name="jqm-custom.css" />
+		<css name="jquery-ui-datepicker.css" />
+		<css name="jquery.mobile.iscrollview.css" />
+		<css name="jquery.mobile.iscrollview-pull.css" />
+		<css name="footable.jqm.css" />
+		<css name="responsive.css" />
+		<css name="jquery.window.css" />
+	</theme>
+
+	<theme id="canvas" mode="jqui"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqui/style/">
+		<css name="theme.css" />
+	</theme>
+
+	<theme id="structure" mode="ext"
+		folderRef="/CTRIAFramework/UIArena/theme/system/ext/structure/">
+		<css name="reset.css" />
+		<css name="core.css" />
+		<css name="resizable.css" />
+		<css name="tabs.css" />
+		<css name="form.css" />
+		<css name="button.css" />
+		<css name="toolbar.css" />
+		<css name="grid.css" />
+		<css name="pivotgrid.css" />
+		<css name="dd.css" />
+		<css name="tree.css" />
+		<css name="date-picker.css" />
+		<css name="qtips.css" />
+		<css name="menu.css" />
+		<css name="box.css" />
+		<css name="combo.css" />
+		<css name="panel.css" />
+		<css name="window.css" />
+		<css name="editor.css" />
+		<css name="borders.css" />
+		<css name="layout.css" />
+		<css name="progress.css" />
+		<css name="list-view.css" />
+		<css name="slider.css" />
+		<css name="dialog.css" />
+		<css name="cssupload.css" />
+		<css name="ext-ux-calendar.css" />
+		<css name="ext-ux-livegrid.css" />
+		<css name="FisheyeMenu.css" />
+		<css name="ItemSelector.css" />
+		<css name="MultiSelect.css" />
+		<css name="fileupload.css" />
+		<css name="spinner.css" />
+		<css name="app-menu.css" />
+		<css name="master-catalog-icons.css" />
+		<css name="LockingGridView.css" />
+		<css name="custom.css" />
+		<css name="layoutcard.css" />
+		<css name="layoutapp.css" />
+		<css name="layoutexcard.css" />
+		<css name="lockinggrid.css" />
+		<css name="favapppanel.css" />
+		<css name="ctbuttons.css" />
+		<css name="showastoolbar.css" />
+		<css name="indexedmultiwidget.css" />
+		<css name="globaldatefilter.css" />
+		<css name="layouttabletop.css" />
+		<css name="layouttab.css" />
+		<css name="layoutmenu.css" />
+		<css name="menulayer.css" />
+		<css name="appstore.css" />
+		<css name="treegrid.css" />
+		<css name="notes.css" />
+	</theme>
+
+
+	<theme id="canvas" mode="ext"
+		folderRef="/CTRIAFramework/UIArena/theme/system/ext/style/">
+		<css name="core.css" />
+		<css name="resizable.css" />
+		<css name="tabs.css" />
+		<css name="form.css" />
+		<css name="button.css" />
+		<css name="toolbar.css" />
+		<css name="grid.css" />
+		<css name="pivotgrid.css" />
+		<css name="dd.css" />
+		<css name="tree.css" />
+		<css name="date-picker.css" />
+		<css name="qtips.css" />
+		<css name="menu.css" />
+		<css name="box.css" />
+		<css name="combo.css" />
+		<css name="panel.css" />
+		<css name="window.css" />
+		<css name="editor.css" />
+		<css name="borders.css" />
+		<css name="layout.css" />
+		<css name="progress.css" />
+		<css name="list-view.css" />
+		<css name="slider.css" />
+		<css name="dialog.css" />
+		<css name="cssupload.css" />
+		<css name="ext-ux-calendar.css" />
+		<css name="ext-ux-livegrid.css" />
+		<css name="FisheyeMenu.css" />
+		<css name="ItemSelector.css" />
+		<css name="MultiSelect.css" />
+		<css name="fileupload.css" />
+		<css name="spinner.css" />
+		<css name="app-menu.css" />
+		<css name="master-catalog-icons.css" />
+		<css name="custom.css" />
+		<css name="layoutcard.css" />
+		<css name="layoutmenu.css" />
+		<css name="layoutapp.css" />
+		<css name="layoutexcard.css" />
+		<css name="lockinggrid.css" />
+		<css name="favapppanel.css" />
+		<css name="ctbuttons.css" />
+		<css name="showastoolbar.css" />
+		<css name="indexedmultiwidget.css" />
+		<css name="globaldatefilter.css" />
+		<css name="layouttabletop.css" />
+		<css name="layouttab.css" />
+		<css name="menulayer.css" />
+		<css name="appstore.css" />
+		<css name="treegrid.css" />
+		<css name="notes.css" />
+		<css name="preferences.css" />
+	</theme>
+
+
+	<theme id="rtl" mode="ext"
+		folderRef="/CTRIAFramework/UIArena/theme/system/ext/rtl/">
+		<css name="extjs_rtl.css" />
+	</theme>
+	<theme id="rtl" mode="jqtbs"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqtbs/rtl/">
+		<css name="jqtbs-rtl.css" />
+		<!-- <css name="bootstrap-rtl.css" /> -->
+	</theme>
+
+	<theme id="rtl" mode="jqui"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqui/rtl/">
+		<css name="jqui_rtl.css" />
+	</theme>
+
+	<theme id="rtl" mode="jqm"
+		folderRef="/CTRIAFramework/UIArena/theme/system/jqm/rtl/">
+		<css name="jqm_rtl.css" />
+		<css name="jqm-datebox.css" />
+		<css name="jqm_custom_rtl.css" />
+	</theme>
+
+
+</themeConfig>
+

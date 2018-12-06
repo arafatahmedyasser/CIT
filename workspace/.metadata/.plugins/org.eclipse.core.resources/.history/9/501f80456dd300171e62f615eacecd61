@@ -1,0 +1,45 @@
+package com.ccp.sample;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class fileReaderWriter {
+
+	public static void main(String[] args) throws smleException {
+		// TODO Auto-generated method stub
+		File ff=new File("/home"+File.separator+"ahmed"+File.separator+"mysupply.txt");
+		File ff1=new File("/home"+File.separator+"ahmed"+File.separator+"mysupply1.txt");
+		try {
+			BufferedReader ss=new BufferedReader(new FileReader(ff));
+			//BufferedWriter ss1=new BufferedWriter(new FileWriter(ff1));
+			String h=null;
+			try {
+				while((h=ss.readLine())!=null){
+					System.out.println(h);
+					//ss1.write(h);
+				}
+
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new smleException(e.getMessage(), e);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new smleException(e.getMessage(), e);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new smleException(e.getMessage(), e);
+		}
+
+	}
+
+}

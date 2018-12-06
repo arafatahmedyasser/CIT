@@ -1,0 +1,60 @@
+<div id="dragDropModelContainer">
+	<div class="panel-heading ct-app__header ct-app__header-tm">
+		<h3 data-item-id="formCont-title" class="panel-title ct-app__title ct-app__title-tm">Re Arrange Widgets</h3>
+	</div>
+
+{{#if_eq currentSWLayout "STACK"}}
+	<div data-item-id="dragDrop-model-container" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	    <div data-item-id="leftWidgets" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		    {{#each leftWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+	    </div>
+    </div>
+{{/if_eq}}
+
+{{#if_eq currentSWLayout "TWO-COLUMN"}}
+	<div data-item-id="dragDrop-model-container" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div data-item-id="leftWidgets" class="canvas-dragableGroup col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		    {{#each leftWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+	    </div>
+	    <div data-item-id="rightWidgets" class="canvas-dragableGroup col-lg-6 col-md-6 col-sm-6">
+		    {{#each rightWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+	    </div>
+	</div>
+{{/if_eq}}
+
+{{#if_eq currentSWLayout "THREE-COLUMN"}}
+	<div data-item-id="dragDrop-model-container" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div data-item-id="leftWidgets" class="canvas-dragableGroup  col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		    {{#each leftWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+		</div>
+		<div data-item-id="centerWidgets" class="canvas-dragableGroup col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		    {{#each centerWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+		</div>
+		<div data-item-id="rightWidgets" class="canvas-dragableGroup col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		    {{#each rightWidgets}}
+		    	<div data-widget-id="{{this.widgetId}}" data-layout-id="{{this.layoutId}}" class="ct-app__header-tm dragableModelWidget">{{this.widgetTitle}}</div>
+		    {{/each}}
+		</div>
+	</div>
+{{/if_eq}}
+	<div class="panel-footer ct-model__panel-footer">
+		<div class="row">
+			<div class='pull-left'>
+				<button class="btn ct_btn btn-save-cancel" data-button-id="save">Save</button>
+			</div>
+			<div class='pull-right'>
+				<button class="btn ct_btn btn-save-cancel" data-button-id="cancel">Cancel</button>
+			</div>
+		</div>	
+	</div>
+</div>

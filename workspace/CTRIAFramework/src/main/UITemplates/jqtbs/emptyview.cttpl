@@ -1,0 +1,3 @@
+{{!--missing ct class--}} {{!--empty_content begins--}}
+<div id= "{{VIEW_ID}}" data-item-id="{{VIEW_ID}}" class="" data-content="empty_content">{{content}}</div>
+{{!--empty_content ends--}}

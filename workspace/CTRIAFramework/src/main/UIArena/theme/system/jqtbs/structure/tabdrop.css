@@ -1,0 +1,21 @@
+/*!
+ * Tab drop for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ /*
+  Purpose : File contains tabdrop css.
+  Contains: This contain all structures related to rendering of tabdrop nothing but
+  it gives fuctionality of dropdown for tabs  .                   
+*/
+/* 
+=============================
+========= TABDROP ===========
+=============================  
+*/ 
+.nav-tabs,.nav-pills {
+	position: relative;
+}

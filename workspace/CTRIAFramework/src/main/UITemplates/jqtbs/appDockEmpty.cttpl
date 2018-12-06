@@ -1,0 +1,16 @@
+<div id='ct-dock'>
+	<div data-item-id="clicker" class="ct-app-dock">
+		<span class="ct_menu_appdoc flaticon-stack flaticon-stackAppdock">&nbsp;</span>
+		<div class='ct-app-dock__notification'>0</div>
+		<div class='ct-dock-title'></div>
+		<div class="ct-app-dock__container">
+			<a href='javascript:void(0)' class="ct-app-dock__cancel pull-right"><span class="flaticon-appdock-close flaticon-close2"></span></a>
+			<div class="ct-app-dock__content"></div>
+			<div class="notify">
+				<div class="flaticon-warning3"></div>
+				<span>{{emptyMsg}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="ct-app-dock__overlay"></div>
+</div>

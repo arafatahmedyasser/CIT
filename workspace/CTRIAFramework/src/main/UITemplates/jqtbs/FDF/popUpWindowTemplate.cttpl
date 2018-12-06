@@ -1,0 +1,54 @@
+<div data-item-id="{{windowId_subString}}_header" class="panel-heading ct-app__header ct-app__header-tm">
+	<div class="ct-app__header-container">
+		<div class="pull-left">
+			<h3 data-item-id="{{windowId_subString}}-title" class="panel-title ct-app__title ct-app__title-tm">{{title}}</h3>
+		</div>
+		<div class="pull-right">
+			<div class="ct-dropdown">
+				<ul class="list-inline ct-no-margin">
+					{{#if helpReqd}}
+					<li class="ct-app__tools-help-con">
+						<a data-item-id="{{windowId_subString}}_helpTool" class="flaticon-info flaticon_widget_header" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOL_TIPS_HELP}}"></a>
+					</li> 
+					{{/if}} 
+					{{#if exportReqd}}
+					<li class="ct-app__tools-excel-con">
+						<a data-item-id="{{windowId_subString}}_excelTool" class="flaticon-pdf flaticon_widget_header" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOL_TIPS_EXPORT}}"></a>
+					</li> 
+					{{/if}} 
+					{{#if printReqd}}
+					<li class="ct-app__tools-print-con">
+						<a data-item-id="{{windowId_subString}}_printTool" class="flaticon-print flaticon_widget_header" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOL_TIPS_PRINT}}"></a>
+					</li> 
+					{{/if}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div data-item-id="{{windowId_subString}}_body" class="panel-body ct-model__panel-body ct-app__content">
+{{#if windowCont}} {{{message}}} {{/if}}
+</div>
+<div data-item-id="{{windowId_subString}}_footer" class="panel-footer ct-model__panel-footer">
+	<div class="row">
+		<div data-item-id="leftActionBtnContainer" class="col-md-6">
+			{{#each LEFT_ACTION_BUTTONS}}
+			<div class="ct-btnCont pull-left" data-item-id="{{WINDOW_BTN_ID}}_outerCont">
+				<div class="ct-btnCont" data-item-id="{{WINDOW_BTN_ID}}_innerCont">
+					<a data-item-id={{WINDOW_BTN_ID}} data-item-type="{{../windowId_subString}}_button" class="btn {{../btnClass}} ct_btn ct-left-btn {{WINDOW_BTN_ID}}">{{WINDOW_BTN_DISPLAY_NM}}</a>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+		<div data-item-id="rightActionBtnContainer" class="col-md-6">
+			{{#each RIGHT_ACTION_BUTTONS}}
+			<div class="ct-btnCont pull-right" data-item-id="{{WINDOW_BTN_ID}}_outerCont">
+				<div class="ct-btnCont" data-item-id="{{WINDOW_BTN_ID}}_innerCont">
+					<a data-item-id={{WINDOW_BTN_ID}} data-item-type="{{../windowId_subString}}_button" class="btn {{../btnClass}} ct_btn_neg ct-right-btn {{WINDOW_BTN_ID}}">{{WINDOW_BTN_DISPLAY_NM}}</a>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>

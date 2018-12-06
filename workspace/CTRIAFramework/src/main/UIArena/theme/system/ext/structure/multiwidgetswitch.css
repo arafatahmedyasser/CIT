@@ -1,0 +1,38 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.menu_arrow{
+background:url(../images/menu_arrow.gif) no-repeat !important;
+}
+/**
+ * RangeMenu Styles
+ **/
+.ux-rangemenu-gt {
+	background-image: url(../images/default/filter/greater_than.png);
+}
+.ux-rangemenu-lt {
+	background-image: url(../images/default/filter/less_than.png);
+}
+.ux-rangemenu-eq {
+	background-image: url(../images/default/filter/equals.png);
+}
+.ux-gridfilter-text-icon {
+	background-image: url(../images/default/filter/find.png);
+}
+.noborder-icon-text .x-btn-over .x-btn-ml, .noborder-icon-text .x-btn-over .x-btn-mc, .noborder-icon-text  .x-btn-over .x-btn-tc, .noborder-icon-text .x-btn-over .x-btn-tr, .noborder-icon-text .x-btn-over .x-btn-tl,
+ .noborder-icon-text .x-btn-over .x-btn-ml, .noborder-icon-text .x-btn-over .x-btn-mr, .noborder-icon-text .x-btn-over .x-btn-br, .noborder-icon-text .x-btn-over .x-btn-bl, .noborder-icon-text .x-btn-over .x-btn-bc{
+color:#000 !important;
+font-size:10px !important;
+}
+.noborder-icon-text .x-btn-over .x-btn-ml, .noborder-icon-text .x-btn-over .x-btn-mr, .noborder-icon-text .x-btn-over .x-btn-br, .noborder-icon-text .x-btn-over .x-btn-bl, .noborder-icon-text .x-btn-over .x-btn-bc
+{
+	color:#000 !important;
+	font-size:10px !important;
+	
+
+}
+.noborder-icon-text .x-btn-mc .x-btn-icon-small-left, .noborder-icon-text .x-btn-mc .x-btn-text{
+	font-family:Arial,Helvetica,sans-serif !important;
+	font-size:11px;
+	color:#000000;
+}

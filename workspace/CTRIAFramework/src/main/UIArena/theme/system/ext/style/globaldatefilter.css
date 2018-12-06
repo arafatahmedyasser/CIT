@@ -1,0 +1,9 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.date-scroll-panel .scroll-left-icon {
+	background: url("../images/globaldatefilter/scroll-left.png") no-repeat scroll 0 center transparent !important;
+}
+.date-scroll-panel .scroll-right-icon{ 
+	background: url("../images/globaldatefilter/scroll-right.png") no-repeat scroll 0 center transparent !important;
+}

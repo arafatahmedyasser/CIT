@@ -1,0 +1,12 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.x-form-itemselector-body .x-form-item {
+    margin: 0;
+}
+.infopanel .itemselector-field .x-panel-bwrap{
+	padding:0px 0px;
+}
+.x-form-label-left .itemselector-field{
+	float:left;	
+}

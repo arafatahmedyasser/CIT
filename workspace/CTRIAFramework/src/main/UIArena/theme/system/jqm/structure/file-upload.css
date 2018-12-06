@@ -1,0 +1,291 @@
+
+.uploadwrapper * {
+	
+	box-sizing: content-box;
+}
+
+.uploadcontainer{
+	  background: rgba(0, 0, 0, 0) url("../images/transp50.png") repeat scroll 0 0;
+     padding: 8px;
+	 
+}
+
+.uploadheader{
+	padding: 8px 8px;
+	color: #42454A;
+	background: #dfdfdf none repeat scroll 0 0;
+	border-top: 1px solid #FFF; height: 25px; line-height: 20px; vertical-align: middle;
+	
+}
+.upload_button {
+	display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+	padding: 0 20px 0 31px;
+	margin-right: 4px;
+    background: #f3f3f3 url('../images/buttons.png') no-repeat 0 center;
+	outline: 0;
+	margin-top: -6px;	
+	line-height:35px;
+
+    /* Optional rounded corners for browsers that support it */
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.upload_button_RTL {
+	display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding: 2px 8px 3px 20px;
+	margin-right: 4px;
+    background: #f3f3f3 url('../images/buttons.png') no-repeat 0 center;
+	outline: 0;
+
+    /* Optional rounded corners for browsers that support it */
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    float:right;
+}
+.upload_add {
+    background-position: -176px center;
+}
+
+.upload_button_remove{
+		display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding: 0px 20px 0px 31px;
+    margin-top: -6px;
+    background: #f3f3f3 url('../images/cross.png') no-repeat 6px center;
+	outline: 0;
+	line-height:34px;
+
+    /* Optional rounded corners for browsers that support it */
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	float:right;
+	cursor: pointer;
+}
+
+.upload_button_remove_RTL{
+		display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding: 2px 8px 3px 20px;
+    background: #f3f3f3 url('../images/cross.png') no-repeat 0 center;
+	outline: 0;
+
+    /* Optional rounded corners for browsers that support it */
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	float:left;
+	cursor: pointer;
+}
+
+.uploadheadertitle {
+	font: normal 18px sans-serif;
+	padding: 6px 0 3px;
+}
+.uploadheadertext {
+	font: normal 12px sans-serif;
+}
+
+
+
+.uploadfooter{
+	border-top: 1px solid #fff;
+	background: #dfdfdf none repeat scroll 0 0;
+	
+}
+.uploadfootercontent {
+	  background: rgba(0, 0, 0, 0) url("../images/backgrounds.gif") no-repeat scroll 0 -326px;
+    	min-height: 40px;
+	padding-left: 60px;
+	
+}
+
+.uploadfootertitle {
+	font: bold 14px sans-serif;
+	padding: 2px 0 3px;
+}
+.uploadfootertext {
+	font: normal 12px sans-serif;
+}
+.uploadcontent{
+box-sizing: content-box;
+background: #f5f5f5 none repeat scroll 0 0;
+border: 1px solid #f5f5f5;
+
+}
+
+
+.uploadqueue{
+	
+	    height: auto;
+    margin: 25px;
+    min-height: 40px;
+}
+
+
+.uploadwrapper {
+	font: normal 11px Verdana,sans-serif;
+	width: 100%;
+}
+
+
+
+.cbx-file-upload-statusbar {
+border: 1px solid #006ca2;
+margin-top: 10px;
+margin-right: 10px;
+margin: 5px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+padding: 5px 5px 5px 5px;
+overflow:hidden;
+}
+
+.cbx-file-upload-filename {
+	color: #807579;
+    height: auto;	
+    overflow: hidden;
+    margin: 0 5px 5px 10px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.cbx-file-upload-progress {
+margin: 0 10px 5px 10px;
+position: relative;
+width: 250px;
+border: 1px solid #ddd;
+padding: 1px;
+border-radius: 3px;
+display: inline-block;
+width:90%;
+}
+.cbx-file-upload-bar {
+background-color: #006ca2;
+width: 0;
+height: 20px;
+border-radius: 3px;
+color:black;
+font-weight:bold;
+white-space: nowrap;
+}
+.cbx-file-upload-percent {
+position: absolute;
+display: inline-block;
+top: 3px;
+left: 48%;
+}
+.cbx-file-upload-red {
+-moz-box-shadow: inset 0 39px 0 -24px #e67a73;
+-webkit-box-shadow: inset 0 39px 0 -24px #e67a73;
+box-shadow: inset 0 39px 0 -24px #e67a73;
+background-color: #e4685d;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+display: inline-block;
+color: #fff;
+font-family: Helvetica,Arial,sans-serif;
+font-size: 13px;
+font-weight: normal;
+padding: 4px 15px;
+text-decoration: none;
+text-shadow: 0 1px 0 #b23e35;
+cursor: pointer;
+vertical-align: top;
+margin-right:5px;
+}
+.cbx-file-upload-green {
+background-color: #77b55a;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+margin: 0;
+padding: 0;
+display: inline-block;
+color: #fff;
+font-family: Helvetica,Arial,sans-serif;
+font-size: 13px;
+font-weight: normal;
+padding: 4px 15px;
+text-decoration: none;
+cursor: pointer;
+text-shadow: 0 1px 0 #5b8a3c;
+vertical-align: top;
+margin-right:5px;
+}
+.cbx-file-upload {
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 16px;
+   font-weight: bold;
+	padding: 15px 20px;
+	cursor:pointer;
+	line-height:20px;
+	height:25px;
+	margin:0 10px 10px 0;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  color: #888;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 2px 0 0 #e8e8e8;
+  -webkit-box-shadow: 0 2px 0 0 #e8e8e8;
+  box-shadow: 0 2px 0 0 #e8e8e8; 
+  padding: 6px 10px 4px 10px; 
+  color: #fff;
+  background: #2f8ab9;
+  border: none;
+  -moz-box-shadow: 0 2px 0 0 #13648d;
+  -webkit-box-shadow: 0 2px 0 0 #13648d;
+  box-shadow: 0 2px 0 0 #13648d; 
+  vertical-align:middle;  
+  }
+  
+.cbx-file-upload:hover {
+      background: #3396c9;
+      -moz-box-shadow: 0 2px 0 0 #15719f;
+      -webkit-box-shadow: 0 2px 0 0 #15719f;
+      box-shadow: 0 2px 0 0 #15719f;
+}
+
+.cbx-file-upload-error {
+    color: #ff0000;
+    margin-right: 10px;
+}
+.cbx-file-upload-success{
+	 color: #008F00;
+	margin-right: 10px;
+	word-wrap: break-word;
+}
+.cbx-formfileupload-bg{
+	border:1px solid #ff0000;
+}

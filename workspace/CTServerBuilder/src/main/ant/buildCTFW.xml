@@ -1,0 +1,856 @@
+<project name="CT_FW" default="build_CT_Library" basedir=".">
+	<!-- Invoke the common script for validation of server configuration and defining  -->
+	<include file="../../../../../../canvas-common.xml" as="canvas" />
+	<property name="javaFilesPack" value="/main/java" />
+
+	<!-- In case this build is invoked as part of central build, change the properties as per the central build. -->
+	<target name="-setCentralBuildProps" if="CANVAS_CENTRAL_BUILD">
+		<property name="CT_BUILD_FOLDER" value="${CANVAS_BUILD_FOLDER}" />
+		<property name="CT_SVN_HOME" value="${CANVAS_SVN_HOME}" />
+		<property name="product.name" value="${canvas.product.name}" />
+	</target>
+	
+	<!-- In case this build is direcly invoked then import the settings from the local build properties. -->
+	<target name="-setLocalBuildProps" unless="CANVAS_CENTRAL_BUILD">
+		<property file="buildCTFW.properties" />
+	</target>
+
+	<target name="-setProperties" depends="-setCentralBuildProps, -setLocalBuildProps">
+		<echo message="Canvas Build Source folder : ${CT_SVN_HOME}" />
+		<property name="ctBuildTempFolder" value="${CT_BUILD_FOLDER}" />
+		<property name="build" value="${CT_BUILD_FOLDER}/build/CTFW_buildworkspace" />
+		<property name="buildLib" value="${CT_BUILD_FOLDER}/dist/canvas" />
+		<property name="buildWebLib" value="${CT_BUILD_FOLDER}/dist/canvas" />
+		<property name="buildCTDepends" value="${CT_BUILD_FOLDER}/dist/canvas/dependencies" />
+		<property name="CT_SOURCES" value="${CT_SVN_HOME}/CT/Sources" />
+		<property name="CT_ANT_BUILD_JAR_PATH" value="${CT_SVN_HOME}/Supporting_Jars/Ant_Build" />
+		<property name="CT_DEPENDENCY" value="${CT_SVN_HOME}/Supporting_Jars/Third_Party_Jars" />
+		<property name="CT_REST_DEPENDENCY" value="${CT_SVN_HOME}/Supporting_Jars/Rest_Jars" />
+		
+		<property name="srcCTAlertsLib" value="${CT_SOURCES}/CTAlertsLib/src" />
+		<property name="srcCTAuditLib" value="${CT_SOURCES}/CTAuditLib/src" />
+		<property name="srcCTBaseLib" value="${CT_SOURCES}/CTBaseLib/src" />
+		<property name="srcCTCacheLib" value="${CT_SOURCES}/CTCacheLib/src" />
+		<property name="srcCTCommonLib" value="${CT_SOURCES}/CTCommonLib/src" />
+		<property name="srcCTDBLib" value="${CT_SOURCES}/CTDBLib/src" />
+		<property name="srcCTHalLib" value="${CT_SOURCES}/CTHalLib/src" />
+		<property name="srcCTEntitlementLib" value="${CT_SOURCES}/CTEntitlementLib/src" />
+		<property name="srcCTEventLib" value="${CT_SOURCES}/CTEventLib/src" />
+		<property name="srcCTExportServiceLib" value="${CT_SOURCES}/CTExportServiceLib/src" />
+		<property name="srcCTFormDefinitionLib" value="${CT_SOURCES}/CTFormDefinitionLib/src" />
+		<property name="srcCTLoggingLib" value="${CT_SOURCES}/CTLoggingLib/src" />
+		<property name="srcCTLoginLib" value="${CT_SOURCES}/CTLoginLib/src" />
+		<property name="srcCTPropertyReaderUtilLib" value="${CT_SOURCES}/CTPropertyReaderUtilLib/src" />
+		<property name="srcCTRemoteLib" value="${CT_SOURCES}/CTRemoteLib/src" />
+		<property name="srcCTRenderLib" value="${CT_SOURCES}/CTRenderLib/src" />
+		<property name="srcCTReadyApps" value="${CT_SOURCES}/CTReadyApps/src" />
+		<property name="srcCTReportingFW" value="${CT_SOURCES}/CTReportingFW/src" />
+		<property name="srcCTResources" value="${CT_SOURCES}/CTResources/src" />
+		<property name="srcCTValidationLib" value="${CT_SOURCES}/CTValidationLib/src" />
+		<property name="srcCTViewDefinitionLib" value="${CT_SOURCES}/CTViewDefinitionLib/src" />
+		<property name="srcYaHPConverter" value="${CT_SOURCES}/YaHPConverter/src" />
+		<property name="srcCTRIAFramework" value="${CT_SOURCES}/CTRIAFramework/src" />
+		<property name="srcEJBConfig" value="${CT_SOURCES}/CTEjbConfig/src" />
+	</target>
+	
+	<!-- This task validates the server configuration settings provided and establishes the default paths -->
+	<target name="-checkDependencies" depends="-setProperties">
+		<antcall target="canvas.validateServer" />
+	</target>
+
+	<target name="create.Folder.Structure">
+		<mkdir dir="${build}/buildCTAlertsLib" />
+		<mkdir dir="${build}/buildCTAuditLib" />
+		<mkdir dir="${build}/buildCTBaseLib" />
+		<mkdir dir="${build}/buildCTCacheLib" />
+		<mkdir dir="${build}/buildCTCommonLib" />
+		<mkdir dir="${build}/buildCTDBLib" />
+		<mkdir dir="${build}/buildCTEntitlementLib" />
+		<mkdir dir="${build}/buildCTEventLib" />
+		<mkdir dir="${build}/buildCTHalLib" />
+		<mkdir dir="${build}/buildCTExportServiceLib" />
+		<mkdir dir="${build}/buildCTFormDefinitionLib" />
+		<mkdir dir="${build}/buildCTLoggingLib" />
+		<mkdir dir="${build}/buildCTLoginLib" />
+		<mkdir dir="${build}/buildCTPropertyReaderUtilLib" />
+		<mkdir dir="${build}/buildCTRemoteLib" />
+		<mkdir dir="${build}/buildCTRenderLib" />
+		<mkdir dir="${build}/buildCTReadyApps" />
+		<mkdir dir="${build}/buildCTReportingFW" />
+		<mkdir dir="${build}/buildCTResources" />
+		<mkdir dir="${build}/buildCTValidationLib" />
+		<mkdir dir="${build}/buildCTViewDefinitionLib" />
+		<mkdir dir="${build}/buildYaHPConverter" />
+		<mkdir dir="${build}/buildCTEJBs" />
+
+		<mkdir dir="${build}/buildCTRIAFramework" />
+		<mkdir dir="${build}/buildCTRIAFramework/Mini" />
+		<mkdir dir="${build}/buildCTRIAFramework/Mini/CTRIAFramework" />
+	</target>
+
+	<target name="cleanup_CT">
+		<echo message="Deleting build and library folders along with its files." />
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${buildLib}" includes="**/*" erroronmissingdir="false" />
+			<fileset dir="${buildWebLib}" includes="**/*" erroronmissingdir="false" />
+			<fileset dir="${build}" includes="**/*" erroronmissingdir="false" />
+		</delete>
+	</target>
+
+	<target name="initialize_CT" depends="cleanup_CT">
+		<echo message="Recreating build and library folders ${build}  ${buildLib}  ${buildWebLib}" />
+
+		<mkdir dir="${ctBuildTempFolder}/build/CTFW_buildworkspace" />
+		<mkdir dir="${buildLib}" />
+		<mkdir dir="${buildWebLib}" />
+	</target>
+
+	<target name="build_CT_Library" depends="-checkDependencies, cleanup_CT">
+		<antcall target="updateAll" />
+	</target>
+
+	<target name="updateAll">
+		<antcall target="initialize_CT" />
+		<antcall target="create.Folder.Structure" />
+		<antcall target="update_CTResources_jar" />
+		<antcall target="update_CTLoggingLib_jar" />
+		<antcall target="update_YaHPConverter_jar" />
+		<antcall target="update_CTCommonLib_jar" />
+		<antcall target="update_CTPropertyReaderUtilLib_jar" />
+		<antcall target="update_CTRemoteLib_jar" />
+		<antcall target="update_CTCacheLib_jar" />
+		<antcall target="update_CTDBLib_jar" />
+		<antcall target="update_CTBaseLib_jar" />
+		<antcall target="update_CTValidationLib_jar" />
+		<antcall target="update_CTEventLib_jar" />
+		<antcall target="update_CTHalLib_jar" />
+		<antcall target="update_CTEntitlementLib_jar" />
+		<antcall target="update_CTAuditLib_jar" />
+		<antcall target="update_CTAlertsLib_jar" />
+		<antcall target="update_CTLoginLib_jar" />
+		<antcall target="update_CTExportServiceLib_jar" />
+		<antcall target="update_CTViewDefinitionLib_jar" />		
+		<antcall target="update_CTFormDefinitionLib_jar" />
+		<antcall target="update_CTRenderLib_jar" />
+		<antcall target="update_CTReadyApps_jar" />
+		<antcall target="update_CTRenderLib_jar" />
+		<antcall target="update_CTReportingFW_jar" />
+		<antcall target="update_CTRIAFramework" />
+		<antcall target="update_CTRIAFramework_images" />
+		<antcall target="update_CT_Minify" />
+		<antcall target="update_CT_Compress" />
+		<antcall target="update_CT_Combine" />
+		<antcall target="update_CT_Css" />
+		<antcall target="finalClean" />
+		<antcall target="packageCTEJBs" />
+		<antcall target="packageFullCT" />
+		<antcall target="packageThirdPartyJars" />
+		<antcall target="canvas.createChecksumReport">
+			<param name="SOURCE_DIR" value="${buildLib}" />
+		</antcall>
+	</target>
+
+	<target name="update_CTResources_jar">
+		<echo> Compiling CTResources library Sources</echo>
+		<jar destfile="${buildLib}/CTResources.jar">
+			<zipfileset dir="${srcCTResources}/main/properties">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+			<zipfileset dir="${srcCTResources}/main/dbSql">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTLoggingLib_jar">
+		<echo> Compiling CTLoggingLib library Sources</echo>
+		<javac srcdir="${srcCTLoggingLib}/${javaFilesPack}" destdir="${build}/buildCTLoggingLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTLoggingLib.jar">
+			<fileset dir="${build}/buildCTLoggingLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_YaHPConverter_jar">
+		<echo> Compiling YaHPConverter library Sources</echo>
+		<javac srcdir="${srcYaHPConverter}/${javaFilesPack}" destdir="${build}/buildYaHPConverter" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/YaHPConverter.jar">
+			<fileset dir="${build}/buildYaHPConverter">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTCommonLib_jar">
+		<echo> Compiling CTCommonLib library Sources</echo>
+		<javac srcdir="${srcCTCommonLib}/${javaFilesPack}" destdir="${build}/buildCTCommonLib" debug="on" excludes="**/test/**" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTCommonLib.jar">
+			<fileset dir="${build}/buildCTCommonLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTLoggingLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTPropertyReaderUtilLib_jar">
+		<echo> Compiling CTPropertyReaderUtilLib library Sources</echo>
+		<javac srcdir="${srcCTPropertyReaderUtilLib}/${javaFilesPack}" destdir="${build}/buildCTPropertyReaderUtilLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTPropertyReaderUtilLib.jar">
+			<fileset dir="${build}/buildCTPropertyReaderUtilLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTLoggingLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTHalLib_jar">
+		<echo> Compiling CTHalLib_jar library Sources</echo>
+		<javac srcdir="${srcCTHalLib}/${javaFilesPack}" destdir="${build}/buildCTHalLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTHalLib.jar">
+			<fileset dir="${build}/buildCTHalLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCommonLib.jar CTLoggingLib.jar CTRemoteLib.jar CTCacheLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTDBLib_jar">
+		<echo> Compiling CTDBLib library Sources</echo>
+		<javac srcdir="${srcCTDBLib}/${javaFilesPack}" destdir="${build}/buildCTDBLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTDBLib.jar">
+			<fileset dir="${build}/buildCTDBLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCommonLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar CTCacheLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTRemoteLib_jar">
+		<echo> Compiling CTRemoteLib library Sources</echo>
+		<javac srcdir="${srcCTRemoteLib}/${javaFilesPack}" destdir="${build}/buildCTRemoteLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTRemoteLib.jar">
+			<fileset dir="${build}/buildCTRemoteLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCommonLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTCacheLib_jar">
+		<echo> Compiling CTCacheLib library Sources</echo>
+		<javac srcdir="${srcCTCacheLib}/${javaFilesPack}" destdir="${build}/buildCTCacheLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+
+		<jar destfile="${buildLib}/CTCacheLib.jar">
+			<fileset dir="${build}/buildCTCacheLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCommonLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar CTRemoteLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTBaseLib_jar">
+		<echo> Compiling CTBaseLib library Sources</echo>
+		<javac srcdir="${srcCTBaseLib}/${javaFilesPack}" destdir="${build}/buildCTBaseLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTBaseLib.jar">
+			<fileset dir="${build}/buildCTBaseLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTValidationLib_jar">
+		<echo> Compiling CTValidationLib library Sources</echo>
+		<javac srcdir="${srcCTValidationLib}/${javaFilesPack}" destdir="${build}/buildCTValidationLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTValidationLib.jar">
+			<fileset dir="${build}/buildCTValidationLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar  CTCommonLib.jar  CTLoggingLib.jar  CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTEventLib_jar">
+		<echo> Compiling CTEventLib library Sources</echo>
+		<javac srcdir="${srcCTEventLib}/${javaFilesPack}" destdir="${build}/buildCTEventLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTEventLib.jar">
+			<fileset dir="${build}/buildCTEventLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTEntitlementLib_jar">
+		<echo> Compiling CTEntitlementLib library Sources</echo>
+		<javac srcdir="${srcCTEntitlementLib}/${javaFilesPack}" destdir="${build}/buildCTEntitlementLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTEntitlementLib.jar">
+			<fileset dir="${build}/buildCTEntitlementLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTCommonLib.jar CTDBLib.jar CTEventLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTAuditLib_jar">
+		<echo> Compiling CTAuditLib library Sources</echo>
+		<javac srcdir="${srcCTAuditLib}/${javaFilesPack}" destdir="${build}/buildCTAuditLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTAuditLib.jar">
+			<fileset dir="${build}/buildCTAuditLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTEventLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTAlertsLib_jar">
+		<echo> Compiling CTAlertsLib library Sources</echo>
+		<javac srcdir="${srcCTAlertsLib}/${javaFilesPack}" destdir="${build}/buildCTAlertsLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTAlertsLib.jar">
+			<fileset dir="${build}/buildCTAlertsLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTEventLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTLoginLib_jar">
+		<echo> Compiling CTLoginLib library Sources</echo>
+		<javac srcdir="${srcCTLoginLib}/${javaFilesPack}" destdir="${build}/buildCTLoginLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTLoginLib.jar">
+			<fileset dir="${build}/buildCTLoginLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="update_CTFormDefinitionLib_jar">
+		<echo> Compiling CTFormDefinitionLib library Sources</echo>
+		<javac srcdir="${srcCTFormDefinitionLib}/${javaFilesPack}" destdir="${build}/buildCTFormDefinitionLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTFormDefinitionLib.jar">
+			<fileset dir="${build}/buildCTFormDefinitionLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar CTViewDefinitionLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTExportServiceLib_jar">
+		<echo> Compiling CTExportServiceLib library Sources</echo>
+		<javac srcdir="${srcCTExportServiceLib}/${javaFilesPack}" destdir="${build}/buildCTExportServiceLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTExportServiceLib.jar">
+			<fileset dir="${build}/buildCTExportServiceLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCommonLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTReportingFW_jar">
+		<echo> Compiling CTReportingFW library Sources</echo>
+		<javac srcdir="${srcCTReportingFW}/${javaFilesPack}" destdir="${build}/buildCTReportingFW" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTReportingFW.jar">
+			<fileset dir="${build}/buildCTReportingFW">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTAlertsLib.jar CTBaseLib.jar CTCommonLib.jar CTDBLib.jar CTEntitlementLib.jar CTEventLib.jar CTExportServiceLib.jar CTFormDefinitionLib.jar CTLoggingLib.jar CTLoginLib.jar CTPropertyReaderUtilLib.jar CTViewDefinitionLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTViewDefinitionLib_jar">
+		<echo> Compiling CTViewDefinitionLib library Sources</echo>
+		<javac srcdir="${srcCTViewDefinitionLib}/${javaFilesPack}" destdir="${build}/buildCTViewDefinitionLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTViewDefinitionLib.jar">
+			<fileset dir="${build}/buildCTViewDefinitionLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTDBLib.jar CTEntitlementLib.jar CTLoggingLib.jar CTLoginLib.jar CTPropertyReaderUtilLib.jar CTHalLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTRenderLib_jar">
+		<echo> Compiling CTRenderLib library Sources</echo>
+		<javac srcdir="${srcCTRenderLib}/${javaFilesPack}" destdir="${build}/buildCTRenderLib" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+
+		</javac>
+		<jar destfile="${buildLib}/CTRenderLib.jar">
+			<fileset dir="${build}/buildCTRenderLib">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCacheLib.jar CTCommonLib.jar CTExportServiceLib.jar CTLoggingLib.jar CTLoginLib.jar CTPropertyReaderUtilLib.jar CTValidationLib.jar CTViewDefinitionLib.jar YaHPConverter.jar CTEntitlementLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="update_CTReadyApps_jar">
+		<echo> Compiling CTReadyApps library Sources</echo>
+		<javac srcdir="${srcCTReadyApps}/${javaFilesPack}" destdir="${build}/buildCTReadyApps" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false">
+			<classpath refid="base.path" />
+		</javac>
+		<jar destfile="${buildLib}/CTReadyApps.jar">
+			<fileset dir="${build}/buildCTReadyApps">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+				<attribute name="Class-Path" value="CTBaseLib.jar CTCommonLib.jar CTFormDefinitionLib.jar CTLoggingLib.jar CTPropertyReaderUtilLib.jar CTViewDefinitionLib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<path id="compressjars">
+		<fileset dir="${CT_ANT_BUILD_JAR_PATH}">
+			<include name="yui-compressor-ant-task-0.5.1.jar" />
+			<include name="YUIAnt.jar" />
+		</fileset>
+		<fileset dir="${CT_DEPENDENCY}">
+			<include name="commons-io-1.3.1.jar" />
+			<include name="yuicompressor-2.4.2.jar" />
+		</fileset>
+	</path>
+
+	<target name="update_CTRIAFramework_images">
+		<move todir="${build}/buildCTRIAFramework/MINI/CTRIAFramework" includeemptydirs="false">
+			<fileset dir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework">
+				<exclude name="**/*.js" />
+				<exclude name="**/*.css" />
+			</fileset>
+		</move>
+	</target>
+
+
+	<target name="update_CTRIAFramework">
+		<echo> Packaging CTRIAFramework library Sources</echo>
+
+		<copy todir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/UIArena" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${srcCTRIAFramework}/main/UIArena" />
+		</copy>
+		<copy todir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/javascript" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${srcCTRIAFramework}/main/javascript" />
+		</copy>
+		<copy todir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/jsp" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${srcCTRIAFramework}/main/jsp" />
+		</copy>
+		<copy todir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/UITemplates" preservelastmodified="true" verbose="true" includeemptydirs="true">
+					<fileset dir="${srcCTRIAFramework}/main/UITemplates" />
+		</copy>
+	</target>
+
+
+	<target name="update_CT_Minify">
+		<echo>Initializing js/css minify</echo>
+		<taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+			<classpath>
+				<path refid="compressjars" />
+				<pathelement location="${buildLib}/CTBaseLib.jar" />
+				<pathelement location="${buildLib}/CTResources.jar" />
+			</classpath>
+		</taskdef>
+		<yuicompress linebreak="300" warn="false" munge="yes" preserveallsemicolons="true" outputfolder="${build}/buildCTRIAFramework/Mini/CTRIAFramework">
+			<fileset dir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework">
+				<include name="**/*.js" />
+			</fileset>
+		</yuicompress>
+		<echo>All the js/css files have been minified successfully</echo>
+	</target>
+
+	<target name="update_CT_Compress">
+		<echo> Initializing File merge</echo>
+		<taskdef name="compress" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
+			<classpath>
+				<path refid="compressjars" />
+			</classpath>
+		</taskdef>
+		<java classname="com.intellectdesign.canvas.webutil.compress.OnDemandJsCompressor" fork="yes" failonerror="yes">
+			<arg value="${build}/buildCTRIAFramework/Mini/CTRIAFramework/javascript/compress" />
+			<arg value="${build}/buildCTRIAFramework/Mini" />
+			<classpath>
+				<path refid="compressjars" />
+				<pathelement location="${buildLib}/CTBaseLib.jar" />
+				<pathelement location="${buildLib}/CTResources.jar" />
+			</classpath>
+		</java>
+		<mkdir dir="${build}/buildCTRIAFramework/Mini/CTRIAFramework/javascript/compressed" />
+		<echo> Initialized compression..</echo>
+		<compress charset="UTF-8" warn="false" munge="yes" jssuffix="-compressed.js" preserveallsemicolons="true" fromdir="${build}/buildCTRIAFramework/Mini/CTRIAFramework/javascript/compress" todir="${build}/buildCTRIAFramework/Mini/CTRIAFramework/javascript/compressed">
+			<include name="**/*" />
+		</compress>
+	</target>
+
+	<target name="update_CT_Combine">
+		<echo> Initializing File merge</echo>
+		<java classname="com.intellectdesign.canvas.webutil.compress.OnDemandJsCompressor" fork="yes" failonerror="yes">
+			<arg value="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/javascript/compress" />
+			<arg value="${build}/buildCTRIAFramework/INITIAL/" />
+			<classpath>
+				<path refid="compressjars" />
+				<pathelement location="${buildLib}/CTBaseLib.jar" />
+				<pathelement location="${buildLib}/CTResources.jar" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="update_CT_Css">
+		<echo> Initializing File merge</echo>
+		<java classname="com.intellectdesign.canvas.webutil.compress.CssCompressor" fork="yes" failonerror="yes">
+			<arg value="${build}/buildCTRIAFramework/Mini" />
+			<arg value="${build}/buildCTRIAFramework/INITIAL" />
+			<classpath>
+				<path refid="compressjars" />
+				<pathelement location="${buildLib}/CTBaseLib.jar" />
+				<pathelement location="${buildLib}/CTResources.jar" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="finalClean">
+		<echo> Final Clean</echo>
+		<move todir="${build}/buildCTRIAFramework/CTRIAFramework/javascript/compress" includeemptydirs="false">
+			<fileset dir="${build}/buildCTRIAFramework/Mini/CTRIAFramework/javascript/compress">
+				<include name="**/*.js" />
+			</fileset>
+		</move>
+		<move todir="${build}/buildCTRIAFramework/CTRIAFramework/javascript/combine" includeemptydirs="false">
+			<fileset dir="${build}/buildCTRIAFramework/INITIAL/CTRIAFramework/javascript/compress">
+				<include name="**/*.js" />
+			</fileset>
+		</move>
+		<move todir="${build}/buildCTRIAFramework/CTRIAFramework/" includeemptydirs="false">
+			<fileset dir="${build}/buildCTRIAFramework/MINI/CTRIAFramework/">
+				<exclude name="**/*.js" />
+			</fileset>
+		</move>
+		<delete dir="${build}/buildCTRIAFramework/MINI" />
+		<delete dir="${build}/buildCTRIAFramework/INITIAL" />
+		<!-- Ensure that the JQTBS based compiled templates are copied to the combine and compress folder -->
+		<copy todir="${build}/buildCTRIAFramework/CTRIAFramework/javascript/combine" file="${srcCTRIAFramework}/main/TemplatesJS/jqtbs_CT_TEMPLATES.js"/>
+		<copy todir="${build}/buildCTRIAFramework/CTRIAFramework/javascript/compress" file="${srcCTRIAFramework}/main/TemplatesJS/jqtbs_CT_TEMPLATES.js"/>
+
+		<zip destfile="${buildWebLib}/CTRIAFramework.zip">
+			<zipfileset dir="${build}/buildCTRIAFramework" />
+		</zip>
+	</target>
+
+	<target name="packageCTEJBs">
+		<echo>Packaging the EJB Jar for CT</echo>
+		<mkdir dir="${build}/buildCTEJBs/META-INF" />
+		<copy todir="${build}/buildCTEJBs/META-INF" includeemptydirs="false">
+			<fileset dir="${srcEJBConfig}/main/config/">
+				<exclude name="**/*.java" />
+				<exclude name="**/*.js" />
+				<exclude name="**/*.class" />
+			</fileset>
+		</copy>
+		<jar destfile="${buildLib}/CTEJBs.jar">
+			<fileset dir="${build}/buildCTEJBs">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="packageFullCT">
+		<jar destfile="${buildLib}/CTFull.jar">
+			<fileset dir="${build}/buildCTAlertsLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTAuditLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTBaseLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTCacheLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTCommonLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTDBLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTEntitlementLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTEventLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTHalLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTExportServiceLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTFormDefinitionLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTLoggingLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTLoginLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTPropertyReaderUtilLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTRemoteLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTRenderLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTReportingFW">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTValidationLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTResources">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildCTViewDefinitionLib">
+				<include name="**/*.*" />
+			</fileset>
+			<fileset dir="${build}/buildYaHPConverter">
+				<include name="**/*.*" />
+			</fileset>
+			<manifest>
+				<attribute name="Created-By" value="${unit.name}" />
+				<attribute name="Implementation-Vendor" value="${company.name}" />
+				<attribute name="Implementation-Title" value="${product.name}" />
+				<attribute name="Implementation-Version" value="${product.version}" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="packageThirdPartyJars">
+		<mkdir dir="${buildCTDepends}"/>
+		<zip destfile="${buildCTDepends}/Dependencies.zip">
+			<zipfileset dir="${CT_DEPENDENCY}">
+				<include name="**/*.jar" />
+				<include name="**/*.xml" />
+				<exclude name="**/*.txt" />
+			</zipfileset>
+		</zip>
+		<copy todir="${buildCTDepends}" file="${CT_DEPENDENCY}/Readme.txt"/>
+	</target>
+
+	<target name="cleanbuildTempFolders">
+		<echo message="Deleting Temp build files available in ${build}" />
+		<delete includeemptydirs="true">
+			<fileset dir="${build}" includes="**/*" erroronmissingdir="false" />
+		</delete>
+	</target>
+	
+	<!-- Compilation class path for Canvas Model House -->
+	<path id="base.path">
+		<path refid="canvas.base.path" />
+		<!-- Include 3rd party jars -->
+		<fileset dir="${CT_REST_DEPENDENCY}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${CT_DEPENDENCY}">
+			<include name="**/*.jar" />
+		</fileset>
+		<!-- Include incrementally Built jars -->
+		<fileset dir="${buildLib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+</project>

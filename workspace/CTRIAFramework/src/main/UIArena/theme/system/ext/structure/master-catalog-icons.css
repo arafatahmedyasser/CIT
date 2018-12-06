@@ -1,0 +1,141 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.widgetcatalogues_holder {
+	float: left;
+	width: 100%
+}
+
+.widget_bg {
+	background-repeat: no-repeat;
+}
+.x_bg {
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+.catalog_icon_holder {
+	float: center;
+	width: 100%;
+	cursor:pointer;
+}
+
+
+/* CHGFW08EXCARD ends CSS restructure */
+.catalog_icon_holder div.catalog_icon_icon {
+	width: 32px !important;
+	height: 32px !important;
+	background-repeat: no-repeat;
+	background-position: top left;
+	cursor: pointer;
+}
+/* internal css */
+.template{
+	 width:248px;
+	 height:89px;
+	 padding:4px 0px 4px 4px;
+	 float:left;
+ }
+ .template_selected{
+	 width:248px;
+	 height:68px;
+	 padding:4px 0px 4px 4px;
+	 float:left;
+	 border:solid 0px #cacaca;
+ }
+.template-disable{
+	 width:300px;
+	 opacity:.6;
+	 filter:alpha(opacity=60);
+	 background:url(disable-bg.gif) repeat scroll 0 0; 
+	 padding:4px 0px 4px 4px;
+	 float:left;
+	 border:solid 1px #cacaca;
+ }
+ 
+div.icon{
+    float: left;
+    height: 54px;
+    text-align: left;
+    width: 58px;
+ }
+
+ 
+h1.widgetTitle{
+	 padding:2px 8px 8px 4px;
+	 margin:0px;
+	 text-align:left;
+ }
+ h1.widgetTitle_selected{     
+	 padding:2px 8px 8px 0px;
+	 margin:0px;
+	 text-align:left;
+ }
+.description-text{
+	float:left;
+	text-align: left;	
+	display:inline-block;
+ }
+.ALL_ICON{
+    height: 48px !important;
+    padding-bottom: 10px;
+    padding-left: 58px !important;
+}
+.add{
+    height: 48px !important;
+    padding-bottom: 10px;
+    padding-left: 58px !important;
+}
+#layoutStackedBtn .x-btn-mc, #layoutTwoColumnBtn .x-btn-mc, #layoutThreeColumnBtn .x-btn-mc{
+ text-align: left!important;
+}
+.x-btn-pressed .STACKLAYOUT,.x-btn-pressed .TWOCOLUMN,.x-btn-pressed .THREECOLUMN{
+text-decoration: none;
+cursor:text;
+}
+.STACKLAYOUT{
+	 height: 20px !important;
+    padding-left: 26px !important;
+  text-decoration: underline;
+  cursor:pointer;
+	}
+.TWOCOLUMN{
+ height: 20px !important;
+    padding-left: 26px !important;
+   text-decoration: underline;
+     cursor:pointer;
+}
+
+.THREECOLUMN{
+ height: 20px !important;
+    padding-left: 26px !important;
+text-decoration: underline;
+  cursor:pointer;
+	}	
+#filterPanel .x-table-layout-ct{
+overflow-x: hidden !important;
+overflow-y:scroll!important;
+}
+#filterPanel .x-panel-noborder{margin-bottom:0px!important}
+.widgetcatalogues_holder .widgetcatalogue_mid #WIDGET_CATALOGUE .x-panel{ 
+	margin:12px 0px 0px 15px!important;
+}
+.widgetId {
+    text-align: left;
+}
+.widgetId .x-btn-tl, .widgetId .x-btn-tr, .widgetId .x-btn-tc,.widgetId .x-btn-ml,.widgetId .x-btn-mr,.widgetId .x-btn-mc,.widgetId .x-btn-bl,.widgetId .x-btn-br,.widgetId .x-btn-bc
+{
+   background-image: none;
+}
+
+/*CHGFW08EXCARD for card layout *//* layout changes 65429 starts */
+.widget_icon {
+	width:99px;
+	height: 88px;
+	clear: both;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	cursor: pointer;
+}
+.addnewworkspaceMaster {
+	background-position: 0px -99px;
+}

@@ -1,0 +1,126 @@
+<project name="Canvas Database Build" default="build_CT_Scripts" basedir=".">
+	<!-- Invoke the common script for validation of server configuration and defining  -->
+	<include file="../../../../../../canvas-common.xml" as="canvas" />
+	<property name="javaFilesPack" value="/main/java" />
+
+	<!-- In case this build is invoked as part of central build, change the properties as per the central build. -->
+	<target name="-setCentralBuildProps" if="CANVAS_CENTRAL_BUILD">
+		<property name="CT_BUILD_FOLDER" value="${CANVAS_BUILD_FOLDER}" />
+		<property name="CT_SVN_HOME" value="${CANVAS_SVN_HOME}" />
+		<property name="product.name" value="${canvas.product.name}" />
+	</target>
+	
+	<!-- In case this build is direcly invoked then import the settings from the local build properties. -->
+	<target name="-setLocalBuildProps" unless="CANVAS_CENTRAL_BUILD">
+		<property file="buildCTFW.properties" />
+	</target>
+
+	<target name="-setProperties" depends="-setCentralBuildProps, -setLocalBuildProps">
+		<echo message="Canvas Build Source folder : ${CT_SVN_HOME}" />
+		<property name="ctBuildFolder" value="${CT_BUILD_FOLDER}/dist/database" />
+		<property name="build" value="${CT_BUILD_FOLDER}/build/DB_build" />
+		<property name="srcDBSetup" value="${CT_SVN_HOME}/DB_Scripts" />
+		<property name="buildutils" value="${build}/utils" />
+		<property name="CT_SOURCES" value="${CT_SVN_HOME}/CT/Sources" />
+		<property name="srcDBUtils" value="${CT_SOURCES}/CTServerBuilder/src" />
+	</target>
+	
+	<!-- This task validates the server configuration settings provided and establishes the default paths -->
+	<target name="-checkDependencies" depends="-setProperties">
+		<antcall target="canvas.validateServer" />
+	</target>
+
+	<target name="-cleanup_CT">
+		<echo message="Deleting build and library folders along with its files." />
+		<delete includeemptydirs="true">
+			<fileset dir="${build}" includes="**/*" erroronmissingdir="false" />
+		</delete>
+	</target>
+
+	<!-- Creates the output folder structure within the build folder -->
+	<target name="-create.Folder.Structure" depends="-cleanup_CT">
+		<mkdir dir="${ctBuildFolder}" />
+		<mkdir dir="${build}/oraclepkg" />
+		<mkdir dir="${buildutils}" />
+	</target>
+
+	<target name="build_CT_Scripts" depends="-checkDependencies, -create.Folder.Structure">
+		<echo message="Building CT scripts from ${srcDBSetup}" />
+		<copy todir="${build}" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${srcDBSetup}" />
+		</copy>
+
+		<!-- compile the build utils needed for the DB Packaging -->
+		<javac srcdir="${srcDBUtils}/${javaFilesPack}" excludes="**/package-info.java" destdir="${buildutils}" debug="on" deprecation="off" verbose="false" optimize="false" nowarn="true" includeantruntime="false" />
+
+		<antcall target="-buildOracle" />
+		<antcall target="-buildDBPackage">
+			<param name="dbServer" value="MYSQL" />		
+			
+		</antcall>
+		<antcall target="-buildDBPackage">
+			<param name="dbServer" value="MSSQL" />
+		</antcall>
+		
+		<antcall target="-buildDBPackage">
+			<param name="dbServer" value="DB2" />
+		</antcall>
+		<antcall target="canvas.createChecksumReport">
+			<param name="SOURCE_DIR" value="${ctBuildFolder}" />
+		</antcall>
+	</target>
+
+	<target name="-buildOracle">
+		<echo message="Preparing Oracle install package" />
+		<!-- Rename the bat files from txt extn to bat. -->
+		<copy todir="${build}/oraclepkg" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${build}/Oracle" />
+		</copy>
+		<move file="${build}/oraclepkg/bin/getpassword.bat.txt" tofile="${build}/oraclepkg/bin/getpassword.bat" />
+		<move file="${build}/oraclepkg/bin/run.bat.txt" tofile="${build}/oraclepkg/bin/run.bat" />
+		<move file="${build}/oraclepkg/bin/run_apps.bat.txt" tofile="${build}/oraclepkg/bin/run_apps.bat" />
+		<move file="${build}/oraclepkg/ctstudio/Wizard/getpassword.bat.txt" tofile="${build}/oraclepkg/ctstudio/Wizard/getpassword.bat" />
+		<move file="${build}/oraclepkg/ctstudio/Wizard/run.bat.txt" tofile="${build}/oraclepkg/ctstudio/Wizard/run.bat" />
+		<zip destfile="${ctBuildFolder}/canvasSetup_oracle.zip">
+			<zipfileset dir="${build}/oraclepkg" />
+		</zip>
+	</target>
+
+	<target name="-buildDBPackage">
+		<echo message="Preparing ${dbServer} install package" />
+		<java classname="com.intellectdesign.canvas.utils.build.${dbServer}DatabasePackageBuilder" dir="${buildutils}" fork="true">
+			<arg value="${build}/Oracle" />
+			<arg value="${build}/${dbServer}" />
+		</java>
+		<!-- Clear out the .txt files as we will replace them from custom scripts -->
+		<delete>
+			<fileset dir="${build}/${dbServer}/bin">
+				<include name="**/*.txt" />
+			</fileset>
+		</delete>
+
+		<move file="${build}/${dbServer}/Custom_scripts/run_${dbServer}.txt" tofile="${build}/${dbServer}/bin/run.bat" />
+		<move file="${build}/${dbServer}/Custom_scripts/run_apps.txt" tofile="${build}/${dbServer}/bin/run_apps.bat" />
+		<copy file="${build}/${dbServer}/Custom_scripts/config.txt" tofile="${build}/${dbServer}/bin/config.txt" />
+		<copy file="${build}/${dbServer}/Custom_scripts/config.txt" tofile="${build}/${dbServer}/ctstudio/Wizard/config.txt" />
+		<copy file="${build}/oraclepkg/bin/getpassword.bat" tofile="${build}/${dbServer}/bin/getpassword.bat" />
+		<move file="${build}/${dbServer}/ctstudio/Wizard/getpassword.bat.txt" tofile="${build}/${dbServer}/ctstudio/Wizard/getpassword.bat" />
+		<copy file="${build}/${dbServer}/Custom_scripts/search-replace-filelocation.txt" tofile="${build}/${dbServer}/bin/search-replace-filelocation.bat" failonerror="false" />
+		<copy file="${build}/${dbServer}/Custom_scripts/cleanup_tables.sql" tofile="${build}/${dbServer}/ctstudio/Wizard/cleanup_tables.sql" failonerror="false" />
+		<move file="${build}/${dbServer}/Custom_scripts/run_${dbServer}_Wizard.txt" tofile="${build}/${dbServer}/ctstudio/Wizard/run.bat" />
+		<copy todir="${build}/${dbServer}/ct_base" preservelastmodified="true" verbose="true" includeemptydirs="true" overwrite="true" force="true">
+			<fileset dir="${build}/${dbServer}/Custom_scripts">
+				<include name="**/*.sql" />
+			</fileset>
+		</copy>
+			
+		<delete includeEmptyDirs="true">
+			<fileset dir="${build}/${dbServer}/Custom_scripts" />
+			<fileset dir="${build}/${dbServer}/Generate_package" />
+		</delete>
+		<zip destfile="${ctBuildFolder}/canvasSetup_${dbServer}.zip">
+			<zipfileset dir="${build}/${dbServer}" />
+		</zip>
+	</target>
+
+</project>

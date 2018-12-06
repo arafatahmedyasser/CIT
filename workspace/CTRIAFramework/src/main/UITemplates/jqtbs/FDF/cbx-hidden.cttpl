@@ -1,0 +1,3 @@
+<div class="form-group ct-form__group ct-form__group-tm ct-{{xtype}}-bs {{itemId}}-bs hidden"{{anchorStyle}}>
+	<input type="hidden" value="{{Value}}" name={{itemId}}>
+</div>

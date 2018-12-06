@@ -1,0 +1,14 @@
+{{#each this}}
+<div class='ct-app-dock__each ct-dock__each-tm  ct-dock__each-bs'>
+	<a class='ct-app-dock__each-item' href='javascript:void(0)' data-item-type='miniapp' data-item-id='{{ITEM_ID}}'> 
+	<span class='ct-app-dock__app-img'>
+		{{#condchk ITEM_ID 'MasterLayout'}} 
+		<i class="flaticon-home-icon"></i> 
+		{{else}} 
+		<i class="flaticon-default_a"></i> 
+		{{/condchk}}
+	</span> 
+	<span class='ct-app-dock__app-name'>{{ITEM_TITLE}} </span>
+	</a>
+</div>
+{{/each}}

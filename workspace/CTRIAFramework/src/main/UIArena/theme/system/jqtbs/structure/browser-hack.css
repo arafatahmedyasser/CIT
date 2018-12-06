@@ -1,0 +1,45 @@
+/*
+  Purpose : File contains specific css for browser hacks [includes world's most famous and user friendly browser IE8 :p]
+ 
+*/
+
+
+/*
+*Firefox
+*/ 
+
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+/****** Support Team fixes by Chandrakala  ******/
+/* ==================================================
+===Widget shrinking in IE-11 whn click
+ on any icon of last column header styles ====
+==================================================== */
+
+html.ua-ie-11 .ct-app__content,html.ua-ie-10 .ct-app__content{
+	-ms-overflow-style: none;
+} 
+/* ================================================================
+=== Scrollpanel overlapping the appdoc icon in IE_11====
+=================================================================== */
+
+
+html.ua-ie-11,html.ua-ie-10
+{
+    overflow-y: scroll;
+    -ms-overflow-style: scrollbar;
+}
+
+/* ==============================================================
+===on hover of canvas logo some unwanted link in chrome-28,and IE-10====
+================================================================ */
+html.ua-chrome-28-0 a.ct-logo:hover, html.ua-ie-10 a.ct-logo:hover
+{
+	text-decoration:none !important;	/* does nothing ! */
+}
+
+
+/* ===========Ends Chandrakala ================  */

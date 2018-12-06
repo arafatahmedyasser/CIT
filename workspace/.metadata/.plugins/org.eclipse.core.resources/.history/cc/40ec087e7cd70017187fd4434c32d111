@@ -1,0 +1,9 @@
+package com.ccjp.creditmanagement;
+
+public class creditVO {
+
+	public creditVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

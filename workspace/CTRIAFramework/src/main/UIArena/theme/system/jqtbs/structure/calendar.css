@@ -1,0 +1,45 @@
+/*
+  Purpose : File contains  calendar css.
+  Contains:This contains structure related to calendar for which we use datepicker to display calendar and 
+select particular date using this structures we are setting width of datepicker.                   
+*/
+/* 
+=============================
+========== CALENDAR =========
+============================= 
+*/
+.datepicker-inline {
+	width: 80%;
+	margin:0 auto;
+}
+
+@media screen and (max-width:535px){
+	.datapicker-inline{
+	width:100%;
+	}
+}
+
+.ct-datepicker table {
+	width:100%;
+    border: 1px solid;
+} 
+
+/* Don't Remove this commented code*/
+
+
+
+.ct-datepicker .datepicker-switch{
+    
+}
+
+
+
+.ct-datepicker .prev{
+    
+}
+
+.ct-datepicker .next{
+    
+}
+/**/
+

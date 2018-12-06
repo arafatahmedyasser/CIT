@@ -1,0 +1,252 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.x-tree-node-expanded .x-tree-node-icon{
+	background-image:url(../images/tree/folder-open.gif);
+}
+
+.x-tree-node-leaf .x-tree-node-icon{
+	background-image:url(../images/tree/leaf.gif);
+}
+
+.x-tree-node-collapsed .x-tree-node-icon{
+	background-image:url(../images/tree/folder.gif);
+}
+
+.x-tree-node-loading .x-tree-node-icon{
+	background-image:url(../images/tree/loading.gif) !important;
+}
+
+.x-tree-node .x-tree-node-inline-icon {
+    background-image: none;
+}
+
+.x-tree-node-loading a span{
+	 font-style: italic;
+	 color:#444444;
+}
+
+.ext-ie .x-tree-node-el input {
+    width:15px;
+    height:15px;
+}
+
+.x-tree-lines .x-tree-elbow{
+	background-image:url(../images/tree/elbow.gif);
+}
+
+.x-tree-lines .x-tree-elbow-plus{
+	background-image:url(../images/tree/elbow-plus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-minus{
+	background-image:url(../images/tree/elbow-minus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-end{
+	background-image:url(../images/tree/elbow-end.gif);
+}
+
+.x-tree-lines .x-tree-elbow-end-plus{
+	background-image:url(../images/tree/elbow-end-plus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-end-minus{
+	background-image:url(../images/tree/elbow-end-minus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-line{
+	background-image:url(../images/tree/elbow-line.gif);
+}
+
+.x-tree-no-lines .x-tree-elbow-plus{
+	background-image:url(../images/tree/elbow-plus-nl.gif);
+}
+
+.x-tree-no-lines .x-tree-elbow-minus{
+	background-image:url(../images/tree/elbow-minus-nl.gif);
+}
+
+.x-tree-no-lines .x-tree-elbow-end-plus{
+	background-image:url(../images/tree/elbow-end-plus-nl.gif);
+}
+
+.x-tree-no-lines .x-tree-elbow-end-minus{
+	background-image:url(../images/tree/elbow-end-minus-nl.gif);
+}
+
+.x-tree-arrows .x-tree-elbow-plus{
+    background-image:url(../images/tree/arrows.gif);
+}
+
+.x-tree-arrows .x-tree-elbow-minus{
+    background-image:url(../images/tree/arrows.gif);
+}
+
+.x-tree-arrows .x-tree-elbow-end-plus{
+    background-image:url(../images/tree/arrows.gif);
+}
+
+.x-tree-arrows .x-tree-elbow-end-minus{
+    background-image:url(../images/tree/arrows.gif);
+}
+
+.x-tree-node{
+	color:#000;
+	font: normal 11px arial, tahoma, helvetica, sans-serif;
+}
+
+.x-tree-node a, .x-dd-drag-ghost a{
+	color:#000;
+}
+
+.x-tree-node a span, .x-dd-drag-ghost a span{
+	color:#000;
+}
+
+.x-tree-node .x-tree-node-disabled a span{
+	color:gray !important;
+}
+
+.x-tree-node div.x-tree-drag-insert-below{
+ 	 border-bottom-color:#36c;
+}
+
+.x-tree-node div.x-tree-drag-insert-above{
+	 border-top-color:#36c;
+}
+
+.x-tree-dd-underline .x-tree-node div.x-tree-drag-insert-below a{
+ 	 border-bottom-color:#36c;
+}
+
+.x-tree-dd-underline .x-tree-node div.x-tree-drag-insert-above a{
+	 border-top-color:#36c;
+}
+
+.x-tree-node .x-tree-drag-append a span{
+	 background-color:#ddd;
+	 border-color:gray;
+}
+
+.x-tree-node .x-tree-node-over {
+	background-color: #eee;
+}
+
+.x-tree-node .x-tree-selected {
+	background-color: #ddd;
+}
+
+.x-tree-drop-ok-append .x-dd-drop-icon{
+  background-image: url(../images/tree/drop-add.gif);
+}
+
+.x-tree-drop-ok-above .x-dd-drop-icon{
+  background-image: url(../images/tree/drop-over.gif);
+}
+
+.x-tree-drop-ok-below .x-dd-drop-icon{
+  background-image: url(../images/tree/drop-under.gif);
+}
+
+.x-tree-drop-ok-between .x-dd-drop-icon{
+  background-image: url(../images/tree/drop-between.gif);
+}
+
+/* tree grid */
+.x-tree-node-ct {
+	background: #fff;
+}
+
+.x-tree-node-expanded {
+	background: #fff;
+}
+
+.x-tree-node-expanded {
+	background: #fff;
+}
+
+.x-tree-node-collapsed {
+	background: #fff;
+}
+
+
+/* TreeGrid CSS Starts */
+.group-view .x-grid3-hd-row td {
+	color: #666666 !important;
+	border-right: 1px solid #bbbbbb !important;
+}
+/*width and height of the arrow image and space b/w arrow and group header End*/
+/*cursor default for the group view row start*/
+.group-view .dummy-group-node {
+	color: #666666 !important;
+}
+/*cursor default for the group view row End*/
+.x-treegrid-root-node-nodata {
+	background-color: #fff;
+}
+
+.x-treegrid-resizer {
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.x-treegrid-root-table,.x-treegrid-col {
+	border-bottom: solid 1px #b4caff;
+}
+
+.x-treegrid-resizer {
+	border-left-color: #555;
+	border-right-color: #555;
+}
+
+.node-even-style {
+	background-color: #fff;
+	border-right: solid 1px #bbb;
+}
+
+.group-view .nodeGrandTotalCls .x-treegrid-col {
+	border-top: 3px solid #ced9e1 !important;
+}
+/* Group view Font Color and size*/
+.group-view .x-tree-node {
+	color: #000 !important;
+}
+
+.group-view .dummy-group-node {
+	color: #000 !important;
+}
+
+.group-view .x-tree-node a span,.group-view .x-dd-drag-ghost a span {
+	color: #000;
+}
+
+.group-view .x-grid3-header-inner {
+	background: #BDCEE2 url(../images/grid/grid3-hrow.jpg) repeat-x scroll 0
+		top;
+}
+
+.negativeAmt {
+	color: red !important;
+}
+
+a.anchorDrill {
+	COLOR: blue;
+}
+
+a.anchorDrillUL {
+	COLOR: blue;
+}
+
+.x-tree-arrows .x-tree-elbow-end-plus,.x-tree-arrows .x-tree-elbow-plus,.x-tree-arrows .x-tree-ec-over .x-tree-elbow-plus,.x-tree-arrows .x-tree-ec-over .x-tree-elbow-end-plus
+	{
+	background: transparent url(../images/grid/off.gif) no-repeat center;
+}
+
+.x-tree-arrows .x-tree-elbow-end-minus,.x-tree-arrows .x-tree-elbow-minus,.x-tree-arrows .x-tree-ec-over .x-tree-elbow-minus,.x-tree-arrows .x-tree-ec-over .x-tree-elbow-end-minus
+	{
+	background: transparent url(../images/grid/on.gif) no-repeat center;
+}

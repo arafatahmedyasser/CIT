@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<resultMap id="EVENT_RESULT_MAP" class="java.util.HashMap">
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="EVENT_TITLE" nullValue="" column="EVENT_TITLE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EVENT_DESC" nullValue="" column="EVENT_DESC"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRODUCT_CODE" nullValue="" column="PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SUB_PRODUCT_CODE" nullValue=""
+			column="SUB_PRODUCT_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FUNCTION_CODE" nullValue="" column="FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ACTION" nullValue="" column="ACTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EVENT_TYPE_ID" nullValue="" column="EVENT_TYPE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PAGE_CODE" nullValue="" column="PAGE_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HOST_CODE" nullValue="" column="HOST_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="EVENT_LIST_DAM_KEY_SELECT_EVENT_EXT_GET_ALL_EVENT_LIST"
+		parameterClass="java.util.HashMap" resultMap="EVENT_RESULT_MAP">
+		SELECT
+		EVENT_ID,
+		EVENT_TITLE,
+		EVENT_DESC,
+		PRODUCT_CODE,
+		SUB_PRODUCT_CODE,
+		FUNCTION_CODE,
+		ACTION,
+		EVENT_TYPE_ID,
+		PAGE_CODE,
+		HOST_CODE
+		FROM
+		EVENT_MASTER
+	</select>
+
+
+
+	<resultMap id="EVENT_PRPT_MAP" class="java.util.HashMap"
+		groupBy="EVENT_ID">
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="HANDLER_LIST" javaType="java.util.List"
+			resultMap="HANDLER_PRPT_MAP" />
+	</resultMap>
+
+
+	<resultMap id="HANDLER_PRPT_MAP" class="java.util.HashMap">
+		<result property="HANDLER_ID" nullValue="" column="HANDLER_ID"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="HANDLER_DESC" nullValue="" column="HANDLER_DESC"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HANDLER_CLASS" nullValue="" column="HANDLER_CLASS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRIORITY" nullValue="" column="PRIORITY"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="SYNCHRONIZED" nullValue="" column="SYNCHRONIZED"
+			javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="IGNORE_EXCEPTION" nullValue=""
+			column="IGNORE_EXCEPTION" javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="OLD_VALUES_REQUIRED" nullValue=""
+			column="OLD_VALUES_REQUIRED" javaType="java.lang.String" jdbcType="CHAR" />
+
+	</resultMap>
+
+
+
+
+	<select
+		id="EVENT_HANDLER_FRMWRK_MNT_SELECT_EVENT_EXT_GET_ALL_HANDLER_DTLS"
+		parameterClass="java.util.HashMap" resultMap="EVENT_PRPT_MAP">
+		SELECT
+		EHM.EVENT_ID EVENT_ID,
+		EHMT.HANDLER_ID HANDLER_ID,
+		EHMT.HANDLER_DESC HANDLER_DESC,
+		EHMT.HANDLER_CLASS HANDLER_CLASS,
+		EHMT.PRIORITY PRIORITY,
+		EHMT.SYNCHRONIZED SYNCHRONIZED,
+		EHMT.IGNORE_EXCEPTION IGNORE_EXCEPTION,
+		EHM.OLD_VALUES_REQUIRED
+		FROM
+		EVENT_HANDLER_MASTER EHMT,
+		EVENT_HANDLER_MAP EHM
+		WHERE
+		EHMT.HANDLER_ID = EHM.HANDLER_ID
+	</select>
+	
+	
+	<resultMap id="EVENT_CONFIG_CACHE_RESULTMAP" class="java.util.HashMap">
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="PREPROCESSOR_KEY" nullValue="" column="PREPROCESSOR_KEY" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="PREPROCESSOR_VALUE" nullValue="" column="PREPROCESSOR_VALUE" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="PROCESSING_FORM_ID" nullValue="" column="PROCESSING_FORM_ID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="EVENT_MANAGER_SELECT_EVENT_CONFIG_CACHE" parameterClass="java.util.HashMap" resultMap="EVENT_CONFIG_CACHE_RESULTMAP">
+	SELECT 
+		EVENT_ID,
+		PREPROCESSOR_KEY,
+		PREPROCESSOR_VALUE,
+		PROCESSING_FORM_ID
+	FROM 
+		EVENT_PREPROCESSOR_CONFIG
+	ORDER BY 
+		EVENT_ID
+	</select>
+	<resultMap id="HANDLER_PRPT_FOR_EVENT" class="java.util.HashMap">
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID" javaType="java.lang.String" jdbcType="NUMBER"/>
+		<result property="HANDLER_ID" nullValue="" column="HANDLER_ID" javaType="java.lang.String" jdbcType="NUMBER"/>
+		<result property="HANDLER_DESC" nullValue="" column="HANDLER_DESC" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="HANDLER_CLASS" nullValue="" column="HANDLER_CLASS" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="PRIORITY" nullValue="" column="PRIORITY" javaType="java.lang.String" jdbcType="NUMBER"/>
+		<result property="SYNCHRONIZED" nullValue="" column="SYNCHRONIZED" javaType="java.lang.String" jdbcType="CHAR"/>
+		<result property="IGNORE_EXCEPTION" nullValue="" column="IGNORE_EXCEPTION" javaType="java.lang.String" jdbcType="CHAR"/>
+		<result property="OLD_VALUES_REQUIRED" nullValue="" column="OLD_VALUES_REQUIRED" javaType="java.lang.String" jdbcType="CHAR"/>
+	</resultMap>
+
+	<select id="EVENT_HANDLER_FRMWRK_MNT_SELECT_EVENT_EXT_GET_HANDLER_DTLS" parameterClass ="java.util.HashMap" resultMap="HANDLER_PRPT_FOR_EVENT">
+		SELECT 
+			EHM.EVENT_ID EVENT_ID,
+			EHMT.HANDLER_ID HANDLER_ID,
+			EHMT.HANDLER_DESC HANDLER_DESC,
+			EHMT.HANDLER_CLASS HANDLER_CLASS,
+			EHMT.PRIORITY PRIORITY,
+			EHMT.SYNCHRONIZED SYNCHRONIZED,
+			EHMT.IGNORE_EXCEPTION IGNORE_EXCEPTION,
+			EHM.OLD_VALUES_REQUIRED
+		FROM 
+			EVENT_HANDLER_MASTER EHMT,
+			EVENT_HANDLER_MAP  EHM
+		WHERE
+			EHMT.HANDLER_ID = EHM.HANDLER_ID
+		AND
+			EHM.EVENT_ID =#EVENT_ID#
+	</select>
+</sqlMap>

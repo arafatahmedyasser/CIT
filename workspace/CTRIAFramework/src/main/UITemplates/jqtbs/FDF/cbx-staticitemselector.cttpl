@@ -1,0 +1,32 @@
+<div class="form-group selectpicker {{#unless visibleInd}}hidden{{/unless}}">
+	{{#unless hideLabel}}
+	<div>
+		<label for="text" {{#condchk labelAlignType 'TOP'}}class="control-label" {{else}}class="col-sm-2 control-label"{{/condchk}}> 
+			<span class="form-ct-label" data-item-type='ct-fieldlabel'> {{{fieldLabel}}} </span>
+		</label>
+	</div>
+	{{/unless}} {{#condchk labelAlignType 'TOP'}}
+	<div class="input-group col-sm-12">
+		{{else}}
+		<div class="input-group col-sm-10">
+			{{/condchk}} {{#each rawKeys}}
+			<div data-item-type="itemSelectorItemCont" class="ct-form__itemselect-each">
+				<span data-item-type="itemSelectorItem" class="">
+					<div class="col-sm-10" data-item-id={{itemId}} data-item-type={{xtype}}>{{getOf ../rawValues @index}}</div>
+				</span>
+			</div>
+			{{/each}} 
+			<span type="error_Msg_Container" class="input-group-addon ct-input-group-addon"> 
+			<span type="error_Msg" class="hidden"> 
+				<i class="flaticon-warning"></i>
+			</span>
+			</span> 
+			{{#if helpInd}}
+			<span class="input-group-addon ">
+				<i class="flaticon-alert"></i>
+			</span>
+			{{/if}}
+		</div>
+	</div>
+</div>
+	

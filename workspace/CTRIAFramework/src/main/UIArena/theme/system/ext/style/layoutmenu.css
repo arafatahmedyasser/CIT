@@ -1,0 +1,260 @@
+.menulayoutworkspacetitle { /* header workspace title */
+    color: #000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.250em;
+	font-weight:bold;
+	line-height:18px;
+}
+.menulayoutusername{
+	color: #000;
+   font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.083em;
+	font-weight:bold;
+	line-height:15px;
+}
+.menulayoutlastlogin{  
+	color: #000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:15px;
+}
+.menulayoutlogo{
+	background: url("../images/headerlogo.png") no-repeat scroll right center transparent; 	
+}
+.WIDGET_CATALOGUE_OWNER {
+    background: url("../images/layoutmenu/fisheyeapplayout.png") no-repeat scroll center 18px / 100% auto rgba(0, 0, 0, 0);
+}
+.menulayoutlogiconDefault{
+    background-image: url("../images/layoutmenu/fisheye_menu_ws.png");
+}
+
+.menulayoutheaderworkspace .menulayoutwsicon {
+    background-image: url("../images/layoutmenu/menu_sprite.png");
+}
+.menulayoutwslabel {
+    color: #000 !important;
+}
+.menulayoutlogout{
+	background: url("../images/layoutmenu/logoff.png") no-repeat scroll left center transparent;
+	text-decoration:none !important;	
+}
+.menulayoutlogouttext {
+    color: #000000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:bold;
+	line-height:15px;
+}
+.menulayoutheaderworkspace  .x-panel-mc{
+	background: transparent !important; 
+}
+.menulayoutuserimage{
+	background:url(images/layoutmenu/default.png) 0px 3px no-repeat;
+}
+.headermenulayout .x-panel-body{
+	background: transparent !important; 
+}
+.footermenulayout .x-panel-body{
+	background: transparent !important; 
+}
+.headermenulayout .menulayoutheaderworkspace .x-panel-ml, 
+.headermenulayout .menulayoutheaderworkspace .x-panel-mr{
+  	background-color: rgba(0, 0, 0, 0) !important; 
+} 
+.menulayoutheaderworkspace{
+	background: #7bc0df !important; 
+}
+
+.menulayoutwsiconDefault {
+    background-image: url("../images/layoutmenu/menu_sprite.png");
+    background-repeat: no-repeat;
+}
+
+.menulayoutsettingsiconDefault {
+    background-image: url("../images/layoutmenu/user_icons.png");
+    background-repeat: no-repeat;
+}
+.menulayout_text {
+	color: #000000;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 1.333em;
+    font-weight: bold;
+}
+
+.menu-pic-icon
+{
+	background-position: -5px -4px;
+}
+
+.menu-settings-icon
+{
+	background-position: -5px -100px;
+}
+
+.menu-logout-icon
+{
+	background-position: -5px -31px;
+}
+
+.menulayout-cust-pref {
+    background: url("../images/layoutmenu/preferences.png") no-repeat scroll right center;
+}
+.menulayoutsettings-con{
+	padding-right:10px;	
+}
+.menulayoutsettings {
+    display: inline-block;
+    height: 33px;
+    margin-top: 22px;
+    width: 32px;
+    margin-left: 10px;
+}
+
+.menu_layout_show_icon{
+ background-image: url("../images/layoutmenu/menu_top.png");
+ background-repeat:no-repeat;
+}
+
+.menu-home-iconMaster{
+	background-position:0px -45px;
+}
+
+.menulayoutws_text{
+	color: #222;
+    font-size: 1.000em;
+    font-weight: bold;
+    line-height: 1.4;
+    padding-bottom: 2px;
+    padding-left: 36px;
+    padding-top: 7px !important;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.menulayoutheaderpanel{
+	background:rgba(0,0,0,0.3);
+	 	
+}
+.menulayoutlogo {
+    background: url("../images/headerlogo.png") no-repeat scroll right center transparent;
+	position: fixed;
+	left: 100px;
+}
+.cbxuserimage-wrap-layoutmenu{
+	position: absolute;
+	right: 300px;
+	border-radius: 51px;
+	padding-top: 0px;	
+}
+
+.menulayoutuserdetails-con {
+    padding-right: 5px !important;
+    position: fixed;
+    right: 86px;
+    top: 20px;
+}
+
+.menulayoutusername {
+    color: #FFF;
+    float: left;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:15px;
+    clear: both;
+}
+
+.menulayoutlastlogin {
+    color: #FFF;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:15px;
+    clear: both;
+	font-size:10px;
+	}
+	
+.menulayoutworkspacetitle {
+    color: #fff;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:18px;
+}
+
+.headerMENU .workspacetitle{
+	text-align: center;
+    line-height: 80px;
+    padding-left:0;
+}
+.userimage-dropdown{
+background-position:0px -120px;
+}
+
+.dock_menu_layout_show_icon{
+ background-image: url("../images/layoutmenu/menu_bar.png");
+ background-repeat:no-repeat;
+}
+
+#MENU_HEADER_LAYOUT{
+background:rgba(255,255,255,0.7) !important;
+box-shadow:none !important;
+}
+.menucatalog_iconDefault {
+    background-image: url("../images/layoutcard/catlicon-sprite.png");
+    background-position: 0 -184px;
+    background-repeat: no-repeat;
+	}
+	
+	
+#DOCK_LAYER_MENU {
+    background: none repeat scroll 0% 0% rgb(255, 255, 255) !important;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.9);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+	-webkit-transition: opacity .218s;
+	-moz-box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+	
+.widgetCatOuterCls{	
+	height: 0;
+    width: 0;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+	line-height:0;
+	right: 15px;
+	position: absolute;
+	top: -16px;
+}
+	
+.widgetCatOuterCls:after, .widgetCatOuterCls:before{
+	border-bottom:none;
+	border-color: transparent;
+	border-style:none;
+	content:"";
+	height:0;
+	width:0;
+	position:absolute;
+	}
+	
+.widgetCatOuterCls:after{
+	border-bottom: #f6f6f6;
+	border-left:18px solid transparent;
+	border-right:18px solid transparent;
+	content:"";
+	right:10px;
+	top:10px;
+	line-height:0;
+}
+	
+.menu-pic-icon-cls{
+	padding: 5px 21px 6px 35px !important;
+}
+.dock_menu_tooltip{
+	background:rgba(0,0,0,0.4);
+	color:#fff;
+}
+.menulayoutwsicon_holder .ACC_SERV_WSPACEMaster {
+    background-position: 0 -257px;
+}

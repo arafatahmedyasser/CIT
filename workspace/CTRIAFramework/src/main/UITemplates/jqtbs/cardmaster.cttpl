@@ -1,0 +1,38 @@
+{{!--ct-al ct-al-card ct-al-tm ct-al-bs begins--}}
+<div class='ct-al ct-al-card ct-al-tm ct-al-bs' data-itemid='wslinks'>
+	{{!-- ct-al__container begins --}}
+	<div class='ct-al__container'>{{#everyNth this 6}} {{#if isModZeroNotFirst}}</div>
+	{{!-- row ends --}} {{/if}} 
+	{{#if isModZero}} 
+	{{!-- row begins --}}{{!-- missing ct class --}}
+	<div class="row">
+		{{/if}} {{!-- col-xs-12 col-sm-6 col-md-2 col-lg-2 ct-bufferbottom-md begins --}}
+		<div class='col-xs-12 col-sm-6 col-md-2 col-lg-2 ct-bufferbottom-md'>
+			{{!-- ct-al__wslink-container begins --}}
+			<div class='ct-al__wslink-container'>
+				{{!-- ct-al__wslink ct-al__wslink-tm ct-al-card__wslink begins --}}
+				<div class='ct-al__wslink ct-al__wslink-tm ct-al-card__wslink'>
+					{{!-- ct-al__wslink-each ct-al__wslink-each-tm begins --}}
+					<div class='ct-al__wslink-each ct-al__wslink-each-tm' data-itemid='workspace'>
+						<a href='javascript:void(0)' data-item='wslink'> 
+						{{!-- col-md-12 ct-al__wslink-icon ct-al-card__wslink-icon ct-al-card__wslink-icon-tm {{WORKSPACE_ID}}-wslink-icon begins --}}
+							<div class='col-md-12 flaticon-default flaticon-{{WORKSPACE_ID}} ct-al__wslink-icon  ct-al-card__wslink-icon ct-al-card__wslink-icon-tm {{WORKSPACE_ID}}-wslink-icon'></div>
+							{{!-- col-md-12 ct-al__wslink-icon ct-al-card__wslink-icon ct-al-card__wslink-icon-tm {{WORKSPACE_ID}}-wslink-icon ends --}}
+							{{!-- col-md-12 ct-al__wslink-txt ct-al__wslink-txt-tm ct-al-card__wslink-txt ct-al-card__wslink-txt-tm begins --}}
+							<div class='col-md-12 ct-al__wslink-txt ct-al__wslink-txt-tm ct-al-card__wslink-txt ct-al-card__wslink-txt-tm' data-itemtype='workspaceid' data-itemid={{WORKSPACE_ID}}>{{ITEM_LABEL}}</div>
+							{{!-- col-md-12 ct-al__wslink-txt ct-al__wslink-txt-tm ct-al-card__wslink-txt ct-al-card__wslink-txt-tm ends --}}
+						</a>
+						<div class='clearfix'></div>
+					</div>
+					{{!-- ct-al__wslink-each ct-al__wslink-each-tm ends --}}
+				</div>
+				{{!-- ct-al__wslink ct-al__wslink-tm ct-al-card__wslink ends --}}
+			</div>
+			{{!-- ct-al__wslink-container ends --}}
+		</div>
+		{{!-- col-xs-12 col-sm-6 col-md-3 col-lg-3 ct-bufferbottom-md ends --}} {{#if isLast}}
+	</div>
+	{{!-- row ends --}}
+	{{!-- ct-al__container ends --}} {{/if}} {{/everyNth}}
+</div>
+{{!--ct-al ct-al-card ct-al-tm ct-al-bs ends--}}

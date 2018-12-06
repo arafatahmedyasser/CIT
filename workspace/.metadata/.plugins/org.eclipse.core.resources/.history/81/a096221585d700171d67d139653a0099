@@ -1,0 +1,104 @@
+package com.ccjp.creditmanagement;
+
+import java.util.Date;
+
+public class creditVO {
+    
+	private String creditcardNumber;
+	private String payment;
+	private Date paymentDate;
+	private Date dueDate;
+	private double fine;
+	private char rank;
+	private String name;
+	public creditVO() {
+		
+	}
+	public creditVO(String creditcardNumber, String payment, Date paymentDate,
+			Date dueDate, double fine, char rank, String name) {
+		this.creditcardNumber = creditcardNumber;
+		this.payment = payment;
+		this.paymentDate = paymentDate;
+		this.dueDate = dueDate;
+		this.fine = fine;
+		this.rank = rank;
+		this.name = name;
+	}
+	public String getCreditcardNumber() {
+		return creditcardNumber;
+	}
+	public void setCreditcardNumber(String creditcardNumber) {
+		this.creditcardNumber = creditcardNumber;
+	}
+	public String getPayment() {
+		return payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+	public Date getPaymentDate() {
+		return paymentDate;
+	}
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+	public Date getDueDate() {
+		return dueDate;
+	}
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
+	public double getFine() {
+		return fine;
+	}
+	public void setFine(double fine) {
+		this.fine = fine;
+	}
+	public char getRank() {
+		return rank;
+	}
+	public void setRank(char rank) {
+		this.rank = rank;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "creditVO [creditcardNumber=" + creditcardNumber + ", payment="
+				+ payment + ", paymentDate=" + paymentDate + ", dueDate="
+				+ dueDate + ", fine=" + fine + ", rank=" + rank + ", name="
+				+ name + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime
+				* result
+				+ ((creditcardNumber == null) ? 0 : creditcardNumber.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		creditVO other = (creditVO) obj;
+		if (creditcardNumber == null) {
+			if (other.creditcardNumber != null)
+				return false;
+		} else if (!creditcardNumber.equals(other.creditcardNumber))
+			return false;
+		return true;
+	}
+	
+	
+
+}

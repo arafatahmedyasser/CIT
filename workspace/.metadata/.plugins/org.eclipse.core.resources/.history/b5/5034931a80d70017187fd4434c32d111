@@ -1,0 +1,61 @@
+package com.ccjp.creditmanagement;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+
+public class creditmgmn {
+
+	public static void main(String[] args) {
+
+		creditmgmn cd= new creditmgmn();
+
+	}
+
+
+	public void process() throws creditcardException{
+
+		///home/ahmed/Desktop
+		String readLine=null;
+		File f=new File("home"+File.separator+"ahmed"+File.separator+"Desktop"+File.separator+"cd.txt");
+		try {
+			if(f.exists()){
+				BufferedReader br =new BufferedReader(new FileReader(f));
+				while((readLine=br.readLine())!=null){
+					String[] hh=readLine.split("\\|");
+					validate(hh[0]);
+
+				}
+			}
+
+		}
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new creditcardException("File Not Found Exception");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new creditcardException("IOException");
+		}
+
+	}
+
+
+	private void validate(String cd) throws creditcardException {
+		if(cd!=null && (!"".equals(cd))){
+			if(cd.charAt(0)=='4' && cd.length()!=16){
+				throw new creditcardException("Invalid Credit Card");
+			}
+			if((cd.substring(0,2).equals("34") || cd.substring(0,2).equals("36") ) && cd.length()!=15){
+				throw new creditcardException("Invalid Credit Card");
+			}
+		}
+		
+	}
+
+}

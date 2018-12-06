@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=/opt/eclipse
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/usr/lib/java/jdk1.8.0_131/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/usr/lib/java/jdk1.8.0_131/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=/opt/eclipse/plugins/org.junit_4.11.0.v201303080030/
+org.eclipse.jdt.core.classpathVariable.M2_REPO=/home/ahmed/.m2/repository
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+org.eclipse.jdt.core.compiler.compliance=1.5
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.source=1.5
+org.eclipse.jdt.core.userLibrary.Rest_jars=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/ahmed/RestJars/aopalliance-repackaged-2.4.0-b31.jar"/>\n\t<archive path\="/home/ahmed/RestJars/asm-debug-all-5.0.4.jar"/>\n\t<archive path\="/home/ahmed/RestJars/hk2-api-2.4.0-b31.jar"/>\n\t<archive path\="/home/ahmed/RestJars/hk2-locator-2.4.0-b31.jar"/>\n\t<archive path\="/home/ahmed/RestJars/hk2-utils-2.4.0-b31.jar"/>\n\t<archive path\="/home/ahmed/RestJars/javassist-3.18.1-GA.jar"/>\n\t<archive path\="/home/ahmed/RestJars/javax.annotation-api-1.2.jar"/>\n\t<archive path\="/home/ahmed/RestJars/javax.inject-2.4.0-b31.jar"/>\n\t<archive path\="/home/ahmed/RestJars/javax.servlet-api-3.0.1.jar"/>\n\t<archive path\="/home/ahmed/RestJars/javax.ws.rs-api-2.0.1.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jaxb-api-2.2.7.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-client.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-common.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-container-servlet.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-container-servlet-core.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-guava-2.21.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-media-jaxb.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-media-json-jackson-2.0-m07-1.jar"/>\n\t<archive path\="/home/ahmed/RestJars/jersey-server.jar"/>\n\t<archive path\="/home/ahmed/RestJars/mysql-connector-java-5.0.8-bin.jar"/>\n\t<archive path\="/home/ahmed/RestJars/org.osgi.core-4.2.0.jar"/>\n\t<archive path\="/home/ahmed/RestJars/osgi-resource-locator-1.0.1.jar"/>\n\t<archive path\="/home/ahmed/RestJars/persistence-api-1.0.jar"/>\n\t<archive path\="/home/ahmed/RestJars/validation-api-1.1.0.Final.jar"/>\n</userlibrary>\n

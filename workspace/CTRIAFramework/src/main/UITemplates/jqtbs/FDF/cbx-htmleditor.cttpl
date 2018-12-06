@@ -1,0 +1,81 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	{{#if hideLabel}} {{#unless onlyInput}}
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} {{/unless}}
+		<div class="input-group"{{anchorStyle}}>
+			{{!--input-group--}} {{else}} {{#condchk labelAlignType 'TOP'}}
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}} 
+				<label class="ct-form__label"> 
+					<span class="ct-form__label-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}}
+				<div class="input-group"{{anchorStyle}}>
+					{{!--input-group--}} {{else}}
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						{{!--col-sm-2 begins--}} 
+						<label for="html-editor" class="ct-form__label"> 
+						{{!--control-label begins--}} 
+							<span class="ct-form__label-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+						</label> 
+						{{!--control-label ends--}}
+					</div>
+					{{!--col-sm-2 ends--}}
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						{{!--col-sm-10 begins--}}
+						<div{{anchorStyle}}>
+							{{!--textarea container begins--}} {{/condchk}} {{/if}}
+							<div id="main">
+								<form class="formstyles">
+									{{#unless disableComp}}
+									<div class="btn-toolbar" data-role="editor-toolbar" data-target="#{{this.itemId}}">
+										
+										<div class="btn-group htm_btn_padding">
+									    	<a class="btn ct-form__html_btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><span class="">Font Size</span></a>
+									    	<ul class="dropdown-menu">
+									      		<li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+									      		<li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+									      		<li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+									      	</ul>
+									    </div>	
+									    
+										<div class="btn-group htm_btn_padding">
+											<a class="btn ct-form__html_btn bold" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><span class="flaticon-bold"></span></a>
+											<a class="btn ct-form__html_btn italic" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><span class="flaticon-italics"></span></a>
+											<a class="btn ct-form__html_btn underline" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><span class="flaticon-underlined"></span></a>
+											<a class="btn ct-form__html_btn strikethrough" data-edit="strikethrough" title="" data-original-title="Strikethrough"><span class="flaticon-strikethrough">S</span></a>
+										</div>
+										
+										<div class="btn-group htm_btn_padding">
+											<a class="btn ct-form__html_btn unorderedlist" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><span class="flaticon-bullet_list2"></span></a>
+									        <a class="btn ct-form__html_btn orderedlist" data-edit="insertorderedlist" title="" data-original-title="Number list"><span class="flaticon-number_list2"></span></a>
+									        <a class="btn ct-form__html_btn" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><span class=""><<</span></a>
+									        <a class="btn ct-form__html_btn" data-edit="indent" title="" data-original-title="Indent (Tab)"><span class="">>></span></a>
+										</div>
+										
+										<div class="btn-group htm_btn_padding">
+											 <a class="btn ct-form__html_btn alignleft" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><span class="flaticon-indent-left"></span></a>
+										     <a class="btn ct-form__html_btn aligncenter" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><span class="flaticon-center-alignment"></span></a>
+										     <a class="btn ct-form__html_btn alignright" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><span class="flaticon-indent-rght"></span></a>
+										     <a class="btn ct-form__html_btn justifyfull" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><span class="flaticon-justifyfull">J</span></a>
+										</div>								
+									</div>									
+									{{/unless}}
+									<p>
+										<div name="description" id={{this.itemId}} class="html-editor" {{#unless disableComp}} contenteditable="false" {{/unless}}></div>
+									</p>
+								</form>
+							</div>
+						</div>
+						{{!--textarea container ends--}}
+					</div>
+					{{!--col-sm-12 ends--}} {{!--col-sm-10 ends--}}
+					<div class='clearfix'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+				

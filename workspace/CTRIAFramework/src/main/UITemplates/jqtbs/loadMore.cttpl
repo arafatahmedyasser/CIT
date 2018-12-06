@@ -1,0 +1,18 @@
+<tr class="load-more" data-item-id="load-more">
+	{{#if IS_PAGING}}
+	<td colspan="{{colLen}}" class="text-center" data-item-id="load_more">
+		<span class="flaticon-more-icon2 flaticon-load">Load More</span>
+	</td> 
+	{{else}}
+	<td colspan="{{colLen}}">
+		<ul class="pager ct-liveview_navigator">
+			<li class="" data-item-id="load_prev_parent">
+				<a href="javascript:void(0);" class="pull-left load_prev" data-item-id="load_prev">Previous</a>
+			</li>
+			<li data-item-id="load_next_parent">
+				<a href="javascript:void(0);" class="pull-right load_next" data-item-id="load_next">Next</a>
+			</li>
+		</ul>
+	</td> 
+	{{/if}}
+</tr>

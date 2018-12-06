@@ -1,0 +1,288 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.menulayoutheaderpanel{ /* header panel */
+    padding: 0 0 0px 0px;
+    z-index: 1;	
+}
+.menulayoutuserdetails-con {
+    display: table-cell;
+    height: 25px;
+    padding: 10px 0 0 12px;
+    vertical-align: middle;
+}
+.menulayoutlogo-con{
+	float:right;
+	padding-right:10px;	
+}
+.menulayoutlogo{
+	float: right;
+    height: 75px;
+    width: 200px;
+}
+
+.menucatalog_icon_holder {
+	cursor: pointer;
+	height: 75px;
+	width: 77px;
+	white-space: pre-wrap;
+	line-height: 1.2em;
+	padding-right: 1px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.menucatalog_icon_text {
+	clear: both;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px
+}
+.menucatalog_iconDefault {
+	width: 45px !important;
+	height: 36px !important;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top left;
+	cursor: pointer;
+}
+
+.menuactivews{ 
+    cursor: pointer;
+    text-align: left;
+ }
+ 
+.menulayoutlogiconDefault{
+ 	background-position: -43px 2px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 45px;
+    width: 40px !important;
+}
+.menulayoutlogiconholder:hover .menulayoutlogiconDefault{
+    background-position: 0px 0px;
+    height: 50px;
+    width: 45px !important;
+}
+.wgticonCT_CHART_WGT{
+	 background-position: -45px -95px;
+}
+.menulayoutlogiconholder{
+	width:100px!important;
+}
+.menulayoutlogiconholderr:hover  .wgticonCT_CHART_WGT{
+	background-position: 0 -100px; 
+    height: 50px;
+    width: 45px;
+}
+.menulayoutwsicon_holder {
+	float: left;
+	width: 100%;
+	cursor: pointer;
+}
+.menulayoutheaderworkspace .active-ws {
+    background-position: 0px 0px;
+}
+.menulayoutheaderworkspace .menulayoutwsicon {
+	background-position: -45px 2px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+    display: inline-block;
+    height: 42px;
+    text-align: center;
+    width: 36px;
+}
+.menulayoutwslabel {
+    font-weight: bold;
+    height: 25px;
+}
+.menulayoutwsicon {
+	width: 99px;
+	height: 99px;
+	clear: both;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	cursor: pointer;
+}
+.menulayoutlogout-con {
+    padding: 5px 0 0 13px;
+    text-decoration: none !important;
+}
+.menulayoutlogout{
+	 padding-left: 23px;	
+}
+.menulayoutuserimage{
+	margin-top:8px;
+	position:relative;	
+	padding:3px 0px 0px 0px;
+}
+.user-frame {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1px solid #f6f6f6;
+    cursor: pointer;
+    height: 56px;
+    left: 0;
+    position: absolute;
+    top: 3;
+    width: 56px;
+    z-index: 1;
+}
+
+.menulayoutwsiconDefault{
+	background-position: 0 0px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+   	height: 30px;
+    width: 30px; 
+    float:left;
+}
+
+.layoutmenusettings-con{
+	padding-right:10px;	
+}
+.layoutmenusettings {
+    display: inline-block;
+    height: 33px;
+    margin-top: 22px;
+    width: 32px;
+    margin-left: 10px;
+}
+.cbxuserimage-wrap-layoutmenu{
+    float: left;
+    margin-top: 5px;
+    /*padding: 3px 10px 0 0;*/
+    padding:0;
+    position: relative;
+    width:58px!important;
+    height:58px!important;
+}
+
+.user-image-menu{
+	height:70px;
+	width:70px;
+	padding-top: 0px;
+}
+
+.user-frame-menu{
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 70px;
+    left: 0;
+    width: 65px;
+    z-index: 1;
+	position:relative; 
+	top: -76px;
+}
+.menu_layout_show_icon{
+	background-position: 0 0px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+    height: 35px;
+    width: 35px; 
+    float:left;
+	margin-top:20px;
+}
+
+.menulayoutwsicon_holder:hover{
+background: -webkit-linear-gradient(right, rgba(56, 148, 206, 0.2) 0%, transparent 100%);
+ background: linear-gradient(to left, rgba(56, 148, 206, 0.2) 0%, transparent 100%); 
+color:#222;
+}
+
+
+.layoutmenuheaderpanel{ /* header panel */
+    padding: 0 0 0px 0px;
+    z-index: 1;	
+}
+.menulayoutworkspacetitle{
+	display: table-cell;	
+	vertical-align: middle; 
+}
+
+/* .wsconMENU_visible{
+	left : 210px !important;
+}
+ */
+.wsconMENU_visible {
+	-webkit-transform: translate3d(101px, 0px, 0px) rotateY(32deg);
+	-moz-transform: translate3d(101px, 0px, 0px) rotateY(32deg);
+	transform: translate3d(101px, 0px, 0px) rotateY(32deg);
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.dockMENU_visible {
+	-webkit-transform: translate3d(101px, 0px, 0px) rotateY(32deg);
+	-moz-transform: translate3d(101px, 0px, 0px) rotateY(32deg);
+	transform: translate3d(-42px, 0px, 0px) rotateY(20deg);
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+#dockMenu .x-panel-body{
+	width: 140px!important;
+    background-color: transparent; 
+}
+.dock_menu_layout_show_icon{
+	background-position: 0 0px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+   	height: 35px;
+    width: 35px; 
+    float:right;
+	margin-top:20px;
+}
+
+.dockMenuCls{
+position:absolute;
+right:10px;	
+}
+
+#MENU_HEADER_PIC_LAYOUT {
+    width: 150px;
+}
+.headerMENU .workspacetitle {
+    font: bold 15px Arial, Helvetica, sans-serif;
+    float: left;
+    padding-left: 110px;
+    width: 100%;
+}
+#APPLICATION_HEADER_AREA .x-panel-body{
+height:80px!important
+}
+.menulayoutwsicon_selected{
+background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+ background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0%, transparent 100%); 
+color:#222;
+}
+.menu_layout_show_icon{
+ background-position: 0 0px;
+    clear: both;
+    cursor: pointer;
+   	height: 35px;
+    width: 35px; 
+    float:left;
+	margin-top:20px;
+	margin-left: 10px;
+}
+.dock_menu_layout_show_icon{
+ background-position: 0 0px;
+    clear: both;
+    cursor: pointer;
+   	height: 35px;
+    width: 35px; 
+    float:right;
+	margin-top:20px;
+}
+#DOCK_LAYER_MENU .widgetcatlContainer{
+	min-height:60px;
+	padding:5px 0 0 20px;
+	width:70px;
+}

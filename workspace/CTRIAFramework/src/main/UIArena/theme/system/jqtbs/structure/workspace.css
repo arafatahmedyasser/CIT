@@ -1,0 +1,17 @@
+/*
+  Purpose : File contains workspace css.
+  Contains: This contain all structures related to rendering of workspaces using which 
+  the workspace icons and list of workspace have such a allignment .                   
+*/
+/* 
+=============================
+======== WORKSPACE ==========
+=============================  
+*/
+.ct-ws-icon {
+	height: 190px;
+}
+
+.ct-ws-list {
+	margin-bottom: 0px;
+}

@@ -1,0 +1,163 @@
+/* 
+=============================
+======== LOAD MASK ==========
+============================= 
+*/
+
+
+.overlay-container {
+	/* The div that shows/hides. */
+	position: relative;
+  	z-index: 1;
+/*   	display: inline-block !important; */
+  	width: inherit;
+}
+
+
+.overlay-loader {
+	/* The actual box, centered in the fixed-position div */
+	 /* Whatever width you want the box to be */
+	margin: 0 auto; /* Everything below is just visual styling */
+	padding: 10px;
+	height: 50px;
+	width: 50px
+}
+/* 
+=============================
+======== NEW LOAD MASK ======
+============================= 
+*/
+.load-statusbar {
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.3);
+}
+
+.overlay-global_spin_container {
+  background: url("../images/loading.gif") no-repeat scroll center center rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+/*   box-shadow: 0 0 10px #333333; */
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  width: 50px;
+  z-index: 1;
+}
+
+.statusHolder{
+    color: #333333 !important;
+    font-size: 24px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    top: 50%;  
+}
+
+.statuspop{
+	 opacity: 0.3;
+     font-size: 0;
+       border:0;
+         margin:0;
+         padding:0;
+
+}
+
+.spinner
+{
+	stroke:white;
+}
+
+.circle
+{
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  
+}
+
+.loading_text{
+	top: -10px;
+    position: relative;
+    padding-left: 10px;
+}
+/* 
+=============================
+== NEW GLOBAL LOAD MASK ====
+============================= 
+*/
+
+.sidebar-bar {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  text-align: center;
+}
+.sidebar-load-bar {
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index:2000;
+  width: 100%;
+  height: 3px;
+
+}
+
+/* 
+=============================
+== NEW Metadata LOAD MASK ====
+============================= 
+*/
+.popup-container {
+	background: black;
+	border: @gray solid 1px;
+	border-radius: 5px;
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	top: 36%;
+	left: 32%;
+	width: 41%;
+	height: 14%;
+	text-align: center;
+}
+.metadata-overlay {
+  background-size: 100%;
+  overflow: hidden;
+  opacity: 0.2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+   background: #ccc;
+}
+.progress-container {
+	width: 99%;
+	height: 15px;
+	border: 1px solid black;
+	background-color: white;
+	margin: 7px 0px 0px 0px;
+}
+.progress-bar {
+	width: 10%;
+	background-color: lightblue;
+	height: 15px;
+}
+.loading-text {
+	color: white;
+	text-align: left;
+	height: 20%;
+	font: bold 14px tahoma, arial, verdana, sans-serif;
+	margin: 17px 0px 0px 0px;
+}

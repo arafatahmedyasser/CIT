@@ -1,0 +1,18 @@
+<table class="table  table-striped table-hover no-margin ct-listview ct-listview-tm">
+	<thead>
+		<tr>
+			{{#each header}}
+			<th>{{this.col}}</th> 
+			{{/each}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#each rows}}
+		<tr>
+			{{#each this}}
+			<td>{{this.rowValue}}</td> 
+			{{/each}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

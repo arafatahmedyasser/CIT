@@ -1,0 +1,31 @@
+package com.ccp.sample.coll;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class employeeList {
+	
+	private static List<Employee> dd=new ArrayList<Employee>();
+	private static String date1="25/11/2017";
+	private static SimpleDateFormat sf= new SimpleDateFormat("dd/MM/yyyy");
+	try {
+		dd=Arrays.asList(
+				new Employee("one", 1, sf.parse(date1), (float) 1000.00)
+				);
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	static{
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

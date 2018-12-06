@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AllCaches>
+	<Cache Id="DYNAMIC_DATASOURCES" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.cache.handler.IncrementalCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="DYNAMIC_CONNECTIONS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.cache.handler.IncrementalCacheDataBuilder</Handler>
+	</Cache>
+	
+	<Cache Id="ALL_PREF_DATA" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.preferences.PreferenceCacheDataBuilder</Handler>
+	</Cache>
+
+	<Cache Id="EVENTS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.event.cache.EventFrameworkCacheDataBuilder</Handler>
+	</Cache>
+	
+	<Cache Id="EVENT_MANAGER_CACHE" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.eventmanager.cache.EventManagerConfigCacheDataBuilder</Handler>
+	</Cache> 
+
+	<Cache Id="AUDIT_CACHE" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.audit.handler.AuditCacheDataBuilder</Handler>
+	</Cache>
+
+	<Cache Id="JS_FILES" Scope="session" Preload="Y">
+		<Handler>com.intellectdesign.canvas.cache.ondemandjs.OnDemandJSCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="VDF_INSTRUCTIONS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.ViewInstructionCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="SYSTEM_VIEWS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.SystemViewCacheDataBuilder</Handler>
+	</Cache>
+
+	<Cache Id="SYSTEM_VIEWS_WIDGET_TOOLS_CONFIG" Scope="application"
+		Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.SystemViewToolsCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="APP_MENU_ITEMS_META" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.SystemMenuCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="SYSTEM_CUSTOM_TOOLS_CONFIG" Scope="application"
+		Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.SystemCustomToolsCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="FORM_META_CACHE" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.formdefinition.FormMetaCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="FORM_CONTAINER_META_CACHE" Scope="application"
+		Preload="Y">
+		<Handler>com.intellectdesign.canvas.formcontainer.cache.FormContainerMetadataCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="VDF_FILTER_MASTER_DATA" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.database.GenericDatabaseCacheDataBuilder</Handler>
+		<HandlerParams>
+			<Param Name="DATA_ACCESS_MAP_KEY">VDF_FILTER_MASTER_DATA</Param>
+			<Param Name="DATA_ACCESS_EXTN">GET_FILTER_DETAILS</Param>
+			<Param Name="FW_DATA_SOURCE_FLAG">Y</Param>
+		</HandlerParams>
+	</Cache>
+	<Cache Id="WORKSPACE_META_DATA" Scope="session" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.WorkspaceDefinitionCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="ENTL_MENU_ITEMS_META" Scope="session" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.EntitledMenuCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="GLOBAL_CURR_CACHE" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.GlobalCurrencyCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="ZOLOG_SEARCH_META_CACHE" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.ZologSearchMetaCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="APP_CONTAINER_METADATA" Scope="session" Preload="Y">
+			<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.AppContainerCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="CT_APP_TOOLS" Scope="session" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.AppToolsCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="CT_FORM_CONTAINER_TOOLS" Scope="session" Preload="Y">
+		<Handler>com.intellectdesign.canvas.formcontainer.cache.FormContainerToolsCacheDataBuilder</Handler>
+	</Cache>
+
+	<Cache Id="CT_HAL_APP_ID_LIST" Scope="application" Preload="N">
+		<Handler>com.intellectdesign.canvas.hal.HADefinitionsCacheDataBuilder</Handler>
+		<HandlerParams>
+			<Param Name="DATA_ACCESS_MAP_KEY">HAL_FW</Param>
+			<Param Name="DATA_ACCESS_EXTN">GET_ALL_DEFINITIONS</Param>
+			<Param Name="FW_DATA_SOURCE_FLAG">Y</Param>
+		</HandlerParams>
+	</Cache>
+	<Cache Id="ENCRYPTION_KEYS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.viewdefinition.handler.cache.URLHashEncryptionKeysCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="ALERT_DATA_KEYS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.alert.handler.AlertDataKeyCacheDataBuilder</Handler>
+	</Cache>
+	<Cache Id="CHANNELS" Scope="application" Preload="Y">
+		<Handler>com.intellectdesign.canvas.alert.handler.ChannelCacheDataBuilder</Handler>
+	</Cache>
+
+</AllCaches>

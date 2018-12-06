@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<action-mapping>
+	<action-map screenCode="VDF_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="VIEWDEFN">
+		<action-class>com.intellectdesign.canvas.vdf.ViewDefinitionAction</action-class>
+	</action-map>
+	
+	<action-map screenCode="WIDGET_PREFERENCE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="WIDPREF">
+    	<action-class>com.intellectdesign.canvas.vdf.WidgetPreferenceAction</action-class>
+    </action-map>
+    
+    <action-map screenCode="FDF_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="FORMDEFN">
+    	<action-class>com.intellectdesign.canvas.fdf.FormDefinitionAction</action-class>
+    </action-map>
+	
+	<action-map screenCode="FCDF_ACTION" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="FORMCONTAINERDEFN">
+		<action-class>com.intellectdesign.canvas.formcontainer.action.FormContainerDefinitionAction</action-class>
+	</action-map>
+	    
+    <action-map screenCode="ALL_APPS" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="APPCTR">
+		<action-class>com.intellectdesign.canvas.appContainer.AppContainerAction</action-class>
+	</action-map>
+
+	 <action-map screenCode="FILE_UPLOAD" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="FILEUPLOAD">
+    	<action-class>com.intellectdesign.canvas.fdf.FileUploadAction</action-class>
+    </action-map>
+
+    <action-map screenCode="PICTURE_PROCESS" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="PICTUREPROCESS">
+    	<action-class>com.intellectdesign.canvas.fdf.PictureProcessAction</action-class>
+    </action-map>
+    
+    <action-map screenCode="WSDF_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="VIEWDEFN">
+			<action-class>com.intellectdesign.canvas.vdf.ViewDefinitionAction</action-class>
+	</action-map>
+	
+	<action-map screenCode="USER_PREF_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="USRPREF">
+			<action-class>com.intellectdesign.canvas.userPref.UserPreferenceAction</action-class>
+	</action-map>
+			
+	<action-map screenCode="EXPORT_FORM_ACTION" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="FORMDEFN">
+			<action-class>com.intellectdesign.canvas.fdf.FormViewAction</action-class>
+	</action-map>
+	
+	<action-map screenCode="VECTOR_EXPORT" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="VIEWDEFN">
+			<action-class>com.intellectdesign.canvas.viewdefinition.export.VectorViewAction</action-class>
+	</action-map>
+	
+	<action-map screenCode="CANVAS_NOTES" prodCode="CANVAS" subProdCode="CANVAS" funcCode="NOTES" host="NOTES">
+		<action-class>com.intellectdesign.canvas.notes.action.NotesAction</action-class>
+	</action-map>
+	<action-map screenCode="ALERTSUMMARY_LIST_VIEW"  prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="PKASLV">
+		<action-class>com.intellectdesign.canvas.alert.action.AlertSummaryListViewAction</action-class>
+    </action-map>
+	<action-map screenCode="RDF_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="REPORTDEFN">
+			<action-class>com.intellectdesign.canvas.report.action.ReportDefinitionAction</action-class>
+	</action-map>
+    
+    <action-map screenCode="CHART_EXPORT"  prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="NONEED">
+		<action-class>com.intellectdesign.canvas.viewdefinition.export.ChartViewAction</action-class>
+    </action-map>
+			
+	<action-map screenCode="SYNC_METADATA_CODE" prodCode="CANVAS" subProdCode="CANVAS" funcCode="VSBLTY" host="SYNCMD">
+	             <action-class>com.intellectdesign.canvas.syncaction.SyncMetadataAction</action-class>
+	</action-map>
+</action-mapping>

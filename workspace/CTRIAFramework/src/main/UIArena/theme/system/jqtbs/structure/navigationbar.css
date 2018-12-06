@@ -1,0 +1,12 @@
+/*
+  Purpose : File contains navigation bar css.
+  Contains: This contains all structures which are uesd for rendering all the list views like pagination,grid and also sort indicator. 
+*/
+/* 
+=============================
+======== NAVIGATION =========
+============================= 
+*/
+.ct-nav {
+	margin-top: 10px;
+}

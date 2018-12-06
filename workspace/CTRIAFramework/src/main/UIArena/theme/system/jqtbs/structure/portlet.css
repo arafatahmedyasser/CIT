@@ -1,0 +1,242 @@
+/*
+  Purpose : File contains all styles releated to Portlet.
+  Contains: Section 1 --> PORTLET DROPDOWN
+            Section 2 --> PORTLET HEADER
+            Section 3 --> PORTLET TOOLS BAR
+            Section 4 --> [add title]                      
+*/
+/* 
+========Section 1========
+==== PORTLET DROPDOWN ===
+========================= 
+*/
+.ct-dropdown-menu li {
+	border-bottom: 1px solid;
+}
+
+.ct-dropdown-menu>li>a {
+	padding: 3px 8px;
+}
+
+.ct-dropdown-menu-txt {
+	padding: 0px 8px;
+}
+
+.ct-dropdown-menu-licon {
+	
+}
+
+.ct-dropdown-menu-ricon {
+	
+}
+
+.ct-dropdown .ct-dropdown-menu a {
+	display: block;
+	padding: 8px 8px;
+	clear: both;
+	line-height: 1.42857143;
+	white-space: nowrap;
+}
+
+.ct-dropdown-menu {
+	padding: 0;
+	
+}
+
+.ct-dropdown>.list-inline li {
+	float: left;
+}
+
+.dropdown-submenu {
+	position: relative;
+}
+
+.ct-dropdown>ul.list-inline li {
+	float: left;
+}
+
+.dropdown-submenu>.dropdown-menu {
+	position: absolute;
+	top: 0;
+	left: 100%; /* Date:18-03-2015 / Previous:right:100% / Note : Changed by gopal to get the normal flow */
+	margin-top: -6px;
+	margin-left: -1px;
+}
+
+.dropdown-submenu>a:after {
+	display: inline-block;
+	content: " ";
+	float: right;
+	width: 0px;
+	height: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	border-width: 5px 0px 5px 5px;
+	position: absolute;
+	right: 8px;
+	top: 34%;
+
+}
+
+.dropdown-submenu.pull-left {
+	float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+	left: -100%;
+	margin-left: 10px;
+}
+
+
+/* Fix for the main level menu alignment */
+
+.dropdown-menu>li {
+width: 100%;
+}
+
+
+/* 
+========section 2========
+==== PORTLET HEADER =====
+========================= 
+*/
+
+.ct-app__header{
+padding: 8px 0px 8px 15px;
+border-bottom:0;
+
+}
+
+/* portlet header tools */
+.ct-app__tools{
+/* width: 25px; */
+/* height: 20px; */
+display: inline-block;
+float: left; /* will remove later for consistency */
+cursor: pointer;
+}
+
+ 
+/* fix dropdown overlap the menu and misalignment in list */
+.ct-app__header ul {
+  top: 25px;
+}
+
+
+/* 
+========Section 3========
+==== PORTLET TOOL BAR ===
+========================= 
+*/
+
+.ct-app__showas-menu{
+	width: 100%;
+clear: both;
+
+}
+
+.ct-btnCont{
+	display: inline-table;
+	padding-left: 3px;
+}
+.ct-btnpullright{
+	margin-right : 4px;
+}
+/*
+=======Section 4===============
+=== Active Highlight column ===
+===============================
+*/
+/* 
+========Section N========
+ Fix  Hover Dropdown menu 
+========================= 
+*/
+
+.ct-dropdown-hover .dropdown-menu{
+	left:100%;
+	
+}
+.dropdown-menu.ct-dropdown-dynamic {
+	right: auto;
+	left:0px;
+}
+
+
+/*
+==========================================
+======= Portlet Comes with Multiapp ======
+==========================================
+*/
+
+.ct-multiapp {
+padding-bottom: 0;
+}
+
+
+/*
+==========================================
+======= Portlet fadeInUp animation========
+==========================================
+*/
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+
+.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+	@-webkit-keyframes sidebar-loading {
+    from {
+        left: 50%;
+        width: 0;
+        z-index: 100
+    }
+
+    33.3333% {
+        left: 0;
+        width: 100%;
+        z-index: 10
+    }
+
+    to {
+        left: 0;
+        width: 100%
+    }
+}
+.ct-portlet_icon_dropdown{
+	margin-bottom: 85px;	
+}

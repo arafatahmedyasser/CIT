@@ -1,0 +1,8 @@
+{{#each obj}}
+<div class="dyc-splitter col-lg-{{../colWidth}} no-pad" style="border-right: 3px solid #333;">
+	<div data-item-id="dyc-widgetcontainer-{{@index}}" class="dyc-widgetcontainer">
+		<div class="dyc-addwidget flaticon-expand"></div>
+	</div>
+	<div class="dyc-hsplitter"></div>
+</div>
+{{/each}}

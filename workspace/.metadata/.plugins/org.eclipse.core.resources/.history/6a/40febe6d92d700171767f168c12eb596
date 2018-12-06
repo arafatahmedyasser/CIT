@@ -1,0 +1,121 @@
+package com.ccjp.hospitalmanagement;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+
+
+public class hospitalmanagement {
+
+	public static void main(String[] args) throws hospitalmanagementException{
+		hospitalmanagement hh=new hospitalmanagement();
+		hh.process();
+	}
+
+
+	public void process() throws hospitalmanagementException{
+
+		String readLine=null;
+		BufferedReader br =null;
+		hospitalVO hv=null;
+		String name=null;
+		String serialNo=null;
+		String gender=null;
+		String mnrNo=null;
+		String admissionDate=null;
+		String dischargeDate=null;
+		ArrayList<hospitalVO> hl=new ArrayList<hospitalVO>();
+		File f=new File(File.separator+"home"+File.separator+"ahmed"+File.separator+"Desktop"+File.separator+"hm.txt");
+		try {
+			if(f.exists()){
+				br =new BufferedReader(new FileReader(f));
+				while((readLine=br.readLine())!=null){
+					hv=new hospitalVO();
+					String[] hh=readLine.split(",");
+					name=hh[0];hv.setName(name);
+					serialNo=hh[1];hv.setSerialNo(serialNo);
+					gender=hh[2];hv.setGender(gender);
+					mnrNo=hh[3];hv.setMnrNo(mnrNo);
+					admissionDate=hh[4];
+					dischargeDate=hh[5];
+					SimpleDateFormat sd=new SimpleDateFormat("dd/MM/yyyy");
+					Date adDate=sd.parse(admissionDate);hv.setAdmissionDate(adDate);
+					Date disDate=sd.parse(dischargeDate);hv.setDischargeDate(disDate);
+					if(serialNo!=null && (serialNo.startsWith("IN") || serialNo.startsWith("OUT"))){}
+					else{
+						throw new hospitalmanagementException("Invalid Serial No");
+					}
+					if(mnrNo!=null && (mnrNo.length()!=8 || mnrNo.split("-").length!=2))throw new hospitalmanagementException("Invalid MNR No");
+					
+					String[] mnrSplit=mnrNo.split("-");
+					String pt1=mnrSplit[0];String pt2=mnrSplit[1];
+					System.out.println(pt1+"==="+"pt2);
+					if(pt1.matches("^.{4}") || pt2.matches("^(GEN|NEU|ENT)$"))throw new hospitalmanagementException("Invalid MNR No Seq");
+					
+					long bill=(pt2=="GEN")?1240:(pt2=="NEU")?1740:(pt2=="ENT")?1000:0;
+					hl.add(hv);
+					int gen=0;int neu=0;int ent=0;
+					Set<Date> adDateLisr=new HashSet<Date>();
+					
+					for(hospitalVO d:hl){
+						String specialist=mnrSplit[1];
+						adDateLisr.add(d.getAdmissionDate());
+						int ct=(pt2.equalsIgnoreCase("GEN"))?gen++:(pt2.equalsIgnoreCase("NEU"))?neu++:(pt2.equalsIgnoreCase("ENT"))?ent++:0;
+					}
+					System.out.println("gen -"+gen+"-neu-"+neu+"-ent-"+ent);
+					System.out.println();
+					SimpleDateFormat sd1=new SimpleDateFormat("E, ddd MMM yyyy HH:MM:ss");
+					HashMap<String,ArrayList<hospitalVO>>  cl=new HashMap<String,ArrayList<hospitalVO>>();
+					ArrayList<hospitalVO> hh1=null;
+					for(Date adDate1:adDateLisr){
+						hh1=new ArrayList<hospitalVO>();
+						for(hospitalVO d:hl){
+							if(adDate1.compareTo(d.getAdmissionDate())==0){
+								hh1.add(d);	
+							}
+						}
+						
+						cl.put(sd1.format(adDate1), hh1);
+					}
+					
+					System.out.println("cl "+cl);
+					
+					
+					
+				}
+
+			}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			throw new hospitalmanagementException("Date Parse Exception");
+		}
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new hospitalmanagementException("File Not Found Exception");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new hospitalmanagementException("IOException");
+		}
+		finally{
+			if(br!=null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
+}

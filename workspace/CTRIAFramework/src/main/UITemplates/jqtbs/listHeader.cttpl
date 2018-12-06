@@ -1,0 +1,35 @@
+<tr data-item-header class ="ct-padding-top-tr-paging">
+			
+{{#if IS_GROUPING_GRID}}
+			<th class="row_spacer"></th>
+			{{#each fieldPosInGroup}}
+			<th class='spacer' data-group-index ="{{@index}}" colspan='1'></th>
+			{{/each}}
+{{/if}}
+{{#if ROWSELECTION}}
+         	<th class="text-center rowselection-col" data-ct-input="rowselection-col"><span><input type="checkbox" data-item-checker="true" /></span></th>
+{{/if}}
+{{#if ACTION_COLUMN}}
+			<th class="text-center actionselection-col {{IS_LIST_VIEW_TYPE_CLASS}}" data-column-id="actionColumn"></th>
+{{/if}}
+         	<th class="rowsexpand-col {{rowExpand}}" data-column-id="rowExpand"><div data-ct-input="rowexpand-All" class="ct-row-expand flaticon-add"></div></th>
+
+{{#each HEADER_COLS}}
+            <th class="{{this.cssClass}}" data-thindex="{{this.TH_INDEX}}" {{#if this.COLUMNORDER}} data-attr="listColumnsDrag" data-colorder="true" data-draggable{{else}}{{#condchk this.FLD_GROUPABLE_IND 'Y'}} data-groupdrag="listGroupDrag" data-groupable="true"{{/condchk}}{{/if}} data-column-linked="{{COL_ID}}">
+            	<span data-lbl="{{this.COL_ID}}" data-fieldName="{{this.HEADER_VAL}}"></span>
+            	{{!-- ct-grid-header begins --}}
+            	<div data-attr="listColumns" {{#if this.GROUPABLE}}data-groupable="true" {{/if}} {{#if this.COLUMNORDER}}data-colorder="true"{{/if}} class="ct-grid-header pull-left">
+            	<div class="_header_title">
+               		<span data-lbl="{{COL_ID}}" class="ct-listview__header-title">{{this.HEADER_VAL}} </span>
+               		</div>
+               		{{#if this.SHOW_ICONS}}
+               			{{#if this.SORTABLE}}
+               			 <div class="_sort_icon">
+               				<span data-action="column-sorter" data-toggle="tooltip" data-placement="auto" data-column-linked="{{COL_ID}}" data-original-title="{{this.toolTipforSorting}}" class="sort-ind ct-app__tools {{#canvas-sorting this.COL_ID}}default-class{{/canvas-sorting}}"></span>
+               			</div>
+               			{{/if}}
+               		{{/if}}
+               	</div>
+            </th>
+{{/each}}
+</tr>

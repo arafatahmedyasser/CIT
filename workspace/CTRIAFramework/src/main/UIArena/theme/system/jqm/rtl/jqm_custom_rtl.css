@@ -1,0 +1,664 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/* CBXMobility_RTL_1.0 Starts */
+
+/*footable overite specific css*/
+
+.tbl-jquery th, .tbl-jquery td {
+	text-align:right;
+}
+
+/*table.tbl-jquery thead > tr > th, table.tbl-jquery tbody > tr > td:not(.footable-row-detail-cell) {
+	padding: 10px 10px 10px 0px;
+}*/
+
+
+/*iScroll overite specific css*/
+.iScrollVerticalScrollbar {
+	left:1px;
+	right:initial !important;
+}
+
+
+.x-app-icon .contextapp-glassyicon {
+    margin-right: -48px;
+    margin-left: initial !important;
+}
+
+
+/*jqm override specific css*/
+
+.ui-content{
+	padding: 0;
+}
+
+.header-navCls {
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+ul.header-navCls li {
+    /*CHG_MOBILE_RTL-Starts*//*background: url("jqm-themes/gold/images/app-icons/tt-workspace-sprite.png") no-repeat scroll 0 0 #d7eaf8;*/
+}
+#wsmenu .header-navCls li.ui-li.ui-li-static {
+    background-position: 10px 4px;
+}
+
+#wsmenu .nav-listCls0 {
+    background-position: 10px -292px !important;
+}
+
+#wsmenu .nav-listCls1 {
+    background-position: 10px -398px !important;
+}
+#wsmenu .nav-listCls2 {
+	background-position: 10px -345px !important;
+}
+#wsmenu .nav-listCls3 {
+	background-position: 10px 1px !important;
+}
+#wsmenu .nav-listCls4 {
+	background-position: 10px -291px !important;
+}
+#wsmenu .nav-listCls5 {
+	background-position: 10px -449px !important;
+}
+#wsmenu .nav-listCls6 {
+	background-position: 10px -291px !important;
+}
+#wsmenu .nav-listCls7 {
+	background-position: 10px -504px !important;
+}
+#wsmenu .nav-listCls8 {
+	background-position: 10px -553px !important;
+}
+
+#wsmenu .nav-listCls9 {
+	background-position: 10px -496px !important; /*CHG-MOBILITY-AHLIBLUE 20/08*/
+}
+#wsmenu .nav-listCls10 {
+	background-position: 10px -345px !important;
+}
+
+#wsmenu .nav-listCls11 {
+	background-position: 10px -495px !important;
+}
+.nav-listCls .nav-listCls-active {
+    height: 75px;
+    width: 75px;
+}
+
+.app-header-text{
+	float: right;
+	text-align: right;
+    /* RTL code added by senthil*/
+    line-height: 29px;
+}
+
+.marquee {
+    direction: initial !important;
+}
+
+ @media (min-width: 768px) {
+	div.responsiveClass .widgetColumns { 
+		width : 49%;
+		display: inline-block;
+		float:right;
+	}
+}
+
+.homeLink 
+{
+margin: 0px 0px 0px 5px!important; /*adding space between the logout button and the home button*/
+}
+
+
+#wswrapper{
+	left: initial !important;
+	right: 0px;
+	width:100%;
+}
+
+.ui-btn-icon-notext .ui-btn-inner .ui-icon 
+{
+	margin: 4px 1px 2px 3px; 
+}/* fixing the gear icon view */
+
+.ui-header .ui-btn-left .ui-btn-inner .ui-icon.ui-icon-toolsIcon 
+{
+margin-right: -2px;
+padding-left: 0px;
+margin-top: 0;
+}
+
+.ui-btn-inner
+{
+    text-overflow : initial !important;
+}
+
+.footable > thead > tr > th > span.footable-sort-indicator
+{
+	padding-right:5px;
+	padding-left:0;
+}
+
+.footable.breakpoint > tbody > tr > td > span.footable-toggle
+{
+	padding-right:initial;
+	padding-left:5px;
+}
+
+.jcarousel-control-next, .jcarousel-control-prev {
+	direction:ltr;
+}
+
+#context-app-panel-popup {
+    right:auto!important;
+    left:0px!important;
+    width:70%;
+    opacity: 0.9;
+}
+ 
+.slide.in {
+	-webkit-transform: translateX(0) !important;
+	-webkit-animation-name: slideinfromleft !important;
+	-moz-transform: translateX(0) !important;
+	-moz-animation-name: slideinfromleft !important;
+	transform: translateX(0) !important;
+	animation-name: slideinfromleft !important;
+}
+.slide.out.reverse {
+	-webkit-transform: translateX(-100%) !important;
+	-webkit-animation-name: slideouttoleft !important;
+	-moz-transform: translateX(-100%) !important;
+	-moz-animation-name: slideouttoleft !important;
+	transform: translateX(-100%) !important;
+	animation-name: slideouttoleft !important;
+}
+
+.quickLinks,.quickLinks.ui-btn-up-a{
+    left: auto!important;
+    right: 0px;
+}
+
+.ui-icon-plus{
+    top: 9px !important;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title{
+    text-align: right;
+    line-height:29px;
+}
+/*CT_MOBILITY_CHGv1.2 ISSUE_FIXES_RTL_1.3 Starts*/
+.form-wrapper .cbx-date input.cbx-date{
+    background: url("jqm-themes/gold/images/tools/calendar.png") no-repeat scroll left center rgba(0, 0, 0, 0) !important;
+    /*width:105%;*/
+}
+/*CT_MOBILITY_CHGv1.2 ISSUE_FIXES_RTL_1.3 Ends*/
+.ui-icon-calendar{
+	right:0px;
+        background-position: 15% -1px !important; /*CT_RTL changes*/
+}
+
+.headerlogo{
+    float: left;
+}
+
+.ui-datebox-container .ui-icon-arrow-r {
+background-position: -144px -1px !important;
+}
+
+
+.ui-datebox-container .ui-icon-arrow-l {
+background-position: -108px -1px !important;
+}
+
+table.footable.tbl-jquery.breakpoint>tbody>tr>td>span.footable-toggle:before{
+    background-position: -144px 0px;
+}
+
+.footable-toggle{
+	float: left;
+}
+
+.ui-collapsible-heading .ui-btn-icon-right.ui-mini .ui-btn-inner 
+{
+    padding-right: 15px; 
+}
+
+.ui-collapsible-heading .ui-btn-text{ /*CHG-MOBILITY-AHLIBLUE 21/08*/
+ width:auto;
+ float:right;
+}
+
+
+.ui-header .ui-btn-icon-right .ui-icon,
+.ui-footer .ui-btn-icon-right .ui-icon,
+.ui-mini.ui-btn-icon-right .ui-icon,
+.ui-mini .ui-btn-icon-right .ui-icon 
+{ 
+    left: 5px;
+    right:initial;
+}
+
+.ui-btn-icon-right > .ui-btn-inner > .ui-icon, .ui-btn-icon-left > .ui-btn-inner > .ui-icon
+{
+    margin-top:-9px;
+}
+
+.ui-btn-icon-right .ui-icon
+{
+left:10px !important;
+right:initial;
+}
+
+.ui-icon-plus{
+    background-position: -144px 0 !important;
+}
+
+.ui-icon-minus
+{
+   background-position-y:0px !important;
+}
+
+.ui-footer .ui-btn-icon-right .ui-btn-inner
+{
+padding-left: 30px;
+}
+
+.ui-btn-icon-right .ui-btn-inner
+{
+padding-left: 40px;
+}
+
+/* CBXMobility_RTL_1.0 Ends */
+
+.backButton,.backButton.ui-btn-up-a,.backButton, .backButton.ui-btn-up-a {
+background: url(../images/header/back-links.png) 0px 4px no-repeat;
+	border: 0;
+	box-shadow: none;
+	text-shadow: none;
+	height:30px;
+	width: 23px;
+	right: 35px!important;
+	box-shadow: none !important;
+	margin: 5px;
+	transform: rotate(180deg);
+}
+
+
+.backButton.ui-btn-hover-a,.quickLinks.ui-btn-hover-a{
+	margin: 5px;
+}
+
+.quickLinks,.quickLinks.ui-btn-up-a {
+	 /*page header quick links style*/ 
+	background: url(../images/header/quick-links.png) 0px 4px no-repeat;
+	border: 0;
+	box-shadow: none !important;
+	text-shadow: none;
+	border-radius: 0;
+	width:22px;
+	margin: 5px;
+}
+
+.ui-input-search .ui-input-clear, .ui-input-text .ui-input-clear {
+    left: 0;
+    margin-top: -13px;
+    position: absolute;
+    right: auto;
+    top: 50%;
+}
+
+.quickLinks, .backButton, .logoutLink, .homeLink span{
+	border:0;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.homeLink {
+	background: url(../images/header/home.png) center 5px no-repeat !important;
+	width:20px;
+	height:30px;
+	margin: 0 25px!important;
+	border: none;
+}
+
+.logoutLink {
+	background: url(../images/header/signout.png) center center no-repeat !important;
+	border: 0;
+	width:20px;
+	height:30px;
+}
+
+#HEADER_DIV h1.titleUserName span {
+    display: inline-block;
+    line-height: 85px;
+    margin-right: 0;
+    max-width: none;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    width: 100%;
+    margin-top: 9px !important;
+    margin-left: 30px !important;
+}
+
+.ui-btn-inner{
+	border:none;
+}
+
+.ui-btn-icon-left .ui-icon{
+	left: 10px !important;
+	right: auto !important;
+}
+
+table.tbl-jquery thead > tr > th, table.tbl-jquery tbody > tr > td:not(.footable-row-detail-cell) {
+    padding: 20px 10px 20px 0px;
+}
+
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    display: block;
+    font-size: 14px;
+    margin: 0 !important;
+    min-height: 2em;
+    outline: 0 none !important;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 0;
+    white-space: nowrap;
+}
+
+.highcharts-container{
+	direction: ltr;
+}
+
+.ui-btn-corner-all {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.ui-body-c, .ui-overlay-c {
+    background: none repeat scroll 0 0 #008fd5;
+}
+/* added on 11.08.2015 by vimal*/
+/* rtl support for form-iconcombobox */
+.dd .ddArrow {
+float: left !important;
+right: -11px !important;
+}
+
+.dd
+{
+	 float: left !important;
+ }
+ 
+  /* added on 11.08.2015 by vimal*/
+/* rtl support for form-tabpanel */
+
+ul.resp-tabs-list.ct-form-component {
+    float: right;
+}
+
+.resp-tabs-container {
+    float: right;
+    width: 100%;
+}
+
+ul.resp-tabs-list li {
+    float: right;
+}
+/*image support in dialog*/
+.confirmation-image {
+  background: url("../images/confirmation-image.png") no-repeat scroll 7px 14px rgba(0, 0, 0, 0);
+  float: right;
+  height: 57px;
+  width: 46px;
+}
+.warning-image {
+  background: url("../images/warning-image.png") no-repeat scroll 7px 14px rgba(0, 0, 0, 0);
+  float: right;
+  height: 57px;
+  width: 46px;
+}
+.info-image {
+  background: url("../images/info-image.png") no-repeat scroll 7px 14px rgba(0, 0, 0, 0);
+  float: right;
+  height: 57px;
+  width: 46px;
+}
+
+.error-image {
+  background: url("../images/error-image.png") no-repeat scroll 7px 14px rgba(0, 0, 0, 0);
+  float: right;
+  height: 57px;
+  width: 46px;
+}
+/* CT_RTL Starts*/
+.ui-li-has-arrow.ui-li-has-count .ui-btn-inner a.ui-link-inherit{
+	    padding-right: 10px;
+}
+.workspacemenus .header-navCls .ui-li-desc{
+	margin: -0.5em 75px.6em 0em !important;
+}
+.workspacemenus .header-navCls .ui-li-heading{
+	    margin: -0.5em 6.5em 0.5em 0em !important;
+}
+
+
+
+.ui-li-has-arrow.ui-li-has-count .ui-li-count {
+    left: 40px;
+    right: initial;
+}
+
+
+
+
+/*Menu Drawer Icon*/
+.ui-header button.ui-btn-left.ct-quicklink {
+	right: 5px;
+}
+
+ 
+/* Arrow icon in for all items in the menu */
+#wsmenu li:after {
+	float: left;
+}
+.header-navCls li.ui-li>span {
+	margin-right:0.5em !important;
+}
+
+/*Added for Logout Icon */
+.fa-ellipsis-v:before {
+	left: 3px !important;
+	right: initial;
+	float: left;
+}
+/* fix for user image upload */
+.ui-popup>.ui-btn-right {
+    left: 3px !important;
+    right: initial !important;
+    top: 5px !important;
+}
+
+
+
+/* Fix for Date Picker */
+.ui-datebox-container .ui-header a {
+	left:28px !important;
+}
+/* Fix for comboBox Text*/
+.jqm-cbxComboBox div.ui-select span.ui-btn-text .cbx-combobox {
+	float: right !important;
+}
+/*FIx for BBar Alignment*/
+.POSITIVE-ctCls.ct-action-btn-container {
+	float: right !important;
+}
+.NEGATIVE-ctCls.ct-action-btn-container {
+	float: left !important;
+}
+
+
+
+/* For Form Alignment */
+.staticfield span.cbxstaticfield { 
+	margin-left: 1% !important;
+}
+
+
+
+.ui-btn-icon-right .ui-icon {
+	right: 4px !important;
+	left: initial;
+}
+/* For Group Grid Icon*/
+.ui-btn-icon-right > .ui-btn-inner > .ui-icon.ui-icon-minus {
+	margin-top: -8px;
+}
+/* For Group Grid Icon*/
+.ui-btn-icon-right > .ui-btn-inner > .ui-icon.ui-icon-plus {
+	margin-top: -8px;
+}
+
+
+
+
+/* Fix for Multiapp Tab Alignment*/
+.resp-tabs-container {
+	clear:right;
+}
+/* Fix for Multiapp Tab Alignment*/
+.resp-tabs-list {
+	float: right;
+}
+/* Fix for Value Alignment in Grouping Grid to Left*/
+.ctlistviewli_col1 {
+	text-align: left !important;
+}
+/* For Form Alignment */
+.staticfield span.cbxstaticfield { 
+	margin-left: 1% !important;
+}
+
+
+
+
+
+/* FORM: radio group label alignment fix*/
+.ui-radio .ui-btn-text {
+    text-align: right;
+    right: 6px;
+    left: initial;
+    bottom: 3px;
+    top: initial;
+}
+
+
+/* label and value alignment in fieldset */
+@media all and (min-width: 28em){
+.ui-field-contain label.ui-input-text {
+    width: 40%;
+}
+.ui-field-contain .ui-select {
+    width: 30%;
+}
+}
+
+
+/*checkbox and label alignment fix*/
+.ui-checkbox .ui-btn-inner .ui-btn-text {
+    padding: 5px 5px 5px 5px !important;
+}
+
+/*fix for collapse icon in field set*/
+.ui-collapsible-heading-toggle.ui-mini.ui-btn-icon-right .ui-icon {
+    right: 5px !important;
+    left: initial;
+}
+
+
+#context-scroller {
+    left: 0;
+}
+
+
+.x-app-icon .contextapp-icon {
+    float: right;
+}
+
+.widget-content .grid_view_icons .x-app-icon span {
+    float: right;
+    width: auto !important;
+    padding-right: 10px;
+}
+
+/*header title fix*/
+.hConfigTitle.ui-title.app-header-body{
+	float: right;
+	text-align: right; 
+}
+@media (min-width: 28em) {
+	.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+		margin: .5em 0;
+	}	
+}
+/* for dropdown icon in combo */
+.jqm-cbxComboBox > div > div > span > span.ui-icon.ui-icon-arrow-d.ui-icon-shadow {
+left: 0px !important;
+}
+/* spinner plus alignment */
+.spinnerCls .ui-icon.ui-icon-arrow-u.ui-icon-shadow::after {
+	right: 6px !important
+}
+/* spinner minus alignment */
+.spinnerCls .ui-icon.ui-icon-arrow-d.ui-icon-shadow::after {
+	top: 4px !important;
+	left: 1px !important;
+}
+/* for dropdown arrow alignment*/
+.ui-select .ui-icon.ui-icon-arrow-d.ui-icon-shadow::after {
+	left: 0px! important
+}
+/* for checkbox alignment*/
+.ui-checkbox input, .ui-radio input {
+	right: 5px !important;
+}
+/*widget header tools icon alignment fix*/
+span.ui-icon.ui-icon-toolsIcon.ui-icon-shadow {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+}
+/*header logout btn fix*/
+.ui-header .ui-btn-left, .ui-footer .ui-btn-left {
+    left: 5px;
+}
+/*form checkbox group alignment fix*/
+.ui-checkbox .ct-form-component+.ui-checkbox-off {
+    padding-right: 35px;
+}
+.ui-checkbox .ct-form-component+.ui-checkbox-on {
+    padding-right: 35px;
+}
+/*date picker alignment fix*/
+.ui-datebox-flipcenter {
+    top: -46px!important;
+}
+
+/*context scroller alignment fix*/
+#context-scroller .context-app-icon {
+    direction: ltr;
+}
+/* for pending activity count arrow icon*/
+.fa-chevron-right:before {
+content: "\f053" !important;
+font-family: fontawesome;
+}
+/* CT_RTL Changes Ends*/
+

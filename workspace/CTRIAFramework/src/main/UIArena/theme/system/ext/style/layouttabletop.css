@@ -1,0 +1,51 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.tabletopheaderpanel .x-panel-body{
+	background:transparent!important;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+}
+
+.table_toplogo{
+	background: url("../images/headerlogo.png") no-repeat scroll 10px center transparent;	
+}
+.tabletoplogout{
+	background: url("../images/layouttabletop/logoff.png") no-repeat scroll right center transparent;
+	text-decoration:none !important;	
+}
+.tabletopuserdetails-col{
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+}
+.ttc-left{
+	background-image: url("../images/layouttabletop/tabletop-left.png");
+}
+.ttc-right{
+	background-image: url("../images/layouttabletop/tabletop-right.png");
+}
+.ttc-mid {
+    background-image: url("../images/layouttabletop/tabletop-repeat.png");
+}
+.tabletopwsiconDefault{	
+	background-image: url("../images/layouttabletop/tabletopwsdefault.png");
+}
+.tabletopwslabel{
+	color:#000;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+	text-transform:uppercase;
+}
+.tabletoplogouttext{
+	color:#000;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+	line-height:15px;
+}
+.footerTABLE_TOP .x-panel-body{
+	background:transparent!important;
+}

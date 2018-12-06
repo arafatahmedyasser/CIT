@@ -1,0 +1,189 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.headerCARD .x-panel-body{
+	background: transparent !important;  
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.000em;
+	font-weight: bold;
+}
+.cardworkspacetitle , .workspacetitle{ /* header workspace title */
+    color: #000;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.083em;
+	font-weight: bold;
+}
+.cardusername{
+	color:#333;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.000em;
+	font-weight: bold;
+	line-height:15px;
+}
+.cardlastlogin{  
+	 color: #707173;
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	line-height:15px;
+}
+.cardlogo{
+	background: url("../images/headerlogo.png") no-repeat scroll right center transparent;	
+	width:165px;
+	float:left;
+}
+
+.carduserdetails-con{
+    vertical-align:middle;
+}
+
+.MASTER_SCREEN, .MASTER_SCREEN .x-tab-panel-body{
+	background-color: transparent !important;
+}
+body.x-border-layout-ct{
+   background: url("../images/layoutcard/bg.jpg") center !important;
+   background-size: cover !important;
+   font-size:12px;
+}
+.MASTER_SCREEN .x-panel-body {
+	  background-color: transparent  !important;
+	border-color: transparent !important;
+}
+.footerCARD .x-panel-body{
+	background: #FFF!important;
+}
+.cardwsiconDefault {
+    background-image: url("../images/layoutcard/workspace-iconsprite_new.png");
+    background-repeat: no-repeat;
+}
+.cardws_text {
+	color: #000000;
+    font-family: Arial;
+    font-size:1.00em;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+
+/* widget catalog container and widgtet/app icon default style */
+.cardcatalog_icon_holder {
+	background: transparent;
+}
+.cardcatalog_iconDefault {
+	background-image: url("../images/layoutcard/catlicon-sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -184px;
+}
+.master {
+  background-image: url("../images/layoutcard/catlicon-sprite.png");
+    background-repeat: no-repeat;
+    background-position:0px 0px;
+}
+.CT_CALENDER_WGT{
+	background-position: 0 -184px
+}
+.CT_PAGING_WGT{
+	  background-position:0 -221px;
+}
+.CT_MAP_WGT{
+	background-position: 0 -148px;
+}
+.cardwidgetcatalogue_mid .x-panel-body {
+    background: transparent !important;
+}
+.cardwidgetcatalogue_left {
+    background-image: url("../images/layoutcard/catalog-left.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.cardwidgetcatalogue_mid {
+    background-image: url("../images/layoutcard/catalog-mid.gif");
+    background-position: left top;
+    background-repeat: repeat-x;
+}
+.cardwidgetcatalogue_right {
+    background-image: url("../images/layoutcard/catalog-right.gif");
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+.cardlogout{
+	background:url(../images/layoutapp/logoff.png) 0px 0px no-repeat;
+	text-decoration:none !important;
+	color:#000;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:15px;
+}
+.cardlogouttext{
+	color:#707173;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:bold;
+	line-height:15px;
+}
+.cardsettings {
+    background: url("../images/layoutcard/preferences.png") no-repeat scroll right center;
+}
+
+.catalog_icon_text {
+    color: #000;
+	font-family: helvetica,arial,sans-serif;
+    font-size:0.917em;
+    font-weight: bold;
+    line-height: 12px;
+    margin-top: -2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.floatingbanner{
+  	background: url("../images/layoutcard/expand.png") no-repeat scroll 0 25px rgba(0, 0, 0, 0);
+  	z-index:999;
+} 
+
+.ACC_SERV_WSPACEMaster {
+    background-position: 0 -1143px;
+}
+.wsconCARD .DASHBOARD_WSMaster {
+    background-position: 0 -1648px;
+}
+.CFF_WSPACEMaster {
+    background-position: 0 -107px;
+}
+
+.message-window {
+    padding: 10px;
+    text-align:left;
+}
+.info-image {
+    background: url("../images/info-image.png") no-repeat 0 0px;
+    margin: 10px;
+}
+.INIT_PAY{
+	background-image: url("../images/initiate.png");	
+	background-repeat: no-repeat;
+	font-size: 1.000em !important;
+    font-weight: bold;
+}
+.MESSAGES{
+	background-image: url("../images/message.png");
+    background-position: 0 6px !important;
+    background-repeat: no-repeat;
+    font-size: 1.000em !important;
+    font-weight: bold;
+    padding-left: 35px !important;
+}
+.alert-count {
+    background: #1578B4;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-weight: bold;
+    left: 34px;
+    padding: 3px 6px 3px 5px;
+    position: absolute;
+    top: 4px;    
+}
+.error-image {
+    background: url("../images/error-image.png") no-repeat 0 0px;
+    margin: 10px;
+}

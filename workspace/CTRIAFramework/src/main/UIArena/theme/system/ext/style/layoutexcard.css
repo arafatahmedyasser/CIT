@@ -1,0 +1,80 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+
+.excardworkspacetitle { /* header workspace title */
+    color: #000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.250em;
+	font-weight:bold;
+	line-height:18px;
+}
+.excardusername{
+	color: #000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.083em;
+	font-weight:bold;
+	line-height:15px;
+}
+.excardlastlogin{  
+	color: #000;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.000em;
+	font-weight:bold;
+	line-height:15px;
+}
+.excardlogo{
+	background: url("../images/headerlogo.png") no-repeat scroll right center transparent; 	
+}
+.WIDGET_CATALOGUE_OWNER {
+    background: url("../images/layoutexcard/fisheyeapplayout.png") no-repeat scroll center 18px / 100% auto rgba(0, 0, 0, 0);
+}
+.excatalogiconDefault{
+    background-image: url(../images/layoutexcard/fisheye_menu_ws.png);
+}
+a.ux-fisheye-menu-item, a.app-ux-fisheye-menu-item{
+	font-size:1.000em;
+	font-weight:bold;
+	color: #000;
+} 
+a.ux-fisheye-menu-item span {
+	color: #000;
+}
+.excardheaderworkspace .excardwsicon {
+    background-image: url("../images/layoutexcard/workspace-icons-sprite.png");
+}
+.excardwslabel {
+    color: #000 !important;
+}
+.excardlogout{
+	background: url("../images/layoutexcard/logoff.png") no-repeat scroll left center transparent;
+	text-decoration:none !important;	
+}
+.excardlogouttext {
+    color: #000000;
+   font-size:0.917em;
+	font-weight:bold;
+	color: #000;
+	line-height:18px;
+	height: 20px;
+    float: left;
+}
+.excardheaderworkspace  .x-panel-mc{
+	background: transparent !important; 
+}
+.excarduserimage{
+	background:url(../images/layoutexcard/default.png) 0px 3px no-repeat;
+}
+.headerEXCARD .x-panel-body{
+	background: transparent !important; 
+}
+.footerEXCARD .x-panel-body{
+	background: transparent !important; 
+}
+.headerEXCARD .excardheaderworkspace .x-panel-ml, 
+.headerEXCARD .excardheaderworkspace .x-panel-mr{
+  	background-color: rgba(0, 0, 0, 0) !important; 
+} 
+.excardheaderworkspace{
+	background: #7bc0df !important; 
+}

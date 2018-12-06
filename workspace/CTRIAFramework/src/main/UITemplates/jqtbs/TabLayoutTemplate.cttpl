@@ -1,0 +1,15 @@
+{{!-- ct-TabLayout begins --}} {{!-- ct-tabbable div begins --}}
+<div class="tabbable ct-tab ct-tab-tm ct-tab-bs">
+	{{#if tabStripReq}} {{!-- ct-nav-tabs begin --}}
+	<ul class="{{tabStripClass}}">
+		{{#each tabStrip}}
+		<li data-item-id="{{tabStripId}}" tabindex={{tabStripIndex}} role="presentation" class="{{tabStripCls}} ct-tab__each ct-tab_each-tm ct-tab__each-bs">
+			<a class="{{tabStripAnchorClass}} ct-tab__txt ct-tab__txt-tm ct-tab__txt-bs" data-toggle='tab' href="javascript:void(0)"><span class="ct-tab__txtspan">{{tabStripLbl}}</span></a>
+		</li> {{/each}}
+	</ul>
+	{{!-- ct-nav-tabs end --}} {{/if}} {{!--ct-TabContent begins --}}
+	{{#tabContainerConf}}
+	<div data-item-id={{contDivId}} class="{{contDivClass}}"></div>
+	{{/tabContainerConf}} {{!--ct-TabContent ends --}
+</div>
+{{!-- ct-tabbable div ends --}} {{!-- ct-TabLayout ends --}}

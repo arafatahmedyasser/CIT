@@ -1,0 +1,6 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	<div data-item-id="displayfield" class="form-control {{#condchk visibleInd 'N'}} hidden{{/condchk}}"{{anchorStyle}}>
+		<span name="{{itemId}} ct-form__static">{{{fieldLabel}}}</span>
+	</div>
+	<div class='clearfix'></div>
+</div>

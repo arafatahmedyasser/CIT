@@ -1,0 +1,25 @@
+/*
+  Purpose : File contains all styles releated to sub-workspace layout.
+            keyword is "sws". all kind of sws structure should define in this file.
+  Contains: Section 1 --> TWO COLUMN LAYOUT
+            Section 2 --> [add title]
+            Section 3 --> [add title]
+            Section 4 --> [add title]                      
+ */
+/* 
+==========Section 1==========
+===== TWO COLUMN LAYOUT =====
+============================= 
+*/
+.ct-sws-twocol {
+	border: 1px solid;
+}
+
+.ct-sws-twocol__container {
+	padding: 5px;
+}
+/* 
+========section 2========
+===== [ADD TITLE] =======
+========================= 
+*/

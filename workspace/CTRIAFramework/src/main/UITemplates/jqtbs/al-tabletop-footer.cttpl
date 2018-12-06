@@ -1,0 +1,31 @@
+ {{!-- col-*-12 begins--}}
+ {{#if FOOTER_REQ}}
+<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-fixed-bottom ct-al__footer ct-al-tabletop__footer ct-al__footer-tm ct-al__footer-bs '>
+	{{!-- ct-al-tabletop__footer-wrap begins--}}
+	<div class='ct-al-tabletop__footer-container'>
+		{{!-- ct-al-tabletop__hscroll begins--}}
+		<div class='ct-al-tabletop__hscroll mCustomScrollbar' data-item-id='ct-al__tabletop-ws-list'>
+			{{!-- ct-al-wslink__container begins--}}
+			<ul class='ct-al__wslink-container'>
+				{{!-- ct-al-tabletop__each begins--}} {{#each WORKSPACES}}
+				<li class='ct-al__tabletop-each ct-al__tabletop-each-js' data-selection-id='{{WORKSPACE_ID}}'>
+					<div class='ct-al__wslink ct-al__wslink-tm ct-al-tabletop__ws-{{@index}}'>
+						{{!-- ct-al-wslink__each begins--}}
+						<div class="ct-al__wslink-each ct-al__wslink-each-tm">
+							<a class='col-md-12 col-sm-12 col-lg-12 col-xs-12 flaticon-default flaticon-{{WORKSPACE_ID}} f-table-top ct-al__wslink-icon-js' href='javascript:void(0)' dat-item-id='{{WORKSPACE_ID}}'></a> 
+							<a class='col-md-12 col-sm-12 col-lg-12 col-xs-12 ct-al__tabletop-wslink-txt ' href='javascript:void(0)' dat-item-id='{{WORKSPACE_ID}}'>{{WORKSPACE_DISPLAY_NM}}</a>
+							<div class='clearfix'></div>
+						</div>
+						{{!-- ct-al-wslink__each ends--}}
+					</div>
+				</li>
+				{{/each}} {{!-- ct-al-tabletop__each ends--}
+			</ul>
+			{{!-- ct-al-wslink__container ends--}}
+		</div>
+		{{!-- ct-al-tabletop__hscroll ends--}}
+	</div>
+	{{!-- ct-al-tabletop__footer-wrap ends--}}
+</div>
+{{/if}}
+{{!-- col-*-12 ends--}}

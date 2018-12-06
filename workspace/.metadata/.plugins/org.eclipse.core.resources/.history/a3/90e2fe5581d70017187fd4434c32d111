@@ -1,0 +1,102 @@
+package com.ccjp.creditmanagement;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+
+
+public class creditmgmn {
+
+	public static void main(String[] args) {
+
+		creditmgmn cd= new creditmgmn();
+
+	}
+
+
+	public void process() throws creditcardException{
+
+		///home/ahmed/Desktop
+		String readLine=null;
+		BufferedReader br =null;
+		creditVO cv=null;
+		Map<String,creditVO> amexCard=new HashMap<String,creditVO>();
+		Map<String,creditVO> visaCard=new HashMap<String,creditVO>();
+		Map<Integer,Map<String,creditVO>> finalOutput=new HashMap<Integer,Map<String,creditVO>>();
+		File f=new File("home"+File.separator+"ahmed"+File.separator+"Desktop"+File.separator+"cd.txt");
+		try {
+			if(f.exists()){
+				 br =new BufferedReader(new FileReader(f));
+				while((readLine=br.readLine())!=null){
+					cv=new creditVO();
+					String[] hh=readLine.split("\\|");
+					validate(hh[0]);
+					String creditCardNumber=hh[0];
+					String name=hh[1];
+					String payment=hh[2];
+					String paymentDate=hh[3];
+					String dueDate=hh[4];
+
+					SimpleDateFormat dd=new SimpleDateFormat("dd/MM/yyyy");
+
+					Date pd=dd.parse(paymentDate);
+					Date dud=dd.parse(dueDate);
+
+					if(creditCardNumber.charAt(0)=='4' && creditCardNumber.length()==16){
+						
+						
+					}
+
+
+
+				}
+			}
+
+		
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		throw new creditcardException("File Not Found Exception");
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		throw new creditcardException("IOException");
+	}
+		finally{
+			if(br!=null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+
+}
+
+
+private void validate(String cd) throws creditcardException {
+	if(cd!=null && (!"".equals(cd))){
+		if(cd.charAt(0)=='4' && cd.length()!=16){
+			throw new creditcardException("Invalid Credit Card");
+		}
+		if((cd.substring(0,2).equals("34") || cd.substring(0,2).equals("36") ) && cd.length()!=15){
+			throw new creditcardException("Invalid Credit Card");
+		}
+	}
+
+}
+
+}

@@ -1,0 +1,43 @@
+/*!
+ * Ext JS Library 3.0.0
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+.ux-mselect{
+    overflow:auto;
+    position:relative; /* for calculating scroll offsets */
+    zoom:1;
+    overflow:auto;	
+}
+.ux-mselect-item{
+    padding:2px;
+    white-space: nowrap;
+}
+.multiselecticon{
+	height:16px;
+	width:16px;	
+}
+/* item selector */
+.ux-form-multiselect .x-fieldset {
+	padding: 0px 0px 0 !important;
+	padding-left: 0px !important;
+}
+.cbxmultiselect-rightPanel {
+	text-align: left;
+}
+.cbxmultiselect-leftPanel {
+	text-align: right;
+}
+.cbx-itemselector .x-list-body dt {
+	white-space: normal;
+}
+.ux-form-multiselect .x-item-disabled *{
+    font-weight: bold !important;
+}
+.x-form-itemselector-body .x-form-item {
+    margin: 0;
+}
+.ux-form-multiselect .x-panel-tbar .x-toolbar{
+	padding:1px 1px 0px 1px;
+}

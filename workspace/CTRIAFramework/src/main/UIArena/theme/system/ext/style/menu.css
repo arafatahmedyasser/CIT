@@ -1,0 +1,102 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.x-menu {
+    background-color:#f0f0f0;
+	background-image:url(../images/menu/menu.gif);
+}
+
+.x-menu-floating{
+    border-color:#7D7D7D;
+}
+
+.x-menu-nosep {
+	background-image:none;
+}
+
+.x-menu-list-item{
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight: normal;
+}
+
+.x-menu-item-arrow{
+	background-image:url(../images/menu/menu-parent.gif);
+}
+
+.x-menu-sep {
+    background-color:#e0e0e0;
+	border-bottom-color:#fff;
+}
+
+a.x-menu-item {
+	color:#222;
+}
+
+.x-menu-item-active {
+    background-image: url(../images/menu/item-over.gif);
+	background-color: #f1f1f1;
+    border-color:#ACACAC;
+}
+
+.x-menu-item-active a.x-menu-item {
+	border-color:#ACACAC;
+}
+
+.x-menu-check-item .x-menu-item-icon{
+	background-image:url(../images/menu/unchecked.gif);
+}
+
+.x-menu-item-checked .x-menu-item-icon{
+	background-image:url(../images/menu/checked.gif);
+}
+
+.x-menu-item-checked .x-menu-group-item .x-menu-item-icon{
+    background-image:url(../images/menu/group-checked.gif);
+}
+
+.x-menu-group-item .x-menu-item-icon{
+    background-image:none;
+}
+
+.x-menu-plain {
+	background-color:#fff !important;
+}
+
+.x-menu .x-date-picker{
+    border-color:#AFAFAF;
+}
+
+.x-cycle-menu .x-menu-item-checked {
+    border-color:#B9B9B9 !important;
+    background-color:#F1F1F1;
+}
+
+.x-menu-scroller-top {
+    background-image:url(../images/layout/mini-top.gif);
+}
+
+.x-menu-scroller-bottom {
+    background-image:url(../images/layout/mini-bottom.gif);
+}
+
+/**
+ * RangeMenu Styles
+ **/
+.ux-rangemenu-gt {
+	background-image: url(../images/menu/greater_than.png);
+}
+
+.ux-rangemenu-lt {
+	background-image: url(../images/menu/less_than.png);
+}
+
+.ux-rangemenu-eq {
+	background-image: url(../images/menu/equals.png);
+}
+.ux-gridfilter-text-icon {
+	background-image: url(../images/menu/find.png);
+}

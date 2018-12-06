@@ -1,0 +1,32 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.helpbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 0 transparent !important;
+}
+.ExporttoExcelbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -48px transparent !important;
+}
+.ExporttoPDFbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -64px transparent !important;
+}
+.ExporttoCSVbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -32px transparent !important;
+}
+/**FW129EXPORTRTF001 - Starts*/
+.ExporttoRTFbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -128px transparent !important;
+}   
+/**FW129EXPORTRTF001 - Ends*/
+.ClearFiltersbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -80px transparent !important;
+}
+.Refreshbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -96px transparent !important;
+}
+.Printbtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -16px transparent !important;
+}.SwitchToMorebtn{
+  background: url("../images/showastoolbar/showastoolbar-sprite.gif") no-repeat scroll 0 -112px transparent !important;
+  
+}

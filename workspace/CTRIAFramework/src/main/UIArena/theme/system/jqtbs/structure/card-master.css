@@ -1,0 +1,244 @@
+/*
+  Purpose : Contains all common styles for the application layout
+  Contains: Logo,                    
+*/
+/* 
+=============================
+======== CARD MASTER ========
+============================= 
+*/
+
+.ct-al-card {
+	padding-top: 25px;	
+}
+
+.ct-al-card .ct-al__wslink-each {
+	border: 1px solid;
+}
+
+.ct-al-card .ct-al__wslink-each a {
+float: left;
+width: 100%;
+}
+
+ 
+.ct-al-card__wslink-icon {
+	height: 100px;
+	float: left;
+	width: 100%;
+	text-align: center;
+} 
+
+.ct-al-card__wslink-icon:before {
+	font-size: 70px !important;
+}
+
+.ct-al__wslink-txt {
+padding: 9px 0;
+float: left;
+width: 100%;
+}
+
+/* card layout layer level changes */
+
+.ct-al-card__header-container
+{
+	float:left;
+	width:100%;
+	position: fixed;
+	z-index:999;
+	transition:0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;	
+}
+
+.ct-al__card-user_details-cont
+{
+	list-style: none;
+	float: right;
+}
+
+.ct-al__card-user_details-cont a{
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.ct-al__card-user_details-cont li
+{
+	display: inline;
+}
+
+.ct-card-desktop__ws-user-img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ct-card-desktop__ws-user-img img{
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+.ct-card-desktop__ws-user-img-big {
+	margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+}	
+
+.ct-user.ct-card-desktop__ws-user-info {
+	display: none;
+	width: 320px;
+	position: fixed;
+	top: 85px;
+	z-index: 999;
+	right: 15px;
+}
+.ct-al-card__ws-pref_logout_cont {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 7px 0px;
+	border-top: 1px solid;
+	background: #F4f4f4;
+}
+.ct-al-card__ws-userinfo_hldr{
+	display: block;
+	box-shadow: 0px 0px 12px #333;
+}
+.ct-al-card__ws-user_txt{
+	text-align: left;
+}
+.ct-al-card__ws-userimg_hldr{
+	border-radius: 0px !important;
+	border: 1px solid;
+}
+
+.ct-al-card__ws-float_img{
+	margin-top: 8px;
+}
+
+.ct-card-desktop__ws-user-img {
+	padding: 10px 0px;
+	margin-right: 30px;
+}
+
+.ct-card-destop__ws-tooltip-arrow{
+	position: absolute;
+  	top: -7px;
+  	border-width: 0 7px 7px;
+  	border-color: transparent;
+  	border-style: solid;
+  	right: 13%;
+}
+
+.ct-card__ws-user-snippet {
+	text-align: left;
+	width: 100%;
+	padding: 0px;	
+}
+
+.ct-card__ws-user-name{
+	padding: 10px 0px;
+	font-weight: bold;
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+.btn.ct-al-card__ws-pref:before{
+	margin-left:0px;
+}
+
+.ct-card__ws-user-snippet > div> span > a {
+	padding: 10px;
+}
+
+/* #CONTENT_DIV changes only for card layout */
+
+.ct-card-headerbuffer .ct-global-menu {
+	position: absolute;
+	width: 100%;
+	z-index: 998;
+	margin-left: -15px;
+}
+
+.ct-card-headerbuffer #breadCrumb {
+	padding-top: 10px; 	/*	Also in workspaceContainer file to change the padding when workspace menu is not available */
+}
+
+/* Changes for sticky header */
+
+.ct-card-headerbuffer.ct-sticky_header {
+	margin-top: 50px;
+}
+
+.ct-al-card__header.ct-sticky_header{
+	height:50px;
+}
+
+.ct-logo.ct-sticky_header{
+	float: left;
+  	border-radius: 8px;
+  	padding: 5px;
+  	width: 40px;
+  	height: 40px;
+  	background: url('../images/CT-logo_small.png');
+  	font-size: 20px;
+  	margin: -2px 0px 0px 0px;
+  	background-repeat: no-repeat;
+}
+
+#HEADER_DIV ul.ct-sticky_header {
+  margin: 5px 0 0 0;
+}
+
+.ct-ws-title.ct-sticky_header{
+	line-height :32px;
+}
+
+.ct-card-desktop__ws-user-info.ct-sticky_header {
+	top:60px;
+}
+
+.ct-card-desktop__ws-user-img.ct-sticky_header {
+	padding: 0px;
+}
+
+.ct-card-desktop__ws-user-img.ct-sticky_header img{
+	width: 35px;
+	height: 35px;
+}
+
+/*Alignment for AppDock*/
+
+.ct-app-dock.ct-sticky_header {
+	margin-top:0px;
+	top:5px;
+}
+
+.ct-user__login-text {
+  font-size: 13px;
+}
+
+
+ .ct-al__card-user_details-cont {
+	margin-right: 0px;
+}
+
+.ct-al-card__ws-page .ct-al__card-user_details-cont {
+	margin-right: 30px;
+}
+
+.ct-al-card__home-page .ct-card-destop__ws-tooltip-arrow {
+	right: 13%;
+}
+
+.ct-al-card__ws-page .ct-card-destop__ws-tooltip-arrow {
+	right: 23%;
+}
+
+@media screen and (max-width:767px) {
+	.ct-user.ct-card-desktop__ws-user-info {
+		width: 275px;
+	}
+}

@@ -1,0 +1,15 @@
+package com.ccp.sample.dateHandling;
+
+import java.text.SimpleDateFormat;
+
+public class dateformattingAndParsing {
+
+	public static void main(String[] args) {
+	
+		String dd="26/11/2017";
+		SimpleDateFormat sf= new SimpleDateFormat("dd/MM/yyyy");
+		System.out.println(sf.parse(dd));
+
+	}
+
+}

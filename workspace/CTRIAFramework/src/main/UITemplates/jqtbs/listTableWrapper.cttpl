@@ -1,0 +1,12 @@
+<div name = "{{viewID}}" data-item-id="table-wrapper-container" class="table-wrapper-container">
+	<table data-item-id="tableref" class="table table-striped table-hover no-margin ct-listview ct-listview-tm">
+		<thead data-item-id="ct_listHead" class="ct_pagingHead"></thead>
+		<tbody data-item-id="ct_listBody" class="ct_pagingBody"></tbody>
+		<!-- <tfoot data-item-id="ct_listFoot" class="ct_pagingFoot"></tfoot>-->
+	</table>
+	<div data-item-id="ct_empty_content" class="ct_empty_content hidden">
+		<span class="ct-info_icon"></span> <span class="ct-info_text"></span>
+	</div>
+</div>
+<div data-item-id="ct_ListNavigation__{{viewID}}" class="panner ct_panLeft flaticon-previous flaticon-Carousel hidden" data-scroll-modifier='-1'></div>
+<div data-item-id="ct_ListNavigation__{{viewID}}" class="panner ct_panRight flaticon-next flaticon-Carousel hidden" data-scroll-modifier='1'></div>

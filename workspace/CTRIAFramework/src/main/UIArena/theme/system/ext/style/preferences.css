@@ -1,0 +1,61 @@
+
+/*** update preferences theme icons ***/
+
+.x-combo-list-item.icon-combo-item {
+    text-indent: 15px;
+}
+.ext-strict input.comboIcon-UPDATE_PREF_FORM-THEME-neural {
+    background: url(../images/appicons/neural.png) no-repeat 4px 6px;
+    text-indent: 20px!important;
+}
+.ext-strict input.comboIcon-UPDATE_PREF_FORM-THEME-blue {
+    background: url(../images/appicons/blue.png) no-repeat 4px 6px;
+    text-indent: 20px!important;
+}
+
+.ext-strict input.comboIcon-UPDATE_PREF_FORM-THEME-red {
+    background: url(../images/appicons/red.png) no-repeat 4px 6px;
+    text-indent: 20px!important;
+}
+
+.ext-strict input.comboIcon-UPDATE_PREF_FORM-THEME-canvas {
+    background: url(../images/appicons/canvas.png) no-repeat 4px 6px;
+    text-indent: 20px!important;
+}
+
+.ext-strict input.comboIcon-UPDATE_PREF_FORM-THEME-royalblue {
+    background: url(../images/appicons/royal_blue.png) no-repeat 4px 6px;
+    text-indent: 20px!important;
+}
+
+.comboIcon-UPDATE_PREF_FORM-THEME-neural {
+    background: url(../images/appicons/neural.png) no-repeat 3px 6px;
+    height: 20px;
+    line-height: 16px;
+}
+.comboIcon-UPDATE_PREF_FORM-THEME-red {
+    background: url(../images/appicons/red.png) no-repeat 3px 6px;
+    height: 20px;
+    line-height: 16px;
+}
+
+.comboIcon-UPDATE_PREF_FORM-THEME-blue {
+    background: url(../images/appicons/blue.png) no-repeat 3px 6px;
+    height: 20px;
+    line-height: 16px;
+}
+
+.comboIcon-UPDATE_PREF_FORM-THEME-canvas {
+    background: url(../images/appicons/canvas.png) no-repeat 3px 6px;
+    height: 20px;
+    line-height: 16px;
+}
+
+.comboIcon-UPDATE_PREF_FORM-THEME-royalblue {
+    background: url(../images/appicons/royal_blue.png) no-repeat 3px 6px;
+    height: 20px;
+    line-height: 16px;
+}
+*/
+/*** update preferences theme icons ends***/
+

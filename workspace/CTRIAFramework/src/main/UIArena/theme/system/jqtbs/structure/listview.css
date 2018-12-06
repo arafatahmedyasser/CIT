@@ -1,0 +1,294 @@
+/*
+  Purpose : File contains listview css.
+  Contains: This contains all structures which are uesd for rendering all the list views like pagination,grid and sort indicator.
+  			It also contain search tags.
+*/
+/* 
+=============================
+=========== LISTVIEW ========
+============================= 
+*/
+.ct-pagination .pagination {
+	margin: 0px;
+}
+
+.ct-listview th {
+	vertical-align: middle;
+}
+.ct-listview thead .ct-app__tools {
+    float: right;
+}
+.ct-not_sys_view_id{
+	padding-left:33px;
+}
+/* sorting indicator */
+.sort-ind {
+	padding-left: 5px;
+	
+
+}
+.ct-list-header-action-padding {
+	padding-top:8px;
+}
+.ct-list-table-action-padding,.ct-list-tool-padding{
+	padding-left:0px;
+	padding-right:0px;
+}
+._header_title{
+width: 75%;
+float: left;
+}
+
+._sort_icon{
+width: 25%;
+float: right;
+}
+
+.ct-padding-top-tr-paging{
+	border-top: 1px solid;
+}
+.ct-padding-filter-container {
+	
+    padding-top: 8px;
+    padding-bottom: 8px;
+	
+}
+
+.ct-footer__container {
+	
+    padding: 8px;
+    background : #E2E2E2;
+    border-top : 1px #ddd;
+	
+}
+
+
+
+
+
+/* added with table prefixed for win the specificity race */
+.ct-listview thead > tr > th, table.ct-listview thead > tr > th{ 
+	vertical-align:top;
+}
+
+/*
+=============================
+=== compact view (Mobile) ===
+=============================
+*/
+
+
+
+
+.ct-mobile__title {
+	position: fixed;
+	top: 0px;
+	display: inline-block;
+	font-size: 1.3em;
+	line-height: 1.222;
+	height: 33px;
+	width: 100%;
+	padding: 6px 5px;
+	overflow: hidden;
+	z-index: 1;
+}
+ .ct-listview-key::after{
+	padding: 0 0px;
+	float: right;
+	vertical-align: top;
+	position: absolute;
+	top: 0px;
+	right: 2px;
+}
+ .ct-listview-key{
+	padding: 0 8px 8px 0;
+	box-sizing: border-box;
+	position: relative;
+	width: 9em;
+}
+ .ct-listview-val{
+	font-size: 1em;
+}
+
+
+/*
+=====================
+=== Search Tags  ====
+=====================
+*/
+
+.ct-badge__each{
+  float:left;
+  line-height:1.222;
+  margin-right:8px;
+  margin-bottom:3px;
+  display: inline-flex; /* New Browser */
+  display:inline-block; /* Fall Back */
+  border-radius: 5px;
+}
+
+.ct-badge__txt {
+  display: inline-block;
+  padding: 4px 8px;
+}
+.ct-filter-badge {
+	margin-right : 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+
+.ct-badge__action {
+  margin-left: -3px;
+  padding: 1px 5px 3px 5px;
+  display: inline-block;
+}
+/*
+======================
+===  Break title  ====
+======================
+*/
+.ct-listview__header-title{
+	display:inline-block;/*width:100%;*/
+}
+.ct-listview__header-action{
+	 display: block;
+ 	 width: 100%;
+ 	 float: left;
+}
+/*
+======================
+===  Applying css for scrollbar
+======================
+*/
+.ct-scroll {
+	overflow-y :scroll;
+}
+.show_hide_menu {
+	left:0 !important;
+	right:auto !important;
+}
+
+
+/*
+======================
+===  Action Icons  ====
+======================
+*/
+.ct-detailaction-fld {
+/* 	background : url('../images/detailed_action.png'); */
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	font-weight: bold;
+}
+
+.ct-contextaction-fld {
+	/*background : url('../images/mouse_click_right.png');*/
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+}
+
+/*
+========================
+===  Context App  ====
+========================
+*/
+
+.ct-context-app {
+	list-style: none;
+}
+
+.ct-context-app li {
+	padding: 10px 0px;
+	font-size: 17px;
+}
+
+/*
+========================
+===  Context Icons  ====
+========================
+*/
+.ct-paging_context-menu {
+	text-decoration: underline;
+}
+
+.ct-paging_context-menu__SAVE {
+	background : url('../images/save.jpg');
+	display: inline-block;
+    	height: 16px;
+	width: 16px;	
+}
+
+.ct-paging_context-menu__CANCEL {
+	background : url('../images/cancel.png');
+	display: inline-block;
+    	height: 16px;
+	width: 16px;		
+}
+
+.ct-paging_context-menu__REFRESH {
+	background : url('../images/refresh.png');
+	display: inline-block;
+    	height: 16px;
+	width: 16px;		
+}
+
+.ct-paging_action-column {
+	padding: 0px;
+}
+
+.ct-liveview_navigator {
+	margin:0px;
+}
+/*
+=======================================
+======== Paging Grid 	===============
+=======================================
+
+*/
+.yscroll-wrapper-container {
+	padding-left : 0px;
+	padding-right : 0px;
+}
+.ct-paging-action{
+	min-width : 60px;
+} 
+.ct_paging_struc{
+	padding-right : 4px;
+} 
+    
+    .ct_list-toolbar > div[data-filterbadgecontainer] {
+     	background-color: #ECECEC;
+    	border-top: 1px solid #ddd;
+    }
+
+/*
+===============================================
+======== Advanced Grouping Grid ===============
+===============================================
+
+*/
+    
+ .ct-listview__summary-title, .group_headerData {
+ 
+ 	font-weight	: bold;
+ 
+ }
+ @media screen and (max-width:767px) {
+ 	.ct-mobile-view-filer-form{
+ 	float:left;
+ 	}
+ 	.ct-float-filter{
+ 	padding-bottom:0px;
+ 	}
+ 	.ct-mobile-filter-padd{
+ 	margin-bottom: 5px !important;
+ 	}
+ }
+ 
+ .btn-save-cancel{
+     margin-left: 12px;
+    margin-right: 12px;
+ }

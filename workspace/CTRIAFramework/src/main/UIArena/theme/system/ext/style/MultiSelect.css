@@ -1,0 +1,64 @@
+/*!
+ * Ext JS Library 3.0.0
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+.ux-mselect{
+    background:white;
+}
+
+.ux-mselect-item{
+    font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.000em;
+	font-weight: normal;
+    border:1px solid #fff;
+    cursor:pointer;
+}
+
+.ux-mselect-selected{
+	border:1px dotted #a3bae9 !important;
+    background:#DFE8F6;
+    cursor:pointer;
+}
+
+.x-view-drag-insert-above { 
+    border-top:1px dotted #3366cc; 
+} 
+.x-view-drag-insert-below { 
+    border-bottom:1px dotted #3366cc; 
+} 
+/* Styles used by Ext.ux.form.ItemSelector */
+.x-form-multiselect-body .x-boundlist .x-mask {
+    background: none;
+}
+.x-form-itemselector-top, .iconTop {
+    background-image: url(../images/multiselect/top2.gif);
+}
+.x-form-itemselector-up, .iconUp {
+    background-image: url(../images/multiselect/up2.gif);
+}
+.x-form-itemselector-add, .iconRight {
+    background-image: url(../images/multiselect/right2.gif);
+}
+.x-form-itemselector-remove, .iconLeft {
+    background-image: url(../images/multiselect/left2.gif);
+}
+.x-form-itemselector-down, .iconDown {
+    background-image: url(../images/multiselect/down2.gif);
+}
+.x-form-itemselector-bottom, .iconBottom {
+    background-image: url(../images/multiselect/bottom2.gif);
+}
+ /* CBX-ITEMSELECTOR starts*/
+.ux-form-multiselect .x-toolbar {
+	border-bottom: 1px dotted #B5B8C8 !important;
+}
+.ux-form-multiselect .x-item-disabled * {
+	color: #4C566C !important;
+	font-weight: bold !important;
+}
+.ux-mselect-selected {
+	background-color: #EEEEEE;
+}
+/* CBX-ITEMSELECTOR Ends*/

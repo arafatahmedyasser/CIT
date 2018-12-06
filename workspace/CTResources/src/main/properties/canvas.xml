@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<validate>
+
+	<VSBLTY_ACTION_APPSTORE_SAVE>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_PRODUCT</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_SUB_PRODUCT</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">INPUT_FUNCTION_CODE</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">PRODUCT_NAME</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">PAGE_CODE_TYPE</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">INPUT_ACTION</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="25" inclusive=" -/:_">WORKSPACE_DISPLAY_NM</fieldType>
+
+	</VSBLTY_ACTION_APPSTORE_SAVE>
+
+	<VSBLTY_ACTION_APPSTORE_DELETE>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_PRODUCT</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_SUB_PRODUCT</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">INPUT_FUNCTION_CODE</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">PRODUCT_NAME</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">PAGE_CODE_TYPE</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">INPUT_ACTION</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="40" inclusive=" -/:_">WORKSPACE_ID</fieldType>
+
+	</VSBLTY_ACTION_APPSTORE_DELETE>
+
+	<VSBLTY_ACTION_APPSTORE_INIT_ACTION>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_PRODUCT</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="20" inclusive=" -/:_">INPUT_SUB_PRODUCT</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">INPUT_FUNCTION_CODE</fieldType>
+		<fieldType type="XAN" specialCharacter="" size="20"
+			inclusive=" -/:_">PRODUCT_NAME</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">PAGE_CODE_TYPE</fieldType>
+		<fieldType type="XAN" mandatory="true" specialCharacter=""
+			size="30" inclusive=" -/:_">INPUT_ACTION</fieldType>
+
+	</VSBLTY_ACTION_APPSTORE_INIT_ACTION>
+</validate>

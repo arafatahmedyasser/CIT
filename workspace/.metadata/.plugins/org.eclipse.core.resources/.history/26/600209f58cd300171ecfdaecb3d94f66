@@ -1,0 +1,12 @@
+package com.ccp.sample.coll;
+
+import java.util.Date;
+
+public class Employee {
+	
+	private String empNme;
+	private int empId;
+	private Date joiningDate;
+	private Float sal;
+
+}

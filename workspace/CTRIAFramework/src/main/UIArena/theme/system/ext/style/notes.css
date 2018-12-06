@@ -1,0 +1,24 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.notes-menu .x-panel-body{
+	background:#FFFFD9;
+}
+.notes-menu .x-panel-body textarea.x-form-field {
+	background:#FFFFC8;
+	background-image:none;
+	border-color:#FFFFD9;
+}
+.notes-menu textarea.x-form-focus {
+	background:#FFFFC8!important;
+	background-image:none;
+	background-color:#FFFFC8!important;
+	border-color:#FFFFD9;
+}
+
+.notes-menu .x-form-text {
+    background: none repeat scroll 0 0 #FFFFD9;
+    border-color: #FFFFD9;
+    padding-bottom: 0;
+    padding-top: 2px;
+}

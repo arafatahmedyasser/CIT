@@ -1,0 +1,21 @@
+{{#if totalResultInd}}
+<div class="col-sm-12 col-xs-12 col-lg-12 ct-footer__container">
+		<div class="text-primary pull-right">
+			{{pagingRecords.displaying}} {{pagingRecords.from}} - <span data-item-id="ct_pagingFoot_to">{{pagingRecords.to}}</span>
+			{{pagingRecords.of}} <span data-item-id="ct_pagingFoot_total">{{pagingRecords.total}}</span>
+		</div>
+</div>
+{{/if}}
+
+{{!--<!-- {{#if pagingRecords}}
+<tr>
+	<td colspan="{{pagingRecords.colLen}}">
+		<div class="text-primary pull-right">
+			{{pagingRecords.displaying}} {{pagingRecords.from}} - <span data-item-id="ct_pagingFoot_to">{{pagingRecords.to}}</span>
+			{{pagingRecords.of}} <span data-item-id="ct_pagingFoot_total">{{pagingRecords.total}}</span>
+		</div>
+	</td>
+</tr>
+{{/if}}-->--}}
+
+

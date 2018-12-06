@@ -1,0 +1,87 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.payments_submenus{
+padding:1px 3px ;
+padding-bottom:4px;
+}
+
+.lms_submenus_marginR{
+margin-right:5px;
+}
+.menu_arrow{
+width:16px !important;
+height:16px !important;
+}
+.x-portal .x-panel-dd-spacer {
+    margin-bottom:0px;
+}
+.x-portlet {
+    margin-bottom:5px;
+    margin-right:2px;
+    margin-left:2px;
+    border-width:1px;
+}
+/* Clean up the look of the portlets */
+.x-portlet .x-panel-ml {
+    padding-left:0px;
+}
+.x-portlet .x-panel-mr {
+    padding-right:0px;
+}
+.x-portlet .x-panel-bl {
+    padding-left:0px;
+}
+
+.x-portlet .x-panel-br {
+    padding-right:0px;
+}
+
+.x-portlet .x-panel-mc {
+    padding-top:0px;
+}
+.x-portlet .x-panel-bc .x-panel-footer {
+    padding-bottom:2px;
+}
+/* CHG_WGT_RESIZE - starts */
+.x-portlet .x-panel-nofooter .x-panel-bc {
+    height:1px;
+}
+.x-portal .x-portal-column {
+    padding: 1px 0 0 0;
+}
+
+/* Temporary Patch for Bug ??? gt lt eq  */
+.x-menu-list-item-indent .x-menu-item-icon {
+position: relative;
+top: 0px;
+left: 3px;
+margin-right: 10px;
+}
+/*CHG_CBT_Q2 FIX STARTS  TC#15 Filter icon and spacing */
+.hide-sf{ font-size:0px!important;line-height:0px!important; height:0px!important; }
+/*CHG_CBT_Q2 FIX ENDS  TC#15 Filter icon and spacing  */
+li.x-menu-list-item-indent {padding:0px 0px 0px 0px;}
+.noborder-icon-text .x-btn-tl, .noborder-icon-text .x-btn-tr, .noborder-icon-text .x-btn-tc, .noborder-icon-text .x-btn-ml,.noborder-icon-text .x-btn-mr,.noborder-icon-text .x-btn-mc, .noborder-icon-text .x-btn-bl,.noborder-icon-text .x-btn-br, .noborder-icon-text  .x-btn-bc{
+	background-image:none!important;  }
+.noborder-icon-text	.x-btn-mc em.x-btn-arrow{	background-image:none; }
+.noborder-icon-text .x-btn-mc .x-btn-text{padding:0 0 2px 22px;}
+
+.noborder-icon-text .x-btn-over .x-btn-ml, .noborder-icon-text .x-btn-over .x-btn-mc, .noborder-icon-text  .x-btn-over .x-btn-tc, .noborder-icon-text .x-btn-over .x-btn-tr, .noborder-icon-text .x-btn-over .x-btn-tl,
+ .noborder-icon-text .x-btn-over .x-btn-ml, .noborder-icon-text .x-btn-over .x-btn-mr, .noborder-icon-text .x-btn-over .x-btn-br, .noborder-icon-text .x-btn-over .x-btn-bl, .noborder-icon-text .x-btn-over .x-btn-bc{
+background-image:none!important;height:0;width:0;
+}
+.noborder-icon-text .x-btn-mc .x-btn-icon-small-left, .noborder-icon-text .x-btn-mc .x-btn-text{
+	padding-left:25px;
+	height:25px;
+	text-transform:uppercase;	
+	font-weight:normal;
+}
+.iportal-menu-item .x-btn-mc .x-btn-icon-small-left, .noborder-icon-text .x-btn-mc .x-btn-text{
+	padding-left:25px;
+	height:25px;
+	
+}
+
+
+

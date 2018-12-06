@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+	<!-- Zolog Search queries -->
+	<resultMap id="GET_ZOLOG_SEARCH_MAP" class="java.util.HashMap">
+		<result property="ITEM_ID" nullValue="" column="ITEM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ITEM_TYPE" nullValue="" column="ITEM_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_ID" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WS_MENU_ID" nullValue="" column="WS_MENU_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DISPLAY_KEY_NM" nullValue="" column="DISPLAY_KEY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<select id="ZOLOG_SEARCH_MAP_SELECT_ITEMS" parameterClass="java.util.HashMap"
+		resultMap="GET_ZOLOG_SEARCH_MAP">
+		SELECT
+		ZM.ITEM_ID,
+		ZM.ITEM_TYPE,
+		ZM.WORKSPACE_ID,
+		ZM.WS_MENU_ID,
+		CASE
+		WHEN ZM.ITEM_TYPE='WIDGET' AND WD.CONTAINER_FLAG='Y'
+		THEN WD.WGT_DISPLAY_NM
+		WHEN ZM.ITEM_TYPE='WIDGET' AND WD.CONTAINER_FLAG='N' THEN
+		VD.VIEW_DISPLAY_NM
+		WHEN ZM.ITEM_TYPE='FORM' THEN FD.FORM_TITLE
+		END
+		DISPLAY_KEY_NM
+		FROM
+		ZOLOG_SEARCH_MAP ZM ,WIDGET_DEFINITION
+		WD,VIEW_DEFINITION VD,FORM_DEFINITION FD where
+		WD.WIDGET_ID(+) =ZM.ITEM_ID
+		AND
+		VD.VIEW_ID(+)=WD.DEFAULT_VIEW_ID
+		AND
+		FD.FORM_ID(+)=ZM.ITEM_ID
+	</select>
+
+
+</sqlMap>

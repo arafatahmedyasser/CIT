@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+
+
+	<resultMap id="GET_FORM_CONTAINER_DEFN_RESULTMAP" class="java.util.HashMap">
+		<result property="CONTAINER_ID" nullValue="" column="FCD_CONTAINER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_ID" nullValue="" column="FCD_FORM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WINDOW_TITLE" nullValue="" column="FCD_WINDOW_TITLE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="FCD_BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WINHEIGHT" nullValue="" column="FCD_WINHEIGHT"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="WINWIDTH" nullValue="" column="FCD_WINWIDTH"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="EXPORT_IND" nullValue="" column="FCD_EXPORT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CLOSED_IND" nullValue="N" column="FCD_CLOSED_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRINT_IND" nullValue="N" column="FCD_PRINT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HELP_IND" nullValue="N" column="FCD_HELP_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MODAL_IND" nullValue="Y" column="FCD_MODAL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ACTION_ID" nullValue="" column="FCDA_ACTION_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHANNEL_ID" nullValue="" column="FCDA_CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FCD_CHANNEL_ID" nullValue="" column="FCD_CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ACTION_TYPE" nullValue="" column="FCDA_ACTION_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BLOCK_POSITION" nullValue=""
+			column="FCDA_BLOCK_POSITION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="FCDA_POSITION"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="CONTEXT_FORM_RENDER" nullValue=""
+			column="FORM_RENDER_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+	</resultMap>
+
+	<select id="FORM_CONTAINER_MGR_FRMWK_SELECT_GET_FORM_CONTAINER_DEFN"
+		parameterClass="java.util.HashMap" resultMap="GET_FORM_CONTAINER_DEFN_RESULTMAP">
+		SELECT
+		FD.CONTAINER_ID
+		FCD_CONTAINER_ID,
+		FD.FORM_ID FCD_FORM_ID,
+		FD.WINDOW_TITLE
+		FCD_WINDOW_TITLE,
+		FD.BUNDLE_KEY FCD_BUNDLE_KEY,
+		FD.WINHEIGHT
+		FCD_WINHEIGHT,
+		FD.WINWIDTH FCD_WINWIDTH,
+		FD.EXPORT_IND FCD_EXPORT_IND,
+		FD.CLOSED_IND FCD_CLOSED_IND,
+		FD.PRINT_IND FCD_PRINT_IND,
+		FD.HELP_IND FCD_HELP_IND,
+		FD.MODAL_IND
+		FCD_MODAL_IND,
+		FDA.ACTION_ID FCDA_ACTION_ID,
+		FDA.CHANNEL_ID
+		FCDA_CHANNEL_ID,
+		FD.CHANNEL_ID FCD_CHANNEL_ID,
+		FDA.ACTION_TYPE
+		FCDA_ACTION_TYPE,
+		FDA.BLOCK_POSITION FCDA_BLOCK_POSITION,
+		FDA.POSITION
+		FCDA_POSITION,
+		FD.FORM_RENDER_TYPE FORM_RENDER_TYPE,
+		FDA.EVENT_ID EVENT_ID
+		FROM FORM_CONTAINER_DEFINITION FD
+		left join
+		FORM_CONTAINER_ACTION_MAP FDA
+		on FD.CONTAINER_ID=FDA.CONTAINER_ID
+		ORDER BY FD.CONTAINER_ID,FDA.POSITION
+		</select>
+	<!--Form Container Definition queries -->
+	<resultMap
+		id="FORM_CONTAINER_MGR_FRMWK_SELECT_GET_FC_TOOLS_MAP_RESULT_MAP"
+		class="java.util.HashMap">
+		<result property="TOOL_ID" nullValue="" column="TOOL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOOL_DESCRIPTION" nullValue=""
+			column="TOOL_DESCRIPTION" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="FORM_CONTAINER_MGR_FRMWK_SELECT_GET_FC_TOOLS_MAP"
+		resultMap="FORM_CONTAINER_MGR_FRMWK_SELECT_GET_FC_TOOLS_MAP_RESULT_MAP">
+		select
+		TOOL_ID,
+		TOOL_DESCRIPTION
+		from
+		FORM_CONTAINER_TOOLS_MAP
+		WHERE CHANNEL_ID ='A' OR CHANNEL_ID LIKE '%' + #CHANNEL_ID# + '%'
+	</select>
+</sqlMap>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="com.ccp.sample.coll.Employee"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern"/>
+<fullyQualifiedTypeName name="java.util.regex.Matcher"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.stream.Collector"/>
+<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.stream.Stream"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+<fullyQualifiedTypeName name="java.time.chrono.Chronology"/>
+<fullyQualifiedTypeName name="java.util.function.Function"/>
+<fullyQualifiedTypeName name="java.util.function.Consumer"/>
+<fullyQualifiedTypeName name="java.util.function.BiConsumer"/>
+<fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+</qualifiedTypeNameHistroy>

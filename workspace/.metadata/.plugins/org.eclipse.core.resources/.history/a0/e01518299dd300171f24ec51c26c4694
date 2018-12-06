@@ -1,0 +1,117 @@
+package com.ccp.sample.coll;
+
+import java.util.Comparator;
+import java.util.Date;
+
+public class Employee implements Comparable<Employee>{
+	
+	private String empName;
+	private int empId;
+	private Date joiningDate;
+	private Float sal;
+	
+	public Employee(String empName,int empId,Date jDate,Float sal){
+		this.empName=empName;
+		this.empId=empId;
+		this.joiningDate=jDate;
+		this.sal=sal;
+		
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public Date getJoiningDate() {
+		return joiningDate;
+	}
+
+	public void setJoiningDate(Date joiningDate) {
+		this.joiningDate = joiningDate;
+	}
+
+	public Float getSal() {
+		return sal;
+	}
+
+	public void setSal(Float sal) {
+		this.sal = sal;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empName=" + empName + ", empId=" + empId
+				+ ", joiningDate=" + joiningDate + ", sal=" + sal + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((joiningDate == null) ? 0 : joiningDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Employee)) {
+			return false;
+		}
+		Employee other = (Employee) obj;
+		if (joiningDate == null) {
+			if (other.joiningDate != null) {
+				return false;
+			}
+		} else if (!joiningDate.equals(other.joiningDate)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public int compareTo(Employee obj) {
+		// TODO Auto-generated method stub
+		Employee other = (Employee) obj;
+		return empName.compareToIgnoreCase(obj.empName);
+		
+	}
+	
+	public static Comparator<Employee> comp=new Comparator<Employee>() {
+
+		@Override
+		public int compare(Employee o1, Employee o2) {
+			// TODO Auto-generated method stub
+			return o1.empName.compareToIgnoreCase(o2.empName)
+			/*if(o1.joiningDate.after(o2.joiningDate)){
+				return 1;
+			}
+			if(o1.joiningDate.before(o2.joiningDate)){
+				return -1;
+			}
+			return 0;*/
+		}
+	};
+	
+	
+	
+
+}

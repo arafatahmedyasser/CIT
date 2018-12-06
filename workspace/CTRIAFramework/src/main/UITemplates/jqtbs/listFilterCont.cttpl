@@ -1,0 +1,77 @@
+ 
+<div class="col-sm-12 col-xs-12 col-lg-12 ct-padding-filter-container">
+
+      <div data-filterformcontainer style="display:none;">
+    		{{!-- form-inline begins --}}
+               <form class="form-inline pull-left" data-filter-form="true" method="post">
+               </form>
+               {{!-- form-inline ends --}}
+       </div>
+       {{#if FILTER_IND}}
+		<div class="ct-list-header-action-padding">
+		
+		<div class="dropdown pull-right">
+		{{!-- clear filter begins --}}
+			<span class="{{#unless FILTERS}}hidden {{/unless}}ct-app__tools-filter-con"><a data-item-id="list_clearFilterTool" class="ct-app__tools flaticon-filter-o flaticon-fliter-align" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{this.toolTipforClearFilter}}"><span class="flaticon_clearfilter">x</span></a></span>
+        {{!-- clear filter ends --}}
+		</div>
+		
+         <div class="dropdown pull-right">
+             <a href="javascript:void(0);" class="dropdown-toggle" data-xtype="{{this.DATA_TYPE}}" data-toggle="dropdown" id="filter-menu-{{@index}}">
+               	<span data-toggle="tooltip" data-placement="auto" data-original-title="{{this.toolTipforFilter}}" class="ct-app__tools flaticon-filter-o pull-right"></span>
+              </a>
+           <ul class="dropdown-menu" role="menu" data-icn-action="filter">
+			{{#each HEADER_COLS}}
+			{{#if FILTER_ENABLED}}
+			<li {{#if this.SUBMENU}}data-menus {{else}}data-menu  {{/if}}data-colId="{{this.COL_ID}}" data-column-id="{{this.TH_INDEX}}"  data-xtype="{{this.DATA_TYPE}}" class="{{#if this.SUBMENU}}dropdown-submenu{{/if}} pull-left"><a href="javascript:void(0);">{{HEADER_VAL}}</a>
+				   {{#if this.SUBMENU}}
+               		{{!-- dropdown-menu begins --}}
+               			<ul class="dropdown-menu" role="menu" aria-labelledby="filter-menu-{{@index}}">
+               				{{#each this.SUBMENU}}
+               					<li data-submenu="{{this.key}}" data-colId="{{../this.COL_ID}}" data-xtype="{{../this.DATA_TYPE}}"><a role="menuitem" href="javascript:void(0)">{{this.display_name}}</a></li>
+               				{{/each}}
+               			</ul>
+               		{{!-- dropdown-menu ends --}}
+               		{{/if}}
+			</li>
+			{{/if}}
+			{{/each}}
+			</ul>
+		</div>
+		</div>
+		{{/if}}
+  </div>
+      {{#if_Or GROUPCOLS FILTERS}}
+         <div data-filterbadgecontainer class="col-sm-12 col-xs-12 col-lg-12 ct-badge__container ct-padding-filter-container">
+         {{#if FILTERS}}
+         <span class="pull-left ct-filter-badge"> Filter by  </span>
+         		{{!-- ct-badge ct-badge-tm begins --}}
+         		<div class="ct-badge ct-badge-tm pull-left">
+         				{{#each FILTERS}}
+         					{{!-- ct-badge__each ct-badge__each-tm begins --}}
+         					<div class="ct-badge__each ct-badge__each-tm ct-filterbadge pull-left">
+  								<a href="javascript:void(0)" class="ct-badge__txt" data-datatype="{{this.cfg.xType}}" data-searchType="{{this.cfg.searchType}}" data-column="{{this.cfg.column}}"><strong>{{this.label}}</strong> {{this.value}}</a>
+  								<a href="javascript:void(0)" data-filter-id="{{this.ID}}" class="ct-badge__action">x</a>
+							</div>
+							{{!-- ct-badge__each ct-badge__each-tm ends --}}
+         				{{/each}}
+         			{{!-- clearfix begins --}}<div class="clearfix"></div>{{!-- clearfix ends --}}
+         		</div>
+         		{{!-- ct-badge ct-badge-tm ends --}}
+         	{{/if}}
+         	{{#if GROUPCOLS}}
+         <span class="pull-left ct-filter-badge"> Group by  </span>
+		{{#each GROUPCOLS}}
+			{{!-- ct-badge__each ct-badge__each-tm begins --}}
+			<div class="ct-badge__each ct-badge__each-tm ct-groupbadge">
+			
+				<a href="javascript:void(0)" class="ct-badge__txt">{{this.HEADER_VAL}}</a>
+				<a href="javascript:void(0)" data-group-id="{{this.COL_ID}}" class="ct-badge__action">
+				  x
+				</a>
+			</div>
+			{{!-- ct-badge__each ct-badge__each-tm ends --}}
+		{{/each}}
+		{{/if}}
+         </div>
+         {{/if_Or}}

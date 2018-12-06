@@ -1,0 +1,141 @@
+ /*
+  Purpose : File contains table top css.
+  Contains: This contains all structures which are related to rendering of the table-top application layout. 
+*/
+/* 
+=============================
+======== TABLE-TOP AL ========
+============================= 
+*/
+
+
+
+.ct-al-tabletop__hscroll {
+	white-space: nowrap;
+}
+.ct-al-tabletop__footer{
+	margin-bottom:0px;
+	padding: 0px;
+}
+
+.ct-al-tabletop__footer .ct-al__tabletop-wslink-txt{
+	font-size: 13px;
+	padding: 4px 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	width: 100%;
+}
+
+.ct-al-tabletop__footer .ct-al__wslink-icon {
+	height: 80px;
+}
+
+
+.ct-al__tabletop-each
+{
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	width: 186px;
+	border: 1px solid;
+}
+.ct-al-tabletop__footer-container{
+	height: 60px;
+}
+
+.tabletop-collapse-mobile{
+	padding-left:0px;
+	padding-right:0px;
+	    
+}
+.ct-tabletop__ws-user-snippet{
+	text-align: left;
+	width: 100%;
+	padding: 0px;
+	
+}
+.ct-table-top-ws-header{
+	text-align:center;
+}
+.ct-ws-title{
+	float:none;
+}
+.ct-tabletop-desktop__ws-user-img-big {
+	margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+}
+.ct-al-tabletop__ws-float_img{
+	margin-top: 8px;
+}
+.ct-al-tabletop__ws-userimg_hldr{
+	border-radius: 0px !important;
+	border: 1px solid;
+}
+.ct-tabletop__ws-user-name{
+	padding: 10px 0px;
+	font-weight: bold;
+	line-height: 1.5;
+	font-size: 16px;
+}
+.ct-al-tabletop__ws-pref_logout_cont {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 7px 0px;
+	border-top: 1px solid;
+	background: #F4f4f4;
+}
+.ct-al__tabletop-desktop-cont
+{
+	list-style: none;
+	float: right;
+	margin-right: 30px;	
+}
+.ct-tabletop-desktop__ws-user-img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ct-tabletop__ws-user-snippet{
+	text-align: left;
+	width: 100%;
+	padding: 0px;
+}
+.ct-user.ct-tabletop-desktop__ws-user-info {
+	display: none;
+	width: 320px;
+	position: fixed;
+	top: 85px;
+	z-index: 999;
+	right: 15px;
+	box-shadow: 0px 0px 12px #333;
+}
+.ct-tabletop-destop__ws-tooltip-arrow{
+	position: absolute;
+  	top: -7px;
+  	border-width: 0 7px 7px;
+  	border-color: transparent;
+  	border-style: solid;
+  	right:23%;
+}
+.ct-tabletop-desktop__ws-user-img img{
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.ct-tabletop-desktop__ws-user-img{
+	margin-right:30px;
+	padding:10px 0px;
+}
+.ct-table-top-ws-header .ct-ws-title{
+	float:none;
+}
+@media screen and (max-width:767px) {
+	.tabletop-collapse-mobile{
+	box-shadow: 0px 4px 12px #333;
+	}
+}
+
+    

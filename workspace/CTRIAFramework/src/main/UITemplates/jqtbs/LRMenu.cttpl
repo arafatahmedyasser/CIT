@@ -1,0 +1,36 @@
+<div class="ct-LRMenu">
+	<div data-item-id="ct-treeView-menu" class="col-md-2">
+		<ul class='nav nav-list-main'>
+			{{#each data}}
+			<li>
+				<label class="nav-toggle nav-header"> 
+					{{#if CHILDREN}} 
+					<span data-item-id='ct-tree_toggle' class="flaticon-collapse flaticon-leftmenu-expclps"></span> 
+					{{/if}} 
+					<span data-item-id='ct-tree_name' data-item-value='{{text}}' data-layout-id="{{this.ID}}" data-layout-index="{{this.INDEX}}">
+						<a href="javascript:void(0)">{{text}}</a>
+					</span>
+				</label>
+				<ul class="nav nav-list nav-left-ml">
+					{{#recursive CHILDREN}}
+					<li class=''>
+						<label class="nav-toggle nav-header">
+							{{#if CHILDREN}} 
+							<span data-item-id='ct-tree_toggle' class="nav-toggle-icon flaticon-collapse flaticon-leftmenu-expclps"></span> 
+							{{/if}}
+							<span data-item-id='ct-tree_name' data-item-value='{{text}}' data-layout-id="{{this.ID}}" data-layout-index="{{this.INDEX}}">
+								<a href="javascript:void(0)">{{text}}</a>
+							</span>
+						</label> 
+						{{#if CHILDREN}}
+						<ul class='nav nav-list nav-left-ml'>{{{recursive CHILDREN}}}</ul> 
+						{{/if}}
+					</li> 
+					{{/recursive}}
+				</ul>
+			</li> 
+			{{/each}}
+		</ul>
+	</div>
+	<div id="subworkspaceContainer" class="col-md-10"></div>
+</div>

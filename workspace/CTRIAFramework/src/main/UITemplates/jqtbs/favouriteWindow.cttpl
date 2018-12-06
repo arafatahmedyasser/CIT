@@ -1,0 +1,16 @@
+<div class="fav-window col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="fav-window-container col-lg-10 col-md-10 col-sm-10 col-xs-10 mCustomScrollbar" data-mcs-theme="rounded-dots">
+		<ul class="fav-window-inner-container">
+			{{#each winApps}}
+			<li class="ct-fav-apps-modal {{#condchk RENDERER_TYPE 'WINDOW'}}_ct-app-window{{/condchk}} {{#condchk RENDERER_TYPE 'INLINE'}}_ct-app-inline{{/condchk}}" data-app-id="{{APP_ID}}" data-item-id="ct-fav-apps-modal">
+				<div class="ct-fav-app-selc"></div>
+				<div class="ct-fav-app-title">{{widgetTitle}}</div>
+			</li> 
+			{{/each}}
+		</ul>
+	</div>
+	<div class="fav-window-bbar col-lg-10 col-md-10 col-sm-10 col-xs-10">
+		<div class="add-checked-fav-apps flaticon-save-file1" data-item-id="add-checked-fav-apps"></div>
+	</div>
+	<div class="fav-win-close flaticon-close2" data-item-id="fav-win-close"></div>
+</div>

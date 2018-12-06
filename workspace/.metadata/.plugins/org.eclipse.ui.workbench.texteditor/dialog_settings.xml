@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="com.usermgnt" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="springmvc_example"/>
+			<item value="artifactid"/>
+			<item value="groupid"/>
+			<item value="sample."/>
+			<item value="feedback."/>
+			<item value="feedback"/>
+		</list>
+		<list key="replacehistory">
+			<item value="com.usermgnt"/>
+			<item value="artifactId"/>
+			<item value="groupId"/>
+			<item value=""/>
+			<item value="sample"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="329" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="785" key="DIALOG_X_ORIGIN"/>
+		<item value="142" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

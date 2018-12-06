@@ -1,0 +1,593 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/* reset jqm */
+body{
+	margin:0px;
+	overflow:hidden;
+}
+.ui-header .ui-title, .ui-footer .ui-title {
+	border:0px;
+}
+.main-page.ui-page-active.ui-page-panel {
+	overflow-x: hidden;
+	overflow-y: hidden; 
+}
+/* page container */
+/*For page*/
+.main-page {
+	/*padding: 0 23%;*/
+	max-width: 1024px /* 1280px */;
+	min-width: 320px;
+	margin: 0px auto;
+	border: 0;
+/*	border: 1px solid rgba(155,155,155,0.4); */
+	-webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.4);
+}
+.ui-mobile .ui-page-active {
+	display: block;
+	overflow: visible;
+	max-width: 100% /* 1280px */;
+	min-width: 300px;
+	margin: 0 auto;
+}
+/* page workspace content div*/
+.jqm-main-content{
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow : hidden !important;
+}
+.show {
+	display: inline-block;
+}
+.content-hide {
+	display: none;
+}
+.content-show {
+	display: inline-block;
+}
+.no-data {
+	font: bold 1em calibri;
+	display:block;
+	padding-top:10px;
+	color:#ffffff;
+}
+
+
+/* workspace layout */
+.jqm-twocolumnlayout {
+	vertical-align: top;
+	display: inline-block;
+	width:100%;
+	height:100%;
+	/*padding-top:45px;
+	
+*/}
+/* page header quick links style */
+div.ui-controlgroup-controls:first-child {
+	padding-top: 3px;
+}
+.quickLinks{
+	height:32px;
+	width:32px;
+	
+}
+.page-headerlogo{
+	height:48px;	
+}
+.homeLink{
+	height:34px;
+	width:32px;
+	margin: 0px 5px 0px 0px!important;
+}
+
+.logoutLink{
+	height:34px;
+	width:32px
+}
+/* widget container 
+.widget-content{
+	min-height:170px;
+}*/
+/* APP ICONS CONTAINER */
+.app-Container{
+	padding:5px 0px 25px 0px;
+}
+.grid_view_icons span {
+	position: relative;
+	top: 0px;
+	width: 90px;
+	font-size: 0.70em;
+	overflow: hidden;
+	white-space: normal;
+}
+.grid_view_icons div, .grid_view_icons span {
+	display: inline-block;
+	vertical-align: top;
+}
+.grid_view_icons span ,.grid_view_icons .x-app-icon{
+	text-align: center;
+}
+
+/* app header */
+/*CBXMobility_63493_CHG02 */
+.ui-header .ui-title, .ui-footer .ui-title {
+	min-height: 2em;
+	text-align: center;
+	font-size: 14px;
+	display: block;
+	margin: 0px !important;
+	padding: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+	text-shadow: 0px 0px;
+}
+.app-header-text{
+	width: 42%;
+	float: left;
+	text-align: left;
+	line-height: 32px;
+	white-space: nowrap;
+}
+.toolsIcon , .ui-icon-toolsIcon{
+	width: 40px !important;
+	height: 35px !important;
+	display: inline-block !important;
+	float: right;
+	margin-top: 0px;
+}
+.settoolsIcon {
+	width:30px;
+	height:30px;
+	display:inline-block;
+	float:right;
+	width: 30px;
+	border-radius:0px;
+}
+
+/*-- Arun : Widget Tools Class*/
+/* CHG03_46056 : Alignment and widget tool icon FIX */
+.widget-tools {
+	display: inline-block;
+	width: 58%;
+	margin-top : 8px;
+	text-align: right;
+}
+.widgetTools{
+	float:left;
+	text-align: right;
+	width:57%;	
+}
+.widget-header-div{
+	display: inline-block;
+}
+.widget-header-icons{
+	float: left;display: inline-block;background-size: 25px 25px;width: 25px;height: 25px;
+}
+div.header-toolbar-icons,
+a.header-toolbar-icons
+{
+	width:18px;
+	height:18px;
+	margin-left: 3px;
+    text-align: center;
+    vertical-align: middle;
+    cursor:pointer;
+    display:inline-block;
+}
+
+/* app filter */
+.list-filter-theme{
+	padding:5px 5px 5px 5px;
+}
+.tblFilter .ui-select,.tblFilter .ui-input-search{ 
+	margin:5px 0px 5px 0px;
+}
+.tblFilter .ui-select option{ 
+	margin:3px 2px 4px 2px;
+}
+.tblFilter { 
+	text-align:center; 
+}
+/* app footer */
+.app-footer{
+	height:30px;
+}
+
+
+/* App BBAR buttons */ 
+.bbar-btn{
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	margin: .5em 0;
+	padding: 0;
+}
+.bbar-btn .ui-btn-inner{
+	white-space: nowrap;
+}
+.bbar-btn .ui-btn-text{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+/* jqm context app */
+.x-app-icon {
+	margin: 15px 5px 15px 5px;
+	height: 62px;
+	width: 90px;
+}
+.context-app-panel{
+	width: 100px;
+	margin: -1px 0;
+}
+.context-app-icon {
+	margin: 10px 25px 36px 10px;
+	text-align:center;
+}
+
+
+
+
+
+/* yasser */
+
+.cbx-date-view .ui-input-text{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    box-shadow: none; 
+}
+
+.cbx-statictextarea-view  .ui-input-text{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    box-shadow: none; 
+}
+#ruler { visibility: hidden; white-space: nowrap; }
+
+#ui-datepicker-div { display: none; }
+
+textarea {
+    resize: none
+}
+.ui-disabled {
+    opacity: 0.5;
+}
+
+/*
+ * Popup styles
+ */
+.popupcontent p {
+	margin:5px;
+}
+.bottombar{
+	text-align:center;
+}
+
+/* pop up window */
+.popupdialogCls{
+	position:absolute;
+	opacity:0.9;
+	height: 100%;
+}
+.popupdialogContCls{
+    height: 320px;
+    overflow: scroll;
+}
+.popupCls{
+	display : block;
+	height : 360px;
+	width : 500px;
+}
+#wrapper {
+	position:inherit;
+	z-index:1;
+	/*top:0px; 
+	bottom:0px; 
+	left:0;
+	right:0px;*/
+	margin:auto;
+	overflow:auto;
+}
+
+#scroller {
+	position:absolute; 
+	z-index:1;
+/*	-webkit-touch-callout:none;*/
+	width:96%;
+	padding:0;
+}
+.jCProgress {
+    position: absolute;
+    z-index: 99999999;
+}
+.jCProgress > div.percent {
+	 font: 16px/27px 'BebasRegular', Arial, sans-serif;
+	 position:absolute;
+	 margin-top:40px;
+	 margin-left:22px;
+	 text-align: center;
+	 width:60px;
+}
+
+#loading-image{
+	opacity : 0.4;
+    position: fixed;
+    top: 0;
+    left': 0;
+    background-color': black;
+    width: '100%';
+	background-image': url('../images/loaderImg');
+    z-index': 5000;
+}
+/* context app popup */
+#context-app-panel-popup {
+    left:auto!important;
+    right:0px!important;
+    width:70%;
+    opacity: 0.9;
+}
+#context-app-panel {
+    width: 100%;
+	float: right;
+	height: 100%;
+    border-right: none;
+    margin: -1px 0;
+}
+#context-app-panel .ui-btn {
+    margin: 2em 15px;
+}
+.header-navCls{
+	border-radius:0px;
+	margin: 0px !important;
+}
+ul.header-navCls li{
+	background-position: right center;
+    background-repeat: no-repeat;
+	padding: 18px 15px !important;
+}
+#wswrapper{
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	margin: 0px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 98%;
+	z-index: 1;
+}
+.workspacemenus{
+	float: left;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.ui-loader-verbose{
+	background: none repeat scroll 0 0 #ddd !important;
+    border-radius: 10px !important;
+    box-shadow: 2px 2px 4px #000 !important;
+    text-shadow: none !important;
+    padding-bottom: 0 !important;
+}
+.loaderWrapperCls{
+	text-align: center;
+	/*color: #FFFFFF;*/
+	color:#2087C9;
+    font-family: Lucida Console;
+    font-size: 11px;
+}
+.ui-loading .ui-loader {
+	background: none;
+    box-shadow: none;
+    color: #CCCCCC;
+    text-shadow: none; 
+}
+.progressTextCls{
+	float: left;
+	margin-top: 16px;
+	margin-left: 18px;
+}
+.loaderImgCls{	
+	position: relative;
+	background:transparent url('../images/appLoading.gif') no-repeat scroll 1px -1px !important;
+/*    background-size: 44px 46px !important;*/
+	background-size: 47px 47px !important;
+    opacity : 1 !important;
+}
+.wrappercls {
+	bottom: 0;
+    height: 100%;
+    left: 0;
+	overflow: auto;
+    position: absolute;
+    top: 0;;
+    width: 100%;
+    z-index: 1;
+}
+/* for forms */
+.ui-selectmenu .ui-header .ui-title{
+	margin: 0.6em 46px 0.8em;
+}
+/* select menu popup*/
+.ui-selectmenu.ui-popup.ui-body-a{
+	padding: 0px;
+}
+
+.scrollercls {
+	float: left;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/* composite field */
+.jqm-display-hide {
+	display:none!important;
+}
+.cbx-compositefield .cbx-compositefield_wrap .ui-field-contain.jqm-display-hide{
+  display:none!important; 
+}
+/* form alignment */
+label.ui-input-text {
+	font-size: 14px
+}
+.ui-field-contain, fieldset.ui-field-contain {
+	padding: 0.2em 0 .2;
+}
+
+label.ui-input-text {
+	font-size: 14px;
+	line-height: 1.4;
+}
+.cbxstaticfield,.cbxstaticfield{
+	font-size: 14px;
+	line-height: 1.4;
+}
+.cbx-date-view .ui-input-text.ui-focus{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+/* composite field */
+
+
+
+.cbx-form-bg {
+    border-color: #FF0000 !important;
+}
+.toolsIcon {
+	
+	width:18px;
+	height:18px;
+	display:inline-block;
+	float:right;
+	margin-top:10px;
+}
+.ui-icon-toolsIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll -41px -94px !important;
+}
+.settoolsIcon {
+	width:30px;
+	height:30px;
+	display:inline-block;
+	float:right;
+	width: 30px;
+	border-radius:0px;
+}
+
+
+/*CHART_ENH StartsSudha To Modify.Chart tool icon for jquery chart*/
+
+.chart-buttons-holder {
+	background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE;
+    border: 0px solid #CCCCCC;
+    text-shadow: 0 1px 0 #FFFFFF;
+	margin:-5px 0px 0px 0px;
+	padding: 10px 5px 5px 5px;
+}
+.chartmenu-label{
+	font-size:16px;
+    color: #222222;
+    font-weight: bold;
+}
+.icon-chart{
+	width:16px;
+	height:16px;
+	margin-left: 18px;	
+	cursor: pointer;
+	display:inline-block;
+	padding:0px;
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px 0px
+}
+
+
+.LINE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px 0px
+		transparent !important;
+		cursor: pointer;
+}
+
+.ZOOMLINE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -16px
+		transparent !important;
+		cursor: pointer;
+		display:inline
+}
+
+.BAR_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -32px
+		transparent !important;
+}
+
+.HBAR_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -48px
+		transparent !important;
+}
+
+.SBAR_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -64px
+		transparent !important;
+}
+
+.HSBAR_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -80px
+		transparent !important;
+}
+
+.PIE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px -96px
+		transparent !important;
+		cursor: pointer;
+		padding-left: 18px;
+		display:inline
+}
+
+.DONUT_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-112px transparent !important;
+}
+
+.PYRAMID_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-128px transparent !important;
+}
+
+.FUNNEL_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-144px transparent !important;
+}
+
+.AGAUGE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-160px transparent !important;
+}
+
+.LGAUGE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-176px transparent !important;
+}
+
+.HLED_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-192px transparent !important;
+}
+
+.VLED_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-208px transparent !important;
+		cursor: pointer;
+		padding-left: 18px;
+}
+.POLE_CHART {
+	background: url(../images/chart-sprite.gif) no-repeat scroll 0px
+		-208px transparent !important;
+}
+
+/*/*CHART_ENH Ends*/

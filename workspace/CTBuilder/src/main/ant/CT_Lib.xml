@@ -1,0 +1,469 @@
+<project name="CT Local Builder" default="" basedir=".">
+
+	<property file="buildCTFW.properties" />
+
+	<target name="initialize_CT_Library">
+		<echo message="Recreating deployment folders" />
+		<mkdir dir="${CT_LIBRARY_PATH}" />
+		<mkdir dir="${CT_WEB_LIBRARY_PATH}" />
+		<mkdir dir="${CT_WEB_LIBRARY_PATH}/Mini" />
+		<mkdir dir="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework" />
+	</target>
+
+
+	<target name="build_CT_Library">
+		<antcall target="updateAll" />
+	</target>
+
+	<target name="updateAll">
+		<antcall target="initialize_CT_Library" />
+		<antcall target="update_CTResources_jar" />
+		<antcall target="update_YaHPConverter_jar" />
+		<antcall target="update_CTLoggingLib_jar" />
+		<antcall target="update_CTCommonLib_jar" />
+		<antcall target="update_CTPropertyReaderUtilLib_jar" />
+		<antcall target="update_CTDBLib_jar" />
+		<antcall target="update_CTRemoteLib_jar"/>
+		<antcall target="update_CTCacheLib_jar" />
+		<antcall target="update_CTBaseLib_jar" />
+		<antcall target="update_CTValidationLib_jar" />
+		<antcall target="update_CTHALLib_jar" />
+		<antcall target="update_CTEventLib_jar" />
+		<antcall target="update_CTEntitlementLib_jar"/>
+		<antcall target="update_CTAuditLib_jar" />
+		<antcall target="update_CTAlertsLib_jar" />
+		<antcall target="update_CTLoginLib_jar" />
+		<antcall target="update_CTFormDefinitionLib_jar" />
+		<antcall target="update_CTViewDefinitionLib_jar" />
+		<antcall target="update_CTExportServiceLib_jar" />
+		<antcall target="update_CTReadyApps_jar" />
+		<antcall target="update_CTReportingFW_jar" />
+		<antcall target="update_CTRenderLib_jar" />
+		
+		<antcall target="update_templates_as_js" />
+		<antcall target="update_CTRIAFramework" />
+		<antcall target="update_CTRIAFramework_images"/>
+		<antcall target="update_CT_Minify"/>
+		<antcall target="update_CT_Compress" />
+		<antcall target="update_CT_Combine" />
+		<antcall target="update_CT_Css" />
+		<antcall target="finalClean" />
+		
+	</target>
+
+	<target name="update_CTResources_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTResources.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTResources/target">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTLoggingLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTLoggingLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTLoggingLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+
+	<target name="update_YaHPConverter_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/YaHPConverter.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/YaHPConverter/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTCommonLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTCommonLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTCommonLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTPropertyReaderUtilLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTPropertyReaderUtilLib.jar" compress="false">
+			<zipfileset
+				dir="${SOURCE_LINK_ROOT}/CTPropertyReaderUtilLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTDBLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTDBLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTDBLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTRemoteLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTRemoteLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTRemoteLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTCacheLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTCacheLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTCacheLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTBaseLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTBaseLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTBaseLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTValidationLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTValidationLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTValidationLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTHALLib_jar">
+			<jar destfile="${CT_LIBRARY_PATH}/CTHalLib.jar" compress="false">
+				<zipfileset dir="${SOURCE_LINK_ROOT}/CTHalLib/target/classes">
+					<include name="**/*.*" />
+					<exclude name="**/*.java" />
+				</zipfileset>
+			</jar>
+		</target>
+	
+	<target name="update_CTEventLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTEventLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTEventLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTEntitlementLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTEntitlementLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTEntitlementLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTAuditLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTAuditLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTAuditLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTAlertsLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTAlertsLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTAlertsLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTLoginLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTLoginLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTLoginLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTFormDefinitionLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTFormDefinitionLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTFormDefinitionLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTExportServiceLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTExportServiceLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTExportServiceLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTReportingFW_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTReportingFW.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTReportingFW/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTViewDefinitionLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTViewDefinitionLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTViewDefinitionLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTRenderLib_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTRenderLib.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTRenderLib/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="update_CTReadyApps_jar">
+		<jar destfile="${CT_LIBRARY_PATH}/CTReadyApps.jar" compress="false">
+			<zipfileset dir="${SOURCE_LINK_ROOT}/CTReadyApps/target/classes">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<path id="compressjars">
+		<fileset dir="${ANT_BUILD}">
+			<include name="yui-compressor-ant-task-0.5.1.jar"/>
+			<include name="YUIAnt.jar"/>
+		</fileset>
+		<fileset dir="${THIRDPARTYJARS_FOR_BUILD}">
+			<include name="commons-io-1.3.1.jar"/> 
+			<include name="yuicompressor-2.4.2.jar"/>
+		</fileset>
+	</path>
+
+	<target name="createCompileFolder" depends="template_folder_check" unless="dir.exists">
+		<echo>${TMPL_COMPILE_FOLDER} Directory Created...</echo>
+		<mkdir dir="${WEB_LIBRARY_TEMPLATEJS}/${LIBRARY_NAME}" />
+	</target>
+	
+	<target name="template_folder_check">
+		<echo message="Checking for Template directory" />
+		<condition property="dir.exists">
+			<available file="${WEB_LIBRARY_TEMPLATEJS}" type="dir"/>
+		</condition>
+	</target>
+	
+	<target name="update_templates_as_js">
+		<echo message="Handlebars precompiling started..." />
+		<antcall target="createCompileFolder" />
+		<java jar="${SUPPORTING_JARS}/handlebars/rhino-js.jar" fork="true" failonerror="true">
+		 	<arg value="${SUPPORTING_JARS}/handlebars/rhino-handlebars-precompiler.js"/>
+		    <arg value="--handlebars"/>
+		    <arg value="${SUPPORTING_JARS}/handlebars/handlebars-v2.0.0.js"/>
+		    <arg value="--templates"/>
+		    <arg value="${VDF_TEMPLATES}\${LIBRARY_NAME}"/>
+		    <arg value="--output"/>
+		    <arg value="${WEB_LIBRARY_TEMPLATEJS}/${LIBRARY_NAME}_CT_TEMPLATES.js"/>
+		</java>
+		<echo message="Templates compiled successfully" />  
+	</target>
+
+	<target name="update_CTRIAFramework_images">
+
+		 <move todir="${CT_WEB_LIBRARY_PATH}/MINI/CTRIAFramework" includeemptydirs="false">
+		    <fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework">
+		      <exclude name="**/*.js"/>
+		      <exclude name="**/*.css"/>
+		    </fileset>
+		  </move>
+	
+	</target>
+
+	<target name="update_CTRIAFramework">
+		<copy todir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/javascript"
+					preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${SOURCE_LINK_ROOT}\CTRIAFramework\target\javascript" />
+		</copy>
+
+		<copy todir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/UIArena"
+							preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${SOURCE_LINK_ROOT}\CTRIAFramework\target\UIArena" />
+		</copy>
+		
+		<copy todir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/jsp"
+									preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${SOURCE_LINK_ROOT}\CTRIAFramework\target\jsp" />
+		</copy>
+		<copy todir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/UITemplates" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${SOURCE_LINK_ROOT}\CTRIAFramework\target\UITemplates" />
+		</copy>
+		<copy todir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/TemplatesJS" preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${SOURCE_LINK_ROOT}\CTRIAFramework\target\TemplatesJS" />
+		</copy>
+	</target>
+
+
+	<target name="update_CT_Minify">
+			<echo>Initializing js/css minify</echo>
+			<taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+				<classpath>
+					<path refid="compressjars"/>
+					<pathelement location="${SOURCE_LINK_ROOT}/CTBaseLib/target/classes"/>
+					<pathelement location="${SOURCE_LINK_ROOT}/CTResources/target"/>
+				</classpath>
+			</taskdef>
+			<yuicompress linebreak="300" warn="false" munge="yes" preserveallsemicolons="true" outputfolder="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework">
+				<fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework">
+					<include name="**/*.js" />
+				</fileset>
+			</yuicompress>
+			<echo>All the js/css files have been minified successfully</echo>
+		</target>
+	<taskdef name="compress" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
+					<classpath>
+							<path refid="compressjars"/>
+					</classpath>
+	</taskdef>
+	<target name="update_CT_Compress">
+		<echo> Initializing File merge</echo>
+		<java classname="com.intellectdesign.canvas.webutil.compress.OnDemandJsCompressor" fork="yes" failonerror="yes">
+			<arg value="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework/javascript/compress"/>
+			<arg value="${CT_WEB_LIBRARY_PATH}/Mini"/>
+			<classpath>
+				<path refid="compressjars"/>
+				<pathelement location="${SOURCE_LINK_ROOT}/CTBaseLib/target/classes"/>
+				<pathelement location="${SOURCE_LINK_ROOT}/CTResources/target"/>
+			</classpath>
+		</java>
+		<mkdir dir="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework/javascript/compressed" />
+		<echo> Initialized compression..</echo>
+		<compress charset="UTF-8" warn="false" munge="yes" jssuffix="-compressed.js" preserveallsemicolons="true" fromdir="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework/javascript/compress" 
+								todir="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework/javascript/compressed">
+			<include name="**/*" />
+		</compress>
+	</target>
+	
+	
+	<target name="update_CT_Combine">
+			<echo> Initializing File merge</echo>
+			<java classname="com.intellectdesign.canvas.webutil.compress.OnDemandJsCompressor" fork="yes" failonerror="yes">
+				<arg value="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/javascript/compress"/>
+				<arg value="${CT_WEB_LIBRARY_PATH}/INITIAL/"/>
+				<classpath>
+					<path refid="compressjars"/>
+					<pathelement location="${SOURCE_LINK_ROOT}/CTBaseLib/target/classes"/>
+					<pathelement location="${SOURCE_LINK_ROOT}/CTResources/target"/>
+				</classpath>
+			</java>
+		</target>
+	
+	<target name="update_CT_Css">
+				<echo> Initializing File merge</echo>
+				<java classname="com.intellectdesign.canvas.webutil.compress.CssCompressor" fork="yes" failonerror="yes">
+					<arg value="${CT_WEB_LIBRARY_PATH}/Mini/"/>
+					<arg value="${CT_WEB_LIBRARY_PATH}/INITIAL/"/>
+					<classpath>
+						<path refid="compressjars"/>
+						<pathelement location="${SOURCE_LINK_ROOT}/CTBaseLib/target/classes"/>
+						<pathelement location="${SOURCE_LINK_ROOT}/CTResources/target"/>
+					</classpath>
+				</java>
+			</target>
+	
+	<target name="finalClean">
+					<echo> Final Clean</echo>
+		
+		<move todir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework/javascript/compress" includeemptydirs="false">
+				    <fileset dir="${CT_WEB_LIBRARY_PATH}/Mini/CTRIAFramework/javascript/compress">
+				      <include name="**/*.js"/>
+				    </fileset>
+		</move>
+		<move todir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework/javascript/combine" includeemptydirs="false">
+			<fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/javascript/compress">
+				<include name="**/*.js"/>
+			</fileset>
+			<fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/TemplatesJS">
+				<include name="**/*.js"/>
+			</fileset>
+		</move>
+		<move todir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework/" includeemptydirs="false">
+							 <fileset dir="${CT_WEB_LIBRARY_PATH}/MINI/CTRIAFramework/">
+								      <exclude name="**/*.js"/>
+							</fileset>
+		</move>
+		
+		<delete dir="${CT_WEB_LIBRARY_PATH}/MINI"/>
+		<delete dir="${CT_WEB_LIBRARY_PATH}/INITIAL"/>
+		<delete file="${CT_WEB_LIBRARY_PATH}/CTRIAFramework.zip"/>
+		<zip destfile="${CT_WEB_LIBRARY_PATH}/CTRIAFramework.zip">
+			<zipfileset dir="${CT_WEB_LIBRARY_PATH}"/>
+		</zip>
+		
+		<delete dir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework"/>
+
+	</target>
+	<target name="deployDirect">
+		<antcall target="cleanup_CT_Web_Library" />
+		<antcall target="update_templates_as_js" />
+		<antcall target="update_CTRIAFramework" />
+		<antcall target="update_CTRIAFramework_images"/>
+		<antcall target="update_CT_Combine" />
+		<antcall target="update_CT_Css" />
+		<antcall target="finalCleanWithoutCompress" />
+	</target>
+	<target name="finalCleanWithoutCompress">
+					<echo> Final Clean excluding compress...This wont work if you have compression mode enabled..Please put a full build instead</echo>
+	
+		<move todir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework/javascript/combine" includeemptydirs="false">
+					 <fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/javascript/compress">
+						      <include name="**/*.js"/>
+					</fileset>
+					<fileset dir="${CT_WEB_LIBRARY_PATH}/INITIAL/CTRIAFramework/TemplatesJS">
+							<include name="**/*.js"/>
+					</fileset>
+		</move>
+		<move todir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework/" includeemptydirs="false">
+							 <fileset dir="${CT_WEB_LIBRARY_PATH}/MINI/CTRIAFramework/">
+								      <exclude name="**/*.js"/>
+							</fileset>
+		</move>
+		
+		<delete dir="${CT_WEB_LIBRARY_PATH}/MINI"/>
+		<delete dir="${CT_WEB_LIBRARY_PATH}/INITIAL"/>
+		<copy todir="${JBOSS_HOME}/${WAR_FILE_NAME}/CTRIAFramework"
+					preservelastmodified="true" verbose="true" includeemptydirs="true">
+			<fileset dir="${CT_WEB_LIBRARY_PATH}\CTRIAFramework\" />
+		</copy>
+		<zip destfile="${CT_WEB_LIBRARY_PATH}/CTRIAFramework.zip">
+			<zipfileset dir="${CT_WEB_LIBRARY_PATH}"/>
+		</zip>
+		
+		<delete dir="${CT_WEB_LIBRARY_PATH}/CTRIAFramework"/>
+
+	</target>
+	<target name="cleanup_CT_Web_Library">
+		<echo message="Deleting folder - ${CT_WEB_LIBRARY_PATH}." />
+		<delete dir="${CT_WEB_LIBRARY_PATH}" />
+	</target>
+</project>

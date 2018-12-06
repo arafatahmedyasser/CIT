@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!--  
+*************************************************************************************************************** 
+* CHANGE CODE 	             	AUTHOR 				DESCRIPTION 								DATE
+***************************************************************************************************************
+* CHG0001_OT0138_INFO_RPT_FW   Murali R				Comments hanlded                          	19 Sep 2012
+* CHG0002_OT0138_INFO_RPT_FW   Murali R				Enhancement No : CBXQ212U08 - column ambiguously defined issue fixed   	19 Sep 2012
+* IR_ENHANCEMENTS_001              Dharmalingam        		Added the Product, SubProduct and Func Code for Reports     16 Jan 2013
+* CBXQ312F10_UPD1 Dharmalingam	Information Reporting DIT issues fix							14-Dec-2012
+
+***************************************************************************************************************
+-->
+
+<sqlMap>
+        <!--  IR_ENHANCEMENTS_001 Starts -->
+	<resultMap id="VIEW_REPORT_TREE_MAP" class="java.util.HashMap">
+		<result property="reportId" nullValue="" column="REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportName" nullValue="" column="REPORT_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportProdCode" nullValue=""
+			column="OD_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportSubProdCode" nullValue=""
+			column="OD_SUB_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportFuncCode" nullValue=""
+			column="OD_FUNC_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="parentReportId" nullValue=""
+			column="PARENT_REPORT_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isScheduled" nullValue=""
+			column="IS_SCHEDULED" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isActive" nullValue=""
+			column="IS_ACTIVE" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_REPORT_AS_TREE"
+		parameterClass="java.util.HashMap" resultMap="VIEW_REPORT_TREE_MAP">
+		SELECT REPORT_NAME,
+		REPORT_ID,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		OD_FUNC_CODE,
+		PARENT_REPORT_ID,
+		CASE
+    		WHEN SCHEDULER_FROM_DATE IS NULL THEN 'N'
+    	ELSE  'Y'
+  		END IS_SCHEDULED,
+  		CASE
+    		WHEN (SCHEDULER_TO_DATE IS NULL OR SCHEDULER_TO_DATE > SYSDATE) THEN 'Y'
+    	ELSE  'N'
+  		END IS_ACTIVE
+		FROM REPORT_DEFINITION
+		WHERE
+		(OD_USER_NO = '-1' OR OD_USER_NO = #USER_NO#) AND
+		(OD_GCIF = '-1'
+		OR OD_GCIF =
+		#GCIF#) AND
+		STATUS IS NULL  AND
+		OD_PRODUCT IN
+		<iterate property="PRODUCT_LIST" conjunction="," open="("
+			close=")">
+			#PRODUCT_LIST[].prodCode# 
+		</iterate> 
+		AND OD_SUB_PRODUCT IN
+		<iterate property="SUB_PRODUCT_LIST" conjunction="," open="("
+			close=")">
+			#SUB_PRODUCT_LIST[].subProdCode# 
+		</iterate>
+		AND OD_FUNC_CODE IN
+		<iterate property="FUNCTION_LIST" conjunction="," open="("
+			close=")">
+			#FUNCTION_LIST[].funCode# 
+		</iterate>
+		START WITH
+		PARENT_REPORT_ID = '-1'
+		CONNECT BY PRIOR REPORT_ID =PARENT_REPORT_ID
+	</select>
+	
+	<!--  IR_ENHANCEMENTS_001 Ends -->
+	<select id="GET_FORMAT_NAME_SELECT_FORMAT_ID_VIEW"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT A.FORMAT_ID
+		FORMAT_ID,
+		B.FORMAT_NAME FORMAT_NAME
+		FROM
+		REPORT_FORMAT_MAPPING A,
+		REPORT_FORMAT_MASTER B
+		WHERE
+		A.FORMAT_ID=B.FORMAT_ID
+		AND
+		A.REPORT_ID=#REPORT_ID#
+       </select>
+
+	<select id="GET_COLUMN_NAME_SELECT_COLUMN_ID_VIEW"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT
+		COLUMN_ID,
+		COLUMN_NAME
+		FROM REPORT_COLUMN_DEFINITION
+		WHERE REPORT_ID=#REPORT_ID#
+		ORDER BY POSITION
+       </select>
+       
+	<!--IR_ENHANCEMENTS_001 Starts-->
+	<select id="GET_PARENT_NODE_SELECT_PARENT_ID_VIEW"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT
+		PARENT_REPORT_ID,
+		SYSTEM_REPORT_ID,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		OD_FUNC_CODE
+		FROM REPORT_DEFINITION
+		WHERE
+		REPORT_ID=#REPORT_ID#
+		AND STATUS IS NULL
+       </select>
+
+       <!--  CHG0001_OT0138_INFO_RPT_FW Starts -->
+       <!-- Result Map is added -->
+       <!--  IR_ENHANCEMENTS_001 Starts -->
+       <!-- Starts here for - CBXQ312F10_UPD1 -->
+       <resultMap id="VIEW_MGR_FRMWK_MNT_SELECT_GEN_REPORT_VIEW_DATA_MAP" class="java.util.HashMap">
+			<result property="REPORT_NAME"	nullValue="" column="REPORT_NAME" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="CREATED_DATE" nullValue="" column="CREATED_DATE_CNVT" 	javaType="java.lang.String" jdbcType="VARCHAR"/>  
+			<result property="OD_PRODUCT" 	nullValue="" column="OD_PRODUCT" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="OD_SUB_PRODUCT" 	nullValue="" column="OD_SUB_PRODUCT" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="OD_FUNC_CODE" 	nullValue="" column="OD_FUNC_CODE" 	javaType="java.lang.String" jdbcType="VARCHAR"/>			
+			<result property="FORMAT_NAME" 	nullValue="" column="FORMAT_NAME" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="STATUS" 		nullValue="" column="STATUS" 		javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="REPORT_INSTANCE_ID" 	nullValue="" column="REPORT_INSTANCE_ID" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="RD_STATUS" 	nullValue="" column="RD_STATUS" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+			<result property="ERROR_MSG" 	nullValue="" column="ERROR_MSG" 	javaType="java.lang.String" jdbcType="VARCHAR"/>
+		</resultMap>		
+	<!-- CHG0002_OT0138_INFO_RPT_FW Starts -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GEN_REPORT_VIEW"
+		parameterClass="java.util.HashMap" resultMap="VIEW_MGR_FRMWK_MNT_SELECT_GEN_REPORT_VIEW_DATA_MAP">
+		<include refid="NEW_PAGINATION_BEGINS" />
+		SELECT 
+		REPORT_NAME,
+		TO_CHAR(CREATED_DATE,'DD/MM/YYYY') CREATED_DATE_CNVT,		
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		OD_FUNC_CODE,
+		FORMAT_NAME,
+		STATUS,
+		REPORT_INSTANCE_ID,
+		RD_STATUS,
+		ERROR_MSG,
+		<include refid="TOTALROWS_FOR_PAGINATION"/>
+	    <include refid="NEW_DEFAULT_ORDERBY_CLAUSE"/>
+		FROM (
+		SELECT
+		RID.REPORT_NAME
+		REPORT_NAME,
+		RID.CREATED_DATE CREATED_DATE,		
+		RD.OD_PRODUCT OD_PRODUCT,
+		RD.OD_SUB_PRODUCT OD_SUB_PRODUCT,
+		RD.OD_FUNC_CODE OD_FUNC_CODE,
+		RFM.FORMAT_NAME FORMAT_NAME,
+		RID.STATUS STATUS,
+		RID.REPORT_INSTANCE_ID,
+		RD.STATUS RD_STATUS,
+		RID.ERROR_MSG ERROR_MSG
+		FROM
+		REPORT_INSTANCE_DEFINITION RID
+		JOIN REPORT_DEFINITION RD ON
+		RD.REPORT_ID = RID.REPORT_ID
+		JOIN REPORT_FORMAT_MASTER RFM ON
+		RFM.FORMAT_ID=RID.FORMAT_ID
+		WHERE
+		RID.OD_USER_NO=#USER_NO# AND
+		RID.OD_GCIF=#GCIF# AND
+		RID.STATUS != 'DELETED'
+		AND RID.CREATED_DATE &gt;= (SYSDATE - #RPT_INST_DEF_FETCH_INTERVEL#))
+		WHERE 1=1
+		<include refid="FILTER_CLAUSE" />
+		<include refid="NEW_PAGINATION_ENDS" />	
+       </select>
+       
+	<!-- IR_ENHANCEMENTS_001 - Ends -->
+       <!-- CHG0002_OT0138_INFO_RPT_FW End -->
+	<!-- CHG0001_OT0138_INFO_RPT_FW End -->
+
+	<select id="GET_FILTER_CRITERIA_SELECT_FILTER_COLUMN_VIEW"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT VDFM.FILTER_ID,
+  		VDFM.FILTER_NAME,
+  		VDFM.DATA_TYPE
+  		FROM VIEW_DEFINITION_FILTER_MASTER VDFM,
+  		REPORT_COLUMN_DEFINITION RCD
+  		WHERE VDFM.DATA_TYPE=RCD.DATA_TYPE
+  		AND RCD.REPORT_ID=#REPORT_ID#
+  		AND RCD.COLUMN_ID=#COLUMN_NAME#
+  		AND VDFM.ENABLED_IND='Y'
+       </select>
+       
+	<!--IR_ENHANCEMENTS_001 Ends-->
+	<resultMap id="GET_SCHEDULED_VALUES" class="java.util.HashMap">
+		<result property="REPORT_NAME" nullValue="" column="REPORT_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SCHEDULER_FROM_DATE" nullValue=""
+			column="SCHEDULER_FROM_DATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SCHEDULER_TO_DATE" nullValue=""
+			column="SCHEDULER_TO_DATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SCHEDULER_TYPE" nullValue="" column="SCHEDULER_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SCHEDULER_FREQUENCY_VALUE" nullValue=""
+			column="SCHEDULER_FREQUENCY_VALUE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- CHG0001_OT0138_INFO_RPT_FW Starts -->
+	<!-- The date format handled. -->
+		
+	<select id="GET_SCHEDULED_VALUES_SELECT_SCHEDULE_REPORT_VIEW"
+		parameterClass="java.util.HashMap" resultMap="GET_SCHEDULED_VALUES">
+		SELECT REPORT_NAME,
+		TO_CHAR(SCHEDULER_FROM_DATE,'DD/MM/YYYY') SCHEDULER_FROM_DATE, 
+		TO_CHAR(SCHEDULER_TO_DATE,'DD/MM/YYYY') SCHEDULER_TO_DATE,     
+		SCHEDULER_TYPE,
+		SCHEDULER_FREQUENCY_VALUE
+		FROM REPORT_DEFINITION
+		WHERE REPORT_ID=#REPORT_ID#
+		AND STATUS IS NULL
+       </select>
+       
+     <!-- CHG0001_OT0138_INFO_RPT_FW End -->
+     
+	<resultMap id="FETCH_DATASOURCES_RESULT_MAP" class="java.util.HashMap">
+		<result property="REPORT_ID" nullValue="" column="REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DATA_SOURCE_TYPE" nullValue=""
+			column="DATA_SOURCE_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DATA_SOURCE_KEY" nullValue="" column="DATA_SOURCE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_DATASOURCES"
+		resultMap="FETCH_DATASOURCES_RESULT_MAP">
+		SELECT
+		REPORT_ID,
+		DATA_SOURCE_TYPE,
+		DATA_SOURCE_KEY
+		FROM
+		REPORT_DS_TYPE_MAP
+		WHERE
+		REPORT_ID = #REPORT_ID#
+	</select>
+
+	<resultMap id="GET_DS_IMPL_CLASS_RESULT_MAP" class="java.util.HashMap">
+		<result property="DS_IMPLEMENTATION_CLASS" nullValue=""
+			column="DS_IMPLEMENTATION_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_GET_DS_IMPL_CLASS"
+		resultMap="GET_DS_IMPL_CLASS_RESULT_MAP">
+		SELECT
+		DS_IMPLEMENTATION_CLASS
+		FROM
+		DS_TYPE_MASTER
+		WHERE
+		DATA_SOURCE_TYPE = #DATA_SOURCE_TYPE# 	
+	</select>
+	
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DEFINITION_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportDefinition">
+		<result property="reportId" nullValue="" column="REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportName" nullValue="" column="REPORT_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="productCode" nullValue="" column="OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProductCode" nullValue="" column="OD_SUB_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="funcCode" nullValue="" column="OD_FUNC_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userNo" nullValue="" column="OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="gcif" nullValue="" column="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="formatId" nullValue="" column="FORMAT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="includeBlankRec" nullValue=""
+			column="INCLUDE_BLANK_REC" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="parentReportId" nullValue="" column="PARENT_REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="systemReportId" nullValue="" column="SYSTEM_REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="entlType" nullValue="" column="ENTL_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataAggregatorClass" nullValue=""
+			column="DATA_AGGREGATOR_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="rateCard" nullValue="" column="RATECARD"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="referenceCcy" nullValue="" column="REFERENCE_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />		
+		<result property='fromDate' column='SCHEDULER_FROM_DATE'
+			nullValue=""
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.OracleTimeStampToDateStringTypeHandler" />
+		<result property="toDate" column="SCHEDULER_TO_DATE" nullValue=""
+			typeHandler="com.intellectdesign.canvas.ibatis.typeHandler.OracleTimeStampToDateStringTypeHandler" />
+		<result property="type" nullValue="" column="SCHEDULER_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="frequencyValue" nullValue=""
+			column="SCHEDULER_FREQUENCY_VALUE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="status" nullValue="" column="STATUS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="bundleKey" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columns" nullValue="" column="REPORT_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_COLUMN_DEFINITION" />
+		<result property="policies" nullValue="" column="REPORT_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_POLICY" />
+		<result property="publishers" nullValue="" column="REPORT_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_PUBLISHER" />
+		<result property="notifiers" nullValue="" column="REPORT_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_NOTIFIERS" />
+	</resultMap>
+
+	<resultMap
+		id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_COLUMN_DEFINITION_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportColumnDefinition">
+		<result property="reportId" nullValue="" column="REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnId" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnName" nullValue="" column="COLUMN_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataType" nullValue="" column="DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="position" nullValue="" column="POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="groupableInd" nullValue="" column="GROUPABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="groupPosition" nullValue="" column="GROUP_POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="sortableInd" nullValue="" column="SORTABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sortOrder" nullValue="" column="SORT_ORDER"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sortPosition" nullValue="" column="SORT_POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="groupTotalInd" nullValue="" column="GROUP_TOTAL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="allColumnGroupByInd" nullValue=""
+			column="ALL_COL_GRP_BY_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="includeTotal" nullValue="" column="INCLUDE_TOTAL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSrcAmt" nullValue="" column="LINKED_SRC_AMT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSrcCcy" nullValue="" column="LINKED_SRC_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="visibilityInd" nullValue=""
+			column="VISIBILITY_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filters" nullValue=""
+			column="{REPORT_ID = REPORT_ID,COLUMN_ID = COLUMN_ID}" select="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_FILTERS" />
+	</resultMap>
+	
+	<resultMap
+		id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_FILTERS_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportFilter">
+		<result property="columnId" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterId" nullValue="" column="FILTER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterName" nullValue="" column="FILTER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterType" nullValue="" column="FILTER_DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterValues" nullValue="" column="FILTER_VALUES"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_NOTIFIERS_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportNotification">
+		<result property="notificationId" nullValue="" column="NOTIFICATION_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="notificationName" nullValue=""
+			column="NOTIFICATION_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="notificationHandlerClass" nullValue=""
+			column="NOTIFICATION_HANDLER_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DEFINITION"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DEFINITION_RESULT_MAP">
+		SELECT
+		REPORT_ID,
+		REPORT_NAME,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		OD_FUNC_CODE,
+		OD_USER_NO,
+		OD_GCIF,
+		FORMAT_ID,
+		INCLUDE_BLANK_REC,
+		PARENT_REPORT_ID,
+		SYSTEM_REPORT_ID,
+		ENTL_TYPE,
+		DATA_AGGREGATOR_CLASS,
+		RATECARD,
+		REFERENCE_CCY,
+		CREATED_DATE,
+		STATUS,
+		SCHEDULER_FROM_DATE,
+		SCHEDULER_TO_DATE,
+		SCHEDULER_TYPE,
+		SCHEDULER_FREQUENCY_VALUE,
+		BUNDLE_KEY
+		FROM
+		REPORT_DEFINITION
+		WHERE
+		REPORT_ID = #REPORT_ID#
+		AND STATUS IS NULL
+	</select>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_COLUMN_DEFINITION"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_COLUMN_DEFINITION_RESULT_MAP">
+		SELECT
+		REPORT_ID,
+		COLUMN_ID,
+		COLUMN_NAME,
+		DATA_TYPE,
+		POSITION,
+		GROUPABLE_IND,
+		GROUP_POSITION,
+		SORTABLE_IND,
+		SORT_ORDER,
+		SORT_POSITION,
+		GROUP_TOTAL_IND,
+		ALL_COL_GRP_BY_IND,
+		INCLUDE_TOTAL,
+		LINKED_SRC_AMT,
+		LINKED_SRC_CCY,
+		VISIBILITY_IND 
+		FROM
+		REPORT_COLUMN_DEFINITION
+		WHERE
+		REPORT_ID = #REPORT_ID#
+	</select>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_FILTERS"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_FILTERS_RESULT_MAP">
+		SELECT
+		RCF.COLUMN_ID,
+		RCF.FILTER_ID,
+		VDFM.FILTER_NAME,
+		RCF.FILTER_DATA_TYPE,
+		RCF.FILTER_VALUES
+		FROM
+		REPORT_COLUMN_FILTER RCF
+		JOIN VIEW_DEFINITION_FILTER_MASTER VDFM
+		ON RCF.FILTER_ID = VDFM.FILTER_ID
+		WHERE
+		RCF.REPORT_ID = #REPORT_ID#
+		AND
+		RCF.COLUMN_ID =
+		#COLUMN_ID#
+	</select>
+	
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_POLICY_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportPolicy">
+		<result property="policyId" nullValue="" column="POLICY_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="policyName" nullValue="" column="POLICY_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="policyHandlerClass" nullValue=""
+			column="POLICY_HANDLER_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_POLICY"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_POLICY_RESULT_MAP">
+		SELECT
+		RQPM.POLICY_ID,
+		RQP.POLICY_NAME,
+		RQP.POLICY_HANDLER_CLASS
+		FROM
+		REPORT_QUOTA_POLICY_MAPPING RQPM,
+		REPORT_QUOTA_POLICY_MASTER RQP
+		WHERE
+		RQPM.POLICY_ID = RQP.POLICY_ID
+		AND
+		RQPM.REPORT_ID = #REPORT_ID#
+	</select>
+	
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_PUBLISHERS_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportPublisher">
+		<result property="publisherId" nullValue="" column="PUBLISHER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="publisherName" nullValue="" column="PUBLISHER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="publisherHandlerClass" nullValue=""
+			column="PUBLISHER_HANDLER_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_PUBLISHER"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_PUBLISHERS_RESULT_MAP">
+		SELECT
+		RPMP.PUBLISHER_ID,
+		RPMR.PUBLISHER_NAME,
+		RPMR.PUBLISHER_HANDLER_CLASS
+		FROM
+		REPORT_PUBLISHER_MAPPING RPMP,
+		REPORT_PUBLISHER_MASTER RPMR
+		WHERE
+		RPMP.PUBLISHER_ID = RPMR.PUBLISHER_ID
+		AND
+		RPMP.REPORT_ID = #REPORT_ID#
+	</select>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_NOTIFIERS"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_NOTIFIERS_RESULT_MAP">
+		SELECT
+		CM.CHANNEL_ID NOTIFICATION_ID,
+		CM.CHANNEL_NAME
+		NOTIFICATION_NAME,
+		CM.CHANNEL_HANDLER NOTIFICATION_HANDLER_CLASS
+		FROM
+		REPORT_NOTIFICATION_MAPPING RNMP,
+		CHANNEL_MASTER CM
+		WHERE
+		RNMP.NOTIFICATION_ID = CM.CHANNEL_ID
+		AND
+		RNMP.REPORT_ID = #REPORT_ID#
+	</select>
+	
+	<!-- CHG0001_OT0138_INFO_RPT_FW  Starts -->
+	<!-- This resultMap is used for create the ReportInstanceDefintion object. -->
+	
+	<resultMap
+		id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_DEFINITION_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportInstanceDefinition">
+		<result property="reportInstanceId" nullValue=""
+			column="REPORT_INSTANCE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportId" nullValue="" column="REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportName" nullValue="" column="REPORT_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userNo" nullValue="" column="OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="gcif" nullValue="" column="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="formatId" nullValue="" column="FORMAT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="includeBlankRec" nullValue=""
+			column="INCLUDE_BLANK_REC" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="status" nullValue="" column="STATUS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="createdDate" nullValue="" column="CREATED_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="rateCard" nullValue="" column="RATE_CARD"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="referenceCcy" nullValue="" column="REFERENCE_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columns" nullValue="" column="REPORT_INSTANCE_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_COLUMN_DEFINITION" />
+		<result property="publishers" nullValue="" column="REPORT_INSTANCE_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_INIT_PUBLISHER" />
+		<result property="notifiers" nullValue="" column="REPORT_INSTANCE_ID"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_INIT_NOTIFIERS" />
+
+	</resultMap>
+	
+	<resultMap
+		id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_COLUMN_DEFINITION_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportColumnDefinition">
+		<result property="reportInstanceId" nullValue=""
+			column="REPORT_INSTANCE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnId" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnName" nullValue="" column="COLUMN_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataType" nullValue="" column="DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="position" nullValue="" column="POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER"/>
+		<result property="groupableInd" nullValue="" column="GROUPABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="groupPosition" nullValue="" column="GROUP_POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER"/>
+		<result property="sortableInd" nullValue="" column="SORTABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sortPosition" nullValue="" column="SORT_POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="sortOrder" nullValue="" column="SORT_ORDER"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="groupTotalInd" nullValue="" column="GROUP_TOTAL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="allColumnGroupByInd" nullValue=""
+			column="ALL_COL_GRP_BY_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="includeTotal" nullValue="" column="INCLUDE_TOTAL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSrcAmt" nullValue="" column="LINKED_SRC_AMT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSrcCcy" nullValue="" column="LINKED_SRC_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="visibilityInd" nullValue=""
+			column="VISIBILITY_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filters" nullValue=""
+			column="{REPORT_INSTANCE_ID=REPORT_INSTANCE_ID,COLUMN_ID=COLUMN_ID}"
+			select="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_FILTERS" />
+	</resultMap>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_DEFINITION"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_DEFINITION_RESULT_MAP">
+		SELECT
+		REPORT_INSTANCE_ID,
+		REPORT_ID,
+		REPORT_NAME,
+		OD_USER_NO,
+		OD_GCIF,
+		FORMAT_ID,
+		INCLUDE_BLANK_REC,
+		STATUS,
+		CREATED_DATE,
+		RATE_CARD,
+		REFERENCE_CCY
+		FROM
+		REPORT_INSTANCE_DEFINITION
+		WHERE
+		REPORT_INSTANCE_ID =
+		#REPORT_INSTANCE_ID#
+	</select>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_COLUMN_DEFINITION"
+		parameterClass="java.lang.String"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_COLUMN_DEFINITION_RESULT_MAP">
+		SELECT
+		REPORT_INSTANCE_ID,
+		COLUMN_ID,
+		COLUMN_NAME,
+		DATA_TYPE,
+		POSITION,
+		GROUPABLE_IND,
+		GROUP_POSITION,
+		SORTABLE_IND,
+		SORT_POSITION,
+		SORT_ORDER,
+		GROUP_TOTAL_IND,
+		ALL_COL_GRP_BY_IND,
+		INCLUDE_TOTAL,
+		LINKED_SRC_AMT,
+		LINKED_SRC_CCY,
+		VISIBILITY_IND 
+		FROM
+		REPORT_INST_COLUMN_DEFINITION
+		WHERE
+		REPORT_INSTANCE_ID = #REPORT_INSTANCE_ID#
+	</select>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_INST_FILTERS"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_FILTERS_RESULT_MAP">
+		SELECT
+		RICF.COLUMN_ID,
+		RICF.FILTER_ID,
+		VDFM.FILTER_NAME,
+		RICF.FILTER_DATA_TYPE,
+		RICF.FILTER_VALUES
+		FROM
+		REPORT_INST_COLUMN_FILTER RICF
+		JOIN VIEW_DEFINITION_FILTER_MASTER VDFM
+		ON RICF.FILTER_ID = VDFM.FILTER_ID
+		WHERE
+		RICF.REPORT_INSTANCE_ID =
+		#REPORT_INSTANCE_ID# AND
+		RICF.COLUMN_ID = #COLUMN_ID#		
+	</select>
+
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_INIT_PUBLISHER"
+		parameterClass="java.lang.String"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_PUBLISHERS_RESULT_MAP">
+		SELECT
+		RIPMP.PUBLISHER_ID,
+		RPMR.PUBLISHER_NAME,
+		RPMR.PUBLISHER_HANDLER_CLASS
+		FROM
+		REPORT_PUBLISHER_MASTER RPMR,
+		REPORT_INST_PUBLISHER_MAPPING RIPMP
+		WHERE
+		RIPMP.PUBLISHER_ID =
+		RPMR.PUBLISHER_ID
+		AND
+		RIPMP.REPORT_INSTANCE_ID = #REPORT_INSTANCE_ID#
+	</select>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_INIT_NOTIFIERS"
+		parameterClass="java.lang.String"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_NOTIFIERS_RESULT_MAP">
+		SELECT
+		CM.CHANNEL_ID NOTIFICATION_ID,
+		CM.CHANNEL_NAME
+		NOTIFICATION_NAME,
+		CM.CHANNEL_HANDLER NOTIFICATION_HANDLER_CLASS
+		FROM
+		REPORT_INST_NOTIFICATION_MAP RINMP,
+		CHANNEL_MASTER CM
+		WHERE
+		RINMP.NOTIFICATION_ID = CM.CHANNEL_ID
+		AND
+		RINMP.REPORT_INSTANCE_ID =
+		#REPORT_INSTANCE_ID#
+	</select>
+	
+	<!-- CHG0001_OT0138_INFO_RPT_FW End -->
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_INSTANCE_DEFINITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="REPORT_INSTANCE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="REPORT_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FORMAT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="INCLUDE_BLANK_REC" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="ERROR_CODE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ERROR_MSG" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="RATE_CARD" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="REFERENCE_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SCHEDULER_FROM_DATE" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+		<parameter property="SCHEDULER_TO_DATE" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+		<parameter property="SCHEDULER_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SCHEDULER_FREQUENCY_VALUE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_INSTANCE_DEFINITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_INSTANCE_DEFINITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_INSTANCE_DEFINITION
+		(
+		REPORT_INSTANCE_ID,
+		REPORT_ID,
+		REPORT_NAME,
+		OD_USER_NO,
+		OD_GCIF,
+		FORMAT_ID,
+		INCLUDE_BLANK_REC,
+		STATUS,
+		CREATED_DATE,
+		ERROR_CODE,
+		ERROR_MSG,
+		RATE_CARD,
+		REFERENCE_CCY,
+		SCHEDULER_FROM_DATE,
+		SCHEDULER_TO_DATE,
+		SCHEDULER_TYPE,
+		SCHEDULER_FREQUENCY_VALUE
+		)
+		VALUES
+		(?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		SYSDATE,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+	
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_COLUMN_DEFINTITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="REPORT_INSTANCE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="COLUMN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DATA_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="GROUPABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="GROUP_POSITION" jdbcType="NUMERIC"
+			javaType="java.lang.Integer" />
+		<parameter property="SORTABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SORT_POSITION" jdbcType="NUMERIC"
+			javaType="java.lang.Integer" />
+		<parameter property="SORT_ORDER" jdbcType="NUMERIC"
+			javaType="java.lang.String" />
+		<parameter property="GROUP_TOTAL_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ALL_COL_GRP_BY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="INCLUDE_TOTAL" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SRC_AMT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SRC_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="VISIBILITY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_COLUMN_DEFINTITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_COLUMN_DEFINTITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_INST_COLUMN_DEFINITION
+		(
+		REPORT_INSTANCE_ID,
+		COLUMN_ID,
+		COLUMN_NAME,
+		DATA_TYPE,
+		POSITION,
+		GROUPABLE_IND,
+		GROUP_POSITION,
+		SORTABLE_IND,
+		SORT_POSITION,
+		SORT_ORDER,
+		GROUP_TOTAL_IND,
+		ALL_COL_GRP_BY_IND,
+		INCLUDE_TOTAL,
+		LINKED_SRC_AMT,
+		LINKED_SRC_CCY,
+		VISIBILITY_IND
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	   </insert>
+	   
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_FILTER_DEFINITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="REPORT_INSTANCE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="COLUMN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FILTER_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FILTER_DATA_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FILTER_VALUES" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_FILTER_DEFINITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_FILTER_DEFINITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_INST_COLUMN_FILTER
+		(
+		REPORT_INSTANCE_ID,
+		COLUMN_ID,
+		FILTER_ID,
+		FILTER_DATA_TYPE,
+		FILTER_VALUES
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	
+	</insert>
+	
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_PUBLISHER_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="PUBLISHER_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REPORT_INSTANCE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_PUBLISHER_MAP"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_PUBLISHER_MAP_PARAM_MAP">
+		INSERT INTO
+		REPORT_INST_PUBLISHER_MAPPING
+		(
+		PUBLISHER_ID,
+		REPORT_INSTANCE_ID
+		)
+		VALUES
+		(
+		?,
+		?
+		)
+	
+	</insert>
+
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_NOTIFIER_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="NOTIFICATION_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REPORT_INSTANCE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_NOTIFIER_MAP"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_INSTANCE_NOTIFIER_MAP_PARAM_MAP">
+		INSERT INTO
+		REPORT_INST_NOTIFICATION_MAP
+		(
+		NOTIFICATION_ID,
+		REPORT_INSTANCE_ID
+		)
+		VALUES
+		(
+		?,
+		?
+		)
+	</insert>
+
+	<update id="INFO_REPORT_FRMWK_MNT_UPDATE_REPORT_INSTANCE_STATUS"
+		parameterClass="java.util.HashMap">
+		UPDATE
+		REPORT_INSTANCE_DEFINITION
+		SET
+		STATUS = #STATUS#,
+		ERROR_CODE = #ERROR_CODE#,
+		ERROR_MSG = CONCAT(ERROR_MSG,#ERROR_MSG#)
+		WHERE
+		REPORT_INSTANCE_ID = #REPORT_INSTANCE_ID#
+	</update>
+
+	<!-- CHG0001_OT0138_INFO_RPT_FW Starts -->
+	<!-- Delete the report definition details for a given reportId  -->
+	
+	<delete id="INFO_REPORT_FRMWK_MNT_DELETE_COLUMN_FILTER_DEFINITION"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		REPORT_COLUMN_FILTER
+		WHERE
+		REPORT_ID = #REPORT_ID#		
+	</delete>
+	
+	<delete id="INFO_REPORT_FRMWK_MNT_DELETE_REPORT_COLUMN_DEFINITION"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		REPORT_COLUMN_DEFINITION
+		WHERE
+		REPORT_ID = #REPORT_ID#		
+	</delete>
+	
+	<delete id="INFO_REPORT_FRMWK_MNT_DELETE_REPORT_DEFINITION_NOTIFICATION"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		REPORT_NOTIFICATION_MAPPING
+		WHERE
+		REPORT_ID = #REPORT_ID#		
+	</delete>
+	
+	<delete id="INFO_REPORT_FRMWK_MNT_DELETE_REPORT_DEFINITION_PUBLISHER"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		REPORT_PUBLISHER_MAPPING
+		WHERE
+		REPORT_ID = #REPORT_ID#		
+	</delete>
+	
+	<delete id="INFO_REPORT_FRMWK_MNT_DELETE_REPORT_DEFINITION"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		REPORT_DEFINITION
+		WHERE
+		REPORT_ID = #REPORT_ID#		
+	</delete>
+	
+	<!-- CHG0001_OT0138_INFO_RPT_FW  End -->
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_PUBLISHERS"
+		parameterClass="java.lang.String"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_PUBLISHERS_RESULT_MAP">
+		SELECT RPM.PUBLISHER_ID,
+		RPM.PUBLISHER_NAME ,
+		RPM.PUBLISHER_HANDLER_CLASS
+		FROM REPORT_PUBLISHER_MASTER RPM
+		JOIN
+		REPORT_PUBLISHER_MAPPING RPMAP
+		ON RPM.PUBLISHER_ID = RPMAP.PUBLISHER_ID
+		WHERE RPMAP.REPORT_ID = #REPORT_ID#
+   </select>
+
+	<resultMap
+		id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_NOTIFICATIONS_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportNotification">
+		<result property="notificationId" nullValue="" column="NOTIFICATION_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="notificationName" nullValue=""
+			column="NOTIFICATION_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="notificationHandlerClass" nullValue=""
+			column="NOTIFICATION_HANDLER_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_NOTIFICATIONS"
+		parameterClass="java.lang.String"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_NOTIFICATIONS_RESULT_MAP">
+		SELECT
+		CM.CHANNEL_ID NOTIFICATION_ID,
+		CM.CHANNEL_NAME
+		NOTIFICATION_NAME,
+		CM.CHANNEL_HANDLER NOTIFICATION_HANDLER_CLASS
+		FROM
+		REPORT_NOTIFICATION_MAPPING RNMP,
+		CHANNEL_MASTER CM
+		WHERE
+		RNMP.NOTIFICATION_ID = CM.CHANNEL_ID
+		AND
+		RNMP.REPORT_ID = #REPORT_ID#
+   </select>
+   
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_DEFINITION_PARAM_MAP" class="java.util.HashMap">
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="REPORT_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_SUB_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_FUNC_CODE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FORMAT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="INCLUDE_BLANK_REC" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PARENT_REPORT_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SYSTEM_REPORT_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ENTL_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="DATA_AGGREGATOR_CLASS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="RATECARD" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="REFERENCE_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="SCHEDULER_FROM_DATE" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+		<parameter property="SCHEDULER_TO_DATE" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+		<parameter property="SCHEDULER_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SCHEDULER_FREQUENCY_VALUE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="BUNDLE_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_DEFINITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_INSERT_REPORT_DEFINITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_DEFINITION
+		(
+		REPORT_ID,
+		REPORT_NAME,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		OD_FUNC_CODE,
+		OD_USER_NO,
+		OD_GCIF,
+		FORMAT_ID,
+		INCLUDE_BLANK_REC,
+		PARENT_REPORT_ID,
+		SYSTEM_REPORT_ID,
+		ENTL_TYPE,
+		DATA_AGGREGATOR_CLASS,
+		RATECARD,
+		REFERENCE_CCY,
+		CREATED_DATE,
+		STATUS,
+		SCHEDULER_FROM_DATE,
+		SCHEDULER_TO_DATE,
+		SCHEDULER_TYPE,
+		SCHEDULER_FREQUENCY_VALUE,
+		BUNDLE_KEY
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		SYSDATE,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+	
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_COLUMN_DEFINTITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DATA_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="GROUPABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="GROUP_POSITION" jdbcType="NUMERIC"
+			javaType="java.lang.Integer" />
+		<parameter property="SORTABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SORT_POSITION" jdbcType="NUMERIC"
+			javaType="java.lang.Integer" />
+		<parameter property="SORT_ORDER" jdbcType="NUMERIC"
+			javaType="java.lang.String" />
+		<parameter property="GROUP_TOTAL_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ALL_COL_GRP_BY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="INCLUDE_TOTAL" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SRC_AMT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SRC_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="VISIBILITY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_COLUMN_DEFINTITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_COLUMN_DEFINTITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_COLUMN_DEFINITION
+		(
+		REPORT_ID,
+		COLUMN_ID,
+		COLUMN_NAME,
+		DATA_TYPE,
+		POSITION,
+		GROUPABLE_IND,
+		GROUP_POSITION,
+		SORTABLE_IND,
+		SORT_POSITION,
+		SORT_ORDER,
+		GROUP_TOTAL_IND,
+		ALL_COL_GRP_BY_IND,
+		INCLUDE_TOTAL,
+		LINKED_SRC_AMT,
+		LINKED_SRC_CCY,
+		VISIBILITY_IND 
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	   </insert>
+	   
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_FILTER_DEFINITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FILTER_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FILTER_DATA_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FILTER_VALUES" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_FILTER_DEFINITION"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_FILTER_DEFINITION_PARAM_MAP">
+		INSERT INTO
+		REPORT_COLUMN_FILTER
+		(
+		REPORT_ID,
+		COLUMN_ID,
+		FILTER_ID,
+		FILTER_DATA_TYPE,
+		FILTER_VALUES
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	
+	</insert>
+	
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_PUBLISHER_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="PUBLISHER_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_PUBLISHER_MAP"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_PUBLISHER_MAP_PARAM_MAP">
+		INSERT INTO
+		REPORT_PUBLISHER_MAPPING
+		(
+		PUBLISHER_ID,
+		REPORT_ID
+		)
+		VALUES
+		(
+		?,
+		?
+		)
+	
+	</insert>
+	
+	<parameterMap
+		id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_NOTIFIER_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="NOTIFICATION_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REPORT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+	
+	<insert id="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_NOTIFIER_MAP"
+		parameterMap="INFO_REPORT_FRMWK_MNT_BATCH_INSERT_REPORT_NOTIFIER_MAP_PARAM_MAP">
+		INSERT INTO
+		REPORT_NOTIFICATION_MAPPING
+		(
+		NOTIFICATION_ID,
+		REPORT_ID
+		)
+		VALUES
+		(
+		?,
+		?
+		)
+	</insert>
+	
+	<update id="INFO_REPORT_FRMWK_MNT_UPDATE_REPORT_DEFINITION_DELETE"
+		parameterClass="java.util.HashMap">
+		UPDATE
+		REPORT_DEFINITION
+		SET
+		STATUS = #STATUS#
+		WHERE
+		REPORT_ID = #REPORT_ID#
+	</update>
+	
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DS_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportDataSourceVO">
+		<result property="dataSourceType" nullValue="" column="DATA_SOURCE_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataSourceKey" nullValue="" column="DATA_SOURCE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dsImplementationClass" nullValue=""
+			column="DS_IMPLEMENTATION_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DS"
+		parameterClass="java.util.HashMap" resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DS_RESULT_MAP">
+		SELECT
+		RDSTMAP.DATA_SOURCE_TYPE,
+		RDSTMAP.DATA_SOURCE_KEY,
+		RDSTMAP.DS_IMPLEMENTATION_CLASS
+		FROM REPORT_DS_TYPE_MAPPING RDSTMAP
+		WHERE RDSTMAP.REPORT_ID = #REPORT_ID#
+   </select>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_POLICIES"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_POLICY_RESULT_MAP">
+		SELECT RQPM.POLICY_ID,
+		RQPM.POLICY_NAME ,
+		RQPM.POLICY_HANDLER_CLASS
+		FROM REPORT_QUOTA_POLICY_MASTER RQPM
+		JOIN
+		REPORT_QUOTA_POLICY_MAPPING RQPMAP
+		ON RQPM.POLICY_ID = RQPMAP.POLICY_ID
+		WHERE RQPMAP.REPORT_ID = #REPORT_ID#
+   </select>
+	
+	<resultMap id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_CONTEXT_RESULT_MAP"
+		class="com.intellectdesign.canvas.report.vo.ReportContext">
+		<result property="productCode" nullValue="" column="OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProductCode" nullValue="" column="OD_SUB_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="funcCode" nullValue="" column="OD_FUNC_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userName" nullValue="" column="USER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="entlType" nullValue="" column="ENTL_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportDataAggregatorClassName" nullValue=""
+			column="DATA_AGGREGATOR_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportEngineAdaptorClassName" nullValue=""
+			column="REPORT_ENGINE_ADAPTOR_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="systemReportId" nullValue="" column="SYSTEM_REPORT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="corporateName" nullValue="" column="OD_COMPANY_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="bundleKey" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="reportPublishers" nullValue=""
+			column="REPORT_INSTANCE_ID" select="INFO_REPORT_FRMWK_MNT_SELECT_INIT_PUBLISHER" />
+		<result property="notificationListeners" nullValue=""
+			column="REPORT_INSTANCE_ID" select="INFO_REPORT_FRMWK_MNT_SELECT_INIT_NOTIFIERS" />
+		<result property="policies" nullValue=""
+			column="{REPORT_ID=SYSTEM_REPORT_ID}" select="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_POLICIES" />
+		<result property="dataSources" nullValue=""
+			column="{REPORT_ID=SYSTEM_REPORT_ID}" select="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_DS" />
+	</resultMap>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_CONTEXT"
+		parameterClass="java.util.HashMap"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_REPORT_CONTEXT_RESULT_MAP">
+		SELECT 
+		RID.REPORT_INSTANCE_ID,
+		RD.REPORT_ID,
+		RD.OD_PRODUCT ,
+		RD.OD_SUB_PRODUCT ,
+		RD.OD_FUNC_CODE ,
+		OUM.FIRST_NAME||' '||OUM.LAST_NAME AS USER_NAME,
+		RD.ENTL_TYPE,
+		RD.DATA_AGGREGATOR_CLASS,
+		RFM.REPORT_ENGINE_ADAPTOR_CLASS,
+		RD.SYSTEM_REPORT_ID,
+		OCP.OD_COMPANY_NAME,
+		RD.BUNDLE_KEY
+		
+		FROM
+		REPORT_INSTANCE_DEFINITION RID
+		JOIN REPORT_DEFINITION RD ON RID.REPORT_ID = RD.REPORT_ID
+		JOIN REPORT_FORMAT_MASTER RFM ON RFM.FORMAT_ID = RD.FORMAT_ID
+		JOIN OD_USERS_MB OUM ON OUM.OD_USER_NO = RID.OD_USER_NO
+		JOIN OD_CORPORATE_PROFILE_MB OCP ON OCP.OD_GCIF = RID.OD_GCIF
+		WHERE
+		RID.REPORT_INSTANCE_ID = #REPORT_INSTANCE_ID#		
+		AND RD.STATUS IS NULL
+		
+   </select>
+   
+   <!-- CHG0001_OT0138_INFO_RPT_FW  Starts -->
+   <!-- Added for testing data aggregator module -->
+   <!-- Starts here for iSolve SIT - #786 - CBXQ312F10_UPD1 -->
+   
+	<resultMap id="SWP_DATA_FROM_DUMMY_TABLE_RESULT_MAP" class="java.util.HashMap">
+
+		<result property="STR_ID" nullValue="" column="STR_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INSTR_ID" nullValue="" column="INSTR_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="STR_NAME" nullValue="" column="STR_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INSTR_START_DATE" nullValue="" column="INSTR_START_DATE" jdbcType="java.sql.Timestamp" javaType="java.lang.String" />
+		<result property="INSTR_END_DATE" nullValue="" column="INSTR_END_DATE" jdbcType="java.sql.Timestamp" javaType="java.lang.String" />
+		<result property="NEXT_EXEC_DATE" nullValue="" column="NEXT_EXEC_DATE" jdbcType="java.sql.Timestamp" javaType="java.lang.String" />
+		<result property="FAILURE_LEVEL" nullValue="" column="FAILURE_LEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="AMOUNT" nullValue="" column="AMOUNT" javaType="java.lang.Float" jdbcType="NUMERIC" />
+		<result property="CURR" nullValue="" column="CURR" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="SELECT_SWP_DATA_FROM_DUMMY_TABLE">
+		SELECT
+		STR_ID    ,
+  		INSTR_ID        ,
+  		STR_NAME        ,
+  		to_char(INSTR_START_DATE,'dd-mm-yyyy')INSTR_START_DATE,
+ 		to_char(INSTR_END_DATE,'dd-mm-yyyy')INSTR_END_DATE,
+ 		to_char(NEXT_EXEC_DATE,'dd-mm-yyyy')NEXT_EXEC_DATE,
+ 		 FAILURE_LEVEL   ,
+ 		 AMOUNT          ,
+ 		 CURR
+  		 FROM DUMMY_ACTIVE_SWEEP_TABLE
+  		WHERE 
+  		1=1
+	</sql>
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_SWP_DATA_FROM_DUMMY_TABLE"
+		resultMap="SWP_DATA_FROM_DUMMY_TABLE_RESULT_MAP">
+		<include refid="PAGINATION_BEGINS" />
+		<include refid="SELECT_SWP_DATA_FROM_DUMMY_TABLE" />
+		<include refid="FILTER_CLAUSE" />
+		<include refid="DEFAULT_ORDERBY_CLAUSE"/>
+		<include refid="PAGINATION_ENDS" />
+
+	</select>
+	
+	<!-- CHG0001_OT0138_INFO_RPT_FW  End -->
+	<!-- Ends here for iSolve SIT - #786 - CBXQ312F10_UPD1 -->
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_COLUMN_DEF_FOR_COLUMN_ID"
+		resultMap="INFO_REPORT_FRMWK_MNT_SELECT_FETCH_REPORT_COLUMN_DEFINITION_RESULT_MAP">
+		SELECT
+		REPORT_ID,
+		COLUMN_ID,
+		COLUMN_NAME,
+		DATA_TYPE,
+		POSITION,
+		GROUPABLE_IND,
+		GROUP_POSITION,
+		SORTABLE_IND,
+		SORT_ORDER,
+		SORT_POSITION,
+		GROUP_TOTAL_IND,
+		ALL_COL_GRP_BY_IND,
+		INCLUDE_TOTAL,
+		LINKED_SRC_AMT,
+		LINKED_SRC_CCY,
+		VISIBILITY_IND 
+		FROM
+		REPORT_COLUMN_DEFINITION
+		WHERE
+		REPORT_ID = #REPORT_ID#
+		AND COLUMN_ID = #COLUMN_ID#
+	</select>
+	
+	<update id="INFO_REPORT_FRMWK_MNT_UPDATE_REPORT_SCHEDULE"
+		parameterClass="java.util.HashMap">
+		UPDATE
+		REPORT_DEFINITION
+		SET
+		SCHEDULER_FROM_DATE = #SCHEDULER_FROM_DATE#,
+		SCHEDULER_TO_DATE = #SCHEDULER_TO_DATE#,
+		SCHEDULER_TYPE = #SCHEDULER_TYPE#,
+		SCHEDULER_FREQUENCY_VALUE =#SCHEDULER_FREQUENCY_VALUE#		
+		WHERE
+		REPORT_ID = #REPORT_ID#
+	</update>
+	
+	<!--  CHG0001_OT0138_INFO_RPT_FW Starts -->
+	<!-- Status column handled for report availablitiy checking -->
+	
+	<select id="INFO_REPORT_FRMWK_MNT_SELECT_GET_REPORT_AVAILABILITY"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+
+		SELECT 
+		CASE WHEN COUNT(REPORT_NAME)>0 THEN 'Y'
+			 ELSE  'N'
+		END IS_REPORT_AVAILABLE      
+		FROM REPORT_DEFINITION 
+		WHERE 
+		(OD_GCIF = '-1'	OR OD_GCIF = #OD_GCIF#) AND
+		(OD_USER_NO = '-1' OR OD_USER_NO = #OD_USER_NO#) AND
+		SYSTEM_REPORT_ID=#SYSTEM_REPORT_ID# AND		
+		REPORT_NAME=#REPORT_NAME#
+		AND STATUS IS NULL 
+   </select>
+   <!--  CHG0001_OT0138_INFO_RPT_FW End -->
+   
+</sqlMap>

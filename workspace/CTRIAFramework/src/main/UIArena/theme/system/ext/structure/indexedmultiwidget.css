@@ -1,0 +1,10 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.x-btn-txt-wrap button.indexedPanel-btn {
+	text-align: left!important;
+    white-space: normal!important;	
+}
+.x-btn-txt-wrap .x-btn-mc {
+	text-align:left;
+}

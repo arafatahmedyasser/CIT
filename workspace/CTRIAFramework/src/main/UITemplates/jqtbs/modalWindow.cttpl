@@ -1,0 +1,17 @@
+{{!-- modal fade modal-fullscreen force-fullscreen begins --}}
+<div class="modal fade {{#if fullscreenInd}}modal-fullscreen force-fullscreen{{/if}}  ct-modal {{modalClass}}" data-backdrop="static" data-keyboard="false" data-item-id="modal-{{index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	{{!-- modal-dialog begins --}}
+	<div class="modal-dialog">
+		{{!-- modal-content begins --}}
+		<div class="modal-content" data-item-id='ct-modal-content'>
+			{{!-- modal-header begins --}}
+			<div class="modal-header" data-item-id='ct-modal-header'></div>
+			<button type="button" class="flaticon-close flaticon-modal-close" data-dismiss="modal-{{index}}" data-toggle="tooltip" data-placement="top" data-original-title="Close" aria-hidden="true"></button>
+			{{!-- modal-header begins --}}
+			<div data-content-id="modal-content-{{index}}" class="ct-modal-content__container"></div>
+		</div>
+		{{!-- modal-content ends --}}
+	</div>
+	{{!-- modal-dialog ends --}}
+</div>
+{{!-- modal fade modal-fullscreen force-fullscreen ends --}}

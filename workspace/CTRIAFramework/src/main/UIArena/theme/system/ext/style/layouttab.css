@@ -1,0 +1,53 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+
+.headerTAB .x-panel-body{
+	background:transparent  !important;/* #c1bfc0 !important;*/
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+}
+.tablogo{
+	background: url("../images/headerlogo.png") no-repeat scroll 10px center transparent;	
+}
+.tablogout{
+	background: url("../images/layouttab/logoff.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    text-decoration: none !important;	
+    line-height: 50px;
+    height: 60px;
+}
+.tabuserdetails-col{
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+}
+.copyrighttext{
+	font: 0.8em Arial, Helvetica, sans-serif;
+}
+.tablogouttext{
+	color:#000;
+		font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight: bold;
+	line-height:15px;
+}
+.footerTAB .x-panel-body {
+    background:#7fc9e9  !important;/* #c1bfc0 !important;*/
+    color: #333;
+}
+
+/* Application tab Style */
+.applnTab .applnTab .x-tab-strip-top .x-tab-right,.applnTab .applnTab .x-tab-strip-top .x-tab-left,.applnTab .applnTab .x-tab-strip-top .x-tab-strip-inner{
+	background-image: url(../images/layouttab/tabs-sprite.gif);
+} 
+.wsconTAB .x-panel-body {
+    background:transparent;/* #c1bfc0 !important;*/
+}
+.applnTab .x-tab-panel-header,.applnTab .x-tab-panel-footer, .applnTab ul.x-tab-strip-top {
+	  background:transparent;/* #c1bfc0 !important;*/
+}
+.applnTab ul.x-tab-strip-top {
+    background-color: #0D9CD9;
+    border-bottom-color: #0D9CD9;
+}

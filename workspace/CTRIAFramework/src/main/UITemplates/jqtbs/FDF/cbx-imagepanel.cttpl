@@ -1,0 +1,31 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	<div id="ct-Carousel" class="carousel slide{{#if addData}}{{#condchk visibleInd 'N'}} hidden{{/condchk}} {{else}} hidden{{/if}}" data-ride="carousel"{{anchorStyle}}>
+		<ol class="carousel-indicators">
+			{{#each addData}} {{#condchk @index 0}}
+			<li data-target="#ct-Carousel" data-slide-to={{@index}} class="active"></li> 
+			{{else}}
+			<li data-target="#ct-Carousel" data-slide-to={{@index}}></li>
+			{{/condchk}} {{/each}}
+		</ol>
+		<div class="carousel-inner" role="listbox" name={{itemId}}>
+			{{#each data}} {{#condchk @index 0}}
+			<div class="item active">
+				<img id="{{getOf ../keys @index}}" src="{{this}}" alt="{{../altText}}">
+			</div>
+			{{else}}
+			<div class="item">
+				<img id="{{getOf ../keys @index}}" src="{{this}}" alt="{{../altText}}">
+			</div>
+			{{/condchk}} {{/each}}
+		</div>
+		<a class="left carousel-control" href="#ct-Carousel" role="button" data-slide="prev"> 
+			<span class="flaticon-previous" aria-hidden="true"></span> 
+			<span class="sr-only">Previous</span>
+		</a> 
+		<a class="right carousel-control" href="#ct-Carousel" role="button" data-slide="next"> 
+			<span class="flaticon-next" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<div class='clearfix'></div>
+</div>

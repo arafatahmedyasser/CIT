@@ -1,0 +1,20 @@
+
+{{!-- form-group begins --}}
+<div class="form-group ct-mobile-filter-padd">
+	{{!-- input-group begins --}}
+	<div class="input-group input-string-validate" data-item-id="listStringValidate">
+		
+		<div class="input-group-addon ct-mobile-view-filer-form"><strong> {{field_Name}} {{Contains}}</strong></div>
+		<input type="text" class="form-control" name="string_contains" id="stringContains" />
+		<span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_position ct_err_default">
+	  		<span type="Error_Msg" data-item-id="errorMsgListForm" class="ct-form__err hidden">  
+	   		<i class="flaticon-alert"></i>
+		</span>
+	 	</span>
+	</div>
+	{{!-- input-group ends --}}
+</div>
+{{!-- form-group ends --}}
+<button type="button" data-action="submit" class="btn ct_btn">{{btnSearch}}</button>
+<button type="button" data-action="cancel" class="btn ct_btn">{{btnCancel}}</button>
+<span class="input-string-error"></span>

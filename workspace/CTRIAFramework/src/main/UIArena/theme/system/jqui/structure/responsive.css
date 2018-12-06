@@ -1,0 +1,361 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/*
+ * Purpose : Responsive Layout Container, it will render two column layout for Tablet's
+ * Author  : Arun Kumar Sekar - 46046
+ */ 
+ 
+ /* Portrait tablet to landscape and desktop */
+ table.tbl-jquery {
+	font-size:14px;
+ }
+ .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+	font-size: 14px;
+ }
+  table.tbl-jquery {
+	font-size:14px;
+ }
+ .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+	font-size: 14px;
+ }
+ table.footable.tbl-jquery .amountField{
+	font-size:17px;	 
+}
+ @media (min-width: 768px) {
+ 	#context-app-panel-popup {
+ 		height : 100%;
+ 	}
+ 	div.responsiveClass{
+ 		clear:both;
+ 		position:relative;
+ 	/*	padding:0px;*/
+ 		margin:0px;
+ 	}
+ 	
+ 	div.responsiveClass .widgetColumns { 
+ 		width : 49%;
+ 		display: inline-block;
+ 		float:left;
+ 	}
+ 	.widgetColumns .responsiveWidget {
+ 	/*	border:1px solid #fff;*/
+ 		margin: 5px;
+ 	}
+ 	.app-header-text {
+		line-height: 32px;
+		font-size: 14px;
+	} 
+ }
+ @media (max-width: 768px) {
+  	.cbx-compositefield .cbx-compositefield_wrap .ui-field-contain{
+		display:inline-block!important;
+	}
+	.form-wrapper .ui-field-contain{
+		border:0px;
+		padding: 0px 0px 0px 0px;
+	}
+	.ui-field-contain, fieldset.ui-field-contain {
+		padding: .3em 0;
+		border-width: 0 0 0px 0;
+	}
+	label.ui-input-text {
+		font-size: 12px;
+		font-weight: bold;
+		margin: 0 0 0em;
+		padding-top: 10px;
+	}
+	
+}
+ @media (min-width: 280px) and (max-width: 768px) {
+ 	#context-app-panel-popup {
+ 		height : 100%;
+ 	}
+ }
+ 
+ /* app icons */
+ 
+ @media (max-width: 480px){
+	div.grid_view_icons .x-app-icon {
+		margin: 15px 5px 15px 5px;
+		width: 90px;
+		height: 62px;
+	}
+	#context-app-panel-popup {
+ 		height : 100%;
+ 	}	
+	div.grid_view_icons .x-app-icon > span {
+		height: auto;
+		left: 0;
+		position: relative;
+		text-align: center;
+		top: 0px;
+		width: 90px;
+	}
+	table.tbl-jquery {
+		font-size: 14px;
+	}
+ 	.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
+ 		font-size: 14px;
+ 	}
+ 	.app-header-text {
+		line-height: 32px;
+		font-size: 14px;
+	}	
+	 table.tbl-jquery {
+		font-size:12px;
+	 }
+	 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size: 12px;
+	 }
+	  table.tbl-jquery {
+		font-size:12px;
+	 }
+	 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size: 12px;
+	 }
+	 .ui-body-e input, .ui-body-e select, .ui-body-e textarea, .ui-body-e button {
+		font-size: 12px;
+	}
+	 table.footable.tbl-jquery .amountField{
+		font-size:14px;	 
+	}
+ }
+/* pop up window */
+.popupdialogCls {
+	height: 100%;
+}
+
+.popupdialogContCls {
+	height: 320px;
+	overflow: scroll;
+}
+
+.popupCls {
+	height: 360px;
+	width: 500px;
+}
+
+#wrapper {
+	width: 490px;
+	height: 360px;
+	overflow: auto;
+}
+
+@media only screen and (max-width:480px){
+	#HElP_POPUP-popup{
+		width: 86%;
+	 }
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 100%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+}
+
+
+@media all and (min-width: 28em) {
+	.cbx-compositefield .cbx-compositefield_wrap  {
+	   	display: inline-block;
+	    margin: 0;
+	    width: 78%;
+	}
+	.cbx-compositefield .cbx-compositefield_wrap  .ui-field-contain{
+	    margin: 0;
+	    display: inline-block!important;
+	}
+}
+.cbx-compositefield .jqm-form-field-c.jqm-cbxRadioGroup{
+	display:inline-block!important;
+}
+@media (max-width: 28em){
+	.app-header-text {
+		font-size: 14px; 
+	} 
+	.lazzyformpanel label.ui-input-text {
+	font-size: 12px
+    }
+    	.ui-body-e input, .ui-body-e select, .ui-body-e textarea, .ui-body-e button {
+		font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+		font-size: 12px;
+	}
+	.form-wrapper .ui-select .ui-btn-inner, .form-wrapper label.ui-input-text {
+		font-size: 12px;
+	}
+	.form-wrapper .cbx-hyperlink{
+		font-size: 12px;
+	}
+	.ui-btn-inner{
+		font-size: 14px;
+	}
+}
+@media (min-width: 28em){
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text {
+	width: 70%;
+	}	
+	.tblFilter.ui-field-contain input.ui-input-text,.tblFilter.ui-field-contain textarea.ui-input-text, .tblFilter.ui-field-contain .ui-input-search,.tblFilter.ui-field-contain div.ui-input-text {
+	width: 78%; 
+	}
+	.cbx-compositefield .cbx-compositefield_wrap {
+	width: 70%;
+	}
+	.ui-field-contain label.ui-input-text {
+	width: 28%;
+	}
+	.lazzyformpanel label.ui-input-text {
+	font-size: 14px
+    }
+	.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+	margin: .5em 0;
+	}
+	.ui-field-contain label.ui-input-text {
+	font-weight: bold;
+	}
+	.form-wrapper .cbx-hyperlink{
+		font-size: 14px;
+	}	
+}
+
+/* media query css start */
+
+ /* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+}
+
+ /* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+}
+
+@media only screen
+and (min-width : 481px)
+and (max-width : 768px) {
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 100%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 70%;
+	}
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+
+}
+
+/* Smartphones (landscape) ----------- */
+/*@media only screen
+and (min-width : 321px) {
+	#app{
+		border:2px solid yellow;
+	}
+}*/
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 100%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 70%;
+	}
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 100%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 70%;
+	}
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+}
+
+@media only screen
+and (min-width: 1024px)
+and (max-width: 1536px)
+and (orientation : landscape){
+	#HElP_POPUP-popup {
+	    width: 60%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 100%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 70%;
+	}
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+}
+
+ /*media query css end */

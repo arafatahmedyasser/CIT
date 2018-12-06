@@ -1,0 +1,39 @@
+<div class="fav-app" data-item-id="{{widgetID}}-app-container">
+ 	<div class="ct-app-view-container">
+ 	<div class="ct-fav-apps-scroll mCustomScrollbar" data-mcs-theme="dark-thin">
+ 	<ul class="ct-app-view-container-inner">
+ 	{{#each childapps}}
+ 		{{#condchk IS_FAV_APP 'N'}}
+    	<li class="ct-apps" data-app-id="{{APP_ID}}">
+      		<div class="ct-app-icon {{#condchk RENDERER_TYPE 'WINDOW'}}ct-app-window{{/condchk}} {{#condchk RENDERER_TYPE 'INLINE'}}ct-app-inline{{/condchk}}" data-item-id="{{{WIDGET_ID}}}" data-element-id="ct-app-icon">
+      			<div class="app-title">{{{widgetTitle}}}</div>
+      		</div>
+    	</li>
+    	{{/condchk}}
+	{{/each}}
+	</ul>
+	</div>
+	</div>
+	{{#condchk favAppsReq 'Y'}}
+	<div class="ct-fav-app-container">
+	<span class="fav-app-txt">Favourite Apps</span>
+	<div class="ct-fav-apps-empty-txt" data-item-id="ct-fav-apps-empty-txt">No more apps to display ...</div>
+	<span class="add-apps flaticon-expand" data-item-id="add-apps"></span>
+	<div class="ct-fav-apps-scroll mCustomScrollbar" data-mcs-theme="light-thin">
+	<ul class="ct-fav-app-container-inner">
+  	{{#each childapps}}
+  		{{#condchk IS_FAV_APP 'Y'}}
+   		<li class="ct-fav-apps" data-app-id="{{APP_ID}}">
+      		<div class="ct-app-icon {{#condchk RENDERER_TYPE 'WINDOW'}}ct-app-window{{/condchk}} {{#condchk RENDERER_TYPE 'INLINE'}}ct-app-inline{{/condchk}}" data-item-id="{{{WIDGET_ID}}}" data-element-id="ct-app-icon">
+      			<div class="cross" data-item-id="cross"></div>
+      			<div class="app-title">{{{widgetTitle}}}</div>
+      		</div>
+    	</li>
+		{{/condchk}}
+	{{/each}}
+	</ul>	
+	</div>
+	</div>
+	{{/condchk}}
+	
+</div>

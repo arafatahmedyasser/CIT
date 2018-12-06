@@ -1,0 +1,14 @@
+package com.ccjp.creditmanagement;
+
+
+
+public class creditmgmn {
+
+	public static void main(String[] args) {
+		
+		creditmgmn cd= new creditmgmn();
+		
+		
+	}
+
+}

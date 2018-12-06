@@ -1,0 +1,107 @@
+/*
+  Purpose : File contains only helper classes.
+  Contains: This helper class file contains details of margin,padding and border whether they are important or not
+  if important then assign its value.                   
+*/
+/* 
+=============================
+========  CT HELPERS ========
+============================= 
+*/
+
+
+.ct-table{
+	display:table;
+	white-space: normal;
+	word-break: break-word;
+}
+
+.ct-tr{
+	display:table-row;
+}
+
+.ct-td{
+	display:table-cell;
+}
+
+.ct-no-border-radius{
+	border-radius:0 !important;
+}
+
+.ct-no-margin {
+	margin: 0 !important;
+}
+
+.ct-no-padding {
+	padding: 0 !important;
+}
+
+.ct-border-bot {
+	border-bottom: 1px solid;
+}
+
+.ct-bufferbottom-md{
+	margin-bottom:20px !important;
+}
+
+.ct-margintop-no{
+	margin-top: 0px !important;
+}
+.ct-margintop-sm{
+	margin-top: 80px !important;
+}
+.ct-margintop-md{
+	margin-top: 100px !important;
+}
+.ct-margintop-lg{
+	margin-top: 150px !important;
+}
+.ct-paddingtop-no{
+	padding-top: 0px !important;
+}
+.ct-paddingtop-sm{
+	padding-top: 50px !important;
+}
+.ct-paddingtop-md{
+	padding-top: 75px !important;
+}
+.ct-paddingtop-lg{
+	padding-top: 150px !important;
+}
+.ct-action-disabled{
+	opacity: 0.4444;
+  	cursor: not-allowed;
+}
+.ct-no-dragable{
+	  cursor: no-drop;
+}
+.ct-btn{
+  border: 0;
+  text-shadow: none !important;
+  background: #147469;
+  background-image: none !important;
+  border-radius: 5px;
+  border-bottom: 2px solid #42A89C !important;
+}
+
+.ct-btn-neg{
+
+background: rgba(142, 142, 142, 0.74);
+}
+.ct-txt-bold{
+	font-weight: bold;
+}
+.ct-noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ct-text-boundary{
+	word-wrap:break-word;
+}
+
+/* CT Helper classes ends */

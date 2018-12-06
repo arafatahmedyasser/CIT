@@ -1,0 +1,424 @@
+@CHARSET "ISO-8859-1";
+
+html {
+	overflow-y: scroll;
+}
+
+.pull-right {
+	float: left !important;
+}
+
+.pull-left {
+	float: right !important;
+}
+
+/* RTL for Grid */
+.ct-app__header {
+	padding: 7px 7px 7px 0px;
+}
+
+.ct-app__icon {
+	padding-left: 10px;
+	padding-top: 2px;
+}
+
+.flaticon-close:before {
+	margin-right: 0px;
+}
+
+.flaticon-filter-o {
+	padding-right: 15px;
+}
+
+/* .ct-listview>tbody tr */
+/* { */
+
+/* 	border-right: 5px solid transparent; */
+/* } */
+
+/* RTL for tab widget AND form inside widget */
+.form-wrapper,.tabbable.ct-tab.ct-tab-tm.ct-tab-bs {
+	direction: rtl;
+}
+
+.nav-tabs>li {
+	float: right !important;
+}
+
+.ct-form__ip-date-picker-ico {
+	border-left: 1px solid #ccc;
+}
+
+.ct-form__spinner-down {
+	border-left: 1px solid #C2C2C2;
+}
+
+@media ( min-width : 1200px) {
+	.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12
+	{
+		float: right;
+	}
+}
+
+/*   RTL for Groupin Grid */
+thead,tbody {
+	direction: rtl;
+}
+
+.ct-app__tools.flaticon-expand,.ct-app__tools.flaticon-collapse {
+	float: right;
+}
+
+td,tr {
+	cursor: pointer;
+}
+
+.ct-listview-mobile__content>tbody tr:hover {
+	border-right: 4px solid;
+	border-right-color:
+}
+
+/* RTL For HTML Editor */
+.btn-toolbar .btn-group,.btn-toolbar .input-group,.btn-group>.btn {
+	float: right;
+}
+
+/* RTL For OLD and NEW buttons */
+.pager .previous>a,.pager .previous>span {
+	float: right;
+}
+
+.pager .next>a,.pager .next>span {
+	float: left;
+}
+
+/* RTL for scroll bar*/
+/* .mCustomScrollBox */
+/* { */
+/* 	direction: rtl; */
+/* } */
+
+/*RTL for widget re-ordering*/
+@media ( min-width : 992px) {
+	.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12
+	{
+		float: right;
+	}
+}
+
+/*RTL for pagination*/
+.ct-pagination {
+	direction: rtl;
+}
+
+.pagination>li>a,.pagination>li>span {
+	float: right;
+}
+
+input[type="radio"],input[type="checkbox"] {
+	margin: 4px -20px 0px 0px;
+}
+
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{
+	float: right;
+}
+/*RTL for error msg*/
+.ct_err_default {
+	left: 20px !important;
+	right: auto !important;
+}
+
+/*RTL for dropdown menu*/
+.dropdown-menu {
+	left: auto;
+}
+
+.dropdown-menu.pull-right {
+	right: auto;
+	left: 0;
+}
+
+.flat {
+	float: right;
+}
+
+.ct-dropdown>ul.list-inline li {
+	float: right;
+}
+
+.dropdown-submenu>a:after {
+	border-left-color: transparent;
+	border-right-color: #000000;
+	right: auto;
+	left: 8px;
+	border-width: 5px 5px 5px 0px !important;
+	float: right;
+}
+
+.pull-right>.dropdown-menu {
+	right: auto;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+	margin-left: 0px;
+}
+
+.dropdown-menu>li>a {
+	direction: rtl;
+}
+
+/*Grouping grid*/
+.group-title {
+	margin-right: 10px;
+}
+
+/*RTL for R-Menu*/
+.flaticon-leftmenu-expclps {
+	float: right;
+	margin-left: 10px;
+}
+
+/*RTL for maximize mode*/
+.flaticon-modal-close {
+	float: left;
+	margin-left: 25px;
+	margin-right: 0px;
+}
+
+/*RTL for chart dropdown*/
+.ct-dropdown .ct-dropdown-menu a {
+	direction: rtl;
+}
+
+/*RTL for App Dock*/
+.ct-app-dock__each {
+	float: right;
+}
+
+.ct-app-dock {
+	right: auto;
+	float: left;
+	left: 0px;
+}
+
+.ct-app-dock__container {
+	right: auto;
+	left: 80px;
+}
+
+.ct-app-dock__notification {
+	left: auto;
+	right: 30px;
+	top: -4px;
+}
+
+.flaticon-stackAppdock {
+	padding: 0 0 0 15px;
+}
+
+@media ( max-width : 768px) {
+	.ct-app-dock__container {
+		left: 0px;
+	}
+}
+
+/*RTL for filter search*/
+.form-inline.pull-left {
+	direction: rtl;
+}
+
+/*RTL for header*/
+.ct-al-card__header-container {
+	direction: rtl;
+}
+
+.ct-logo {
+	float: right;
+}
+
+.ct-al__card-user_details-cont {
+	float: left;
+	margin-left: 50px;
+}
+
+.ct-ws-title {
+	float: none;
+	margin-right: 142px;
+}
+
+.ct-user.ct-card-desktop__ws-user-info {
+	right: auto;
+	left: 15px;
+}
+
+.ct-al-card__home-page.ct-card-destop__ws-tooltip-arrow {
+	left: 13%;
+}
+
+.ct-card-destop__ws-tooltip-arrow {
+	right: 75% !important;
+}
+
+.tooltip.left {
+	left: auto !important;
+	right: 42px;
+}
+
+.tooltip.left .tooltip-arrow {
+	border-right-color: #333;
+	left: 0px;
+	right: auto;
+	border-width: 5px 5px 5px 0px;
+}
+
+.ct-logo.ct-sticky_header {
+	float: right;
+	margin: -2px 20px 0px 0px;
+}
+
+.ct-card__ws-user-snippet {
+	text-align: right;
+}
+
+a.btn.ct_btn.flaticon-pref_settings,a.btn.ct_btn.flaticon-logout {
+	direction: rtl;
+}
+
+/*RTL for Footer*/
+.navbar-default.navbar-fixed-bottom.ct-al__footer.ct-al__footer-tm.ct-al__footer-bs{
+	direction: rtl;
+}
+
+/*RTL for Menu Layout Header*/
+.ct-al__menu-menu-toggler.flaticon-main-menu {
+	float: right;
+}
+
+.ct-al__wslink-each.ct-al__wslink-each-tm {
+	direction: rtl;
+}
+
+.ct-al__menu-sidebar {
+ 	float: right;
+	right: -275px;
+	left: auto;
+}
+
+.ct-al__menu-wslink-container .ct-al-menu__wslink-txt {
+	padding-right: 10px;
+}
+
+.ct-al__menu-menu-toggler {
+	margin: 20px 10px 0px 20px;
+}
+
+.ct-ws-title {
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	float: left;	
+}
+
+.ct-user.ct-menu-desktop__ws-user-info {
+	left: 15px;
+	right: auto;
+}
+
+.ct-menu-destop__ws-tooltip-arrow {
+	right: auto;
+    left: 34%;
+}
+
+/*RTL for EX-CARD Layout*/
+.ct-al__wslink-container {
+	padding-right: 0px;
+}
+
+.mCSB_container {
+	direction: rtl;
+}
+
+.ct-user.ct-excard-desktop__ws-user-info {
+	left: 15px;
+	right: auto;
+}
+
+.ct-excard-destop__ws-tooltip-arrow {
+	right: auto;
+    left: 35%;
+}
+
+.flaticon-excard-main-menu, .flaticon-tabletop-main-menu, .flaticon-app-main-menu, .flaticon-tab-main-menu {
+	float: right; 
+	margin-left: 20px;
+	padding-top: 20px;
+}
+
+/* RTL for panel*/
+.panel-title {
+	padding: 3px;
+}
+
+/* RTL for App Workspace layout */
+.flaticon-appLayout-footer:before {
+	padding-right: 0px;
+	font-size: 16px;
+}
+
+.flaticon-appLayout-footer {
+	padding-top: 11px;
+}
+
+.ct-user.ct-app-desktop__ws-user-info{
+	left: 15px;
+	right: auto;
+}
+
+.ct-al__app-desktop-cont{
+	float: left;
+	margin-left: 66px;
+	margin-right:0px;
+}
+
+.ct-app-destop__ws-tooltip-arrow {
+	left: 25%;
+	right: auto;
+}
+
+/* RTL for Tabletop Workspace layout */
+
+.ct-user.ct-tabletop-desktop__ws-user-info{
+	left: 15px;
+	right: auto;
+}
+
+.ct-al__tabletop-desktop-cont{
+	float: left;
+	margin-left: 66px;
+	margin-right:0px;
+}
+
+.ct-tabletop-destop__ws-tooltip-arrow {
+	left: 25%;
+	right: auto;
+}
+
+/* RTL for Tab Workspace layout */
+
+.ct-tab__txt.ct-tab__txt-tm.ct-tab__txt-bs{
+	margin-left: 4px;
+}
+
+.ct-user.ct-tab-desktop__ws-user-info{
+	left: 15px;
+	right: auto;
+}
+
+.ct-tab-destop__ws-tooltip-arrow {
+	left: 30%;
+	right: auto;
+}
+
+.ct-logo{
+	margin-right: 15px;
+}

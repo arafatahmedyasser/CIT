@@ -1,0 +1,254 @@
+/*
+  Purpose : File contains  application dock css.
+  Contains: This contains all structures related to the app dock.
+*/
+
+
+
+.ct-app-dock__each {
+  float: left;
+  width: 48%;
+  border: 0;
+  padding: 8px 0px;
+  margin: 3px 3px;
+  position: relative;
+}
+/* For Ap-dock App image alignment */
+.ct-app-dock__app-img {
+font-size: 80px;
+overflow: hidden;
+margin-top: -25px !important;
+}
+
+.ct-app-dock__app-name {
+  display: block;	
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-top: 0;
+  padding: 3px;
+}
+
+.ct-app-dock
+{
+	margin-top: 10px;
+	float: right;
+	top: 10px;
+}
+
+.ct-app-dock {
+  	position: fixed;
+  	z-index: 10000;
+  	
+  	right: 10px;
+/*	Removed during menu layout changes.
+	border: 1px solid;
+  	height: 31px;
+  	top: 10px; 
+  	margin-top: 26px; */
+}
+
+.flaticon-stackAppdock{
+	line-height: 2.22;
+}
+
+.ct-app-dock__app-name{
+	font-size: 12px;
+}
+
+
+.ct-app-dock__container {
+  height: 460px;
+  position: absolute;
+  padding: 10px;
+  right: 40px;
+ /*  right: 70px; */ /* Removed during menu layout changes. */
+  width: 360px;
+  z-index: 4;
+  visibility: hidden;
+  overflow: hidden;
+  transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  box-shadow: 0px 2px 5px 0px, 0px 2px 5px 0px;
+  
+	
+}
+
+
+.ct-app-dock__content {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+  height: 100%;
+  padding-bottom: 40px;
+  -webkit-transform: translate(0, 40px);
+  -moz-transform: translate(0, 40px);
+  -o-transform: translate(0, 40px);
+  -ms-transform: translate(0, 40px);
+  transform: translate(0, 40px);
+}
+
+.ct-app-dock__open {
+  visibility: visible;
+  box-shadow: 0px 6px 10px 0px, 0px 6px 10px 0px;
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.ct-app-dock__dock-open {
+  overflow: hidden;
+}
+.ct-app-dock__dock-open-body{
+  padding-right:15px; /*fix the body glitch in opening dock with scroll in WS*/
+}
+.ct-app-dock__dock-open-header {
+  padding-right:15px; /*fix the body glitch in opening dock*/
+}
+.ct-app-dock__dock-open-footer {
+  padding-right:25px; /*fix the body glitch in opening dock*/
+}
+.ct-app-dock__content-open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0,0);
+  -moz-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+.ct-app-dock__animate-down {
+  top: 45px;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.ct-app-dock__each-item {
+  width: 100%;
+  box-sizing: border-box;
+  float: left;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ct-app-dock__each-item:hover,
+.ct-app-dock__each-item:focus,
+.ct-app-dock__each-item:active {
+	text-decoration: none;
+}
+
+.ct-app-dock__overlay{
+  background-size: 100%;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.ct-app-dock__overlay-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+	Change during menu layout changes.s
+*/
+
+.ct-app-dock__notification
+{
+	border-radius: 15px;
+    text-align: center;
+	left: 25px;
+	top: 0px;
+	padding: 0px 0px;
+	height: 20px;
+	width: 20px;
+	line-height: 1.5;
+	position: absolute;
+	cursor: pointer;
+}
+
+/* 
+.ct-app-dock__notification{
+  position: absolute;
+  left: -31px;
+  padding: 2px 7px;
+  height: 30px;
+  width: 29px;
+  line-height: 1.9;
+  cursor: pointer;
+}
+*/
+ 
+.ct-app-dock__neg-btn{
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+
+.ct-app-dock__animate-down{
+  top:0;
+}
+
+.ct-app-dock__cancel {
+
+  	text-decoration: none;
+  	font-size: 25px;
+  	line-height: 1.8;
+}
+
+.ct-app-dock__cancel:hover {
+	text-decoration: none;
+}
+
+.notify {
+color: #ccc;
+margin: 0 auto;
+width: 100px;
+text-align: center;
+position: relative;
+bottom: 75%;
+}
+
+div.notify > span {
+bottom: 7px;
+position: relative;
+}
+	
+@media only screen and (max-width:767px){
+
+/* 	Removed during menu layer changes
+	.ct-app-dock{
+	  right: 100px;
+  	  top: 23px;
+	}	
+*/	
+	.ct-app-dock__container {
+	  position: fixed;
+	  left:0;
+	  width: 100%;
+	  height: 100%;
+	}
+
+	
+	
+}
+
+

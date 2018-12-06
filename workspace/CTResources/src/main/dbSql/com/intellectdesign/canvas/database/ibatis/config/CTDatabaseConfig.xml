@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<transactionManager type="EXTERNAL">
+		<property name="SetAutoCommitAllowed" value="false" />
+		<dataSource type="JNDI">
+			<property name="DataSource" value="${CT_DATASOURCE}" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/viewdefn/Default_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/login/LoginManagement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/login/UserPreferences_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/viewdefn/ViewDefinition_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/formdefn/FormDefinition_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/entitlement/CanvasViewEntitlement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/globalcurrency/GlobalCurrency_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/zoologsearch/ZologSearch_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/events/EventManagement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/audit/AuditManagement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/alert/AlertManagement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/formcontainer/FormContainerDefinition_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/entitlement/DefaultUserEntitlement_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/hal/HostAccessLayerFramework_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/notes/Notes_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/reportingfw/ReportingFw_SqlMap.xml" />
+	<sqlMap
+		resource="com/intellectdesign/canvas/database/ibatis/${CT_DATABASE_VENDOR}/maps/mail/MailFramework_SqlMap.xml" />
+</sqlMapConfig>

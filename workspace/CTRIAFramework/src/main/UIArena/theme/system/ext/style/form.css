@@ -1,0 +1,195 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.x-form-field{
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.167em;
+	font-weight:normal;
+}
+
+.x-form-text, textarea.x-form-field{
+    background-color:#fff;
+    background-image:url(../images/form/text-bg.gif);
+    border-color:#C1C1C1;
+}
+
+.x-form-select-one {
+    background-color:#fff;
+    border-color:#C1C1C1;
+}
+
+.x-form-check-group-label {
+    border-bottom: 1px solid #d0d0d0;
+    color: #333;
+}
+
+.x-editor .x-form-check-wrap {
+    background-color:#fff;
+}
+
+.x-form-field-wrap .x-form-trigger{
+    background-image:url(../images/form/trigger.gif);
+    border-bottom-color:#b5b8c8;
+}
+
+.x-form-field-wrap .x-form-date-trigger{
+    background-image: url(../images/form/date-trigger.gif);
+}
+
+.x-form-field-wrap .x-form-clear-trigger{
+    background-image: url(../images/form/clear-trigger.gif);
+}
+
+.x-form-field-wrap .x-form-search-trigger{
+    background-image: url(../images/form/search-trigger.gif);
+}
+
+.x-trigger-wrap-focus .x-form-trigger{
+    border-bottom-color: #777777;
+}
+
+.x-item-disabled .x-form-trigger-over{
+    border-bottom-color:#b5b8c8;
+}
+
+.x-item-disabled .x-form-trigger-click{
+    border-bottom-color:#b5b8c8;
+}
+
+.x-form-focus, textarea.x-form-focus{
+	border-color:#777777;
+}
+
+.x-form-invalid, textarea.x-form-invalid{
+    background-color:#fff;
+	background-image:url(../images/grid/invalid_line.gif);
+	border-color:#c30;
+}
+
+.ext-webkit .x-form-invalid{
+	background-color:#fee;
+	border-color:#ff7870;
+}
+
+.x-form-inner-invalid, textarea.x-form-inner-invalid{
+    background-color:#fff;
+	background-image:url(../images/grid/invalid_line.gif);
+}
+
+.x-form-grow-sizer {
+	font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}
+
+.x-form-item {
+	font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}
+
+.x-form-invalid-msg {
+    color:#c0272b;
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+    background-image:url(../images/shared/warning.gif);
+}
+
+.x-form-empty-field {
+    color:gray;
+}
+
+.x-small-editor .x-form-field {
+     font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}
+
+.ext-webkit .x-small-editor .x-form-field {
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}
+
+.x-form-invalid-icon {
+    background-image:url(../images/form/exclamation.gif);
+}
+
+.x-fieldset {
+    border-color:#CCCCCC;
+}
+
+.x-fieldset legend {
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight: bold;
+    color:#777777;
+}
+
+
+/* For Fileupload Start*/
+.x-form-file-wrap .x-form-file-text {
+	color: #777;
+}
+/* file upload ends */
+/** FW137_FF_HYPERLINK -- Starts*/
+.cbx-formfw-hyperlink:hover {
+	COLOR: #0000ff;
+}
+
+.cbx-formfw-hyperlink {
+	COLOR: #0000ff;
+}
+/** FW137_FF_HYPERLINK -- ends */
+/* form components */
+.mandatory,.non_mandatory {
+	color: red;
+}
+.ext-ie .mandatory,.non_mandatory {
+	color: red;
+}
+.reject_mandatory {
+	color: red;
+}
+.mandatory_fx, .cbx-mandatory-fx{
+	color: #0000ff;
+}
+.cbx-mandatory-label {
+	color: #ff0000;
+	font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight: bold;
+}
+.deleteicon {
+	background-image: url(../images/delete.gif);
+}
+.custom-label {
+	color: #4C566C;
+}
+/* lookup icon */
+
+.c-form-lookup .x-form-field-trigger-wrap .x-form-trigger{
+		background: url(../images/form/lookup.gif) no-repeat 0px 0px;
+		width: 20px !important;
+}
+/** switch chart grid styles
+.switch_chart_grid thead td {
+    background-color: #EEE;
+    padding: 7px 5px 7px;
+    font-size: 0.967em;
+    font-family: Arial;
+    text-align:center;
+    font-weight:bold;
+}
+.switch_chart_grid td{
+	padding: 7px 5px 7px;
+	font-size:0.917em; 
+	font-family:Arial;
+	text-align:center;
+	border-right: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+}**/

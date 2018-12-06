@@ -1,0 +1,105 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.tabletopheaderpanel{ /* header panel */
+    padding: 0 0 0px 0px;
+    z-index: 1;	
+}
+.tabletopuserdetails-con{
+	display: table-cell;
+	height:75px;
+	vertical-align: middle;
+	padding:0px 0px 0px 0px;
+}
+.tabletoplogo-col{
+	padding-right:10px;	
+}
+.table_toplogo{
+	float:left;
+    height: 75px;
+    width: 200px;
+}
+.ttc-left{ 
+	position:absolute;
+	left:0px;
+	top:0px;
+	height:80px;
+	width:50px;	
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+.ttc-right{
+	position:absolute;
+	right:0px; 
+	top:0px;
+	height:80px;
+	width:50px;
+    background-position: right bottom;
+    background-repeat: no-repeat;	
+}
+.ttc-mid {	
+	position:absolute;
+    left:50px;
+	top:0px;
+	height:80px;	
+    background-position: 0px bottom;
+    background-repeat: repeat-x;
+}
+.tabletopwsiconDefault {
+	background-position: -43px 0px;
+    background-repeat: no-repeat;
+    height: 43px;
+    width: 43px;
+}
+a.catalog_icon_holder:hover .tabletopwsiconDefault, .activeWS .tabletopwsiconDefault, a.catalog_icon_holder:hover .tabletopwsiconDefault {
+	background-position: 0px 0px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 43px;
+}
+.activeWS .tabletopwsiconDefault{
+    background-position: left top;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+    height: 50px;
+    width: 42px;
+}
+.tabletopwslabel {
+	position: relative;
+	top: -8px;
+	width: 100px !important;
+}
+/*.tabletoplogouttext{
+    bottom: 4px;
+    padding: 0 0 0 4px;
+    position: relative;
+}*/
+.tabletoplogout{
+	height:20px;
+	width:20px;
+	float:right;
+	/*display: inline-block;*/
+}
+.tabletoplogouttext{
+    bottom: -3px;
+    padding: 0 0 0 25px;
+    position: relative;
+}
+.tabletoplogout-con{
+	text-decoration:none !important;
+	padding: 25px 45px 0 0;
+}
+/*.tabletoplogout{
+	height:20px;
+	width:20px;
+	display: inline-block;
+}*/
+/*.tabletoplogout-con{
+	padding:28px 20px 0;
+	float:right;
+}
+.tabletoplogout-col{
+	float:right;
+}*/
+

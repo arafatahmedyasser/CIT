@@ -1,0 +1,49 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.x-combo-list {
+    border-color:#ccc;
+    background-color:#ddd;
+    font-family:  Tahoma, Arial, Helvetica, Sans-serif;
+	font-size:1.000m;
+	font-weight:normal;
+}
+
+.x-combo-list-inner {
+    background-color:#fff;
+}
+
+.x-combo-list-hd {
+    font-family:  Tahoma, Arial, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight: bold;
+    color:#333;
+    background-image: url(../images/layout/panel-title-light-bg.gif);
+    border-bottom-color:#BCBCBC;
+}
+
+.x-resizable-pinned .x-combo-list-inner {
+    border-bottom-color:#BEBEBE;
+}
+
+.x-combo-list-item {
+    border-color:#fff;
+}
+
+.x-combo-list .x-combo-selected{
+	border-color:#777 !important;
+    background-color:#f0f0f0;
+}
+
+.x-combo-list .x-toolbar {
+    border-top-color:#BCBCBC;
+}
+
+.x-combo-list-small {
+	font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}

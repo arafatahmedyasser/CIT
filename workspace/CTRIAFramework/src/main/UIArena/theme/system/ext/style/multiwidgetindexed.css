@@ -1,0 +1,7 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.indexedPanel-btn {
+	background: url(../images/multiwidgetindexed/multiwgticonDefault.jpg) 3px center no-repeat	!important; /* size of the icon should be 16*16. */
+	padding-left: 25px !important; 
+}

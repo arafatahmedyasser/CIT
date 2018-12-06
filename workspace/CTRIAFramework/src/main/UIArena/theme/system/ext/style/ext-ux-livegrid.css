@@ -1,0 +1,23 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.ext-ux-livegrid-drop-waiting {
+    background-image:url(../images/loading.gif) !important;
+}
+
+.ext-ux-livegrid-liveScroller {
+    background:none!important;
+}
+
+.ext-ux-livegrid-liveScroller div {
+    background:none;
+    font-size:1px;
+}
+.liveScroller {
+    background:none!important;
+}
+
+.liveScroller div {
+    background:none;
+    font-size:1px;
+}

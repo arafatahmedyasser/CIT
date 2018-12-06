@@ -1,0 +1,27 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.x-grid3-locked .x-grid3-row {
+    border-right: 0 none;
+    padding: 0;
+}
+.rightcontexticon {
+    display: inline-block;
+    height: 15px !important;
+    margin-left: 3px;
+    width: 15px !important;
+}
+.doubleclickicon {
+	display: inline-block;
+    height: 15px !important;
+    margin-left: 3px;
+    width: 15px !important;
+}
+.x-grid3-locked .x-grid3-hd-inner{
+	padding: 5px 3px 5px 5px;
+}
+.x-grid3-locked .x-action-col-cell .x-grid3-cell-inner{
+    padding-bottom: 0;
+    padding-top: 1px;
+}
+

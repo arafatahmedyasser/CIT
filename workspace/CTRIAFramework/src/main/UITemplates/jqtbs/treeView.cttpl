@@ -1,0 +1,20 @@
+<div class='ct-treeview' data-item-id=ct-treeView>
+	<div class='ct-treeview_header'>
+		<span class=''></span> <span class=''>{{text}}</span>
+	</div>
+	<div>
+		<ul class='ct-treeview_ul'>
+			{{#recursive CHILDREN}}
+			<li class='ct-treeview_li'>
+			{{#if CHILDREN}} 
+				<span data-item-id='ct-tree_toggle' class='ct-treeview_toggle flaticon-collapse'></span>
+			{{/if}} 
+				<span data-item-id='ct-tree_name' data-item-value='{{text}}' class='ct-treeview_leaf'>{{text}}</span> 
+			{{#if CHILDREN}}
+				<ul class='ct-treeview_ul'>{{{recursive CHILDREN}}} </ul> 
+			{{/if}}
+			</li> 
+			{{/recursive}}
+		</ul>
+	</div>
+</div>

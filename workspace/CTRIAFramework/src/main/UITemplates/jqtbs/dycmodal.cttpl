@@ -1,0 +1,61 @@
+ <div class="dyc-modal-container col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad">
+           {{!-- <div class="dyc-modal-sidebar col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	            <ul class="dyc-product-category ">
+	            {{#each md.PRODUCT_CATEGORY_WIDGETS_MAP}}
+	                <li data-product-id="product"><a href="javascript:void(0)"  data-item-id="{{PRODUCT_CATEGORY}}">{{PRODUCT_CATEGORY_DISPLAY_NM}}</a></li>
+	            {{/each}}
+	            </ul>
+            </div>--}}
+            <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 dyc-model-panel ">
+            <div class='row'>
+           
+            </div>
+                
+                <div class='row'>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dyc-search no-pad">
+                 	<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 dyc-search-cont dyc-search-result-xs ">
+                 	<input type="text" name="" class="dyc-search-input dyc-search-box" />
+                 	<div class="flaticon-close pull-right dyc-search-close" data-item-id='dyc-search-close'></div>
+                 	</div>
+                  
+                        <div data-item-id="dyc-search-box" class="dyc-search-result-xs">
+                        
+                        </div> 
+                </div>
+                 
+                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 dyc-search-result">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad mCustomScrollbar" data-item-id="ct-actScroll">
+                <ul class="dyc-product-category ">
+	            {{#each md.PRODUCT_CATEGORY_WIDGETS_MAP}}
+	                <li data-product-id="product"><a href="javascript:void(0)"  data-item-id="{{PRODUCT_CATEGORY}}">{{#getFromBundle PRODUCT_CATEGORY_DISPLAY_NM}}{{/getFromBundle}}</a></li>
+	            {{/each}}
+	            </ul>
+                </div>
+	       {{#each md.WIDGET_META_DATA}}
+                    <div class=" col-lg-4 col-md-6 col-sm-6 col-xs-12 dyc-app" data-item-id='dyc-app' >
+                    	<!-- <div class="dyc-app-name">
+	                  		<div class="dyc-app-name-txt">{{WGT_DISPLAY_NM}}</div>
+			            </div> -->
+			            
+						<div class="dyc-ico col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<div class="dyc-marked" data-product-category="{{PRODUCT_CATEGORY}}" data-widget-id="{{WIDGET_ID}}"></div>
+							<i class="flaticon-default_a"></i>
+						</div>
+						 <div class="dyc-app-name">
+	                  		<div class="dyc-app-name-txt">{{WGT_DISPLAY_NM}}</div>
+	                  		<div class="dyc-app-select" data-app-select>Select</div>
+	                  		<div class="dyc-app-name-desc">{{PRODUCT_CATEGORY}}
+	                  		</div>
+			            </div>
+			            
+                    </div>
+                {{/each}}
+                </div>
+                </div>
+                <div class="navbar-default navbar-fixed-bottom ct-al__footer ct-al__footer-tm ct-al__footer-bs ct-al__modalopen-footer dyc-bbar">
+                	<input type="button" class="dyc-save" value="Save"/>
+                	<input type="button" class="dyc-cancel" value="Cancel"/>
+                </div>
+            </div>
+            
+        </div>

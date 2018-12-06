@@ -1,0 +1,63 @@
+{{!-- ct-al-menu__header begins --}}
+{{#if HEADER_REQ}}
+<div class='navbar navbar-fixed-top ct-al__header ct-al-menu__header ct-al__header-tm ct-al__header-bs {{{CSS_CLASS}}}' role='navigation' id='ct_nav' data-item-id='ct-al-menu__header'>
+	{{!-- ct-al-menu__header-container begins --}}
+	<div class="ct-al-menu__header-container">
+		{{!-- container fluid begins --}}
+		<div class='container-fluid'>
+			{{!--row begins --}}
+			<div class='row'>
+				<div class="col-lg-4 col-md-4 col-sm-10 col-xs-9">
+					<span class="ct-al__menu-menu-toggler flaticon-main-menu" data-item-id="ct_sidebar_menu_toggler"></span> 
+					{{!--ct-logo begins--}} 
+					<a class='ct-logo' data-item-id="ct_logo" rel='home' href='javascript:void(0)'> </a> {{!--ct-logo ends --}}
+				</div>
+				<div class="visible-lg visible-md col-lg-6 col-md-6">
+					<span class="ct-ws-title" data-item-id="ct-ws-title">CANVAS TECHNOLOGY</span>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					<div class="visible-lg visible-md ct-al__menu-desktop-cont">
+						<span class="ct-menu-desktop__ws-user-img" data-item-id="ct-user-details"> 
+							<img data-item-id='ct-pic' src='{{USR_IMG_PATH}}' alt='user_image' class='media-object' data-toggle="tooltip" data-placement="auto" title="{{USR_INFO}}" />
+						</span>
+					</div>
+					
+					<div class="visible-sm visible-xs ct-al__menu-mobile-cont {{#if WORKSPACE_MENU}}{{else}} hidden{{/if}}" data-item-id="ct-menu__ws-ws-menu-toggler">
+						<a><span class="flaticon-more-icon f_more"></span></a>
+					</div>
+				</div>
+			</div>
+			{{!--row ends --}}
+		</div>
+		{{!-- container fluid ends --}}
+	</div>
+	{{!-- ct-al-menu__header-container ends --}}
+</div>
+{{!-- ct-al-menu__header ends --}}
+<div class="ct-user ct-menu-desktop__ws-user-info ct-al-menu__ws-userinfo_hldr " data-item-id="ct-menu-desktop__ws-user-info">
+	<div class="ct-menu-destop__ws-tooltip-arrow"></div>
+	<div class='ct-user-snippet ct-menu__ws-user-snippet'>
+		<div class="col-lg-4 col-md-4">
+			<span class="ct-user-img ct-menu-desktop__ws-user-img-big ct-al-menu__ws-float_img" data-item-id="ct-user-img"> 
+				<img data-item-id='ct_picedit' src='{{USR_IMG_PATH}}' alt='user_image' class='media-object ct-al-menu__ws-userimg_hldr' data-toggle='tooltip' data-placement='bottom' data-original-title='{{PIC_TOOL_TIP}}' />
+			</span>
+		</div>
+		<div class="col-lg-8 col-md-8">
+			<span class="ct-user__name ct-menu__ws-user-name">{{USR_INFO}}</span>
+			<span class="ct-user__login-text ct-menu__ws-login-text">{{LAST_LOGIN_TEXT}}
+				<br />
+				<span class="ct-user__login-time">{{USR_LOGIN}}</span>
+			</span>
+		</div>
+		<div class="col-md-12 ct-al-menu__ws-pref_logout_cont">
+			<div class="col-lg-6 col-md-6 pull-left">
+				<span class="pull-left"><a href="javascript:void(0)" data-item-id='ct_pref' class="btn ct_btn flaticon-pref_settings">&nbsp;{{HEADER_PREF}}</a></span>
+			</div>
+			<div class="col-lg-6 col-md-6 pull-right">
+				<span class="pull-right"><a href="javascript:void(0)" data-item-id='ct_logout' class="btn ct_btn flaticon-logout">&nbsp;{{HEADER_LOGOUT}}</a></span>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+{{/if}}

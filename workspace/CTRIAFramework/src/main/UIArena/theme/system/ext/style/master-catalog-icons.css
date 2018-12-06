@@ -1,0 +1,62 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.widget_bg {
+	background-image: url(../images/widget_bg.png);
+	background-repeat: no-repeat;
+}
+
+.newbackground {
+	background-color: #011954;
+}
+
+.x_bg {
+	background-image: url(../images/x_bg.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-color: #011954
+}
+
+/* internal css */
+.template{
+	 border:solid 0px #cacaca;
+	 background: url('../images/catalog/widget_cont_bg.gif') no-repeat scroll 0 0 transparent !important;
+ }
+ .template_selected{
+	 border:solid 0px #cacaca;
+	 background: url('../images/catalog/widget_cont_selected_bg.gif') no-repeat scroll 0 0 transparent !important;
+ }
+.template-disable{
+	 border:solid 1px #cacaca;
+ }
+ 
+div.icon{
+	background: url('../images/catalog/1_acc_list_view_small.png') no-repeat scroll 0 0 transparent;
+ }
+
+h1.widgetTitle{
+	 color:#070e5f;
+ }
+ 
+h1.widgetTitle_selected{     
+	 color:#070e5f;
+ }
+.description-text{
+	color:#000;
+ }
+
+.add{
+     background: url('../images/catalog/all.gif') no-repeat scroll 10px 0 transparent !important;
+}
+.STACKLAYOUT{
+	   background: url('../images/catalog/icon-stack.gif') no-repeat scroll 0 0px transparent;
+	}
+.TWOCOLUMN{
+   background: url('../images/catalog/two-column.gif') no-repeat scroll 0 0px transparent;
+}
+
+.THREECOLUMN{
+   background: url('../images/catalog/three-column.gif') no-repeat scroll 0 0px transparent;
+	}	
+
+

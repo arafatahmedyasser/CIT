@@ -1,0 +1,17 @@
+package com.ccp.sample.coll;
+
+import java.util.List;
+
+public class employeeList {
+	
+	List<Employee> dd=new ArrayList<Employee>();
+	static{
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

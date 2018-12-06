@@ -1,0 +1,30 @@
+{{!-- col-*-12 begins--}}
+{{#if FOOTER_REQ}}
+<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-fixed-bottom ct-al__footer ct-al-app__footer ct-al__footer-tm ct-al__footer-bs '>
+	{{!-- ct-al-app__footer-wrap begins--}}
+	<div class='ct-al-app__footer-container'>
+		{{!-- ct-al-app__hscroll begins--}}
+		<div class='ct-al-app__hscroll mCustomScrollbar' data-item-id="ct-al__app-ws-list">
+			{{!-- ct-al-wslink__container begins--}}
+			<ul class='ct-al__wslink-container'>
+				{{!-- ct-al-app__each begins--}} {{#each WORKSPACES}}
+				<li class='ct-al__app-each ct-al__app-each-js' data-selection-id='{{WORKSPACE_ID}}'>
+					<div class='ct-al__wslink ct-al__wslink-tm ct-al-app__ws-{{@index}}'>
+						{{!-- ct-al-wslink__each begins--}}
+						<div class="ct-al__wslink-each ct-al__wslink-each-tm">
+							<a class='col-md-12 col-sm-12 col-lg-12 col-xs-12 flaticon-default flaticon-{{WORKSPACE_ID}} flaticon-appLayout-footer ct-al__wslink-icon-js' href='javascript:void(0)' data-item-id='{{WORKSPACE_ID}}' data-toggle='tooltip' data-placement='top' data-original-title='{{WORKSPACE_DISPLAY_NM}}'></a> 
+							<div class='clearfix'></div>
+						</div>
+						{{!-- ct-al-wslink__each ends--}}
+					</div>
+				</li>
+				{{/each}} {{!-- ct-al-app__each ends--}}
+			</ul>
+			{{!-- ct-al-wslink__container ends--}}
+		</div>
+		{{!-- ct-al-app__hscroll ends--}}
+	</div>
+	{{!-- ct-al-app__footer-wrap ends--}}
+</div>
+{{/if}}
+{{!-- col-*-12 ends--}}

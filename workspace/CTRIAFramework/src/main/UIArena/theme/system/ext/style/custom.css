@@ -1,0 +1,662 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+#loading-mask {
+	background-color: white;
+}
+
+#loading a {
+	color: #225588;
+}
+
+#loading .loading-indicator {
+	background: white;
+	color: #444;
+	font-family: Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.083em;
+	font-weight: bold;
+}
+
+#loading-msg {
+	font-size:0.833em;
+}
+
+/* header and footer */
+.cardinformation-wrap div.user-loginname,.appinformation-wrap div.user-loginname
+	{
+	color: #fff;
+}
+
+.cardinformation-wrap .user-logininfo,.appinformation-wrap .user-logininfo
+	{
+	color: #fff;
+}
+
+.tab-information-wrap div.user-loginname,.tab-information-wrap div.user-logininfo
+	{
+	color: #000000;
+}
+
+.mainTitle {
+	color: #FFFFFF;
+}
+
+.UserDetailsinformation {
+	color: #FFFFFF;
+}
+
+.user-loginname,.user-logininfo {
+	color: #FFFFFF;
+}
+
+.footer {
+	background: #e8e8e8;
+}
+
+.Signoff_style a {
+	color: #fff;
+}
+
+.poweredby {
+	color: #da4732;
+}
+
+.appinformation-wrap .Signoff_style a {
+	color: #FFFFFF;
+}
+/* header and footer ends */
+
+.toolsIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-41px -94px !important;
+}
+
+.loadingIcon {
+	background-image: url(../images/custom/nowait.gif) !important;
+}
+
+.refreshIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-81px -94px !important;
+}
+
+.closeIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-43px -39px !important;
+}
+
+.helpIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-119px -94px !important;
+}
+
+.separatorIcon {
+	background-image: url(../images/custom/sep.gif) !important;
+}
+
+.restoreIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-100px -94px !important;
+}
+
+.maxIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-61px -94px !important;
+}
+
+.printIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-138px -94px !important;
+}
+
+.pulloutIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-6px -22px !important;
+}
+
+.expandIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		0px -115px !important;
+}
+
+.collapseIcon {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		0px -90px !important;
+}
+
+.xlsIcon {
+	background-image: url(../images/custom/excel.gif) !important;
+}
+
+.jpgexportIcon {
+	background-image: url(../images/custom/excel.gif) !important;
+}
+
+.myIcon {
+	background-image: url(../images/button/btn-arrow.gif) 0 6px no-repeat
+		!important;
+}
+
+.pdfIcon {
+	background-image: url(../images/custom/pdf.png) !important;
+}
+
+.x-tool-iportalTools {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-41px -94px;
+}
+
+.x-tool-iportalRefresh {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-81px -94px;
+}
+
+.x-tool-iportalPrint {
+	background: transparent url(../images/red/panel/tool-sprites.gif)
+		no-repeat scroll 0 -315px;
+}
+
+.x-tool-iportalExcel {
+	background: url(../images/custom/excel.gif) no-repeat 0px 0px;
+}
+
+.x-tool-iportalRestore {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-100px -94px;
+}
+
+.x-tool-iportalMax {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		-61px -94px;
+}
+
+.x-tool-iportalPin {
+	background: transparent url(../images/image_Sprite.gif) no-repeat scroll
+		0 -135px;
+}
+
+.helpbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0 0
+		transparent !important;
+}
+
+.ExporttoExcelbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-48px transparent !important;
+}
+
+.ExporttoPDFbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-64px transparent !important;
+}
+
+.ExporttoCSVbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-32px transparent !important;
+}
+
+.ClearFiltersbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-80px transparent !important;
+}
+
+.Refreshbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-96px transparent !important;
+}
+
+.Printbtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-16px transparent !important;
+}
+
+.SwitchToMorebtn {
+	background: url("../images/cbx-toolbar-sprite.gif") no-repeat scroll 0
+		-112px transparent !important;
+}
+
+.filterIcon {
+	background: transparent url(../images/filterIcon.gif) no-repeat scroll
+		center !important;
+}
+
+.pdfstyle {
+	background-image: url(../images/pdf.gif);
+}
+
+.x-tool-backTool {
+	background-image: url("../images/left2.gif") !important;
+}
+
+.x-tool-iportalAdd {
+	background: url("../images/designCanvas/add.png") no-repeat scroll 0 0px
+		transparent !important;
+}
+
+.x-tool-iportalRemove {
+	background: url("../images/designCanvas/remove.png") no-repeat scroll 0 0px
+		transparent !important;
+}
+
+.x-tool-iportalMove {
+	background: url("../images/designCanvas/move.png") no-repeat scroll 0 0px
+		transparent !important;
+}
+
+.Up {
+	background: url('../images/designCanvas/top1.gif') no-repeat scroll 0 0px
+		transparent;
+}
+
+.Down {
+	background: url('../images/designCanvas/bottom1.gif') no-repeat scroll 0 0px
+		transparent;
+}
+
+.Left {
+	background: url('../images/designCanvas/left1.gif') no-repeat scroll 0 0px
+		transparent;
+}
+
+.Right {
+	background: url('../images/designCanvas/right1.gif') no-repeat scroll 0 0px
+		transparent;
+}
+
+.Up-over .Up {
+	background: url('../images/designCanvas/top1-over.gif') no-repeat scroll 0
+		-2px transparent;
+}
+
+.Down-over .Down {
+	background: url('../images/designCanvas/bottom1-over.gif') no-repeat scroll 0
+		-2px transparent;
+}
+
+.Left-over .Left {
+	background: url('../images/designCanvas/left1-over.gif') no-repeat scroll 0
+		-2px transparent;
+}
+
+.Right-over .Right {
+	background: url('../images/designCanvas/right1-over.gif') no-repeat scroll 0
+		-2px transparent;
+}
+
+
+
+.icon-PYMNTS {
+	background: url("../images/home.gif") no-repeat scroll 4px 5px
+		transparent !important;
+}
+
+.x-tab-strip-active .icon-PYMNTS {
+	background: url("../images/home-active.gif") no-repeat scroll 0 5px
+		transparent !important;
+}
+
+.x-panel-combo .x-form-invalid-icon {
+	background-image: url(../images/currencyexclamation.png) !important;
+}
+
+.deleteicon {
+	background-image: url(../images/delete.gif);
+}
+
+.errorBg {
+	background-color: #FFFFFF;
+	background-image: url("images/grid/invalid_line.gif");
+	border-color: #CC3300;
+	background-position: center bottom;
+	background-repeat: repeat-x;
+}
+
+.uploadpanelerrorCt {
+	color: Red !important;
+	border: solid 1px red !important;
+	background-color: #FFFFFF;
+	background-image: url("../images/grid/invalid_line.gif");
+}
+
+
+.btn-WGT_TRASH {
+	background: url(../images/view_trash.png) 3px center no-repeat
+		!important;
+}
+
+.btn-WGT_INBOX {
+	background: url(../images/inbox.png) 3px center no-repeat !important;
+}
+
+.btn-WGT_NOTIFY {
+	background: url(../images/notification.jpeg) 3px center no-repeat
+		!important;
+}
+
+.btn-WGT_ALERT {
+	background: url(../images/alert.png) 3px center no-repeat !important;
+}
+
+.btn-WGT_SENT_MAIL {
+	background: url(../images/sentmail.png) 3px center no-repeat !important;
+}
+
+.download-attachment-btn {
+	background: url(../images/download_icon.png) 3px center no-repeat
+		!important;
+}
+
+.x-grid-unread-msg {
+	background: url(../images/un-read-msg.gif) 0px 0px no-repeat !important;
+}
+
+h1.severityHigh {
+	background: transparent url(../images/high.png) no-repeat right center;
+}
+
+h1.severityMedium {
+	background: transparent url(../images/normal.png) no-repeat right center;
+}
+
+h1.severityLow {
+	background: transparent url(../images/low.png) no-repeat right center;
+}
+
+.ROW_EXPANDER {
+	background: url("../images/bottom2.gif");
+}
+
+.ROW_COMPRESSOR {
+	background: url("../images/top2.gif");
+}
+
+.x-scroll-panel {
+	background-image: url("../images/scroll-left.png") !important;
+}
+
+.doubleclickicon {
+	background: url(../images/viewdetails.gif) no-repeat !important;
+}
+
+.doubleclickdisableicon {
+	background: url(../images/disableviewdetails.gif) no-repeat !important;
+}
+
+.rightcontextdisableicon {
+	background: url(../images/disableviewmoredetails.gif) no-repeat
+		!important;
+}
+
+.rightcontexticon {
+	background: url(../images/viewmoredetails.gif) no-repeat !important;
+	padding-top:1px; /*grid action was misalligned. fixed*/
+}
+
+.rightcolumncontextdisableicon {
+	background: url(../images/disableviewmoredetails.gif) no-repeat
+		!important;
+}
+
+.rightcolumncontexticon {
+	background: url(../images/viewmoredetails.gif) no-repeat !important;
+}
+
+.ct-context-default-icon {
+	background-image: url("../images/retailIcon.png") !important;
+}
+
+.ct-context-default-app {
+	background-image: url("../images/retailIcon.png") !important;
+}
+
+.ct-context-PURCHASE_HASSAD_CERT2 {
+	background: url(../images/disableviewmoredetails.gif) no-repeat
+		!important;
+}
+
+.HASSAD_CERT_SUMMARY_VIEW_HASSAD_CERT_DETAILS_ACTION {
+	background: url(../images/viewmoredetails.gif) no-repeat !important;
+}
+
+.HASSAD_CERT_SUMMARY_VIEW_PURCHASE_HASSAD_CERT_ACTION {
+	background: url(../images/viewmoredetails.gif) no-repeat !important;
+}
+
+
+
+/* portal menu Buttons */
+.iportal-menu-item .x-btn-tl {
+	background: url(../images/menu-icons/lt.gif) 0px 0px no-repeat
+		!important;
+}
+
+.iportal-menu-item .x-btn-tr {
+	background: url(../images/menu-icons/rt.gif) 0px 0px no-repeat
+		!important;
+}
+
+.iportal-menu-item .x-btn-tc {
+	background: url(../images/menu-icons/midt.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item .x-btn-ml {
+	background: url(../images/menu-icons/lm.gif) 0px 0px repeat !important;
+}
+
+.iportal-menu-item .x-btn-mr {
+	background: url(../images/menu-icons/rm.gif) 0px 0px repeat !important;
+	background-image: url(../images/menu-icons/rm.gif);
+}
+
+.iportal-menu-item .x-btn-mc {
+	background: url(../images/menu-icons/mid.gif) 0px 0px repeat !important;
+}
+
+.iportal-menu-item .x-btn-bl {
+	background: url(../images/menu-icons/lb.gif) 0px 0px no-repeat
+		!important;
+}
+
+.iportal-menu-item .x-btn-br {
+	background: url(../images/menu-icons/rb.gif) 0px 0px no-repeat
+		!important;
+}
+
+.iportal-menu-item .x-btn-bc {
+	background: url(../images/menu-icons/midb.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-tl {
+	background: url(../images/menu-icons/lt-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-tr {
+	background: url(../images/menu-icons/rt-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-tc {
+	background: url(../images/menu-icons/midt-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-ml {
+	background: url(../images/menu-icons/lm-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-mr {
+	background: url(../images/menu-icons/rm-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-mc {
+	background: url(../images/menu-icons/mid-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-bl {
+	background: url(../images/menu-icons/lb-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-br {
+	background: url(../images/menu-icons/rb-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover  .x-btn-bc {
+	background: url(../images/menu-icons/midb-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.iportal-menu-item:hover .x-btn-mc {
+	background: url(../images/menu-icons/mid-over.gif) 0px 0px repeat-x
+		!important;
+}
+
+.menu_Panel .x-panel-body {
+	background: #f3f1ec;
+}
+
+.tabLayout .x-panel-body {
+	background: #fff !important;
+}
+
+.x-window-ml .x-border-layout-ct {
+	background-color: #ffffff !important;
+}
+/* list views/Group views widget header combo text css starts*/
+.titlebar_extjs_comp .x-form-field {
+	font-family: Verdana, Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:1.00em;
+	font-weight:normal;
+	color: #333333;
+}
+/* list views/Group views widget header combo text css ends*/
+
+/* START CHGLOCKINGGRID */
+.doubleclickicon {
+	background: url(../images/viewdetails.gif) no-repeat !important;
+}
+
+.doubleclickdisableicon {
+	background: url(../images/disableviewdetails.gif) no-repeat !important;
+}
+
+.rightcontextdisableicon {
+	background: url(../images/disableviewmoredetails.gif) no-repeat
+		!important;
+}
+
+.rightcontexticon {
+	background: url(../images/viewmoredetails.gif) no-repeat !important;
+	padding-top:1px; /*grid action was misalligned. fixed*/
+}
+/*Group-view css changes*/
+.group-node-leaf-style td {
+	border-right: 1px solid #b4caff;
+}
+
+.sub-node-root-total td {
+	background: #fff;
+	border-right: 1px solid #b4caff;
+	border-top: 1px solid #b4caff;
+	border-bottom: 1px solid #b4caff;
+}
+
+.sub-node-root td {
+	background: #eaedf9;
+	border: none !important;
+}
+
+.group-view .x-tree-node-el td {
+	background: #fff;
+	border-right: 1px solid #b4caff;
+	border-bottom: 1px solid #b4caff;
+}
+
+.x-tree-node-expanded td,.x-tree-node-collapsed td {
+	background: #fbf8ee !important;
+	border-style: none;
+	border-right: 1px solid #b4caff;
+	border-bottom: 1px solid #b4caff;
+}
+
+.group-more-style td {
+	background: #fff;
+	font: bold !important;
+}
+
+.group-grand-total-style {
+	background-color: #fbf8ee;
+}
+
+.x-window-ml .x-border-layout-ct {
+	background-color: #ffffff !important;
+}
+
+.fontBold {
+	color: #4C566C;
+}
+.High_SEVERITY {
+	background: url(../images/high.png) left 0px no-repeat !important;
+}
+
+.Medium_SEVERITY {
+	background: url(../images/normal.png) left 0px no-repeat !important;
+}
+
+.low_SEVERITY {
+	background: url(../images/low.png) left 0px no-repeat !important;
+}
+
+.simulationmode {
+	background: url(../images/loader.gif) left 0px repeat-x !important;
+	color: #fff;
+}
+
+.active-menu .x-menu-item-text {
+	font-weight: bold;
+}
+/* CBTQ3Q4_TC29 - Starts */
+
+.tlink:hover {
+	COLOR: #0000ff;
+	TEXT-DECORATION: underline;
+	cursor: pointer;
+}
+
+.tlink {
+	COLOR: #0000ff;
+	TEXT-DECORATION: none;
+	cursor: pointer;
+}
+
+/**
+Added for iportal editable-lookup button focus border 
+**/
+.button-invalid {
+	border: 3px solid red !important;
+}
+
+.label_note {
+	font: normal 0.9em arial, tahoma, helvetica, sans-serif;
+	color: #666666;
+}
+/* CHGCCKCOL - CheckBox Column -Starts*/
+
+
+.chart-grid tr{
+	color:#000;
+	font-family:Arial;
+}
+.chart-grid thead td{
+	background-color: #CCC;
+    padding:0.6rem !important;
+    color:#000;
+    font-family:Arial;
+}

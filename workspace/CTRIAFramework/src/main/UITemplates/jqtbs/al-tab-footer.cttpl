@@ -1,0 +1,11 @@
+{{!-- navbar-default navbar-fixed-bottom begins --}}
+{{#if FOOTER_REQ}}
+<div class="navbar-default navbar-fixed-bottom ct-al__footer ct-al__footer-tm ct-al__footer-bs" data-item-id='ct-copyrights' data-item-toggle ='ct-show-hide-footer'>
+	{{!-- copyright-content begins --}}
+	<div class='copyright-content'>
+		<span>{{{footerCopyrights}}}</span>
+	</div>
+	{{!-- copyright-content ends --}}
+</div>
+{{/if}}
+{{!-- navbar-default navbar-fixed-bottom ends --}}

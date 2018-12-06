@@ -1,0 +1,12 @@
+
+<script id="listview_mobile_table" type="text/x-handlebars-script">
+
+<script id="listview_table" type="text/x-handlebars-script">
+
+</script><script id="listFilters_amount" type="text/x-handlebars-script">
+
+</script><script id="listFilters_date" type="text/x-handlebars-script">
+
+</script><script id="listFilters_string" type="text/x-handlebars-script">
+
+</script>

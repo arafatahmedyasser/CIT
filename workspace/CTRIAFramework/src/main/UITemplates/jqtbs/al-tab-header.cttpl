@@ -1,0 +1,92 @@
+{{!-- ct-al-tab__header begins --}}
+{{#if HEADER_REQ}}
+<div class='navbar navbar-default navbar-fixed-top ct-al__header ct-al-tab__header ct-al__header-tm ct-al__header-bs {{{CSS_CLASS}}}' role='navigation' id='ct_nav' data-item-id='ct-al-tab__header'>
+	{{!-- ct-al__container begins --}}
+	<div class='ct-al-tab__container'
+		{{!-- container-fluid begins-- }}
+		<div class='container-fluid'>
+			{{!-- col-lg-12 begins --}}{{!--missing ct class 1 ends--}}
+			<div class='col-lg-12 col-md-12'>
+				{{!-- row begins --}}{{!--missing ct class 2 begins--}}
+				<div class='row'>
+					{{!-- ct-home col begins--}}
+					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-12'>
+						<div type='button' class='pull-right flaticon-main-menu flaticon-tab-main-menu visible-xs' data-toggle='collapse' data-target='#img1'></div>
+						<a class='ct-logo' data-item-id="ct_logo" rel='home' href='javascript:void(0)'> 
+							<img data-item-id='ct-pic' src='CTRIAFramework/UIArena/theme/system/jqtbs/images/CT-logo.png' title='CANVAS TECHNOLOGY' alt='CANVAS TECHNOLOGY' />
+						</a>
+					</div>
+					{{!-- ct-home col ends--}}
+					<div class="visible-lg visible-md visible-sm col-lg-8 col-md-8  col-sm-8 ct-table-top-ws-header">
+						<span class="ct-ws-title" data-item-id="ct-ws-title">CANVAS TECHNOLOGY</span>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+						<div class="visible-lg visible-md visible-sm ct-al__tab-desktop-cont">
+							<span class="ct-tab-desktop__ws-user-img" data-item-id="ct-user-details"> 
+								<img src='{{USR_IMG_PATH}}' alt='user_image' class='media-object' data-toggle="tooltip" data-placement="auto" title="{{USR_INFO}}" />
+							</span>
+						</div>
+					</div>
+					{{!-- navbar-collapse begins --}}
+					<div class='collapse navbar-collapse tab-collapse-mobile' id='img1'>
+						<div class=' visible-xs ct-user-snippet ct-tab__ws-user-snippet'>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<span class="ct-user-img ct-tab-desktop__ws-user-img-big ct-al-tab__ws-float_img" data-item-id="ct-user-img"> 
+									<img data-item-id='ct_picedit' src='{{USR_IMG_PATH}}' alt='user_image' class='media-object ct-al-tab__ws-userimg_hldr' data-toggle='tooltip' data-placement='bottom' data-original-title='{{PIC_TOOL_TIP}}' />
+								</span>
+							</div>
+							<div class="col-lg-8 col-md-8 col-xs-8">
+								<span class="ct-user__name ct-tab__ws-user-name">{{USR_INFO}}</span>
+								<span class="ct-user__login-text ct-tab__ws-login-text">{{LAST_LOGIN_TEXT}}
+									<br />
+									<span class="ct-user__login-time">{{USR_LOGIN}}</span>
+								</span>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 ct-al-tab__ws-pref_logout_cont">
+								<div class="col-lg-6 col-md-6 col-xs-6 pull-left">
+									<span class="pull-left"><a href="javascript:void(0)" data-item-id='ct_pref' class="btn ct_btn flaticon-pref_settings">&nbsp;{{HEADER_PREF}}</a></span>
+								</div>
+								<div class="col-lg-6 col-md-6 col-xs-6 pull-right">
+									<span class="pull-right"><a href="javascript:void(0)" data-item-id='ct_logout' class="btn ct_btn flaticon-logout">&nbsp;{{HEADER_LOGOUT}}</a></span>
+								</div>
+							</div>
+							{{!--navbar-collapse ends --}}
+						</div>
+						{{!-- row ends --}}{{!--missing ct class 2 ends--}}
+					</div>
+					{{!-- col-lg-12 ends --}}{{!--missing ct class 1 ends--}}
+				</div>
+				{{!-- container-fluid ends-- }}
+			</div>
+			{{!-- ct-al-tab__container ends --}}
+		</div>
+		{{!-- ct-al-tab__header ends --}}
+		<div class="ct-user ct-tab-desktop__ws-user-info ct-al-excard__ws-userinfo_hldr hidden-xs " data-item-id="ct-menu-desktop__ws-user-info">
+			<div class="ct-tab-destop__ws-tooltip-arrow"></div>
+			<div class='ct-user-snippet ct-tab__ws-user-snippet'>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<span class="ct-user-img ct-tab-desktop__ws-user-img-big ct-al-tab__ws-float_img" data-item-id="ct-user-img"> 
+						<img data-item-id='ct_picedit' src='{{USR_IMG_PATH}}' alt='user_image' class='media-object ct-al-tab__ws-userimg_hldr' data-toggle='tooltip' data-placement='bottom' data-original-title='{{PIC_TOOL_TIP}}' />
+					</span>
+				</div>
+				<div class="col-lg-8 col-md-8">
+					<span class="ct-user__name ct-tab__ws-user-name">{{USR_INFO}}</span>
+					<span class="ct-user__login-text ct-tab__ws-login-text">{{LAST_LOGIN_TEXT}}
+						<br />
+						<span class="ct-user__login-time">{{USR_LOGIN}}</span>
+					</span>
+				</div>
+				<div class="col-md-12 col-sm-12 ct-al-tab__ws-pref_logout_cont">
+					<div class="col-lg-6 col-md-6 pull-left">
+						<span class="pull-left"><a href="javascript:void(0)" data-item-id='ct_pref' class="btn ct_btn flaticon-pref_settings">&nbsp;{{HEADER_PREF}}</a></span>
+					</div>
+					<div class="col-lg-6 col-md-6 pull-right">
+						<span class="pull-right"><a href="javascript:void(0)" data-item-id='ct_logout' class="btn ct_btn flaticon-logout">&nbsp;{{HEADER_LOGOUT}}</a></span>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}				

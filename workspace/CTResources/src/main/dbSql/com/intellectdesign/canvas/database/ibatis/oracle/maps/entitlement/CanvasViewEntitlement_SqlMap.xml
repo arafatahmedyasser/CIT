@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+
+
+
+	<resultMap id="CRITERIA_VALUE_RESULTMAP" class="com.intellectdesign.canvas.entitlement.CriteriaValue">
+		<result property="criteriaValue" nullValue="" column="CRITERIA_VALUE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<resultMap id="CRITERIA_RESULTMAP"
+		class="com.intellectdesign.canvas.entitlement.CanvasCriteriaTypeMap" groupBy="criteriaType">
+		<result property="criteriaType" nullValue="" column="CRITERIA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="criteriaValues" nullValue=""
+			resultMap="CRITERIA_VALUE_RESULTMAP" />
+	</resultMap>
+
+	<resultMap id="FUNC_CRITERIA_RESULTMAP" class="com.intellectdesign.canvas.entitlement.FunctionVO"
+		groupBy="funcCode">
+		<result property="funcCode" nullValue="" column="OD_FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="criteriaList" nullValue="" resultMap="CRITERIA_RESULTMAP" />
+	</resultMap>
+
+	<resultMap id="SUBPROD_FUNC_RESULTMAP" class="com.intellectdesign.canvas.entitlement.SubProductVO"
+		groupBy="subProdCode">
+		<result property="subProdCode" nullValue="" column="OD_SUBPROD_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="funcList" nullValue="" resultMap="FUNC_CRITERIA_RESULTMAP" />
+	</resultMap>
+
+	<resultMap id="PRODUCT_SUBPROD_RESULTMAP"
+		class="com.intellectdesign.canvas.entitlement.ProductFunctionVO" groupBy="prodCode">
+		<result property="prodCode" nullValue="" column="OD_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProdFuncList" resultMap="SUBPROD_FUNC_RESULTMAP" />
+	</resultMap>
+
+
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEW_ENTITLEMENTS"
+		resultMap="PRODUCT_SUBPROD_RESULTMAP">
+
+		SELECT DISTINCT
+		UFM.OD_PRODUCT_CODE,
+		UFM.OD_SUBPROD_CODE,
+		UFM.OD_FUNCTION_CODE,
+		UFM.CRITERIA_TYPE,
+		UFM.OD_ACC_NO CRITERIA_VALUE
+		FROM
+		OD_USER_FUNCTION_MB UFM
+		LEFT OUTER JOIN OO_CRITERIA_TYPE_MASTER OCTM ON
+		UFM.OD_PRODUCT_CODE = OCTM.PRODUCT_CODE
+		AND UFM.OD_SUBPROD_CODE = OCTM.SUBPRODUCT_CODE
+		AND UFM.CRITERIA_TYPE = OCTM.CRITERIA_TYPE
+		WHERE
+		UFM.OD_USER_NO =#FLD_OD_USER_NO#
+		AND UFM.OD_GCIF =#FLD_OD_GCIF#
+			<isNotEmpty property="USER_ROLE"  prepend="AND" > 
+				<isNotEqual property="USER_ROLE" compareValue="ALL">
+					UFM.USER_ROLE = #USER_ROLE#
+				</isNotEqual >
+			</isNotEmpty>
+
+	</select>
+
+	<resultMap id="FUNCTIONS_RESULTMAP" class="com.intellectdesign.canvas.entitlement.FunctionVO">
+		<result property="funcCode" nullValue="" column="OD_FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<resultMap id="SUBPROD_RESULTMAP" class="com.intellectdesign.canvas.entitlement.SubProductVO">
+		<result property="subProdCode" nullValue="" column="OD_SUBPROD_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="funcList" resultMap="FUNCTIONS_RESULTMAP" />
+	</resultMap>
+
+
+	<resultMap id="ENTITLED_FUNCTIONS_RESULTMAP"
+		class="com.intellectdesign.canvas.entitlement.ProductFunctionVO" groupBy="prodCode">
+		<result property="prodCode" nullValue="" column="OD_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProdFuncList" resultMap="SUBPROD_RESULTMAP" />
+	</resultMap>
+
+	<select id="ENTITLED_FUNCTIONS_SELECT" parameterClass="java.util.HashMap"
+		resultMap="ENTITLED_FUNCTIONS_RESULTMAP">
+		SELECT
+		OFPMM.OD_FUNCTION_CODE OD_FUNCTION_CODE,
+		OFPMM.OD_PRODUCT_CODE OD_PRODUCT_CODE,
+		OFPMM.OD_SUBPROD_CODE OD_SUBPROD_CODE
+		FROM
+		od_function_product_map_mb OFPMM
+		where
+		EXISTS ( SELECT 1 FROM OD_USER_FUNCTION_MB OUFM WHERE
+		OUFM.OD_GCIF = #OD_GCIF#
+		AND OUFM.OD_USER_NO = #OD_USER_NO#
+		AND OFPMM.OD_FUNCTION_CODE = OUFM.OD_FUNCTION_CODE
+		AND OFPMM.OD_PRODUCT_CODE = OUFM.OD_PRODUCT_CODE
+		AND OFPMM.OD_SUBPROD_CODE = OUFM.OD_SUBPROD_CODE
+		)
+	</select>
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ACCESS_ENTITLEMENTS"
+		resultClass="java.util.HashMap">
+
+		SELECT DISTINCT
+		UFM.OD_PRODUCT_CODE PRODUCT,
+		UFM.OD_SUBPROD_CODE SUBPROD,
+		UFM.OD_FUNCTION_CODE FUNCTION
+		FROM
+		OD_USER_FUNCTION_MB UFM
+		WHERE
+		UFM.OD_USER_NO =#FLD_OD_USER_NO#
+		AND UFM.OD_GCIF =#FLD_OD_GCIF#
+			<isNotEmpty property="USER_ROLE"  prepend="AND" > 
+				<isNotEqual property="USER_ROLE" compareValue="ALL">
+					UFM.USER_ROLE = #USER_ROLE#
+				</isNotEqual >
+			</isNotEmpty>
+	</select>
+
+</sqlMap>

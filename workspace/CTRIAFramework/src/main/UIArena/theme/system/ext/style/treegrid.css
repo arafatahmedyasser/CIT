@@ -1,0 +1,12 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.x-treegrid-root-table,
+.x-treegrid-col {
+    border-color: #ededed;
+}
+
+.x-treegrid-resizer {
+    border-left-color:#555;
+    border-right-color:#555;
+}

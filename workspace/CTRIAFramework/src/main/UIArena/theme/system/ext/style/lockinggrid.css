@@ -1,0 +1,12 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.rightcontexticon {
+    background: url("../images/lockinggrid/viewmoredetails.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.doubleclickicon {
+    background: url("../images/lockinggrid/viewdetails.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.x-grid3-locked .x-grid3-hd,.x-grid3-locked .x-grid3-cell-first{
+	 border-right: solid 1px #D0D0D0!important;
+}

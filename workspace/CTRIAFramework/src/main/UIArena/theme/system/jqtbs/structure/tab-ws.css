@@ -1,0 +1,112 @@
+/*
+  Purpose : File contains all styles releated to Tab component ,same component 
+            used for tablication layout tab, workspace layout tab, tab component.
+  Contains: Section 1 ------> TAB WORKSPACE(TAB CONTAINER)
+            Section 2 ------> TAB TABS
+            Section 3 ------> TAB PANEL
+*/
+/* 
+==========Section 1==========
+======= TAB WORKSPACE =======
+============================= 
+*/
+.ct-tab-container {
+	margin-bottom: 0px;
+}
+.ct-al-tab__footer-container{
+	    height: 55px;
+}
+.ct-al__tab-each.ct-al__tab-each-js a{
+	color : #fff;
+}
+.tab-collapse-mobile{
+	padding-left:0px;
+	padding-right:0px;
+}
+.ct-tab__ws-user-snippet{
+	text-align: left;
+	width: 100%;
+	padding: 0px;
+	box-shadow : 0px 0px 12px #333;
+}
+.ct-tab-ws-header{
+	text-align:center;
+}
+.ct-ws-title{
+	float:none;
+}
+.ct-tab-desktop__ws-user-img-big {
+	margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+}
+.ct-al-tab__ws-float_img{
+	margin-top: 8px;
+}
+.ct-al-tab__ws-userimg_hldr{
+	border-radius: 0px !important;
+	border: 1px solid;
+}
+.ct-tab__ws-user-name{
+	padding: 10px 0px;
+	font-weight: bold;
+	line-height: 1.5;
+	font-size: 16px;
+}
+.ct-al-tab__ws-pref_logout_cont {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 7px 0px;
+	border-top: 1px solid;
+	background: #F4f4f4;
+}
+.ct-al__tab-desktop-cont
+{
+	list-style: none;
+	float: right;
+	margin-right: 30px;	
+}
+.ct-tab-desktop__ws-user-img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ct-tab__ws-user-snippet{
+	text-align: left;
+	width: 100%;
+	padding: 0px;
+}
+.ct-user.ct-tab-desktop__ws-user-info {
+	display: none;
+	width: 320px;
+	position: fixed;
+	top: 85px;
+	z-index: 999;
+	right: 15px;
+}
+.ct-tab-destop__ws-tooltip-arrow{
+	position: absolute;
+  	top: -7px;
+  	border-width: 0 7px 7px;
+  	border-color: transparent;
+  	border-style: solid;
+  	right:23%;
+}
+.ct-tab-desktop__ws-user-img img{
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.ct-tab-desktop__ws-user-img{
+	margin-right:30px;
+	padding:10px 0px;
+}
+/* 
+========section 2========
+====== [TAB TABS] =======
+========================= 
+*/
+.ct-tab__txt{
+	white-space: nowrap;
+}

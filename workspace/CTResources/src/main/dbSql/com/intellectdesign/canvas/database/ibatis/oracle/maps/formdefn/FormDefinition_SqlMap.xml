@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<resultMap id="GET_DATA_DRIVEN_FIELD_TYPES_RESULTMAP" class="java.util.HashMap">
+		<result property="TYPE_NAME" nullValue="" column="TYPE_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="FORM_MGR_FRMWK_SELECT_GET_DATA_DRIVEN_FIELD_TYPES"
+		parameterClass="java.util.HashMap" resultMap="GET_DATA_DRIVEN_FIELD_TYPES_RESULTMAP">
+		SELECT TYPE_NAME
+		from
+		FORM_ITEM_TYPE
+		where ADDITIONAL_INFO_IND='Y'
+	</select>
+
+
+	<sql id="FORM_DEFN_COLUMNS">
+		FORM_ID,
+		FORM_DESC,
+		FORM_TITLE,
+		LAYOUT,
+		TOTAL_COLUMNS,
+		BUNDLE_KEY,
+		DATASOURCE_CLASS,
+		FORM_LOGO,
+		LABEL_ALIGN_TYPE,
+		INITIAL_MULTIPLICITY,
+		CHANNEL_ID,
+		LABEL_CHAR_COUNT
+	</sql>
+	<resultMap id="GET_FORM_META_DATA_EXPORT_MASTER_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="ITEM_KEY" nullValue="" column="ITEM_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="METADATA" resultMap="GET_FORM_DEFN_RESULTMAP" />
+	</resultMap>
+
+	<resultMap id="GET_FORM_DEFN_RESULTMAP" class="java.util.HashMap">
+		<result property="FORM_ID" nullValue="" column="FORM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_DESC" nullValue="" column="FORM_DESC"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_TITLE" nullValue="" column="FORM_TITLE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT" nullValue="" column="LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOTAL_COLUMNS" nullValue="" column="TOTAL_COLUMNS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DATASOURCE_CLASS" nullValue=""
+			column="DATASOURCE_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_LOGO" nullValue="" column="FORM_LOGO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LABEL_ALIGN_TYPE" nullValue=""
+			column="LABEL_ALIGN_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INITIAL_MULTIPLICITY" nullValue=""
+			column="INITIAL_MULTIPLICITY" javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="CHANNEL_ID" nullValue="A" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LABEL_CHAR_COUNT" nullValue=""
+			column="LABEL_CHAR_COUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="FORM_MGR_FRMWK_SELECT_GET_FORM_DEFN" parameterClass="java.util.HashMap"
+		resultMap="GET_FORM_DEFN_RESULTMAP">
+		SELECT
+		<include refid="FORM_DEFN_COLUMNS" />
+		from FORM_DEFINITION
+	</select>
+
+	<resultMap id="GET_FORM_META_DATA_RESULTMAP" class="java.util.HashMap">
+		<result property="ITEM_ID" nullValue="" column="ITEM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_ID" nullValue="" column="FORM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PARENT_ID" nullValue="" column="PARENT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ITEM_TYPE" nullValue="" column="ITEM_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="POSITION"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="DISPLAY_NM_KEY" nullValue="" column="DISPLAY_NM_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PLAIN_LBL" nullValue="" column="PLAIN_LBL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT" nullValue="" column="LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ANCHOR" nullValue="" column="ANCHOR"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MIN_LENGTH" nullValue="" column="MIN_LENGTH"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MAX_LENGTH" nullValue="" column="MAX_LENGTH"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MAX_NUM_LINES" nullValue="" column="MAX_NUM_LINES"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MAX_CHAR_PER_LINES" nullValue=""
+			column="MAX_CHAR_PER_LINES" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOTAL_COLS" nullValue="" column="TOTAL_COLS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ROW_SPAN" nullValue="" column="ROW_SPAN"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COL_SPAN" nullValue="" column="COL_SPAN"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VALIDATION_TYPE" nullValue="" column="VALIDATION_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="RAW_KEYS" nullValue="" column="RAW_KEYS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="RAW_VALUES" nullValue="" column="RAW_VALUES"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INCLUDE_SELECT_IND" nullValue=""
+			column="INCLUDE_SELECT_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_IND" nullValue="" column="CONTAINER_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VISIBLE_IND" nullValue="" column="VISIBLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EDITABLE_IND" nullValue="" column="EDITABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="READ_ONLY_IND" nullValue="" column="READ_ONLY_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="REQUIRED_IND" nullValue="" column="REQUIRED_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LOOKUP_IND" nullValue="" column="LOOKUP_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COLLAPSIBLE_FIRST_IND" nullValue=""
+			column="COLLAPSIBLE_FIRST_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DS_VIEW_ID" nullValue="" column="DS_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DS_KEY_COLUMN_ID" nullValue=""
+			column="DS_KEY_COLUMN_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DS_VAL_COLUMN_ID" nullValue=""
+			column="DS_VAL_COLUMN_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONDITIONAL_IND" nullValue="" column="CONDITIONAL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CACHE_DATA_IND" nullValue="" column="CACHE_DATA_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HIDE_LABEL" nullValue="" column="HIDE_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTEXT_CONATINER_IND" nullValue=""
+			column="CONTEXT_CONATINER_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VALIDATE_ON_SWITCH_IND" nullValue=""
+			column="VALIDATE_ON_SWITCH_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CRITERIA_ID_REQ_IND" nullValue=""
+			column="CRITERIA_ID_REQ_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LINKED_CURR_COL" nullValue="" column="LINKED_CURR_COL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LABEL_ALIGN_TYPE" nullValue=""
+			column="LABEL_ALIGN_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HIDE_LABEL" nullValue="" column="HIDE_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SUPPORTED_MIME_TYPES" nullValue=""
+			column="UPLOAD_FILE_FORMATS" javaType="java.util.ArrayList"
+			select="FILE_UPLOAD_SUPPORTED_MIME_TYPES_SELECT" />
+		<result property="COLUMN_TYPE" nullValue="" column="COLUMN_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_PRODUCT_CODE" nullValue=""
+			column="WIDGET_PRODUCT_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_SUB_PRODUCT_CODE" nullValue=""
+			column="WIDGET_SUB_PRODUCT_CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="WIDGET_FUNCTION_CODE" nullValue=""
+			column="WIDGET_FUNCTION_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APPEND_CURRENCY_MODE" nullValue=""
+			column="APPEND_CURRENCY_MODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRINT_REQUIRED_IND" nullValue=""
+			column="PRINT_REQUIRED_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHANNEL_ID" nullValue="A" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOGGLE_IND" nullValue="" column="TOGGLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="RESIZABLE_IND" nullValue="" column="RESIZABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MULTI_LANG_IND" nullValue="" column="MULTI_LANG_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LABEL_CHAR_COUNT" nullValue=""
+			column="LABEL_CHAR_COUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COPY_PASTE_IND" nullValue="" column="COPY_PASTE_IND" 
+		javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<sql id="FORM_ITEMS_COLUMNS">
+		FID.ITEM_ID,
+		FID.FORM_ID,
+		FID.PARENT_ID,
+		FIT.TYPE_NAME ITEM_TYPE,
+		FID.POSITION,
+		FID.DISPLAY_NM_KEY,
+		FID.PLAIN_LBL,
+		FID.LAYOUT,
+		FID.ANCHOR,
+		FID.BUNDLE_KEY,
+		FID.MIN_LENGTH,
+		FID.MAX_LENGTH,
+		FID.MAX_NUM_LINES,
+		FID.MAX_CHAR_PER_LINES,
+		FID.TOTAL_COLS,
+		FID.ROW_SPAN,
+		FID.COL_SPAN,
+		FID.VALIDATION_TYPE,
+		FID.RAW_KEYS,
+		FID.RAW_VALUES,
+		FID.INCLUDE_SELECT_IND,
+		FID.CONTAINER_IND,
+		FID.VISIBLE_IND,
+		FID.EDITABLE_IND,
+		FID.READ_ONLY_IND,
+		FID.REQUIRED_IND,
+		FID.LOOKUP_IND,
+		FID.COLLAPSIBLE_FIRST_IND,
+		FID.DS_VIEW_ID,
+		FID.DS_KEY_COLUMN_ID,
+		FID.DS_VAL_COLUMN_ID,
+		FID.WIDGET_ID,
+		DECODE (FID.DS_KEY_COLUMN_ID, NULL,NULL,
+		(SELECT DISTINCT VCD.DATA_TYPE
+		FROM VIEW_COLUMN_DEFINITION VCD
+		JOIN WIDGET_DEFINITION WD ON(WD.DEFAULT_VIEW_ID=VCD.VIEW_ID)
+		WHERE WD.WIDGET_ID =FID.WIDGET_ID
+		AND VCD.COLUMN_ID =FID.DS_KEY_COLUMN_ID
+		)) COLUMN_TYPE,
+		DECODE (FID.WIDGET_ID, NULL,NULL,
+		(SELECT DISTINCT VD.PRODUCT
+		FROM WIDGET_DEFINITION WD
+		INNER JOIN VIEW_DEFINITION VD
+		ON VD.VIEW_ID = WD.DEFAULT_VIEW_ID WHERE WD.WIDGET_ID=FID.WIDGET_ID
+		)) WIDGET_PRODUCT_CODE,
+		DECODE (FID.WIDGET_ID, NULL,NULL,
+		(SELECT DISTINCT VD.SUB_PRODUCT
+		FROM WIDGET_DEFINITION WD
+		INNER JOIN VIEW_DEFINITION VD
+		ON VD.VIEW_ID = WD.DEFAULT_VIEW_ID WHERE WD.WIDGET_ID=FID.WIDGET_ID
+		)) WIDGET_SUB_PRODUCT_CODE,
+		DECODE (FID.WIDGET_ID, NULL,NULL,
+		(SELECT DISTINCT VD.FUNCTION_CODE
+		FROM WIDGET_DEFINITION WD
+		INNER JOIN VIEW_DEFINITION VD
+		ON VD.VIEW_ID = WD.DEFAULT_VIEW_ID WHERE WD.WIDGET_ID=FID.WIDGET_ID
+		)) WIDGET_FUNCTION_CODE,
+		FID.CONDITIONAL_IND,
+		FID.CACHE_DATA_IND,
+		DECODE(FID.HIDE_LABEL, NULL, 'N', FID.HIDE_LABEL) HIDE_LABEL,
+		FID.CONTEXT_CONATINER_IND,
+		FID.CRITERIA_ID_REQ_IND,
+		FID.VALIDATE_ON_SWITCH_IND,
+		FID.LINKED_CURR_COL ,
+		FID.RESIZABLE_IND,
+		FID.UPLOAD_FILE_FORMATS,
+		FID.MULTI_LANG_IND,
+		FID.LABEL_ALIGN_TYPE,
+		FID.HIDE_LABEL,
+		FID.PRINT_REQUIRED_IND,
+		FID.CHANNEL_ID,
+		FID.APPEND_CURRENCY_MODE,
+		FID.TOGGLE_IND,
+		FID.LABEL_CHAR_COUNT,
+		FID.COPY_PASTE_IND
+	</sql>
+	<select id="FORM_MGR_FRMWK_SELECT_GET_FORM_DEFN_EXPORT"
+		parameterClass="java.util.HashMap" resultMap="GET_FORM_META_DATA_EXPORT_MASTER_RESULTMAP">
+		SELECT
+		FORM_ID ITEM_KEY,
+		<include refid="FORM_DEFN_COLUMNS" />
+		from FORM_DEFINITION
+		WHERE FORM_ID IN
+		<iterate property="FORM_IDS" conjunction="," open="(" close=")">
+			#FORM_IDS[]#
+		</iterate>
+	</select>
+	<select id="FORM_MGR_FRMWK_SELECT_GET_FORM_META_DATA"
+		parameterClass="java.util.HashMap" resultMap="GET_FORM_META_DATA_RESULTMAP">
+		SELECT
+		<include refid="FORM_ITEMS_COLUMNS" />
+		FROM FORM_ITEM_DEFINITION FID
+		JOIN FORM_ITEM_TYPE FIT on (FIT.TYPE_ID=
+		FID.ITEM_TYPE)
+		START WITH FID.FORM_ID= #FORM_ID# AND
+		FID.parent_id = #FORM_ID#
+		CONNECT BY ((PRIOR FID.FORM_ID = FID.FORM_ID AND PRIOR FID.ITEM_ID =
+		FID.PARENT_ID AND (PRIOR FID.ITEM_TYPE &lt;&gt; 18 OR PRIOR FID.ITEM_TYPE &lt;&gt; 30))
+		OR (PRIOR FID.ITEM_ID = FID.FORM_ID AND FID.PARENT_ID = FID.FORM_ID AND
+		(PRIOR FID.ITEM_TYPE = 18 OR
+		PRIOR FID.ITEM_TYPE = 30)))
+		ORDER SIBLINGS BY FID.position
+	</select>
+	<resultMap id="GET_FORM_META_DATA_EXPORT_MASTER_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="ITEM_KEY" nullValue="" column="ITEM_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="METADATA" resultMap="GET_FORM_META_DATA_RESULTMAP" />
+	</resultMap>
+	<select id="FORM_MGR_FRMWK_SELECT_GET_FORM_META_DATA_EXPORT"
+		parameterClass="java.util.HashMap" resultMap="GET_FORM_META_DATA_EXPORT_MASTER_RESULTMAP">
+		SELECT
+		FID.FORM_ID||'|||'||FID.ITEM_ID ITEM_KEY,
+		<include refid="FORM_ITEMS_COLUMNS" />
+		FROM FORM_ITEM_DEFINITION FID
+		JOIN FORM_ITEM_TYPE FIT ON (FIT.TYPE_ID =
+		FID.ITEM_TYPE)
+		START WITH FID.FORM_ID IN
+		<iterate property="FORM_IDS" conjunction="," open="(" close=")">
+			#FORM_IDS[]#
+		</iterate>
+
+		AND FID.PARENT_ID IN
+		<iterate property="FORM_IDS" conjunction="," open="(" close=")">
+			#FORM_IDS[]#
+		</iterate>
+
+		CONNECT BY ((PRIOR FID.FORM_ID = FID.FORM_ID AND PRIOR FID.ITEM_ID =
+		FID.PARENT_ID AND (PRIOR FID.ITEM_TYPE &lt;&gt; 18 OR PRIOR FID.ITEM_TYPE &lt;&gt; 30))
+
+		OR (PRIOR FID.ITEM_ID = FID.FORM_ID AND FID.PARENT_ID = FID.FORM_ID AND
+		(PRIOR FID.ITEM_TYPE = 18 OR
+		PRIOR FID.ITEM_TYPE = 30) ))
+
+		ORDER SIBLINGS BY FID.POSITION
+	</select>
+
+
+	<select id="FILE_UPLOAD_SUPPORTED_MIME_TYPES_SELECT"
+		resultClass="java.util.HashMap">
+		SELECT
+		MIME_TYPE
+		FROM
+		MIME_TYPE_MASTER
+		WHERE
+		MIME_TYPE_ID in (
+		SELECT REGEXP_SUBSTR(#UPLOAD_FILE_FORMATS#,'[^,]+', 1, level) FROM DUAL
+		CONNECT BY REGEXP_SUBSTR(#UPLOAD_FILE_FORMATS#, '[^,]+', 1, LEVEL) IS
+		NOT NULL )
+	</select>
+
+	<resultMap id="GET_FORM_META_DATA_CRITERIA_EXPORT" class="java.util.HashMap">
+		<result property="CRITERIA_FORMID" nullValue="" column="CRITERIA_FORMID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CRITERIA_FROM" column="CRITERIA_FROM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CRITERIA_TO" column="CRITERIA_TO" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="CRITERIA_LABEL" column="CRITERIA_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_ID" column="WIDGET_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="DEFAULT_LABEL_IND" column="DEFAULT_LABEL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="FORM_MGR_FRMWK_SELECT_GET_ALL_EXPORT_CRITERAIA_FOR_FORM_QRY"
+		parameterClass="java.util.HashMap" resultMap="GET_FORM_META_DATA_CRITERIA_EXPORT">
+		SELECT
+		CRITERIA_FORMID,
+		CRITERIA_FROM,
+		CRITERIA_TO,
+		CRITERIA_LABEL,
+		WIDGET_ID,
+		DEFAULT_LABEL_IND
+		FROM EXPORT_CRITERIA
+		WHERE CRITERIA_FORMID
+		IN
+		<iterate property="FORM_IDS" conjunction="," open="(" close=")">
+			#FORM_IDS[]#
+		</iterate>
+	</select>
+
+	<parameterMap id="FILE_ATTACH_INSERT_PARAMETER_MAP" class="java.util.HashMap">
+		<parameter property="ATTACHMENT_REF_NUM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ATTACHMENT_FILE_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ATTACHMENT_REF_FILE_NAME" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="ATTACHMENT_FILE_SIZE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_MAKER_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+	<insert id="ATTACH_FILE_INSERT_FILE_STATUS" parameterMap="FILE_ATTACH_INSERT_PARAMETER_MAP">
+		INSERT
+		INTO FORM_FILE_ATTACHMENT
+		(
+		ATTACHMENT_REF_NUM,
+		ATTACHMENT_FILE_NAME,
+		ATTACHMENT_REF_FILE_NAME,
+		ATTACHMENT_FILE_SIZE,
+		OD_GCIF,
+		OD_MAKER_ID,
+		OD_MAKER_DATE
+		)
+		VALUES (? ,?, ?, ?, ?, ?, SYSDATE)
+	</insert>
+	<resultMap id="FETCH_FILE_DETAIL_SELECT_RESULTMAP" class="java.util.HashMap">
+		<result property="ATTACHMENT_FILE_NAME" nullValue=""
+			column="ATTACHMENT_FILE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ATTACHMENT_REF_FILE_NAME" nullValue=""
+			column="ATTACHMENT_REF_FILE_NAME" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="ATTACHMENT_FILE_SIZE" nullValue=""
+			column="ATTACHMENT_FILE_SIZE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ATTACHMENT_UPLOADED_DATE" nullValue=""
+			column="OD_MAKER_DATE" javaType="java.lang.String" jdbcType="DATE" />
+	</resultMap>
+	<select id="FETCH_FILE_DETAIL_SELECT" parameterClass="java.util.HashMap"
+		resultMap="FETCH_FILE_DETAIL_SELECT_RESULTMAP">
+		SELECT
+		ATTACHMENT_FILE_NAME,
+		ATTACHMENT_REF_FILE_NAME,
+		ATTACHMENT_FILE_SIZE,
+		OD_MAKER_DATE
+		FROM
+		FORM_FILE_ATTACHMENT
+		WHERE
+		ATTACHMENT_REF_NUM = #ATTACHMENT_REFERENCE_NO#
+		AND
+		OD_GCIF = #OD_GCIF#
+		AND
+		OD_MAKER_ID = #OD_MAKER_ID#
+	</select>
+	<delete id="FILE_DETAIL_DELETE_FILE_STATUS" parameterClass="java.util.HashMap">
+		DELETE FROM FORM_FILE_ATTACHMENT
+		WHERE
+		ATTACHMENT_REF_NUM = #ATTACHMENT_REFERENCE_NO#
+		AND
+		OD_GCIF = #OD_GCIF#
+		AND
+		OD_MAKER_ID = #OD_MAKER_ID#
+	</delete>
+
+	<select id="FORM_MGR_FRMWK_SELECT_GET_USERIMAGE_MIME_TYPES"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT
+		MIME_TYPE
+		FROM MIME_TYPE_MASTER
+		WHERE MIME_TYPE_ID IN
+		<iterate property="GET_USERIMAGE_SUPPORTED_FORMATS"
+			conjunction="," open="(" close=")">
+			#GET_USERIMAGE_SUPPORTED_FORMATS[]#
+		</iterate>
+	</select>
+</sqlMap>

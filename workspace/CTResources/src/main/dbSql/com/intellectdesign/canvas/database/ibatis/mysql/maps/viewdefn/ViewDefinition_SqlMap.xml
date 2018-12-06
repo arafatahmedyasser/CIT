@@ -1,0 +1,4325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<!-- This mapping takes care of populating the view definition (including 
+		the attributes) -->
+	<resultMap id="VIEW_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.ViewDefinition">
+		<result property="viewName" nullValue="" column="VIEW_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="viewId" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userNumber" nullValue="" column="USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF" nullValue="" column="GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="product" nullValue="" column="PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProduct" nullValue="" column="SUB_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="functionCode" nullValue="" column="FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strDefaultView" nullValue="" column="DEFAULT_VIEW_IND"
+			javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="instructionClassName" nullValue=""
+			column="INSTRUCTION_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="parentViewId" nullValue="" column="PARENT_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strRecordsPerPage" nullValue=""
+			column="RECORDS_PER_PAGE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sqlParamMapID" nullValue="" column="SQL_PARAM_MAP_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strOverriddenView" nullValue=""
+			column="OVERRIDDEN_FLAG" javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="systemViewID" nullValue="" column="SYSTEM_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strFilterEnabled" nullValue="" column="FILTER_ENABLED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strColumnOrderingEnabled" nullValue=""
+			column="COLUMN_ORDERING" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strGroupingEnabled" nullValue=""
+			column="GROUPING_ENABLED_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="listColumns" column="VIEW_ID"
+			select="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_COLUMNS_FOR_VIEW_QRY" />
+		<result property="viewPreferences" column="VIEW_ID"
+			select="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEW_ATTIONAL_PREFERENCES_QRY" />
+		<result property="viewType" nullValue="" column="VIEW_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="chartType" nullValue="" column="CHART_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="selectionType" nullValue="" column="SELECTION_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="totalResultInd" nullValue=""
+			column="DISPLAY_TOTAL_RESULT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="dateFilters" nullValue="" column="VIEW_ID"
+			select="VIEW_MGR_FRMWK_MNT_SELECT_GET_DATE_FILTERS_QRY" />
+		<result property="globalDateFitlerInd" nullValue=""
+			column="GLOBAL_DATE_FILTER_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="detailActionInd" nullValue=""
+			column="DETAIL_ACTION_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="contextActionInd" nullValue=""
+			column="CONTEXT_ACTION_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataSrcId" nullValue="" column="DATA_SRC_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="highlightInd" nullValue="" column="HIGHLIGHT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="contextColumn" nullValue="" column="CONTEXT_COLUMN"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="groupingHeaderReqd" nullValue=""
+			column="GROUP_HEADER_REQD_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isDataCached" nullValue="" column="IS_DATA_CACHED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataCacheScope" nullValue="" column="DATA_CACHE_SCOPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isGroupModifiable" nullValue=""
+			column="IS_GROUP_MODIFIABLE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="initGroupStage" nullValue="" column="INIT_GROUP_STAGE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="detailMsgInd" nullValue="" column="DETAIL_MSG_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="detailMsgLbl" nullValue="" column="DETAIL_MSG_LBL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isSummaryReqd" nullValue=""
+			column="IS_SUMMARY_REQUIRED" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="initialRecordCount" nullValue=""
+			column="INITIAL_RECORDS_COUNT" javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="chartYAxisMax" nullValue="" column="CHART_YAXIS_MAX"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="chartYAxisMin" nullValue="" column="CHART_YAXIS_MIN"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="chartNoTreadLines" nullValue=""
+			column="CHART_NO_TREAD_LINES" javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="logoUrl" nullValue="" column="LOGO_URL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="logoProperty" nullValue="" column="LOGO_PROPERTY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="borderInd" nullValue="" column="BORDER_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="switchingCharts" nullValue="" column="SWITCHING_CHARTS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="responsiveTemplate" nullValue=""
+			column="RESPONSIVE_TEMPLATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="bundleKey" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="initCollapsed" nullValue="" column="INIT_COLLAPSED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="templateId" nullValue="" column="TEMPLATE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="templateConfig" nullValue="" column="TEMPLATE_CONFIG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="autoLoadInd" nullValue="" column="AUTOLOAD_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<resultMap id="VIEW_COLUMN_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.ColumnDefinition">
+		<result property="viewId" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnId" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnDisplayNameKey" nullValue=""
+			column="COLUMN_DISPLAY_NM_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strPosition" nullValue="" column="POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strPositionFixed" nullValue=""
+			column="POSITION_FIXED_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strMandatory" nullValue="" column="MANDATORY_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strVisible" nullValue="" column="VISIBLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="sortOrder" nullValue="" column="SORT_ORDER"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strSortPosition" nullValue="" column="SORT_POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strHidden" nullValue="" column="HIDDEN_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strSortable" nullValue="" column="SORTABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataType" nullValue="" column="DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strGroupable" nullValue="" column="GROUPABLE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strGroupRelativePosition" nullValue=""
+			column="REL_POS_IN_GRP" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strMandatoryInGroup" nullValue=""
+			column="MANDATORY_IN_GRP_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strGrouped" nullValue="" column="IS_GROUPED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="groupPosition" nullValue="-1" column="POS_IN_GRP"
+			javaType="java.lang.Integer" jdbcType="VARCHAR" />
+		<result property="strDrilldownRequired" nullValue=""
+			column="DRILL_DOWN_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="xSeriesInd" nullValue="" column="X_SERIES_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ySeriesInd" nullValue="" column="Y_SERIES_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataSeriedInd" nullValue="" column="DATA_SERIES_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterEnableInd" nullValue=""
+			column="FILTERING_ENABLED_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSourceAmt" nullValue=""
+			column="LINKED_SOURCE_AMT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedSourceCcy" nullValue=""
+			column="LINKED_SOURCE_CCY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="lookupFilterExtParams" nullValue=""
+			column="LOOKUP_FILTER_EXTPARAMS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="strDisabled" nullValue="" column="IS_DISABLED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="listFilters" nullValue=""
+			column="{VIEW_ID=VIEW_ID, COLUMN_ID=COLUMN_ID}" select="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_FILTERS_FOR_COLUMN_QRY" />
+		<result property="parentColumnId" nullValue="" column="PARENT_COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="summaryType" nullValue="" column="SUMMARY_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strCurrencyAppend" nullValue=""
+			column="APPEND_CURRENCY_MODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="linkedDataSeries" nullValue=""
+			column="LINKED_DATA_SERIES" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="customTooltext" nullValue="" column="CUSTOM_TOOLTEXT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="channelId" nullValue="" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="priority" nullValue="" column="PRIORITY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="templateId" nullValue="" column="TEMPLATE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="templateConfig" nullValue="" column="TEMPLATE_CONFIG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+<result property="PRIMARY_IND" nullValue="" column="PRIMARY_IND" javaType="java.lang.String" jdbcType="VARCHAR" /> <!-- CHANGES MADE BY NITHISH -->
+		<result property="SECONDARY_1" nullValue="" column="SECONDARY_1" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SECONDARY_2" nullValue="" column="SECONDARY_2" javaType="java.lang.String" jdbcType="VARCHAR" />
+				<result property="columnWidth" nullValue="" column="COL_WIDTH_IN_PERCENTAGE"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+	</resultMap>
+
+	<resultMap id="VIEW_COLUMN_FILTER_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.ColumnFilter">
+		<result property="filterID" nullValue="" column="FILTER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="columnID" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="filterType" nullValue="" column="FILTER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="dataType" nullValue="" column="DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="strFilterValues" nullValue="" column="FILTER_VALUES"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- This is the result map for fetching the View definition preferences 
+		for a view -->
+	<resultMap id="VIEW_ADDITIONAL_PREFS_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.ViewDefinitionPreferences">
+		<result property="viewId" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="rateCardAvailableInd" nullValue=""
+			column="RATECARD_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="rateCardId" nullValue="" column="RATECARD"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="referenceCcyAvailableInd" nullValue=""
+			column="REFERENCE_CCY_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="referenceCcy" nullValue="" column="REFERENCE_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="lastColumnHandlingAvailableInd" nullValue=""
+			column="LAST_COL_HANDLE_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="lastColumnHandling" nullValue=""
+			column="LAST_COL_HANDLE_METHOD" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="acctGroupHandlingAvailableInd" nullValue=""
+			column="ACCT_GRP_HANDLE_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="acctGroupHandling" nullValue=""
+			column="ACCT_GRP_HANDLE_METHOD" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- ResultMap for fetching the instruction class details -->
+	<resultMap id="INSTRUCTION_PRPT_MAP" class="java.util.HashMap">
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INSTRUCTION_CLASS" nullValue=""
+			column="INSTRUCTION_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<!-- Query for fetching all the instruction class' details -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_INSTRUCTION_CLASS_DTLS"
+		parameterClass="java.util.HashMap" resultMap="INSTRUCTION_PRPT_MAP">
+		SELECT
+		VIEW_ID,
+		INSTRUCTION_CLASS
+		FROM
+		VIEW_DEFINITION
+	</select>
+
+	<!-- Query for fetching the instruction class name for a particular view 
+		id -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_INSTRUCTION_CLASS"
+		parameterClass="java.util.HashMap" resultClass="java.lang.String">
+		SELECT
+		INSTRUCTION_CLASS
+		FROM
+		VIEW_DEFINITION
+		WHERE
+		VIEW_ID = #VIEW_ID#
+	</select>
+
+	<!-- Select query for getting the list of all views -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_VIEWS_QRY"
+		resultMap="VIEW_DATA_MAP">
+		SELECT
+		VD.VIEW_ID,
+		VD.VIEW_DISPLAY_NM,
+		VD.USER_NO,
+		VD.GCIF,
+		VD.PRODUCT,
+		VD.SUB_PRODUCT,
+		VD.FUNCTION_CODE,
+		VD.DEFAULT_VIEW_IND,
+		VD.INSTRUCTION_CLASS,
+		VD.PARENT_VIEW_ID,
+		VD.RECORDS_PER_PAGE,
+		VD.FILTER_ENABLED,
+		VD.COLUMN_ORDERING,
+		VD.GROUPING_ENABLED_IND,
+		VD.SQL_PARAM_MAP_ID,
+		VD.OVERRIDDEN_FLAG,
+		VD.SELECTION_TYPE,
+		VD.VIEW_TYPE,
+		VD.CHART_TYPE,
+		VD.DISPLAY_TOTAL_RESULT_IND,
+		VD.GLOBAL_DATE_FILTER_IND,
+		VD.DETAIL_ACTION_IND,
+		VD.CONTEXT_ACTION_IND,
+		VD.DATA_SRC_ID,
+		VD.HIGHLIGHT_IND,
+		VD.CONTEXT_COLUMN,
+		VD.GROUP_HEADER_REQD_IND,
+		VD.INIT_COLLAPSED,
+		VD.INITIAL_RECORDS_COUNT,
+		VD.IS_DATA_CACHED,
+		VD.IS_GROUP_MODIFIABLE,
+		VD.INIT_GROUP_STAGE,
+		VD.IS_SUMMARY_REQUIRED,
+		VD.CHART_YAXIS_MAX,
+		VD.CHART_YAXIS_MIN,
+		VD.CHART_NO_TREAD_LINES,
+		VD.DATA_CACHE_SCOPE,
+		VD.DETAIL_MSG_IND,
+		VD.DETAIL_MSG_LBL,
+		VD.LOGO_URL,
+		VD.LOGO_PROPERTY,
+		VD.BORDER_IND,
+		VD.SWITCHING_CHARTS,
+		VD.RESPONSIVE_TEMPLATE,
+		VD.BUNDLE_KEY,
+		VD.AUTOLOAD_IND,
+		VD.TEMPLATE_ID,
+		VDFTM.TEMPLATE_CONFIG TEMPLATE_CONFIG
+		FROM
+		VIEW_DEFINITION VD
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM ON (VD.TEMPLATE_ID = VDFTM.TEMPLATE_ID)
+		ORDER BY
+		VD.VIEW_DISPLAY_NM
+
+	</select>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_COLUMNS_FOR_VIEW_QRY"
+		parameterClass="java.lang.String" resultMap="VIEW_COLUMN_DATA_MAP">
+			SELECT
+		CD.VIEW_ID,
+		CD.COLUMN_ID,
+		CD.COLUMN_DISPLAY_NM_KEY,
+		CD.POSITION,
+		CD.POSITION_FIXED_IND,
+		CD.MANDATORY_IND,
+		CD.VISIBLE_IND,
+		CD.SORT_POSITION,
+		CD.SORT_ORDER,
+		CD.DATA_TYPE,
+		CD.HIDDEN_IND,
+		CD.SORTABLE_IND,
+		CD.GROUPABLE_IND,
+		CD.REL_POS_IN_GRP,
+		CD.POS_IN_GRP,
+		CD.MANDATORY_IN_GRP_IND,
+		CD.IS_GROUPED,
+		CD.DRILL_DOWN_IND,
+		CD.X_SERIES_IND,
+		CD.Y_SERIES_IND,
+		CD.DATA_SERIES_IND,
+		CD.FILTERING_ENABLED_IND,
+		CD.LINKED_SOURCE_AMT,
+		CD.LINKED_SOURCE_CCY,
+		CD.LOOKUP_FILTER_EXTPARAMS,
+		CD.IS_DISABLED,
+		CD.PARENT_COLUMN_ID,
+		CD.SUMMARY_TYPE,
+		CD.APPEND_CURRENCY_MODE,
+		CD.LINKED_DATA_SERIES,
+		CD.CUSTOM_TOOLTEXT,
+		CD.CHANNEL_ID,
+		CD.PRIORITY,
+		CD.TEMPLATE_ID,
+		CD.PRIMARY_IND,<!-- CHANGES MADE BY NITHISH -->
+		CD.SECONDARY_1,
+		CD.SECONDARY_2,
+		CD.COL_WIDTH_IN_PERCENTAGE,
+		VDFTM.TEMPLATE_CONFIG TEMPLATE_CONFIG
+		FROM
+		VIEW_COLUMN_DEFINITION CD
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM
+		ON
+		VDFTM.TEMPLATE_ID = CD.TEMPLATE_ID
+		WHERE
+		CD.VIEW_ID = #VIEW_ID#
+		ORDER BY
+		CD.POSITION
+	</select>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_FILTERS_FOR_COLUMN_QRY"
+		resultMap="VIEW_COLUMN_FILTER_DATA_MAP">
+		SELECT
+		VCF.VIEW_ID,
+		VCF.COLUMN_ID,
+		VCF.FILTER_ID,
+		VCF.FILTER_VALUES,
+		VDFM.FILTER_NAME,
+		VDFM.DATA_TYPE
+		FROM
+		VIEW_COLUMN_FILTER VCF,
+		VIEW_DEFINITION_FILTER_MASTER VDFM
+		WHERE
+		VCF.VIEW_ID = #VIEW_ID#
+		AND
+		VCF.COLUMN_ID = #COLUMN_ID#
+		AND
+		VDFM.FILTER_ID = VCF.FILTER_ID
+		ORDER BY
+		VCF.FILTER_ID
+	</select>
+
+	<!-- This query is fired as part of the View definition fetch. This gets 
+		the data from view additional preferences for a given view. -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEW_ATTIONAL_PREFERENCES_QRY"
+		resultMap="VIEW_ADDITIONAL_PREFS_DATA_MAP">
+		SELECT
+		VDAP.VIEW_ID,
+		VDAP.RATECARD_IND,
+		VDAP.RATECARD,
+		VDAP.REFERENCE_CCY_IND,
+		VDAP.REFERENCE_CCY,
+		VDAP.LAST_COL_HANDLE_IND,
+		VDAP.LAST_COL_HANDLE_METHOD,
+		VDAP.ACCT_GRP_HANDLE_IND,
+		VDAP.ACCT_GRP_HANDLE_METHOD
+		FROM
+		VIEW_DEFN_ADDL_PREFERENCES VDAP
+		WHERE
+		VDAP.VIEW_ID = #VIEW_ID#
+	</select>
+
+	<!-- Select query for getting the view for the given view id -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEW_FOR_ID_QRY"
+		resultMap="VIEW_DATA_MAP">
+		SELECT
+		VD.VIEW_ID,
+		VD.VIEW_DISPLAY_NM,
+		VD.USER_NO,
+		VD.GCIF,
+		VD.PRODUCT,
+		VD.SUB_PRODUCT,
+		VD.FUNCTION_CODE,
+		VD.DEFAULT_VIEW_IND,
+		VD.INSTRUCTION_CLASS,
+		VD.PARENT_VIEW_ID,
+		VD.RECORDS_PER_PAGE,
+		VD.SQL_PARAM_MAP_ID,
+		VD.OVERRIDDEN_FLAG,
+		VD.SYSTEM_VIEW_ID,
+		VD.FILTER_ENABLED,
+		VD.COLUMN_ORDERING,
+		VD.GROUPING_ENABLED_IND,
+		VD.VIEW_TYPE,
+		VD.CHART_TYPE,
+		VD.DISPLAY_TOTAL_RESULT_IND,
+		VD.GLOBAL_DATE_FILTER_IND,
+		VD.DETAIL_ACTION_IND,
+		VD.CONTEXT_ACTION_IND,
+		VD.HIGHLIGHT_IND,
+		VD.SELECTION_TYPE,
+		VD.DATA_SRC_ID,
+		VD.CONTEXT_COLUMN,
+		VD.GROUP_HEADER_REQD_IND,
+		VD.INIT_COLLAPSED,
+		VD.INITIAL_RECORDS_COUNT,
+		VD.IS_DATA_CACHED,
+		VD.IS_GROUP_MODIFIABLE,
+		VD.INIT_GROUP_STAGE,
+		VD.IS_SUMMARY_REQUIRED,
+		VD.CHART_YAXIS_MAX,
+		VD.CHART_YAXIS_MIN,
+		VD.CHART_NO_TREAD_LINES,
+		VD.DATA_CACHE_SCOPE,
+		VD.DETAIL_MSG_IND,
+		VD.DETAIL_MSG_LBL,
+		VD.LOGO_URL,
+		VD.LOGO_PROPERTY,
+		VD.BORDER_IND,
+		VD.SWITCHING_CHARTS,
+		VD.RESPONSIVE_TEMPLATE,
+		VD.BUNDLE_KEY,
+		VD.AUTOLOAD_IND,
+		VD.TEMPLATE_ID,
+		VDFTM.TEMPLATE_CONFIG TEMPLATE_CONFIG
+		FROM
+		VIEW_DEFINITION VD
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM ON (VD.TEMPLATE_ID = VDFTM.TEMPLATE_ID)
+		WHERE
+		VD.VIEW_ID = #VIEW_ID#
+		ORDER BY
+		VD.VIEW_DISPLAY_NM
+	</select>
+
+	<!-- Result mapping for view id -->
+	<resultMap id="VIEW_ID_MAP" class="java.util.HashMap">
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<!-- Select query for getting the default view id for the given user no 
+		and gcif -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_DEFAULT_VIEW_ID_QRY"
+		resultMap="VIEW_ID_MAP">
+		SELECT
+		VD.VIEW_ID
+		FROM
+		VIEW_DEFINITION VD
+		WHERE
+		(
+		(VD.USER_NO = #USER_NO#
+		AND
+		VD.GCIF = #GCIF#)
+		OR
+		(VD.USER_NO = '-1'
+		AND
+		VD.GCIF = '-1')
+		)
+
+		AND
+		VD.DEFAULT_VIEW_IND = 'Y'
+	</select>
+
+	<!-- Result mapping for view id -->
+	<resultMap id="CUST_VIEW_ID_MAP" class="java.util.HashMap">
+		<result property="DEFAULT_VIEW_ID" nullValue="" column="DEFAULT_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Select query for getting the default view id for the given user no 
+		and gcif -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_CUST_DEFAULT_VIEW_ID_QRY"
+		resultMap="CUST_VIEW_ID_MAP">
+		SELECT
+		DEFAULT_VIEW_ID
+		FROM
+		WIDGET_DEFINITION
+		WHERE
+		OD_USER_NO = #USER_NO#
+		AND
+		OD_GCIF = #GCIF#
+		AND
+		WIDGET_ID = #WIDGET_ID#
+	</select>
+
+	<!-- Select query for getting the user specific views for the given user 
+		no and gcif -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_USER_SPECIFIC_VIEWS_QRY"
+		resultMap="VIEW_DATA_MAP">
+		SELECT
+		VD.VIEW_ID,
+		VD.VIEW_DISPLAY_NM,
+		VD.USER_NO,
+		VD.GCIF,
+		VD.PRODUCT,
+		VD.SUB_PRODUCT,
+		VD.FUNCTION_CODE,
+		VD.DEFAULT_VIEW_IND,
+		VD.INSTRUCTION_CLASS,
+		VD.PARENT_VIEW_ID,
+		VD.RECORDS_PER_PAGE,
+		VD.SQL_PARAM_MAP_ID,
+		VD.OVERRIDDEN_FLAG,
+		VD.SYSTEM_VIEW_ID,
+		VD.FILTER_ENABLED,
+		VD.COLUMN_ORDERING,
+		VD.GROUPING_ENABLED_IND,
+		VD.VIEW_TYPE,
+		VD.CHART_TYPE,
+		VD.DISPLAY_TOTAL_RESULT_IND,
+		VD.GLOBAL_DATE_FILTER_IND,
+		VD.DETAIL_ACTION_IND,
+		VD.CONTEXT_ACTION_IND,
+		VD.HIGHLIGHT_IND,
+		VD.SELECTION_TYPE,
+		VD.CONTEXT_COLUMN,
+		VD.GROUP_HEADER_REQD_IND,
+		VD.INIT_COLLAPSED,
+		VD.IS_DATA_CACHED,
+		VD.IS_GROUP_MODIFIABLE,
+		VD.INIT_GROUP_STAGE,
+		VD.INITIAL_RECORDS_COUNT,
+		VD.IS_SUMMARY_REQUIRED,
+		VD.CHART_YAXIS_MAX,
+		VD.CHART_YAXIS_MIN,
+		VD.CHART_NO_TREAD_LINES,
+		VD.DATA_CACHE_SCOPE,
+		VD.DETAIL_MSG_IND,
+		VD.DETAIL_MSG_LBL,
+		VD.LOGO_URL,
+		VD.LOGO_PROPERTY,
+		VD.BORDER_IND,
+		VD.SWITCHING_CHARTS,
+		VD.RESPONSIVE_TEMPLATE,
+		VD.BUNDLE_KEY,
+		VD.AUTOLOAD_IND,
+		VD.TEMPLATE_ID,
+		VDFTM.TEMPLATE_CONFIG TEMPLATE_CONFIG
+		FROM
+		VIEW_DEFINITION VD
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM ON (VD.TEMPLATE_ID= VDFTM.TEMPLATE_ID)
+		WHERE
+		VD.USER_NO = #USER_NO#
+		AND
+		VD.GCIF = #GCIF#
+		ORDER BY
+		VD.VIEW_DISPLAY_NM
+	</select>
+
+	<!-- Select query for getting the system views -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_SYSTEM_VIEWS_QRY"
+		resultMap="VIEW_DATA_MAP">
+		SELECT
+		VD.VIEW_ID,
+		VD.VIEW_DISPLAY_NM,
+		VD.USER_NO,
+		VD.GCIF,
+		VD.PRODUCT,
+		VD.SUB_PRODUCT,
+		VD.FUNCTION_CODE,
+		VD.DEFAULT_VIEW_IND,
+		VD.INSTRUCTION_CLASS,
+		VD.PARENT_VIEW_ID,
+		VD.RECORDS_PER_PAGE,
+		VD.SQL_PARAM_MAP_ID,
+		VD.OVERRIDDEN_FLAG,
+		VD.SYSTEM_VIEW_ID,
+		VD.FILTER_ENABLED,
+		VD.COLUMN_ORDERING,
+		VD.GROUPING_ENABLED_IND,
+		VD.VIEW_TYPE,
+		VD.CHART_TYPE,
+		VD.DISPLAY_TOTAL_RESULT_IND,
+		VD.GLOBAL_DATE_FILTER_IND,
+		VD.DETAIL_ACTION_IND,
+		VD.CONTEXT_ACTION_IND,
+		VD.HIGHLIGHT_IND,
+		VD.SELECTION_TYPE,
+		VD.DATA_SRC_ID,
+		VD.CONTEXT_COLUMN,
+		VD.GROUP_HEADER_REQD_IND,
+		VD.INIT_COLLAPSED,
+		VD.IS_DATA_CACHED,
+		VD.IS_GROUP_MODIFIABLE,
+		VD.INIT_GROUP_STAGE,
+		VD.INITIAL_RECORDS_COUNT,
+		VD.IS_SUMMARY_REQUIRED,
+		VD.CHART_YAXIS_MAX,
+		VD.CHART_YAXIS_MIN,
+		VD.CHART_NO_TREAD_LINES,
+		VD.DATA_CACHE_SCOPE,
+		VD.DETAIL_MSG_IND,
+		VD.DETAIL_MSG_LBL,
+		VD.LOGO_URL,
+		VD.LOGO_PROPERTY,
+		VD.BORDER_IND,
+		VD.SWITCHING_CHARTS,
+		VD.RESPONSIVE_TEMPLATE,
+		VD.BUNDLE_KEY,
+		VD.AUTOLOAD_IND,
+		VD.TEMPLATE_ID,
+		VDFTM.TEMPLATE_CONFIG TEMPLATE_CONFIG
+		FROM
+		VIEW_DEFINITION VD
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM ON (VD.TEMPLATE_ID = VDFTM.TEMPLATE_ID)
+		WHERE
+		VD.USER_NO = '-1'
+		AND
+		VD.GCIF = '-1'
+		ORDER BY
+		VD.VIEW_DISPLAY_NM
+	</select>
+
+	<!-- Select query for getting the system views -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_VIEWS_FOR_USER_QRY"
+		resultMap="VIEW_DATA_MAP">
+		SELECT
+		VD_A.VIEW_ID,
+		VD_A.VIEW_DISPLAY_NM,
+		VD_A.USER_NO,
+		VD_A.GCIF,
+		VD_A.PRODUCT,
+		VD_A.SUB_PRODUCT,
+		VD_A.FUNCTION_CODE,
+		VD_A.DEFAULT_VIEW_IND,
+		VD_A.INSTRUCTION_CLASS,
+		VD_A.PARENT_VIEW_ID,
+		VD_A.RECORDS_PER_PAGE,
+		VD_A.SQL_PARAM_MAP_ID,
+		VD_A.OVERRIDDEN_FLAG,
+		VD_A.SYSTEM_VIEW_ID,
+		VD_A.FILTER_ENABLED,
+		VD_A.COLUMN_ORDERING,
+		VD_A.GROUPING_ENABLED_IND,
+		VD_A.VIEW_TYPE,
+		VD_A.CHART_TYPE,
+		VD_A.DISPLAY_TOTAL_RESULT_IND,
+		VD_A.GLOBAL_DATE_FILTER_IND,
+		VD_A.DETAIL_ACTION_IND,
+		VD_A.CONTEXT_ACTION_IND,
+		VD_A.HIGHLIGHT_IND,
+		VD_A.SELECTION_TYPE,
+		VD_A.DATA_SRC_ID,
+		VD_A.CONTEXT_COLUMN,
+		VD_A.GROUP_HEADER_REQD_IND,
+		VD_A.INIT_COLLAPSED,
+		VD_A.IS_DATA_CACHED,
+		VD_A.IS_GROUP_MODIFIABLE,
+		VD_A.INIT_GROUP_STAGE,
+		VD_A.INITIAL_RECORDS_COUNT,
+		VD_A.IS_SUMMARY_REQUIRED,
+		VD_A.CHART_YAXIS_MAX,
+		VD_A.CHART_YAXIS_MIN,
+		VD_A.CHART_NO_TREAD_LINES,
+		VD_A.DATA_CACHE_SCOPE,
+		VD_A.DETAIL_MSG_IND,
+		VD_A.DETAIL_MSG_LBL,
+		VD_A.LOGO_URL,
+		VD_A.LOGO_PROPERTY,
+		VD_A.BORDER_IND,
+		VD_A.SWITCHING_CHARTS,
+		VD_A.RESPONSIVE_TEMPLATE,
+		VD_A.BUNDLE_KEY,
+		VD_A.AUTOLOAD_IND,
+		VD_A.TEMPLATE_ID,
+		VDFTM.TEMPLATE_CONFIG VDFTM
+		FROM
+		VIEW_DEFINITION VD_A
+		JOIN
+		VIEW_TEMPLATE_MASTER VDFTM ON (VD_A.TEMPLATE_ID = VDFTM.TEMPLATE_ID)
+		WHERE
+		NOT EXISTS
+		(
+		SELECT 1 FROM VIEW_DEFINITION VD_B
+		WHERE
+		VD_B.PARENT_VIEW_ID = VD_A.VIEW_ID
+		AND
+		VD_B.OVERRIDDEN_FLAG = 'Y'
+		AND
+		VD_B.USER_NO = #USER_NO#
+		AND
+		VD_B.GCIF=#GCIF#
+		)
+		AND
+		(VD_A.USER_NO = '-1' AND VD_A.GCIF = '-1')
+		OR
+		( VD_A.USER_NO = #USER_NO# AND VD_A.GCIF=#GCIF#)
+		ORDER BY
+		VD_A.VIEW_DISPLAY_NM
+	</select>
+
+	<!-- Parameter map for updating view definition details -->
+	<parameterMap id="VIEW_DEFN_PARAM_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SUB_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DEFAULT_VIEW_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="INSTRUCTION_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PARENT_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="RECORDS_PER_PAGE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SQL_PARAM_MAP_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OVERRIDDEN_FLAG" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SYSTEM_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DATA_SRC_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<!-- query to update view definition -->
+	<update id="VIEW_MGR_FRMWK_MNT_UPDATE_VIEW_DEFINITION_QRY"
+		parameterMap="VIEW_DEFN_PARAM_MAP">
+		UPDATE
+		VIEW_DEFINITION
+		SET
+		VIEW_DISPLAY_NM = ?,
+		PRODUCT = ?,
+		SUB_PRODUCT = ?,
+		DEFAULT_VIEW_IND= ?,
+		INSTRUCTION_CLASS = ?,
+		PARENT_VIEW_ID = ?,
+		RECORDS_PER_PAGE = ?,
+		SQL_PARAM_MAP_ID = ?,
+		OVERRIDDEN_FLAG = ?,
+		SYSTEM_VIEW_ID = ?,
+		DATA_SRC_ID = ?
+		WHERE
+		VIEW_ID = #VIEW_ID#
+		AND
+		USER_NO = #USER_NO#
+		AND
+		GCIF = #GCIF#
+	</update>
+
+	<!-- query to delete column definitions for the given view id -->
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_COLUMN_DEFINITIONS_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		VIEW_COLUMN_DEFINITION
+		WHERE
+		VIEW_ID=#VIEW_ID#
+	</delete>
+
+	<!-- Parameter map for inserting column definition details -->
+	<parameterMap id="COLUMN_DEFINITION_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="COLUMN_DISPLAY_NM_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="POSITION_FIXED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="MANDATORY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="VISIBLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SORT_POSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SORT_ORDER" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DATA_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="HIDDEN_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SORTABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="GROUPABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="REL_POS_IN_GRP" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="POS_IN_GRP" jdbcType="VARCHAR"
+			javaType="java.lang.Integer" />
+		<parameter property="MANDATORY_IN_GRP_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="IS_GROUPED" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DRILL_DOWN_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="X_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="Y_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DATA_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FILTERING_ENABLED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SOURCE_AMT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SOURCE_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LOOKUP_FILTER_EXTPARAMS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="IS_DISABLED" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PARENT_COLUMN_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+
+		<parameter property="APPEND_CURRENCY_MODE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PRIORITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+	<!-- Query for inserting column definition details in view_column_definition 
+		table -->
+	<insert id="VIEW_MGR_FRMWK_MNT_BATCH_INSERT_BULK_COLUMN_DEFINITION_QRY"
+		parameterMap="COLUMN_DEFINITION_MAP">
+		INSERT INTO
+		VIEW_COLUMN_DEFINITION
+		(
+		VIEW_ID,
+		COLUMN_ID,
+		COLUMN_DISPLAY_NM_KEY,
+		POSITION,
+		POSITION_FIXED_IND,
+		MANDATORY_IND,
+		VISIBLE_IND,
+		SORT_POSITION,
+		SORT_ORDER,
+		DATA_TYPE,
+		HIDDEN_IND,
+		SORTABLE_IND,
+		GROUPABLE_IND,
+		REL_POS_IN_GRP,
+		POS_IN_GRP,
+		MANDATORY_IN_GRP_IND,
+		IS_GROUPED,
+		DRILL_DOWN_IND,
+		X_SERIES_IND,
+		Y_SERIES_IND,
+		DATA_SERIES_IND,
+		FILTERING_ENABLED_IND,
+		LINKED_SOURCE_AMT,
+		LINKED_SOURCE_CCY,
+		LOOKUP_FILTER_EXTPARAMS,
+		IS_DISABLED,
+		PARENT_COLUMN_ID,
+		APPEND_CURRENCY_MODE,
+		PRIORITY
+
+		)
+		VALUES
+		(
+
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+	<!-- Parameter map for inserting Widget definition details -->
+	<parameterMap id="VIEW_DEFN_ADDL_PREFERENCES_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="RATECARD_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="RATECARD" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="REFERENCE_CCY_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="REFERENCE_CCY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="LAST_COL_HANDLE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="LAST_COL_HANDLE_METHOD" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="ACCT_GRP_HANDLE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="ACCT_GRP_HANDLE_METHOD" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<!-- Query for inserting Widget definition details in WIDGET_DEFINITION 
+		table -->
+	<insert id="VIEW_MGR_FRMWK_MNT_INSERT_VIEW_DEFN_ADDL_PREFERENCES_QRY"
+		parameterMap="VIEW_DEFN_ADDL_PREFERENCES_MAP">
+		INSERT INTO
+		VIEW_DEFN_ADDL_PREFERENCES
+		(
+		VIEW_ID,
+		RATECARD_IND,
+		RATECARD,
+		REFERENCE_CCY_IND,
+		REFERENCE_CCY,
+		LAST_COL_HANDLE_IND,
+		LAST_COL_HANDLE_METHOD,
+		ACCT_GRP_HANDLE_IND,
+		ACCT_GRP_HANDLE_METHOD
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<!-- Parameter map for inserting Widget definition details -->
+	<parameterMap id="WIDGET_DEFINITION_MAP" class="java.util.HashMap">
+		<parameter property="WIDGET_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DEFAULT_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_USER_NO" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_SUB_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<!-- Query for inserting Widget definition details in WIDGET_DEFINITION 
+		table -->
+	<insert id="VIEW_MGR_FRMWK_MNT_INSERT_WIDGET_DEFINITION_QRY"
+		parameterMap="WIDGET_DEFINITION_MAP">
+		INSERT INTO WIDGET_DEFINITION
+		(
+		WIDGET_ID,
+		DEFAULT_VIEW_ID,
+		OD_USER_NO,
+		OD_GCIF,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+	<!-- Parameter map for inserting view definition details -->
+	<parameterMap id="VIEW_DEFINITION_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="VIEW_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DEFAULT_VIEW_IND" javaType="java.lang.String"
+			jdbcType="CHAR" />
+		<parameter property="INSTRUCTION_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PARENT_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SUB_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="USER_NO" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="RECORDS_PER_PAGE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SQL_PARAM_MAP_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OVERRIDDEN_FLAG" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SYSTEM_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FILTER_ENABLED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="COLUMN_ORDERING" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="GROUPING_ENABLED_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="VIEW_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CHART_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DISPLAY_TOTAL_RESULT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="GLOBAL_DATE_FILTER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DETAIL_ACTION_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CONTEXT_ACTION_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SELECTION_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DATA_SRC_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CONTEXT_COLUMN" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="GROUP_HEADER_REQD_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="IS_DATA_CACHED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DATA_CACHE_SCOPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="IS_GROUP_MODIFIABLE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="INIT_GROUP_STAGE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="IS_SUMMARY_REQUIRED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DETAIL_MSG_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="DETAIL_MSG_LBL" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="RESPONSIVE_TEMPLATE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="BUNDLE_KEY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="AUTOLOAD_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FUNCTION_CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<!-- Query for inserting view definition details in view_definition table -->
+	<insert id="VIEW_MGR_FRMWK_MNT_INSERT_VIEW_DEFINITION_QRY"
+		parameterMap="VIEW_DEFINITION_MAP">
+		INSERT INTO VIEW_DEFINITION
+		(
+		VIEW_ID,
+		VIEW_DISPLAY_NM,
+		DEFAULT_VIEW_IND,
+		INSTRUCTION_CLASS,
+		PARENT_VIEW_ID,
+		PRODUCT,
+		SUB_PRODUCT,
+		USER_NO,
+		GCIF,
+		RECORDS_PER_PAGE,
+		SQL_PARAM_MAP_ID,
+		OVERRIDDEN_FLAG,
+		SYSTEM_VIEW_ID,
+		FILTER_ENABLED,
+		COLUMN_ORDERING,
+		GROUPING_ENABLED_IND,
+		VIEW_TYPE,
+		CHART_TYPE,
+		DISPLAY_TOTAL_RESULT_IND,
+		GLOBAL_DATE_FILTER_IND,
+		DETAIL_ACTION_IND,
+		CONTEXT_ACTION_IND,
+		SELECTION_TYPE,
+		DATA_SRC_ID,
+		CONTEXT_COLUMN,
+		GROUP_HEADER_REQD_IND,
+		IS_DATA_CACHED,
+		DATA_CACHE_SCOPE,
+		IS_GROUP_MODIFIABLE,
+		INIT_GROUP_STAGE,
+		IS_SUMMARY_REQUIRED,
+		DETAIL_MSG_IND,
+		DETAIL_MSG_LBL,
+		RESPONSIVE_TEMPLATE,
+		BUNDLE_KEY,
+		AUTOLOAD_IND,
+		FUNCTION_CODE
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+
+	<!-- Result mapping for view id -->
+	<resultMap id="VIEW_DISP_NM_COUNT_MAP" class="java.util.HashMap">
+		<result property="VIEW_DISPLAY_NM" nullValue="" column="VIEW_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Select query for getting the system view id for the given view and 
+		user no and gcif -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEW_DISP_NM_COUNT_QRY"
+		resultMap="VIEW_DISP_NM_COUNT_MAP">
+		SELECT
+		VIEW_DISPLAY_NM
+		FROM
+		VIEW_DEFINITION
+		WHERE
+		USER_NO = #USER_NO#
+		AND
+		GCIF = #GCIF#
+		AND
+		PRODUCT = #PRODUCT_CODE#
+		AND
+		SUB_PRODUCT = #SUB_PRODUCT_CODE#
+		AND
+		VIEW_DISPLAY_NM = #VIEW_NAME#
+		AND
+		SYSTEM_VIEW_ID=#SYSTEM_VIEW_ID#
+	</select>
+
+	<resultMap id="SYSTEM_VIEW_ID_MAP" class="java.util.HashMap">
+		<result property="SYSTEM_VIEW_ID" nullValue="" column="SYSTEM_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Select query for getting the system view id for the given view and 
+		user no and gcif -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_SYSTEM_VIEW_ID_QRY"
+		resultMap="SYSTEM_VIEW_ID_MAP">
+		SELECT
+		VD.SYSTEM_VIEW_ID
+		FROM
+		VIEW_DEFINITION VD
+		WHERE
+		VD.USER_NO = #USER_NO#
+		AND
+		VD.GCIF = #GCIF#
+		AND
+		VD.VIEW_ID = #VIEW_ID#
+	</select>
+
+	<resultMap id="FILTER_ID_MAP" class="java.util.HashMap">
+		<result property="FILTER_ID" nullValue="" column="FILTER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Select query for getting the filter id for the given filter type -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_FILTER_ID_QRY"
+		resultMap="FILTER_ID_MAP">
+		SELECT
+		VDFM.FILTER_ID
+		FROM
+		VIEW_DEFINITION_FILTER_MASTER VDFM
+		WHERE
+		VDFM.FILTER_NAME = #FILTER_NAME#
+		<!-- Including data type to fetch filter id -->
+		AND
+		VDFM.DATA_TYPE = #DATA_TYPE#
+	</select>
+
+
+	<resultMap id="FILTER_MASTER_MAP" class="java.util.HashMap">
+		<result property="FILTER_ID" nullValue="" column="FILTER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FILTER_NAME" nullValue="" column="FILTER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DATA_TYPE" nullValue="" column="DATA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="VDF_FILTER_MASTER_DATA_SELECT_GET_FILTER_DETAILS"
+		resultMap="FILTER_MASTER_MAP">
+		SELECT
+		VDFM.FILTER_ID, VDFM.FILTER_NAME, VDFM.DATA_TYPE
+		FROM
+		VIEW_DEFINITION_FILTER_MASTER VDFM
+		ORDER BY
+		VDFM.FILTER_NAME, VDFM.DATA_TYPE
+	</select>
+
+	<!-- Parameter map for inserting view definition details -->
+	<parameterMap id="COLUMN_FILTER_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="COLUMN_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FILTER_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FILTER_VALUES" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<!-- Query for inserting bulk column filter details in view_column_filter 
+		table -->
+	<insert id="VIEW_MGR_FRMWK_MNT_BATCH_INSERT_BULK_COLUMN_FILTER_QRY"
+		parameterMap="COLUMN_FILTER_MAP">
+		INSERT INTO VIEW_COLUMN_FILTER
+		(
+		VIEW_ID,
+		COLUMN_ID,
+		FILTER_ID,
+		FILTER_VALUES
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<!-- query to delete column filter definitions for the given view id -->
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_COLUMN_FILTER_DEFN_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		VIEW_COLUMN_FILTER
+		WHERE
+		VIEW_ID=#VIEW_ID#
+	</delete>
+
+	<!-- query to delete view definitions for the given view id -->
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_VIEW_DEFINITIONS_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		VIEW_DEFINITION
+		WHERE
+		VIEW_ID = #VIEW_ID#
+		AND
+		USER_NO = #USER_NO#
+		AND
+		GCIF = #GCIF#
+	</delete>
+
+	<!-- query to delete widget definitions with the given view id as default 
+		view id -->
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_WIDGET_DEFINITIONS_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		WIDGET_DEFINITION
+		WHERE
+		DEFAULT_VIEW_ID = #VIEW_ID#
+	</delete>
+	<!-- query to delete View Defn Addl definitions with the given view id -->
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_VIEWDEF_ADDL_PREF_DEL_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		VIEW_DEFN_ADDL_PREFERENCES
+		WHERE
+		VIEW_ID = #VIEW_ID#
+	</delete>
+
+	<!-- Result mapping for view id -->
+	<resultMap id="USER_DETAILS_MAP" class="java.util.HashMap">
+		<result property="USER_NO" nullValue="" column="USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF" nullValue="" column="GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Select query for getting the filter id for the given filter type -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_USER_DETAILS_QRY"
+		resultMap="USER_DETAILS_MAP">
+		SELECT
+		VD.USER_NO,
+		VD.GCIF
+		FROM
+		VIEW_DEFINITION VD
+		WHERE
+		VD.VIEW_ID = #VIEW_ID#
+	</select>
+
+	<!-- query to reset the default view defn -->
+	<update id="VIEW_MGR_FRMWK_MNT_UPDATE_RESET_DEFAULT_VIEW">
+		UPDATE
+		VIEW_DEFINITION
+		SET
+		DEFAULT_VIEW_IND= 'N'
+		WHERE
+		USER_NO = #__FILTER__USER_NO#
+		AND
+		GCIF = #__FILTER__GCIF#
+		AND
+		DEFAULT_VIEW_IND= 'Y'
+	</update>
+
+	<!-- Parameter map for inserting account listview rate card details -->
+	<parameterMap id="ACC_LIST_RATE_DEFINITION_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="EXT_KEY" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="EXT_VALUE" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+
+	<!-- Query for inserting account listview rate card details in ACCOUNT_LIST_VDF_EXT 
+		table -->
+	<insert id="ACC_LIST_RATE_INSERT_COLUMN_DEFINITION_QRY"
+		parameterMap="ACC_LIST_RATE_DEFINITION_MAP">
+		INSERT INTO
+		ACCOUNT_LIST_VDF_EXT
+		(
+		VIEW_ID,
+		EXT_KEY,
+		EXT_VALUE
+		)
+		VALUES
+		(
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<resultMap id="ALL_USER_VIEWS_FOR_WIDGET_RESULT_MAP" class="java.util.HashMap">
+		<result property="VIEW_DISPLAY_NM" nullValue="" column="VIEW_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DEFAULT_VIEW_IND" nullValue="N"
+			column="DEFAULT_VIEW_IND" javaType="java.lang.String" jdbcType="CHAR" />
+		<result property="OD_USER_NO" nullValue="" column="USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_GCIF" nullValue="" column="GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOMIZE_IND" nullValue="" column="CUSTOMIZE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="NO_OF_ROWS" nullValue="" column="NO_OF_ROWS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_HT_IN_PIXELS" nullValue=""
+			column="WGT_HT_IN_PIXELS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="IS_ENTITLED" nullValue="" column="IS_ENTITLED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_LIST_ALL_USER_VIEWS_FOR_WIDGET"
+		parameterClass="java.util.HashMap" resultMap="ALL_USER_VIEWS_FOR_WIDGET_RESULT_MAP">
+		SELECT
+		VD.VIEW_ID VIEW_ID,
+		VD.VIEW_DISPLAY_NM VIEW_DISPLAY_NM,
+		CASE
+		IFNULL( (SELECT DEFAULT_VIEW_ID FROM WIDGET_DEFINITION
+		WHERE OD_USER_NO = #USER_NO# AND
+		OD_GCIF = #GCIF# AND WIDGET_ID = #WIDGET_ID#) ,
+		( SELECT DEFAULT_VIEW_ID FROM WIDGET_DEFINITION
+		WHERE OD_USER_NO='-1' AND
+		OD_GCIF='-1' AND WIDGET_ID = #WIDGET_ID#) ) 
+		
+		
+		
+		when VD.VIEW_ID then 'Y' END 
+		DEFAULT_VIEW_IND,
+		VD.USER_NO,
+		VD.GCIF,
+		VDTP.CUSTOMIZE_IND,
+		WD.NO_OF_ROWS NO_OF_ROWS,
+		WD.WGT_HT_IN_PIXELS WGT_HT_IN_PIXELS,
+		CASE
+		IFNULL((SELECT distinct 1 FROM WIDGET_DEFINITION WHERE
+		((WD.OD_USER_NO=-1 AND WD.OD_GCIF =-1) OR(WD.OD_USER_NO =#USER_NO# AND
+		WD.OD_GCIF =#GCIF#))
+		AND
+		WIDGET_ID=WD.WIDGET_ID
+		AND
+		concat(OD_PRODUCT,'--',OD_SUB_PRODUCT,'--',OD_FUNCTION)
+		IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="("
+			close=")">
+			concat(#ENTITLEMENTS[].PRODUCT#,'--',#ENTITLEMENTS[].SUBPROD#,'--',#ENTITLEMENTS[].FUNCTION#)
+		</iterate>
+		),-1)
+		when -1 then 'N'
+		else 'Y' END IS_ENTITLED
+		FROM VIEW_DEFINITION VD,
+		WIDGET_DEFINITION WD,
+		VIEW_DEFINITION_TOOL_PREF VDTP
+		WHERE WD.OD_PRODUCT =VD.PRODUCT
+		AND WD.OD_SUB_PRODUCT =VD.SUB_PRODUCT
+		AND WD.OD_FUNCTION =VD.FUNCTION_CODE
+		AND VD.PRODUCT = VDTP.OD_PRODUCT
+		AND VD.SUB_PRODUCT = VDTP.OD_SUB_PRODUCT
+		AND (VD.SYSTEM_VIEW_ID = WD.DEFAULT_VIEW_ID
+		OR VD.VIEW_ID = WD.DEFAULT_VIEW_ID )
+		AND VD.SYSTEM_VIEW_ID = VDTP.VIEW_ID
+		AND WD.WIDGET_ID = #WIDGET_ID# AND
+		WD.OD_USER_NO = '-1' AND
+		WD.OD_GCIF = '-1' AND
+		( ( VD.USER_NO = #USER_NO# AND VD.GCIF = #GCIF# ) OR
+		( VD.USER_NO='-1' AND VD.GCIF='-1' ) )
+	</select>
+
+	<resultMap id="ALL_USER_CHILD_WIDGETS_VIEWS_FOR_WIDGET_RESULT_MAP"
+		class="java.util.HashMap">
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_DISPLAY_NM" nullValue=""
+			column="WIDGET_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="N" column="POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="NO_OF_ROWS" nullValue="" column="NO_OF_ROWS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="IS_ENTITLED" nullValue="" column="IS_ENTITLED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_HT_IN_PIXELS" nullValue=""
+			column="WGT_HT_IN_PIXELS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="INIT_COLLAPSED" nullValue="" column="INIT_COLLAPSED"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_BUNDLE_KEY" nullValue=""
+			column="WIDGET_BUNDLE_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<result property="CONTAINER_FLAG" nullValue=""
+			column="CONTAINER_FLAG" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select
+		id="VIEW_MGR_FRMWK_MNT_SELECT_LIST_ALL_USER_CHILD_WIDGETS_VIEWS_FOR_WIDGET"
+		parameterClass="java.util.HashMap" resultMap="ALL_USER_CHILD_WIDGETS_VIEWS_FOR_WIDGET_RESULT_MAP">
+		SELECT
+		WD.WIDGET_ID,
+		WC.WIDGET_DISPLAY_NM,
+		WC.POSITION,
+		WD.NO_OF_ROWS,
+		WD.BUNDLE_KEY AS
+		WIDGET_BUNDLE_KEY ,
+		WD.WGT_HT_IN_PIXELS,
+		WD.CONTAINER_FLAG,
+		VD.INIT_COLLAPSED,
+		CASE 
+		IFNULL((SELECT distinct 1 FROM WIDGET_DEFINITION WHERE
+		((WD.OD_USER_NO=-1 AND WD.OD_GCIF =-1) OR(WD.OD_USER_NO =#USER_NO# AND
+		WD.OD_GCIF =#GCIF#))
+		AND
+		WIDGET_ID=#WIDGET_ID#
+		AND
+      concat(OD_PRODUCT,'--',OD_SUB_PRODUCT,'--',OD_FUNCTION)
+		IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="("
+			close=")">
+			concat(#ENTITLEMENTS[].PRODUCT#,'--',#ENTITLEMENTS[].SUBPROD#,'--',#ENTITLEMENTS[].FUNCTION#)
+		</iterate>
+		),-1)
+		when -1 then'N' else 'Y' END IS_ENTITLED
+		FROM
+		WIDGET_DEFINITION WD,
+		VIEW_DEFINITION VD,
+		WIDGET_CONTAINER_MAP WC
+		WHERE
+		WD.WIDGET_ID=WC.WIDGET_ID
+		AND
+		WD.DEFAULT_VIEW_ID=VD.VIEW_ID
+		AND
+		PARENT_WIDGET_ID=#WIDGET_ID#
+		AND
+		((WD.OD_USER_NO=-1 AND WD.OD_GCIF =-1) OR(WD.OD_USER_NO =#USER_NO# AND WD.OD_GCIF
+		=#GCIF#))
+		ORDER BY
+		WC.POSITION
+	</select>
+
+
+	<resultMap id="USER_CONFIG_FOR_WIDGET_RESULT_MAP" class="java.util.HashMap">
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_FLAG" nullValue="" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT" nullValue="TAB" column="LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_DISPLAY_NM" nullValue="" column="WGT_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="NO_OF_ROWS" nullValue="" column="NO_OF_ROWS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_HT_IN_PIXELS" nullValue=""
+			column="WGT_HT_IN_PIXELS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_BUNDLE_KEY" nullValue=""
+			column="WIDGET_BUNDLE_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_USER_CONFIG_FOR_WIDGET"
+		parameterClass="java.util.HashMap" resultMap="USER_CONFIG_FOR_WIDGET_RESULT_MAP">
+		SELECT WIDGET_ID,
+		CONTAINER_FLAG ,
+		LAYOUT,
+		WGT_DISPLAY_NM,
+		NO_OF_ROWS,
+		WGT_HT_IN_PIXELS,
+		BUNDLE_KEY AS WIDGET_BUNDLE_KEY
+		FROM WIDGET_DEFINITION
+		WHERE WIDGET_ID=#WIDGET_ID#
+	</select>
+
+	<!-- This is the result map for fetching the user preference setup at widget 
+		level -->
+	<resultMap id="WIDGET_USER_PREFERENCE_RESULT_MAP" class="java.util.HashMap">
+		<result property="DEFAULT_VIEW_ID" nullValue="" column="DEFAULT_VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- This query fetches the default view id for the user from the widget 
+		definition -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_WIDGET_USER_PREFERENCE"
+		parameterClass="java.util.HashMap" resultMap="WIDGET_USER_PREFERENCE_RESULT_MAP">
+		SELECT
+		IFNULL((SELECT WD.DEFAULT_VIEW_ID
+		FROM WIDGET_DEFINITION WD
+		WHERE WD.WIDGET_ID = #WIDGET_ID# AND
+		WD.OD_USER_NO = #USER_NO# AND
+		WD.OD_GCIF = #GCIF#),
+		(SELECT WD.DEFAULT_VIEW_ID
+		FROM WIDGET_DEFINITION WD
+		WHERE WD.WIDGET_ID = #WIDGET_ID# AND
+		WD.OD_USER_NO = '-1' AND
+		WD.OD_GCIF = '-1')) DEFAULT_VIEW_ID
+		FROM DUAL
+	</select>
+
+
+	<!-- This is the result map for fetching the view - widget tools combination -->
+	<resultMap id="VIEW_WIDGET_TOOLS_RESULT_MAP" class="java.util.HashMap">
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HISTORY_IND" nullValue="N" column="HISTORY_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FILTER_IND" nullValue="N" column="FILTER_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PULL_OUT_IND" nullValue="N" column="PULL_OUT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRINT_IND" nullValue="Y" column="PRINT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EXP_TO_EXCEL_IND" nullValue="N"
+			column="EXP_TO_EXCEL_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EXP_TO_PDF_IND" nullValue="N" column="EXP_TO_PDF_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EXP_TO_CSV_IND" nullValue="N" column="EXP_TO_CSV_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EXP_TO_JPG_IND" nullValue="N" column="EXP_TO_JPG_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOMIZE_IND" nullValue="N" column="CUSTOMIZE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HELP_IND" nullValue="Y" column="HELP_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="REFRESH_IND" nullValue="Y" column="REFRESH_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COLLAPSE_IND" nullValue="Y" column="COLLAPSE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SHOW_AS_TOOLBAR_IND" nullValue="N"
+			column="SHOW_AS_TOOLBAR_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MAXIMIZE_IND" nullValue="Y" column="MAXIMIZE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHART_TOOL_IND" nullValue="Y" column="CHART_TOOL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EXP_TO_RTF_IND" nullValue="N" column="EXP_TO_RTF_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOM_TOOLS_ID" nullValue="" column="CUSTOM_TOOLS_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- This query fetches the tools that are applicable for all combinations 
+		of system views to the widgets that they are applicable for -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_VIEW_WIDGET_TOOLS"
+		parameterClass="java.util.HashMap" resultMap="VIEW_WIDGET_TOOLS_RESULT_MAP">
+		SELECT
+		WD.WIDGET_ID,
+		VD.VIEW_ID,
+		CASE WHEN ( WDTP.HISTORY_IND='Y' AND VDTP.HISTORY_IND='Y' )
+		THEN 'Y' ELSE'N' END HISTORY_IND,
+		CASE WHEN ( WDTP.FILTER_IND='Y' AND VDTP.FILTER_IND='Y' )
+		THEN 'Y' ELSE'N' END FILTER_IND,
+		CASE WHEN ( WDTP.PULL_OUT_IND='Y' AND VDTP.PULL_OUT_IND='Y' )
+		THEN 'Y' ELSE'N' END PULL_OUT_IND,
+		CASE WHEN ( WDTP.PRINT_IND='Y' AND VDTP.PRINT_IND='Y' )
+		THEN 'Y' ELSE'N' END PRINT_IND,
+		CASE WHEN ( WDTP.EXP_TO_EXCEL_IND='Y' AND VDTP.EXP_TO_EXCEL_IND='Y' )
+		THEN 'Y' ELSE'N' END EXP_TO_EXCEL_IND,
+		CASE WHEN ( WDTP.EXP_TO_PDF_IND='Y' AND VDTP.EXP_TO_PDF_IND='Y' )
+		THEN 'Y' ELSE'N' END EXP_TO_PDF_IND,
+		CASE WHEN ( WDTP.EXP_TO_CSV_IND='Y' AND VDTP.EXP_TO_CSV_IND='Y' )
+		THEN 'Y' ELSE'N' END EXP_TO_CSV_IND,
+		CASE WHEN ( WDTP.EXP_TO_JPG_IND='Y' AND VDTP.EXP_TO_JPG_IND='Y' )
+		THEN 'Y' ELSE'N' END EXP_TO_JPG_IND,
+		CASE WHEN ( WDTP.CUSTOMIZE_IND='Y' AND VDTP.CUSTOMIZE_IND='Y' )
+		THEN 'Y' ELSE'N' END CUSTOMIZE_IND,
+		CASE WHEN ( WDTP.HELP_IND='Y' AND VDTP.HELP_IND='Y' )
+		THEN 'Y' ELSE'N' END HELP_IND,
+		CASE WHEN ( WDTP.REFRESH_IND='Y' AND VDTP.REFRESH_IND='Y' )
+		THEN 'Y' ELSE'N' END REFRESH_IND,
+		CASE WHEN ( WDTP.COLLAPSE_IND='Y' AND VDTP.COLLAPSE_IND='Y' )
+		THEN 'Y' ELSE'N' END COLLAPSE_IND,
+		CASE WHEN ( WDTP.SHOW_AS_TOOLBAR_IND='Y' AND VDTP.SHOW_AS_TOOLBAR_IND='Y'
+		)
+		THEN 'Y' ELSE'N' END SHOW_AS_TOOLBAR_IND,
+		CASE WHEN ( WDTP.MAXIMIZE_IND='Y' AND VDTP.MAXIMIZE_IND='Y' )
+		THEN 'Y' ELSE'N' END MAXIMIZE_IND,
+		CASE WHEN ( WDTP.CHART_TOOL_IND='Y' AND VDTP.CHART_TOOL_IND='Y' )
+		THEN 'Y' ELSE'N' END CHART_TOOL_IND,
+		CASE WHEN ( WDTP.EXP_TO_RTF_IND='Y' AND VDTP.EXP_TO_RTF_IND='Y' )
+		THEN 'Y' ELSE'N' END EXP_TO_RTF_IND,
+		CASE WHEN WDTP.CUSTOM_TOOLS_ID=VDTP.CUSTOM_TOOLS_ID
+		THEN WDTP.CUSTOM_TOOLS_ID ELSE null END AS CUSTOM_TOOLS_ID
+		FROM
+		VIEW_DEFINITION VD, WIDGET_DEFINITION WD, WIDGET_DEFINITION_TOOL_PREF
+		WDTP, VIEW_DEFINITION_TOOL_PREF VDTP
+		WHERE
+		WD.OD_PRODUCT=VD.PRODUCT AND
+		WD.OD_SUB_PRODUCT=VD.SUB_PRODUCT AND
+		VD.VIEW_ID = WD.DEFAULT_VIEW_ID AND
+		WD.WIDGET_ID=WDTP.WIDGET_ID AND
+		VD.VIEW_ID=VDTP.VIEW_ID AND
+		( WD.OD_USER_NO='-1' AND WD.OD_GCIF='-1') AND
+		( VD.USER_NO='-1' AND VD.GCIF='-1' )
+	</select>
+
+
+
+	<resultMap id="CUSTOM_TOOLS_DEF_RESULT_MAP" class="java.util.HashMap">
+		<result property="CUSTOM_TOOLS_ID" nullValue="" column="CUSTOM_TOOLS_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MENU_ID" nullValue="" column="MENU_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PARENT_MENU_ID" nullValue="" column="PARENT_MENU_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="POSITION"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="TOOL_TYPE" nullValue="" column="TOOL_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DISPLAY_NAME" nullValue="" column="DISPLAY_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOOL_DESCRIPTION" nullValue=""
+			column="TOOL_DESCRIPTION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LEVEL" nullValue="" column="LEVEL" javaType="java.lang.String"
+			jdbcType="NUMBER" />
+	</resultMap>
+
+	<procedure id="VIEW_MGR_FRMWK_MNT_SELECT_GET_CUSTOM_TOOLS_DEF"
+		resultMap="CUSTOM_TOOLS_DEF_RESULT_MAP">
+		{
+		CALL WITH_EMULATOR(
+"WITH_TABLE",
+"
+ SELECT
+    cast(concat('1',@rownum := @rownum + 1) as CHAR(1000)) as rank,
+		CUSTOM_TOOLS_ID,
+		MENU_ID,
+		PARENT_MENU_ID,
+		POSITION,
+		TOOL_TYPE,
+		DISPLAY_NAME,
+		TOOL_DESCRIPTION
+    FROM CUSTOM_TOOLS_DEFINITION,(SELECT @rownum := 0) r
+",
+"
+  select concat(e.rank,'  ',m.position) AS rank,
+    M.CUSTOM_TOOLS_ID,
+		M.MENU_ID,
+		M.PARENT_MENU_ID,
+		M.POSITION,
+		M.TOOL_TYPE,
+		M.DISPLAY_NAME,
+		M.TOOL_DESCRIPTION from (SELECT
+		CUSTOM_TOOLS_ID,
+		MENU_ID,
+		PARENT_MENU_ID,
+		POSITION,
+		TOOL_TYPE,
+		DISPLAY_NAME,
+		TOOL_DESCRIPTION
+		FROM CUSTOM_TOOLS_DEFINITION) as M JOIN WITH_TABLE E ON E.menu_id = M.Parent_MENU_ID
+  group by M.CUSTOM_TOOLS_ID,
+		M.MENU_ID,
+		M.PARENT_MENU_ID,
+		M.POSITION,
+		M.TOOL_TYPE,
+		M.DISPLAY_NAME,
+		M.TOOL_DESCRIPTION
+",
+"
+   SELECT  CUSTOM_TOOLS_ID,
+		MENU_ID,
+		PARENT_MENU_ID,
+		POSITION,
+		TOOL_TYPE,
+		DISPLAY_NAME,
+		TOOL_DESCRIPTION
+		From WITH_TABLE
+  group by CUSTOM_TOOLS_ID,
+		MENU_ID,
+		PARENT_MENU_ID,
+		POSITION,
+		TOOL_TYPE,
+		DISPLAY_NAME,
+		TOOL_DESCRIPTION
+  order by rank
+",
+0,
+""
+)
+}
+		
+	</procedure>
+
+	<!-- Retrieve the application UI structure for user -->
+	<resultMap id="APP_STRUCTURE_MAP" class="java.util.HashMap">
+		<result property="WORKSPACE_ID" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_DISPLAY_NM" nullValue=""
+			column="WORKSPACE_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_LAYOUT" nullValue=""
+			column="WORKSPACE_LAYOUT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_POSITION" nullValue=""
+			column="WORKSPACE_POSITION" javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="SYSTEM_WORKSPACE_IND" nullValue=""
+			column="SYSTEM_WORKSPACE_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_ACTIVATE_HANDLER" nullValue=""
+			column="WORKSPACE_ACTIVATE_HANDLER" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="TFD_REQ" nullValue="Y" column="TFD_REQ"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT_ID" nullValue="" column="LAYOUT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT_LAYOUT" nullValue="" column="LAYOUT_LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT_PROPORTION" nullValue=""
+			column="LAYOUT_PROPORTION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT_DISPLAY_NM" nullValue=""
+			column="LAYOUT_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WL_POSITION" nullValue="" column="WL_POSITION"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="IS_PARENT_IND" nullValue="" column="IS_PARENT_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTEXT_APP_WIDGET" nullValue=""
+			column="CONTEXT_APP_WIDGET" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PARENT_LAYOUT" nullValue="" column="PARENT_LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_DISPLAY_NM" nullValue="" column="WGT_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LW_POSITION" nullValue="" column="LW_POSITION"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="BLOCK_POSITION" nullValue="" column="BLOCK_POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CLOSED_IND" nullValue="" column="CLOSED_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WD_OD_USER_NO" nullValue="" column="WD_OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WD_OD_GCIF" nullValue="" column="WD_OD_GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WD_OD_PRODUCT" nullValue="" column="WD_OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WD_OD_SUB_PRODUCT" nullValue=""
+			column="WD_OD_SUB_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_OD_PRODUCT" nullValue="" column="LD_OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_OD_SUB_PRODUCT" nullValue=""
+			column="LD_OD_SUB_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_OD_USER_NO" nullValue="" column="LD_OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_RESIZE_IND" nullValue="" column="WGT_RESIZE_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_HEADER_IND" nullValue="Y"
+			column="WIDGET_HEADER_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_HT_IN_PIXELS" nullValue=""
+			column="WGT_HT_IN_PIXELS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APPS_IN_A_ROW" nullValue="" column="APPS_IN_A_ROW"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DEFAULT_WIDGET_IND" nullValue="N"
+			column="DEFAULT_WIDGET_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_OD_GCIF" nullValue="" column="LD_OD_GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_FLAG" nullValue="N" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOMSPACE_BLOCKPOSITION" nullValue=""
+			column="CUSTOMSPACE_BLOCKPOSITION" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="NO_OF_ROWS" nullValue="" column="NO_OF_ROWS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHANNEL_ID" nullValue="" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_CHANNEL_ID" nullValue="" column="LD_CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WI_CHANNEL_ID" nullValue="" column="WI_CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LD_BUNDLE_KEY" nullValue="" column="LD_BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_BUNDLE_KEY" nullValue=""
+			column="WIDGET_BUNDLE_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_STRUCTURE_QRY"
+		resultMap="APP_STRUCTURE_MAP">
+		SELECT WD.WORKSPACE_ID ,
+		WD.CHANNEL_ID ,
+		WD.WORKSPACE_DISPLAY_NM ,
+		WD.LAYOUT AS WORKSPACE_LAYOUT ,
+		WD.POSITION AS WORKSPACE_POSITION ,
+		WD.SYSTEM_WORKSPACE_IND ,
+		WD.WORKSPACE_ACTIVATE_HANDLER ,
+		WD.TFD_REQ ,
+		WD.BUNDLE_KEY AS WD_BUNDLEKEY ,
+		LD.LAYOUT_ID ,
+		LD.LAYOUT AS LAYOUT_LAYOUT ,
+		LD.PROPORTION AS LAYOUT_PROPORTION ,
+		LD.LAYOUT_DISPLAY_NM ,
+		LD.IS_PARENT_IND ,
+		LD.CONTEXT_APP_WIDGET,
+		WLM.POSITION AS WL_POSITION ,
+		WLM.PARENT_LAYOUT AS PARENT_LAYOUT ,
+		WIDGET.WGT_RESIZE_IND ,
+		WIDGET.WIDGET_HEADER_IND ,
+		WIDGET.WGT_HT_IN_PIXELS ,
+		WIDGET.APPS_IN_A_ROW ,
+		WIDGET.NO_OF_ROWS ,
+		WIDGET.CHANNEL_ID AS WI_CHANNEL_ID,
+		WIDGET.CONTAINER_FLAG AS CONTAINER_FLAG,
+		LWM.WIDGET_ID ,
+		CASE
+		WHEN WIDGET.CONTAINER_FLAG='N'
+		THEN VDF.VIEW_DISPLAY_NM
+		ELSE
+		IFNULL(WIDGET.WGT_DISPLAY_NM,WIDGET.WIDGET_ID)
+		END AS WGT_DISPLAY_NM,
+		LWM.POSITION AS LW_POSITION ,
+		LWM.BLOCK_POSITION ,
+		LWM.CLOSED_IND ,
+		LWM.DEFAULT_WIDGET_IND ,
+		WD.OD_PRODUCT AS WD_OD_PRODUCT ,
+		WD.OD_SUB_PRODUCT AS WD_OD_SUB_PRODUCT,
+		WD.OD_USER_NO AS WD_OD_USER_NO ,
+		WD.OD_GCIF AS WD_OD_GCIF ,
+		LD.OD_PRODUCT AS LD_OD_PRODUCT ,
+		LD.OD_SUB_PRODUCT AS LD_OD_SUB_PRODUCT,
+		LD.OD_USER_NO AS LD_OD_USER_NO ,
+		LD.OD_GCIF AS LD_OD_GCIF,
+		LD.CHANNEL_ID AS LD_CHANNEL_ID,
+		LD.BUNDLE_KEY AS LD_BUNDLE_KEY ,
+		WD.BUNDLE_KEY ,
+		WIDGET.BUNDLE_KEY AS WIDGET_BUNDLE_KEY ,
+		WD.CUSTOMSPACE_BLOCKPOSITION
+ 
+	FROM
+  WORKSPACE_DEFINITION WD
+   JOIN WORKSPACE_LAYOUT_MAP WLM
+		ON WD.WORKSPACE_ID = WLM.WORKSPACE_ID
+		JOIN LAYOUT_DEFINITION LD
+		ON WLM.LAYOUT_ID = LD.LAYOUT_ID
+		LEFT OUTER JOIN LAYOUT_WIDGET_MAP LWM
+		ON LD.LAYOUT_ID = LWM.LAYOUT_ID
+		LEFT OUTER JOIN WIDGET_DEFINITION WIDGET
+		ON LWM.WIDGET_ID = WIDGET.WIDGET_ID
+		LEFT OUTER JOIN VIEW_DEFINITION VDF
+		ON WIDGET.DEFAULT_VIEW_ID = VDF.VIEW_ID
+		WHERE (
+		(WD.OD_USER_NO ='-1' AND WD.OD_GCIF ='-1' ) OR
+		(WD.OD_USER_NO =#USER_NO# AND WD.OD_GCIF = #GCIF#  )
+		)
+			AND (
+		concat(WD.OD_PRODUCT , WD.OD_SUB_PRODUCT)
+		IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			concat(#ENTITLEMENTS[].PRODUCT# , #ENTITLEMENTS[].SUBPROD#)
+		</iterate>
+			or
+		(WD.OD_PRODUCT IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			#ENTITLEMENTS[].PRODUCT#
+		</iterate>
+		and WD.OD_SUB_PRODUCT is null)
+		)
+		AND (
+		WD.CHANNEL_ID
+		IN
+		<iterate property="DEVICE" conjunction="," open="("	close=")">
+			#DEVICE[]#
+		</iterate>
+		or wd.CHANNEL_ID is null 
+		)
+		AND
+		 (((LD.OD_USER_NO ='-1' AND LD.OD_GCIF ='-1' ) OR (LD.OD_USER_NO =#USER_NO# AND LD.OD_GCIF = #GCIF# ))
+		AND (
+		concat(LD.OD_PRODUCT , LD.OD_SUB_PRODUCT)
+		IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			concat(#ENTITLEMENTS[].PRODUCT# , #ENTITLEMENTS[].SUBPROD#)
+		</iterate>
+	or
+		(LD.OD_PRODUCT IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			#ENTITLEMENTS[].PRODUCT#
+		</iterate>
+		and LD.OD_SUB_PRODUCT is null)
+		)
+		AND (
+		LD.CHANNEL_ID
+		IN
+		<iterate property="DEVICE" conjunction="," open="("	close=")">
+			#DEVICE[]#
+		</iterate>
+		or LD.CHANNEL_ID is null 
+		
+		)) AND
+		((WIDGET.OD_USER_NO ='-1' AND WIDGET.OD_GCIF ='-1' ) OR (WIDGET.OD_USER_NO =#USER_NO# AND WIDGET.OD_GCIF = #GCIF# ))
+		AND (
+	concat	(WIDGET.OD_PRODUCT , WIDGET.OD_SUB_PRODUCT)
+		IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			concat(#ENTITLEMENTS[].PRODUCT# , #ENTITLEMENTS[].SUBPROD#)
+		</iterate>
+	or
+		(WIDGET.OD_PRODUCT IN
+		<iterate property="ENTITLEMENTS" conjunction="," open="(" close=")">
+			#ENTITLEMENTS[].PRODUCT#
+		</iterate>
+		and WIDGET.OD_SUB_PRODUCT is null)
+		)
+		AND (
+		WIDGET.CHANNEL_ID
+		IN
+		<iterate property="DEVICE" conjunction="," open="("	close=")">
+			#DEVICE[]#
+		</iterate>
+		or WIDGET.CHANNEL_ID is null 
+		
+		)
+		AND
+		WLM.PARENT_LAYOUT IS NULL
+		AND (WLM.LAYOUT_ID  = WLM.PARENT_LAYOUT OR WLM.PARENT_LAYOUT IS NULL)
+		AND
+		WLM.WORKSPACE_ID = WD.WORKSPACE_ID
+		order by
+    	WD.POSITION, WLM.position,LWM.POSITION
+
+
+	 
+	</select>
+	<!-- Retrieve widgets bottom bar buttons -->
+	<resultMap id="BBAR_BUTTONS_FOR_WIDGET_RESULTMAP" class="java.util.HashMap">
+		<result property="FLD_WIDGET_ID" nullValue="" column="FLD_WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_BBAR_BTN_ID" nullValue="" column="FLD_BBAR_BTN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_BTN_DISPLAY_NM" nullValue=""
+			column="FLD_BTN_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_BTN_TYPE_IND" nullValue=""
+			column="FLD_BTN_TYPE_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_CHANNEL_ID" nullValue="" column="FLD_CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_IS_SYS_BUTTON" nullValue=""
+			column="FLD_IS_SYS_BUTTON" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_BBAR_BUTTONS_FOR_WIDGET"
+		parameterClass="java.util.HashMap" resultMap="BBAR_BUTTONS_FOR_WIDGET_RESULTMAP">
+		SELECT WIDGET_ID FLD_WIDGET_ID ,
+		BBAR_BTN_ID FLD_BBAR_BTN_ID ,
+		BTN_DISPLAY_NM FLD_BTN_DISPLAY_NM ,
+		CHANNEL_ID FLD_CHANNEL_ID,
+		IS_SYS_BUTTON FLD_IS_SYS_BUTTON ,
+		BTN_TYPE_IND FLD_BTN_TYPE_IND
+		FROM WIDGET_DEFINITION_BBAR
+		WHERE WIDGET_ID=#FLD_WDG_ID#
+		ORDER BY POSITION
+	</select>
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_TBAR_BUTTONS_FOR_WIDGET"
+		parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT
+		WIDGET_ID,
+		FORM_ID,
+		CHANNEL_ID
+		FROM
+		WIDGET_DEFINITION_TBAR
+		WHERE
+		WIDGET_ID=#FLD_WDG_ID#
+	</select>
+
+
+
+
+	<resultMap id="INITIATED_TRANS_COUNT_RESULT_MAP" class="java.util.HashMap">
+		<result property="OD_MAKER_DATE" nullValue="" column="OD_MAKER_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TRANSACTION_COUNT" nullValue=""
+			column="TRANSACTION_COUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="INITIATED_TRANS_COUNT_SELECT_CLAUSE">
+		SELECT TO_CHAR(TRUNC(OD_MAKER_DATE), 'MM-YYYY') OD_MAKER_DATE,
+		COUNT(OD_REF_NO) TRANSACTION_COUNT
+		FROM OD_TXN_MASTER
+	</sql>
+	<sql id="INITIATED_TRANS_COUNT_WHERE_CLAUSE">
+		WHERE OD_MAKER_DATE BETWEEN ADD_MONTHS(SYSDATE(), -5) AND SYSDATE()
+		<!-- TO_CHAR(OD_MAKER_DATE, 'DD/MM/YYYY') IN <iterate property="LAST_TEN_DTS" 
+			conjunction="," open="(" close=")"> #LAST_TEN_DTS[]# </iterate> -->
+		AND
+		OD_GCIF=#INPUT_GCIF#
+		And OD_STATUS IN ('RN','RA','IO','RE','RR','RO','AH','RH','AO')
+		AND OD_FUNCTION_ID NOT IN ('CRSTAM','BULKUP','CRUTIL','RECUR','CNCLSI')
+		AND OD_SUBPROD_CODE IN ('BKSRNT','BKSIBT','BKSIFT','TELTRF')
+
+		<!-- AND ( ( OD_ACC_NO ) IN <iterate property="HOST_ACCT_IDS" conjunction="," 
+			open="(" close=")"> #HOST_ACCT_IDS[]# </iterate> ) -->
+		GROUP BY TO_CHAR(TRUNC(OD_MAKER_DATE), 'MM-YYYY')
+	</sql>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_INITIATED_TRANS_COUNT"
+		resultMap="INITIATED_TRANS_COUNT_RESULT_MAP">
+		<include refid="INITIATED_TRANS_COUNT_SELECT_CLAUSE" />
+		<include refid="INITIATED_TRANS_COUNT_WHERE_CLAUSE" />
+	</select>
+
+
+
+	<resultMap id="FAILED_TRANS_COUNT_RESULT_MAP" class="java.util.HashMap">
+		<result property="PERIOD" nullValue="" column="PERIOD"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TRANSACTION_COUNT" nullValue=""
+			column="TRANSACTION_COUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="FAILED_TRANS_COUNT_SELECT_CLAUSE">
+		SELECT COUNT(OD_REF_NO) TRANSACTION_COUNT,
+		TO_CHAR(OD_MAKER_DATE, 'MM-YYYY') PERIOD
+		FROM OD_TXN_MASTER
+	</sql>
+	<sql id="FAILED_TRANS_COUNT_WHERE_CLAUSE">
+		WHERE OD_STATUS IN ('RH')
+		AND OD_MAKER_DATE BETWEEN ADD_MONTHS(SYSDATE(), -5) AND SYSDATE()
+		AND OD_FUNCTION_ID NOT IN ('CRSTAM','BULKUP','CRUTIL','RECUR','CNCLSI')
+		AND OD_SUBPROD_CODE IN ('BKSRNT','BKSIBT','BKSIFT','TELTRF')
+		AND
+		OD_GCIF=#INPUT_GCIF#
+		<!-- AND ( ( OD_ACC_NO ) IN <iterate property="HOST_ACCT_IDS" conjunction="," 
+			open="(" close=")"> #HOST_ACCT_IDS[]# </iterate> ) -->
+		GROUP BY TO_CHAR(OD_MAKER_DATE, 'MM-YYYY')
+	</sql>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_FAILED_TRANS_COUNT"
+		resultMap="FAILED_TRANS_COUNT_RESULT_MAP">
+		<include refid="FAILED_TRANS_COUNT_SELECT_CLAUSE" />
+		<include refid="FAILED_TRANS_COUNT_WHERE_CLAUSE" />
+	</select>
+
+	<resultMap id="CURRENCYWISE_TXN_RESULT_MAP" class="java.util.HashMap">
+		<result property="OD_TXN_CY" nullValue="" column="OD_TXN_CY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TRANS_COUNT" nullValue="" column="TRANS_COUNT"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_CURRENCYWISE_TXN"
+		parameterClass="java.util.HashMap" resultMap="CURRENCYWISE_TXN_RESULT_MAP">
+		SELECT
+		COUNT(OD_REF_NO) AS TRANS_COUNT,OD_TXN_CY
+		FROM
+		OD_TXN_MASTER
+		WHERE
+		OD_GCIF=#INPUT_GCIF#
+		AND OD_TXN_CY IS NOT NULL
+		AND OD_FUNCTION_ID NOT IN
+		('CRSTAM','BULKUP','CRUTIL','RECUR','CNCLSI')
+		AND Od_SUBPROD_CODE In ('BKSRNT','BKSIBT','BKSIFT','TELTRF')
+		AND OD_HOST_STATUS='AH'
+		GROUP BY OD_TXN_CY
+	</select>
+
+	<resultMap id="MENU_STRUCTURE_MAP" class="java.util.HashMap">
+		<result property="ITEM_ID" nullValue="" column="ITEM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DISPLAY_KEY_NM" nullValue="" column="DISPLAY_KEY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PARENT_ID" nullValue="" column="PARENT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_FLAG" nullValue="" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_PRODUCT_CODE" nullValue="" column="OD_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_SUBPROD_CODE" nullValue="" column="OD_SUBPROD_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_FUNCTION_CODE" nullValue=""
+			column="OD_FUNCTION_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LEVEL" nullValue="" column="LEVEL" javaType="java.lang.String"
+			jdbcType="NUMBER" />
+		<result property="LABEL_IND" nullValue="" column="LABEL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ICON_IND" nullValue="" column="ICON_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BLOCK_POSITION" nullValue="" column="BLOCK_POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_ID" nullValue="" column="CONTAINER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<procedure id="VIEW_MGR_FRMWK_MNT_SELECT_GET_MENU_STRUCTURE_QRY"
+		resultMap="MENU_STRUCTURE_MAP">
+{
+CALL WITH_EMULATOR(
+"WITH_TABLE",
+"
+ SELECT
+    cast(concat('1',@rownum := @rownum + 1) as CHAR(1000)) as rank,
+		ITEM_ID,
+		DISPLAY_KEY_NM,
+		PARENT_ID,
+		POSITION,
+		CONTAINER_FLAG,
+		OD_PRODUCT_CODE,
+		OD_SUBPROD_CODE,
+		OD_FUNCTION_CODE,
+		LABEL_IND,
+		ICON_IND,
+		BLOCK_POSITION,
+		CONTAINER_ID,
+    
+		1 as LEVEL
+		FROM WORKSPACE_MENU_DEFINITION,(SELECT @rownum := 0) r
+		 WHERE parent_id is null
+",
+"
+  select concat(e.rank,'  ',m.position) AS rank,
+    M.ITEM_ID,
+		M.DISPLAY_KEY_NM,
+		M.PARENT_ID,
+		M.POSITION,
+		M.CONTAINER_FLAG,
+		M.OD_PRODUCT_CODE,
+		M.OD_SUBPROD_CODE,
+		M.OD_FUNCTION_CODE,
+		M.LABEL_IND,
+		M.ICON_IND,
+		M.BLOCK_POSITION,
+		M.CONTAINER_ID,
+    
+		E.LEVEL +1 as LEVEL from (SELECT
+		ITEM_ID,
+		DISPLAY_KEY_NM,
+		PARENT_ID,
+		POSITION,
+		CONTAINER_FLAG,
+		OD_PRODUCT_CODE,
+		OD_SUBPROD_CODE,
+		OD_FUNCTION_CODE,
+		LABEL_IND,
+		ICON_IND,
+		BLOCK_POSITION,
+		CONTAINER_ID
+		FROM WORKSPACE_MENU_DEFINITION) as M JOIN WITH_TABLE E ON E.item_id = M.Parent_Id 
+  group by M.ITEM_ID,
+		M.DISPLAY_KEY_NM,
+		M.PARENT_ID,
+		M.POSITION,
+		M.CONTAINER_FLAG,
+		M.OD_PRODUCT_CODE,
+		M.OD_SUBPROD_CODE,
+		M.OD_FUNCTION_CODE,
+		M.LABEL_IND,
+		M.ICON_IND,
+		M.BLOCK_POSITION,
+		M.CONTAINER_ID,
+		E.LEVEL +1 
+",
+"
+   SELECT  ITEM_ID,
+		DISPLAY_KEY_NM,
+		PARENT_ID,
+		POSITION,
+		CONTAINER_FLAG,
+		OD_PRODUCT_CODE,
+		OD_SUBPROD_CODE,
+		OD_FUNCTION_CODE,
+		LABEL_IND,
+		ICON_IND,
+		BLOCK_POSITION,
+		CONTAINER_ID,
+		LEVEL
+		From WITH_TABLE
+  group by ITEM_ID,
+		DISPLAY_KEY_NM,
+		PARENT_ID,
+		POSITION,
+		CONTAINER_FLAG,
+		OD_PRODUCT_CODE,
+		OD_SUBPROD_CODE,
+		OD_FUNCTION_CODE,
+		LABEL_IND,
+		ICON_IND,
+		BLOCK_POSITION,
+		CONTAINER_ID,
+		LEVEL
+  order by rank
+",
+0,
+""
+)
+}
+	</procedure>
+
+
+	<resultMap id="AMOUNT_FORMAT_PRECISION_SELECT_GET_ALL_FORMAT_PRECISIONMAP"
+		class="java.util.HashMap">
+		<result property="COD_CCY" nullValue="" column="COD_CCY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="NBR_DECIMAL" nullValue="" column="NBR_DECIMAL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="AMOUNT_FORMAT_PRECISION_SELECT_GET_ALL_FORMAT_PRECISION"
+		parameterClass="java.util.HashMap"
+		resultMap="AMOUNT_FORMAT_PRECISION_SELECT_GET_ALL_FORMAT_PRECISIONMAP">
+		SELECT
+		COD_CCY,NBR_DECIMAL
+		FROM
+		ORBICASH_CURRENCY
+	</select>
+	<resultMap id="DEFAULT_BANK_PROFILE_RESULTMAP" class="java.util.HashMap">
+		<result property="OD_MAX_TXN_NO_RET" nullValue=""
+			column="OD_MAX_TXN_NO_RET" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TXN_AMT_RET" nullValue=""
+			column="OD_MAX_TXN_AMT_RET" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TXN_NO_CORP" nullValue=""
+			column="OD_MAX_TXN_NO_CORP" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TXN_AMT_CORP" nullValue=""
+			column="OD_MAX_TXN_AMT_CORP" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TIME_TXN_APPR" nullValue=""
+			column="OD_MAX_TIME_TXN_APPR" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_STATUS" nullValue="" column="OD_STATUS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_REJECT_REASON" nullValue=""
+			column="OD_REJECT_REASON" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAKER_ID" nullValue="" column="OD_MAKER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_AUTH_ID" nullValue="" column="OD_AUTH_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_AUTH_DATE" nullValue="" column="OD_AUTH_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAKER_DATE" nullValue="" column="OD_MAKER_DATE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TXN_NO_FU" nullValue=""
+			column="OD_MAX_TXN_NO_FU" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_TXN_AMT_FU" nullValue=""
+			column="OD_MAX_TXN_AMT_FU" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAX_NO_USERS" nullValue="" column="OD_MAX_NO_USERS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_WARN_PERIOD_TXN_EXP" nullValue=""
+			column="OD_WARN_PERIOD_TXN_EXP" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_BANK_REF_CURR" nullValue=""
+			column="OD_BANK_REF_CURR" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_MAKER_NAME" nullValue="" column="OD_MAKER_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_AUTH_NAME" nullValue="" column="OD_AUTH_NAME"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_CURR_DEC_LIMIT" nullValue=""
+			column="OD_CURR_DEC_LIMIT" javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<select id="DEFAULT_BANK_PROFILE_SELECT_CACHE" resultMap="DEFAULT_BANK_PROFILE_RESULTMAP">
+		SELECT
+		OD_MAX_TXN_NO_RET,
+		OD_MAX_TXN_AMT_RET,
+		OD_MAX_TXN_NO_CORP,
+		OD_MAX_TXN_AMT_CORP,
+		OD_MAX_TIME_TXN_APPR,
+		OD_STATUS,
+		OD_REJECT_REASON,
+		OD_MAKER_ID,
+		OD_AUTH_ID,
+		OD_AUTH_DATE,
+		OD_MAKER_DATE,
+		OD_MAX_TXN_NO_FU,
+		OD_MAX_TXN_AMT_FU,
+		OD_MAX_NO_USERS,
+		OD_WARN_PERIOD_TXN_EXP,
+		OD_BANK_REF_CURR,
+		OD_MAKER_NAME,
+		OD_AUTH_NAME,
+		OD_CURR_DEC_LIMIT
+		FROM
+		OD_DEFAULT_LIMITS_MB
+	</select>
+
+
+	<resultMap id="GET_WIDGET_CONTEXT_SELECT_RESULTMAP" class="java.util.HashMap">
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MENU_ID" nullValue="" column="MENU_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PARENT_ID" nullValue="" column="PARENT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DISPLAY_KEY_NM" nullValue="" column="DISPLAY_KEY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_FLAG" nullValue="" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="MENU_SEPARATOR" nullValue="" column="MENU_SEPARATOR"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_CONTAINER_ID" nullValue=""
+			column="FORM_CONTAINER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FORM_ID" nullValue="" column="FORM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="EVENT_ID" nullValue="" column="EVENT_ID"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="OD_PRODUCT_CODE" nullValue="" column="PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_SUBPROD_CODE" nullValue="" column="SUB_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_FUNCTION_CODE" nullValue="" column="FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ACTION" nullValue="" column="ACTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PAGE_CODE" nullValue="" column="PAGE_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="HOST_CODE" nullValue="" column="HOST_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="DEFAULT_MENU_ID" nullValue="N" column="DEFAULT_MENU_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTEXT_TYPE" nullValue="" column="CONTEXT_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_WIDGET_ID" nullValue="" column="APP_WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHANNEL_ID" nullValue="" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<procedure id="GET_WIDGET_CONTEXT_SELECT_MENU_DATA"
+		 parameterClass="java.util.HashMap" resultMap="GET_WIDGET_CONTEXT_SELECT_RESULTMAP">
+{
+CALL WITH_EMULATOR(
+"WITH_TABLE",
+
+"SELECT
+concat(1,'.',VCM.position) as rank,
+		VCM.MENU_ID,
+		VCM.CHANNEL_ID,
+		VCM.VIEW_ID,
+		VCM.PARENT_ID,
+		VCM.POSITION,
+		VCM.DEFAULT_MENU_ID,
+		VCM.DISPLAY_KEY_NM,
+		VCM.CONTAINER_FLAG,
+		VCM.MENU_SEPARATOR,
+		VCM.FORM_CONTAINER_ID,
+		FCD.FORM_ID,
+		VCM.EVENT_ID,
+		EM.PRODUCT_CODE,
+		EM.SUB_PRODUCT_CODE,
+		EM.FUNCTION_CODE,
+		EM.ACTION,
+		EM.PAGE_CODE,
+		EM.HOST_CODE,
+		VCM.CONTEXT_TYPE,
+		VCM.APP_WIDGET_ID
+		FROM VIEW_CONTEXT_MENU_DEFINITION VCM
+    left join 
+    FORM_CONTAINER_DEFINITION FCD
+    on (FCD.CONTAINER_ID =VCM.FORM_CONTAINER_ID)
+    left join 
+    	EVENT_MASTER EM
+      on( EM.EVENT_ID = VCM.EVENT_ID ),
+		VIEW_DEFINITION VD,
+		WIDGET_DEFINITION WD,(SELECT @rownum := 0) r
+		WHERE
+   WD.WIDGET_ID ='$WIDGET_ID$'
+		AND
+		 VCM.VIEW_ID =
+		WD.DEFAULT_VIEW_ID
+		AND VD.VIEW_ID = WD.DEFAULT_VIEW_ID
+		AND
+		VD.CONTEXT_ACTION_IND='Y' and parent_id is null 
+		",
+		"
+		 select   concat(n.rank,nextlevel.position) AS rank,
+    nextlevel.* from (
+    SELECT 
+		VCM.MENU_ID,
+		VCM.CHANNEL_ID,
+		VCM.VIEW_ID,
+		VCM.PARENT_ID,
+		VCM.POSITION,
+		VCM.DEFAULT_MENU_ID,
+		VCM.DISPLAY_KEY_NM,
+		VCM.CONTAINER_FLAG,
+		VCM.MENU_SEPARATOR,
+		VCM.FORM_CONTAINER_ID,
+		FCD.FORM_ID,
+		VCM.EVENT_ID,
+		EM.PRODUCT_CODE,
+		EM.SUB_PRODUCT_CODE,
+		EM.FUNCTION_CODE,
+		EM.ACTION,
+		EM.PAGE_CODE,
+		EM.HOST_CODE,
+		VCM.CONTEXT_TYPE,
+		VCM.APP_WIDGET_ID
+	FROM VIEW_CONTEXT_MENU_DEFINITION VCM
+    left join 
+    FORM_CONTAINER_DEFINITION FCD
+    on (FCD.CONTAINER_ID =VCM.FORM_CONTAINER_ID)
+    left join 
+    	EVENT_MASTER EM
+      on( EM.EVENT_ID = VCM.EVENT_ID ),
+		VIEW_DEFINITION VD,
+		WIDGET_DEFINITION WD
+    WHERE
+    WD.WIDGET_ID ='$WIDGET_ID$' AND
+		 VCM.VIEW_ID =
+		WD.DEFAULT_VIEW_ID
+		AND VD.VIEW_ID = WD.DEFAULT_VIEW_ID
+		AND
+		VD.CONTEXT_ACTION_IND='Y' 
+     )nextlevel, WITH_TABLE as n,(SELECT @rownum := 0) r 
+     where 
+    
+     n.MENU_ID=nextlevel.PARENT_ID
+		",
+		"
+		SELECT
+		MENU_ID,
+		CHANNEL_ID,
+		VIEW_ID,
+		PARENT_ID,
+		POSITION,
+		DEFAULT_MENU_ID,
+		DISPLAY_KEY_NM,
+		CONTAINER_FLAG,
+		MENU_SEPARATOR,
+		FORM_CONTAINER_ID,
+		FORM_ID,
+		EVENT_ID,
+		PRODUCT_CODE,
+		SUB_PRODUCT_CODE,
+		FUNCTION_CODE,
+		ACTION,
+		PAGE_CODE,
+		HOST_CODE,
+		CONTEXT_TYPE,
+		APP_WIDGET_ID
+		FROM WITH_TABLE
+		Order by rank
+		",
+		0,
+    ""
+		)}
+    </procedure>
+   
+
+
+	<resultMap id="APPSTORE_MNT_SELECT_PRODUCT_CATEGORY_WIDGETS_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="PRODUCT_CATEGORY" nullValue=""
+			column="PRODUCT_CATEGORY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PRODUCT_CATEGORY_DISPLAY_NM" nullValue=""
+			column="PRODUCT_CATEGORY_DISPLAY_NM" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="APPSTORE_MNT_SELECT_PRODUCT_CATEGORY_WIDGETS_QRY"
+		parameterClass="java.util.HashMap"
+		resultMap="APPSTORE_MNT_SELECT_PRODUCT_CATEGORY_WIDGETS_RESULTMAP">
+		SELECT DISTINCT
+		OPPC.OD_PRODUCT_CATEGORY AS PRODUCT_CATEGORY,
+		OPPC.DISPLAY_NM_KEY AS PRODUCT_CATEGORY_DISPLAY_NM,
+		WD.WIDGET_ID AS WIDGET_ID
+		FROM OD_PORTAL_PRODUCT_CATEGORY OPPC
+		JOIN OD_PRODUCT_MASTER_MB OPMM
+		ON OPPC.OD_PRODUCT_CATEGORY = OPMM.OD_PRODUCT_CATEGORY
+		JOIN
+		WIDGET_DEFINITION WD
+		ON OPMM.OD_PRODUCT_CODE = WD.OD_PRODUCT
+		JOIN VIEW_DEFINITION VDF
+		ON (VDF.VIEW_ID = WD.DEFAULT_VIEW_ID)
+		WHERE
+		WD.IN_CATALOGUE_IND = 'Y'
+		AND VDF.VIEW_TYPE != 'ADS'
+		AND (WD.OD_USER_NO = #FLD_OD_USER_NO# OR WD.OD_USER_NO = '-1')
+		AND (WD.OD_GCIF = #FLD_OD_GCIF# OR WD.OD_GCIF = '-1')
+		AND WD.OD_PRODUCT IN
+		<iterate property="PRODUCT_LIST" conjunction="," open="("
+			close=")">
+			#PRODUCT_LIST[].prodCode#
+		</iterate>
+	</select>
+	<resultMap id="APPSTORE_MNT_SELECT_ALL_WIDGETS_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="WGT_DISPLAY_NM" nullValue="" column="WGT_DISPLAY_NM"
+			jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="WGT_CONTAINER_FLAG" nullValue=""
+			column="WGT_CONTAINER_FLAG" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="PRODUCT_CATEGORY" nullValue=""
+			column="PRODUCT_CATEGORY" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="PRODUCT_CATEGORY_DISPLAY_NM" nullValue=""
+			column="PRODUCT_CATEGORY_DISPLAY_NM" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			jdbcType="VARCHAR" javaType="java.lang.String" />
+		<result property="PROD_BUNDLE_KEY" nullValue="" column="PROD_BUNDLE_KEY"
+			jdbcType="VARCHAR" javaType="java.lang.String" />
+	</resultMap>
+	<select id="APPSTORE_MNT_SELECT_ALL_WIDGETS_QRY" parameterClass="java.util.HashMap"
+		resultMap="APPSTORE_MNT_SELECT_ALL_WIDGETS_RESULTMAP">
+		SELECT
+		WIDGET.WIDGET_ID,
+		CASE
+		WHEN VDF.VIEW_DISPLAY_NM IS NOT NULL
+		THEN VDF.VIEW_DISPLAY_NM
+		ELSE
+		CASE WHEN WIDGET.WGT_DISPLAY_NM IS NULL
+		THEN WIDGET.WIDGET_ID
+		ELSE WIDGET.WGT_DISPLAY_NM
+		END
+		END AS WGT_DISPLAY_NM,
+		WIDGET.CONTAINER_FLAG AS WGT_CONTAINER_FLAG,
+		OPPC.OD_PRODUCT_CATEGORY AS PRODUCT_CATEGORY,
+		OPPC.DISPLAY_NM_KEY AS PRODUCT_CATEGORY_DISPLAY_NM,
+		WIDGET.BUNDLE_KEY,
+		OPPC.BUNDLE_KEY AS PROD_BUNDLE_KEY
+		FROM
+		WIDGET_DEFINITION WIDGET
+		<!-- JOIN OD_PRODUCT_MASTER_MB OPMM ON (OPMM.OD_PRODUCT_CODE = WIDGET.OD_PRODUCT 
+			AND OPMM.OD_SUBPROD_CODE = WIDGET.OD_SUB_PRODUCT) -->
+		JOIN OD_PORTAL_PRODUCT_CATEGORY OPPC
+		ON OPPC.OD_PRODUCT_CATEGORY = WIDGET.OD_PRODUCT
+		JOIN VIEW_DEFINITION VDF
+		ON (VDF.VIEW_ID = WIDGET.DEFAULT_VIEW_ID)
+		WHERE WIDGET.IN_CATALOGUE_IND='Y'
+		AND WIDGET.CONTAINER_FLAG='N'
+		AND VDF.VIEW_TYPE != 'ADS'
+		AND (WIDGET.OD_USER_NO = #FLD_OD_USER_NO# OR WIDGET.OD_USER_NO = '-1')
+		AND (WIDGET.OD_GCIF = #FLD_OD_GCIF# OR WIDGET.OD_GCIF = '-1')
+		AND WIDGET.OD_PRODUCT IN
+		<iterate property="PRODUCT_LIST" conjunction="," open="("
+			close=")">
+			#PRODUCT_LIST[].prodCode#
+		</iterate>
+
+		UNION ALL
+
+		SELECT
+		WIDGET.WIDGET_ID,
+		CASE
+		WHEN
+		WIDGET.WGT_DISPLAY_NM IS NULL
+		THEN
+		WIDGET.WIDGET_ID
+		ELSE
+		WIDGET.WGT_DISPLAY_NM
+		END AS WGT_DISPLAY_NM,
+		WIDGET.CONTAINER_FLAG AS WGT_CONTAINER_FLAG,
+		OPPC.OD_PRODUCT_CATEGORY AS PRODUCT_CATEGORY,
+		OPPC.DISPLAY_NM_KEY AS PRODUCT_CATEGORY_DISPLAY_NM,
+		WIDGET.BUNDLE_KEY,
+		OPPC.BUNDLE_KEY AS PROD_BUNDLE_KEY
+		FROM
+		WIDGET_DEFINITION WIDGET
+		<!-- JOIN OD_PRODUCT_MASTER_MB OPMM ON (OPMM.OD_PRODUCT_CODE = WIDGET.OD_PRODUCT 
+			AND OPMM.OD_SUBPROD_CODE = WIDGET.OD_SUB_PRODUCT) -->
+		JOIN OD_PORTAL_PRODUCT_CATEGORY OPPC
+		ON OPPC.OD_PRODUCT_CATEGORY = WIDGET.OD_PRODUCT
+		WHERE WIDGET.IN_CATALOGUE_IND='Y'
+		AND WIDGET.CONTAINER_FLAG='Y'
+		AND (WIDGET.OD_USER_NO = #FLD_OD_USER_NO# OR WIDGET.OD_USER_NO = '-1')
+		AND (WIDGET.OD_GCIF = #FLD_OD_GCIF# OR WIDGET.OD_GCIF = '-1')
+		AND WIDGET.OD_PRODUCT IN
+		<iterate property="PRODUCT_LIST" conjunction="," open="("
+			close=")">
+			#PRODUCT_LIST[].prodCode#
+		</iterate>
+	</select>
+
+	<!-- CT_DESIGN_CANVAS starts -->
+	<parameterMap id="APPSTORE_MNT_INSERT_WORKSPACE_DEFINITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="WORKSPACE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="LAYOUT" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="WORKSPACE_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_SUB_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="SYSTEM_WORKSPACE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WORKSPACE_ACTIVATE_HANDLER" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CUSTOMSPACE_BLOCKPOSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="TFD_REQ" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="CHANNEL_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="BUNDLE_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="APPSTORE_MNT_INSERT_WORKSPACE_DEFINITION_QRY"
+		parameterMap="APPSTORE_MNT_INSERT_WORKSPACE_DEFINITION_PARAM_MAP">
+		INSERT INTO WORKSPACE_DEFINITION
+		(WORKSPACE_ID,
+		OD_USER_NO,
+		OD_GCIF,
+		LAYOUT,
+		WORKSPACE_DISPLAY_NM,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		POSITION,
+		SYSTEM_WORKSPACE_IND,
+		WORKSPACE_ACTIVATE_HANDLER,
+		CUSTOMSPACE_BLOCKPOSITION,
+		TFD_REQ,
+		CHANNEL_ID,
+		BUNDLE_KEY
+		)
+		VALUES
+		(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+	</insert>
+
+	<parameterMap id="APPSTORE_MNT_INSERT_LAYOUT_DEFINITION_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="LAYOUT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="LAYOUT" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="LAYOUT_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_SUB_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PROPORTION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CONTEXT_APP_WIDGET" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="IS_PARENT_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CHANNEL_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="BUNDLE_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="APPSTORE_MNT_BATCH_INSERT_LAYOUT_DEFINITION_QRY"
+		parameterMap="APPSTORE_MNT_INSERT_LAYOUT_DEFINITION_PARAM_MAP">
+		INSERT INTO LAYOUT_DEFINITION
+		(LAYOUT_ID,
+		LAYOUT,
+		LAYOUT_DISPLAY_NM,
+		OD_USER_NO,
+		OD_GCIF,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		PROPORTION,
+		CONTEXT_APP_WIDGET,
+		IS_PARENT_IND,
+		CHANNEL_ID,
+		BUNDLE_KEY
+		)
+		VALUES
+		(?,?,?,?,?,?,?,?,?,?,?,?)
+	</insert>
+
+	<parameterMap id="APPSTORE_MNT_INSERT_WORKSPACE_LAYOUT_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="LAYOUT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="WORKSPACE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="PARENT_LAYOUT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="APPSTORE_MNT_BATCH_INSERT_WORKSPACE_LAYOUT_MAP_QRY"
+		parameterMap="APPSTORE_MNT_INSERT_WORKSPACE_LAYOUT_MAP_PARAM_MAP">
+		INSERT INTO WORKSPACE_LAYOUT_MAP
+		(LAYOUT_ID,
+		WORKSPACE_ID,
+		POSITION,
+		PARENT_LAYOUT)
+		VALUES
+		(?,?,?,?)
+	</insert>
+
+	<parameterMap id="APPSTORE_MNT_INSERT_LAYOUT_WIDGET_MAP_PARAM_MAP"
+		class="java.util.HashMap">
+		<parameter property="WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="LAYOUT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="BLOCK_POSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CLOSED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DEFAULT_WIDGET_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="APPSTORE_MNT_BATCH_INSERT_LAYOUT_WIDGET_MAP_QRY"
+		parameterMap="APPSTORE_MNT_INSERT_LAYOUT_WIDGET_MAP_PARAM_MAP">
+		INSERT INTO LAYOUT_WIDGET_MAP
+		(WIDGET_ID,
+		LAYOUT_ID,
+		POSITION,
+		BLOCK_POSITION,
+		CLOSED_IND,
+		DEFAULT_WIDGET_IND)
+		VALUES
+		(?,?,?,?,?,?)
+	</insert>
+
+	<parameterMap id="APPSTORE_MNT_INSERT_WORKSPACE_MENU_DEFINITION_PMAP"
+		class="java.util.HashMap">
+		<parameter property="ITEM_ID" jdbcType="VARCHAR2" javaType="java.lang.String" />
+		<parameter property="DISPLAY_KEY_NM" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="PARENT_ID" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<parameter property="CONTAINER_FLAG" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT_CODE" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="OD_SUBPROD_CODE" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="OD_FUNCTION_CODE" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="LABEL_IND" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="ICON_IND" jdbcType="VARCHAR2" javaType="java.lang.String" />
+		<parameter property="BLOCK_POSITION" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="CONTAINER_ID" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="APPSTORE_MNT_BATCH_INSERT_WORKSPACE_MENU_DEFINITION_QRY"
+		parameterMap="APPSTORE_MNT_INSERT_WORKSPACE_MENU_DEFINITION_PMAP">
+		INSERT INTO WORKSPACE_MENU_DEFINITION
+		(ITEM_ID,
+		DISPLAY_KEY_NM,
+		PARENT_ID,
+		POSITION,
+		CONTAINER_FLAG,
+		OD_PRODUCT_CODE,
+		OD_SUBPROD_CODE,
+		OD_FUNCTION_CODE,
+		LABEL_IND,
+		ICON_IND,
+		BLOCK_POSITION,
+		CONTAINER_ID)
+		VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
+	</insert>
+
+
+	<resultMap id="APPSTORE_MNT_SELECT_MAX_POSITION_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="MAX_POSITION" nullValue="0" column="MAX_POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMBER" />
+	</resultMap>
+
+	<select id="APPSTORE_MNT_SELECT_WORKSPACE_MAX_POSITION_QRY"
+		parameterClass="java.util.HashMap" resultMap="APPSTORE_MNT_SELECT_MAX_POSITION_RESULTMAP">
+		SELECT
+		MAX(POSITION) AS MAX_POSITION
+		FROM
+		WORKSPACE_DEFINITION
+	</select>
+
+	<select id="APPSTORE_MNT_SELECT_LAYOUT_MAX_POSITION_IN_WORKSPACE_QRY"
+		parameterClass="java.util.HashMap" resultMap="APPSTORE_MNT_SELECT_MAX_POSITION_RESULTMAP">
+		SELECT
+		MAX(POSITION) AS MAX_POSITION
+		FROM
+		WORKSPACE_LAYOUT_MAP
+		WHERE
+		WORKSPACE_ID=#WORKSPACE_ID#
+	</select>
+
+	<resultMap id="WORKSPACE_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.WorkspaceDefinition">
+		<result property="workspaceId" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userNumber" nullValue="" column="OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF" nullValue="" column="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="workspaceLayout" nullValue="" column="LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="workspaceDisplayName" nullValue=""
+			column="WORKSPACE_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="product" nullValue="" column="OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProduct" nullValue="" column="OD_SUB_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="position" nullValue="" column="POSITION"
+			jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<result property="systemWorkspaceInd" nullValue=""
+			column="SYSTEM_WORKSPACE_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="workspaceActivateHandler" nullValue=""
+			column="WORKSPACE_ACTIVATE_HANDLER" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="layoutDefinitions" column="WORKSPACE_ID"
+			select="APPSTORE_MNT_SELECT_LAYOUT_DEFINITION_QRY" />
+		<result property="workspaceMenuDefinitions" column="WORKSPACE_ID"
+			select="APPSTORE_MNT_SELECT_WORKSPACE_MENU_DEFINITION_QRY" />
+
+		<result property="customSpaceBlockPosition" column="CUSTOMSPACE_BLOCKPOSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isTFDRequired" column="TFD_REQ" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="channelId" column="CHANNEL_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="bundleKey" column="BUNDLE_KEY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+
+
+
+
+	</resultMap>
+
+	<resultMap id="LAYOUT_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.LayoutDefinition">
+		<result property="layoutId" nullValue="" column="LAYOUT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="userNumber" nullValue="" column="OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="GCIF" nullValue="" column="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="layoutCategory" nullValue="" column="LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="layoutDisplayName" nullValue=""
+			column="LAYOUT_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="product" nullValue="" column="OD_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProduct" nullValue="" column="OD_SUB_PRODUCT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="proportion" nullValue="" column="PROPORTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="layoutPosition" nullValue="" column="LAYOUT_POSITION"
+			jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<result property="workspaceId" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="widgets" column="LAYOUT_ID"
+			select="APPSTORE_MNT_SELECT_LAYOUT_WIDGET_MAPPING_QRY" />
+		<result property="contextAppWidget" column="CONTEXT_APP_WIDGET"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="isParentInd" column="IS_PARENT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="channelId" column="CHANNEL_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="bundleKey" column="BUNDLE_KEY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<result property="parentLayout" column="PARENT_LAYOUT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<resultMap id="WORKSPACE_MENU_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.WorkspaceMenuDefinition">
+		<result property="itemId" nullValue="" column="ITEM_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="menuDisplayKey" nullValue="" column="DISPLAY_KEY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="parentId" nullValue="" column="PARENT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="orderPosition" nullValue="" column="POSITION"
+			jdbcType="NUMERIC" javaType="java.lang.Integer" />
+		<result property="containerFlag" nullValue="" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="product" nullValue="" column="OD_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="subProduct" nullValue="" column="OD_SUBPROD_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="funcCode" nullValue="" column="OD_FUNCTION_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="labelInd" nullValue="" column="LABEL_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="iconInd" nullValue="" column="ICON_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="blockPosition" nullValue="" column="BLOCK_POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="containerId" nullValue="" column="CONTAINER_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="LAYOUT_WIDGET_MAPPING_DATA_MAP"
+		class="com.intellectdesign.canvas.viewdefinition.LayoutWidgetMapping">
+		<result property="widgetId" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="layoutId" nullValue="" column="LAYOUT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="layoutWidgetPosition" nullValue="" column="POSITION"
+			javaType="java.lang.Integer" jdbcType="NUMERIC" />
+		<result property="blockPosition" nullValue="" column="BLOCK_POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="closedInd" nullValue="" column="CLOSED_IND"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="defaultWidgetInd" nullValue=""
+			column="DEFAULT_WIDGET_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="APPSTORE_MNT_SELECT_WORKSPACE_DEFINITION_QRY"
+		resultMap="WORKSPACE_DATA_MAP">
+		SELECT
+		WRKSPC.WORKSPACE_ID AS WORKSPACE_ID,
+		WRKSPC.OD_USER_NO AS OD_USER_NO,
+		WRKSPC.OD_GCIF AS OD_GCIF,
+		WRKSPC.LAYOUT AS LAYOUT,
+		WRKSPC.WORKSPACE_DISPLAY_NM AS WORKSPACE_DISPLAY_NM,
+		WRKSPC.OD_PRODUCT AS OD_PRODUCT,
+		WRKSPC.OD_SUB_PRODUCT AS OD_SUB_PRODUCT,
+		WRKSPC.POSITION AS POSITION,
+		WRKSPC.SYSTEM_WORKSPACE_IND AS SYSTEM_WORKSPACE_IND,
+		WRKSPC.WORKSPACE_ACTIVATE_HANDLER AS WORKSPACE_ACTIVATE_HANDLER,
+		WRKSPC.CUSTOMSPACE_BLOCKPOSITION,
+		WRKSPC.TFD_REQ,
+		WRKSPC.CHANNEL_ID,
+		WRKSPC.BUNDLE_KEY
+		FROM
+		WORKSPACE_DEFINITION WRKSPC
+		WHERE
+		WRKSPC.WORKSPACE_ID = #WORKSPACE_ID#
+		AND (WRKSPC.OD_USER_NO = #FLD_OD_USER_NO#)
+		AND (WRKSPC.OD_GCIF = #FLD_OD_GCIF#)
+	</select>
+
+	<select id="APPSTORE_MNT_SELECT_LAYOUT_DEFINITION_QRY"
+		resultMap="LAYOUT_DATA_MAP">
+		SELECT
+		LAYOUT.LAYOUT_ID AS LAYOUT_ID,
+		LAYOUT.OD_USER_NO AS OD_USER_NO,
+		LAYOUT.OD_GCIF AS OD_GCIF,
+		LAYOUT.LAYOUT AS LAYOUT,
+		LAYOUT.LAYOUT_DISPLAY_NM AS LAYOUT_DISPLAY_NM,
+		LAYOUT.OD_PRODUCT AS OD_PRODUCT,
+		LAYOUT.OD_SUB_PRODUCT AS OD_SUB_PRODUCT,
+		LAYOUT.PROPORTION AS PROPORTION,
+		WLM.POSITION AS LAYOUT_POSITION,
+		WLM.WORKSPACE_ID AS WORKSPACE_ID,
+		LAYOUT.CONTEXT_APP_WIDGET,
+		LAYOUT.IS_PARENT_IND,
+		LAYOUT.CHANNEL_ID,
+		LAYOUT.BUNDLE_KEY,
+		WLM.PARENT_LAYOUT
+		FROM
+		LAYOUT_DEFINITION LAYOUT
+		JOIN WORKSPACE_LAYOUT_MAP WLM
+		ON WLM.LAYOUT_ID = LAYOUT.LAYOUT_ID
+		WHERE
+		WLM.WORKSPACE_ID = #WORKSPACE_ID#
+	</select>
+
+	<select id="APPSTORE_MNT_SELECT_WORKSPACE_MENU_DEFINITION_QRY"
+		resultMap="WORKSPACE_MENU_DATA_MAP">
+		SELECT
+		WRKSPC_MENU.ITEM_ID AS ITEM_ID,
+		WRKSPC_MENU.DISPLAY_KEY_NM AS DISPLAY_KEY_NM,
+		WRKSPC_MENU.PARENT_ID AS PARENT_ID,
+		WRKSPC_MENU.POSITION AS POSITION,
+		WRKSPC_MENU.CONTAINER_FLAG AS CONTAINER_FLAG,
+		WRKSPC_MENU.OD_PRODUCT_CODE AS OD_PRODUCT_CODE,
+		WRKSPC_MENU.OD_SUBPROD_CODE AS OD_SUBPROD_CODE,
+		WRKSPC_MENU.OD_FUNCTION_CODE AS OD_FUNCTION_CODE,
+		WRKSPC_MENU.LABEL_IND AS LABEL_IND,
+		WRKSPC_MENU.ICON_IND AS ICON_IND,
+		WRKSPC_MENU.BLOCK_POSITION AS BLOCK_POSITION,
+		WRKSPC_MENU.CONTAINER_ID
+		FROM
+		WORKSPACE_MENU_DEFINITION WRKSPC_MENU
+		WHERE
+		WRKSPC_MENU.PARENT_ID = #WORKSPACE_ID#
+	</select>
+
+	<select id="APPSTORE_MNT_SELECT_LAYOUT_WIDGET_MAPPING_QRY"
+		resultMap="LAYOUT_WIDGET_MAPPING_DATA_MAP">
+		SELECT
+		LWM.WIDGET_ID AS WIDGET_ID,
+		LWM.LAYOUT_ID AS LAYOUT_ID,
+		LWM.POSITION AS POSITION,
+		LWM.BLOCK_POSITION AS BLOCK_POSITION,
+		LWM.CLOSED_IND AS CLOSED_IND,
+		LWM.DEFAULT_WIDGET_IND
+		FROM
+		LAYOUT_WIDGET_MAP LWM
+		WHERE
+		LWM.LAYOUT_ID = #LAYOUT_ID#
+	</select>
+
+	<resultMap id="APPSTORE_MNT_SELECT_WORKSPACE_LAYOUT_IDS_RESULTMAP"
+		class="java.util.HashMap">
+		<result property="LAYOUT_ID" nullValue="" column="LAYOUT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="APPSTORE_MNT_SELECT_WORKSPACE_LAYOUT_IDS_QRY"
+		resultMap="APPSTORE_MNT_SELECT_WORKSPACE_LAYOUT_IDS_RESULTMAP">
+		SELECT
+		WLM.LAYOUT_ID AS LAYOUT_ID
+		FROM
+		WORKSPACE_LAYOUT_MAP WLM
+		WHERE
+		WLM.WORKSPACE_ID = #WORKSPACE_ID#
+	</select>
+
+	<resultMap id="WORKSPACE_DATA_BY_NAME_MAP" class="java.util.HashMap">
+		<result property="WORKSPACE_ID" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_OD_USER_NO" nullValue="" column="FLD_OD_USER_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FLD_OD_GCIF" nullValue="" column="FLD_OD_GCIF"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_DISPLAY_NM" nullValue=""
+			column="WORKSPACE_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="APPSTORE_MNT_SELECT_WORKSPACE_DEFINITION_BY_NAME_QRY"
+		resultMap="WORKSPACE_DATA_BY_NAME_MAP">
+		SELECT
+		WRKSPC.WORKSPACE_ID AS WORKSPACE_ID,
+		WRKSPC.OD_USER_NO AS FLD_OD_USER_NO,
+		WRKSPC.OD_GCIF AS FLD_OD_GCIF,
+		WRKSPC.WORKSPACE_DISPLAY_NM AS WORKSPACE_DISPLAY_NM
+		FROM
+		WORKSPACE_DEFINITION WRKSPC
+		WHERE
+		WRKSPC.WORKSPACE_DISPLAY_NM = #WORKSPACE_DISPLAY_NM#
+	</select>
+
+	<delete id="APPSTORE_MNT_DELETE_WORKSPACE_DEFINITION_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		WORKSPACE_DEFINITION
+		WHERE
+		WORKSPACE_ID=#WORKSPACE_ID#
+		AND OD_USER_NO = #FLD_OD_USER_NO#
+		AND OD_GCIF = #FLD_OD_GCIF#
+	</delete>
+
+	<delete id="APPSTORE_MNT_DELETE_WORKSPACE_MENU_DEFINITION_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		WORKSPACE_MENU_DEFINITION
+		WHERE
+		PARENT_ID=#WORKSPACE_ID#
+		OR ITEM_ID=#WORKSPACE_ID#
+	</delete>
+
+	<delete id="APPSTORE_MNT_DELETE_LAYOUT_DEFINITION_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		LAYOUT_DEFINITION
+		WHERE
+		LAYOUT_ID IN
+		<iterate property="LAYOUTS" conjunction="," open="(" close=")">
+			#LAYOUTS[].LAYOUT_ID#
+		</iterate>
+		AND OD_USER_NO = #FLD_OD_USER_NO#
+		AND OD_GCIF = #FLD_OD_GCIF#
+	</delete>
+
+	<delete id="APPSTORE_MNT_DELETE_WORKSPACE_LAYOUT_MAP_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		WORKSPACE_LAYOUT_MAP
+		WHERE
+		WORKSPACE_ID=#WORKSPACE_ID#
+	</delete>
+
+	<delete id="APPSTORE_MNT_DELETE_LAYOUT_WIDGET_MAP_QRY"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		LAYOUT_WIDGET_MAP
+		WHERE
+		LAYOUT_ID IN
+		<iterate property="LAYOUTS" conjunction="," open="(" close=")">
+			#LAYOUTS[].LAYOUT_ID#
+		</iterate>
+	</delete>
+
+	<resultMap id="GET_VIEWFOR_WIDGETID" class="java.util.HashMap">
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_VIEWFOR_WIDGETID"
+		resultMap="GET_VIEWFOR_WIDGETID">
+		SELECT
+		DEFAULT_VIEW_ID AS VIEW_ID
+		FROM
+		WIDGET_DEFINITION
+		WHERE
+		WIDGET_ID = #WIDGET_ID#
+	</select>
+
+
+	<!-- CHART_FW_ENH STARTS - added to fetch additional chart features -->
+
+	<resultMap id="CHART_ADDL_CONFIG_MAP" class="java.util.HashMap">
+		<result property="VIEW_ID" nullValue="" column="VIEW_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="COLUMN_ID" nullValue="" column="COLUMN_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOM_LABEL" nullValue="" column="CUSTOM_LABEL"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CUSTOM_LABEL_POSITION" nullValue=""
+			column="CUSTOM_LABEL_POSITION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="REFLINE_TEXT" nullValue="" column="REFLINE_TEXT"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="REFLINE_VALUE" nullValue="" column="REFLINE_VALUE"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="COLOR_RANGE_MIN" nullValue="" column="COLOR_RANGE_MIN"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="COLOR_RANGE_MAX" nullValue="" column="COLOR_RANGE_MAX"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+		<result property="COLOR_CODE" nullValue="" column="COLOR_CODE"
+			javaType="java.lang.String" jdbcType="NUMBER" />
+	</resultMap>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_CHART_ADDL_CONFIG"
+		resultMap="CHART_ADDL_CONFIG_MAP">
+		SELECT
+		VIEW_ID,
+		COLUMN_ID,
+		CUSTOM_LABEL,
+		CUSTOM_LABEL_POSITION,
+		REFLINE_TEXT,
+		REFLINE_VALUE,
+		COLOR_RANGE_MIN,
+		COLOR_RANGE_MAX,
+		COLOR_CODE
+		FROM
+		CHART_ADDL_CONFIG
+		WHERE
+		VIEW_ID = #VIEW_ID#
+	</select>
+	<!-- CHART_FW_ENH ends -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_DATE_FILTERS_QRY"
+		resultClass="java.util.HashMap">
+		SELECT
+		VDDFC.VIEW_ID AS VIEW_ID,
+		VDDFC.COLUMN_ID AS COLUMN_ID,
+		VDDFC.FILTER_ID AS FILTER_ID,
+		VDDFC.IS_DEFAULT_FILTER AS IS_DEFAULT_FILTER,
+		VDDFC.POSITION AS POSITION,
+		VDDFR.MIN_VALUE AS MIN_VALUE,
+		VDDFR.MIN_UNIT AS MIN_UNIT,
+		VDDFR.MAX_VALUE AS MAX_VALUE,
+		VDDFR.MAX_UNIT AS MAX_UNIT,
+		VDDFM.DISPLAY_NM_KEY AS DISPLAY_NM_KEY,
+		VDDFM.FILTER_VALUE AS FILTER_VALUE,
+		VDDFM.FILTER_UNIT AS FILTER_UNIT,
+		VDDFR.MAX_SELECTION_PERIOD_VAL AS MAX_SELECTION_PERIOD_VAL,
+		VDDFR.MAX_SELECTION_PERIOD_UNIT AS MAX_SELECTION_PERIOD_UNIT ,
+		VDDFR.GLOBAL_PERIOD_VAL,
+		VDDFR.GLOBAL_PERIOD_UNIT
+		FROM
+		VIEW_DEFN_DATE_FILTER_CONFIG  VDDFC 
+		left join VIEW_DEFN_DATE_FILTER_RANGE VDDFR on (VDDFR.VIEW_ID = VDDFC.VIEW_ID)
+	  left join	VIEW_DEFN_DATE_FILTER_MASTER VDDFM on (VDDFM.FILTER_ID = VDDFC.FILTER_ID)
+		WHERE
+		VDDFC.VIEW_ID = #VIEW_ID#
+		AND
+		VDDFC.ENABLE_IND = 'Y'
+
+		ORDER BY
+		VDDFC.POSITION
+	</select>
+	<resultMap
+		id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_CONTAINER_METADATA_RESULT_MAP"
+		class="java.util.HashMap">
+		<result property="APP_CONTAINER_ID" nullValue=""
+			column="APP_CONTAINER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_ID" nullValue="" column="APP_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="POSITION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_TYPE" nullValue="" column="APP_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_ID" nullValue="" column="WORKSPACE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="LAYOUT_ID" nullValue="" column="LAYOUT_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SERVICE_ID" nullValue="" column="SERVICE_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_PRODUCT_CODE" nullValue="" column="OD_PRODUCT_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_SUBPROD_CODE" nullValue="" column="OD_SUBPROD_CODE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="OD_FUNCTION_CODE" nullValue=""
+			column="OD_FUNCTION_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_DISPLAY_NM_KEY" nullValue=""
+			column="APP_DISPLAY_NM_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="RENDERER_TYPE" nullValue="" column="RENDERER_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CHANNEL_ID" nullValue="" column="CHANNEL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="ENTL_TYPE" nullValue="" column="ENTL_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="IS_FAV_APP" nullValue="" column="IS_FAV_APP"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_CSS_CLASS" nullValue="" column="APP_CSS_CLASS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="APP_ENTL_CLASS" nullValue="" column="APP_ENTL_CLASS"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="FAV_APPS_REQ_IND" nullValue=""
+			column="FAV_APPS_REQ_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PROPORTION" nullValue="50,50" column="PROPORTION"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_CONTAINER_METADATA"
+		resultMap="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_CONTAINER_METADATA_RESULT_MAP">
+		SELECT
+		ACM.APP_CONTAINER_ID,
+		ACM.APP_ENTL_CLASS,
+		ACM.FAV_APPS_REQ_IND,
+		ACM.BUNDLE_KEY ,
+		ACM.PROPORTION,
+		ACD.APP_ID,
+		ACD.POSITION ,
+		AM.APP_TYPE ,
+		AM.WORKSPACE_ID ,
+		AM.LAYOUT_ID ,
+		AM.WIDGET_ID ,
+		AM.OD_PRODUCT_CODE,
+		AM.OD_SUBPROD_CODE,
+		AM.OD_FUNCTION_CODE,
+		AM.SERVICE_ID ,
+		AM.APP_DISPLAY_NM_KEY ,
+		AM.RENDERER_TYPE ,
+		AM.CHANNEL_ID,
+		ACD.ENTL_TYPE ,
+		ACD.IS_FAV_APP ,
+		AM.APP_CSS_CLASS
+		FROM app_container_definition ACD
+		RIGHT OUTER JOIN app_container_master ACM
+		ON (ACD.app_container_id = ACM.app_container_id
+		and ACD.OD_USER_NO in (#USER_NO#,'-1')
+		and ACD.OD_GCIF in (#GCIF#,'-1'))
+		LEFT OUTER JOIN APP_MASTER AM
+		on AM.APP_ID = acd.app_id
+		ORDER BY
+		ACD.POSITION
+	</select>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_ALL_APPS" resultClass="java.util.HashMap">
+		SELECT * FROM APP_MASTER WHERE CHANNEL_ID ='A' OR CHANNEL_ID LIKE '%'
+		|| #CHANNEL_ID# || '%' ORDER BY APP_ID
+	</select>
+	<parameterMap id="APP_DEFINTION_FOR_ADD_PARAM_MAP" class="java.util.HashMap">
+		<parameter property="APP_CONTAINER_ID" jdbcType="VARCHAR2"
+			javaType="java.lang.String" />
+		<parameter property="APP_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMERIC" javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" javaType="java.lang.String"
+			jdbcType="VARCHAR2" />
+		<parameter property="OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR2" />
+	</parameterMap>
+	<insert id="VIEW_MGR_FRMWK_MNT_BATCH_INSERT_APP_DEFINTION_FOR_ADD"
+		parameterMap="APP_DEFINTION_FOR_ADD_PARAM_MAP">
+		INSERT INTO APP_CONTAINER_DEFINITION
+		(
+		APP_CONTAINER_ID,
+		APP_ID,
+		POSITION,
+		ENTL_TYPE,
+		IS_FAV_APP,
+		OD_USER_NO,
+		OD_GCIF
+
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		'D',
+		'Y',
+		?,
+		?
+		)
+
+	</insert>
+	<delete id="VIEW_MGR_FRMWK_MNT_DELETE_APP_DEFINTION_FOR_DELETE"
+		parameterClass="java.util.HashMap">
+		DELETE FROM
+		APP_CONTAINER_DEFINITION
+		WHERE
+		OD_USER_NO = #OD_USER_NO#
+		AND OD_GCIF = #OD_GCIF#
+		AND APP_ID = #APP_ID#
+		AND APP_CONTAINER_ID = #APP_CONTAINER_ID#
+		AND IS_FAV_APP = 'Y'
+	</delete>
+	<resultMap id="VIEW_MGR_FRMWK_MNT_SELECT_GET_WIDGET_MD_RESULT_MAP"
+		class="java.util.HashMap">
+		<result property="WIDGET_HEADER_IND" nullValue="Y"
+			column="WIDGET_HEADER_IND" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_HT_IN_PIXELS" nullValue=""
+			column="WGT_HT_IN_PIXELS" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WGT_DISPLAY_NM" nullValue="" column="WGT_DISPLAY_NM"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CONTAINER_FLAG" nullValue="" column="CONTAINER_FLAG"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_WIDGET_MD" resultMap="VIEW_MGR_FRMWK_MNT_SELECT_GET_WIDGET_MD_RESULT_MAP">
+		select
+		WIDGET.WIDGET_HEADER_IND,
+		WIDGET.WGT_HT_IN_PIXELS,
+		case WHEN WIDGET.CONTAINER_FLAG='N'
+		then VDF.VIEW_DISPLAY_NM
+		else IFNULL(WIDGET.WGT_DISPLAY_NM,WIDGET.WIDGET_ID)
+		end as WGT_DISPLAY_NM,
+		WIDGET.CONTAINER_FLAG,
+		WIDGET.BUNDLE_KEY
+		from
+		WIDGET_DEFINITION WIDGET
+		left outer join VIEW_DEFINITION VDF
+		on (WIDGET.DEFAULT_VIEW_ID = VDF.VIEW_ID)
+		where WIDGET.widget_id = #WIDGET_ID#
+	</select>
+
+	<resultMap id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_TOOLS_MAP_RESULT_MAP"
+		class="java.util.HashMap">
+		<result property="TOOL_ID" nullValue="" column="TOOL_ID"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="TOOL_DESCRIPTION" nullValue=""
+			column="TOOL_DESCRIPTION" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_TOOLS_MAP"
+		resultMap="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_TOOLS_MAP_RESULT_MAP">
+		select
+		TOOL_ID,
+		TOOL_DESCRIPTION
+		from
+		APP_TOOLS_MAP
+		WHERE CHANNEL_ID ='A' OR CHANNEL_ID LIKE '%' || #CHANNEL_ID# || '%'
+	</select>
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_FETCH_DATA_QUERY_FOR_VIEW"
+		resultClass="java.util.HashMap">
+			SELECT
+		VD.VIEW_ID,
+		DSD.COLUMN_IDS,
+		DSD.TABLE_NAMES,
+		DSD.WHERE_CLAUSE,
+		DSD.GROUPBY_COLUMN_IDS,
+		DSD.ORDERBY_COLUMN_IDS,
+		DSD.DATA_QUERY
+		FROM
+		DATA_SOURCE_DEFINITION DSD
+		JOIN
+		VIEW_DEFINITION VD ON (VD.DATA_SRC_ID = DSD.DATA_SRC_ID)
+		WHERE
+		VIEW_ID = #VIEW_ID#
+	</select>
+
+
+	<parameterMap id="VIEW_COL_DATA_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FLD_COLUMN_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_COLUMN_DISPLAY_NAME_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_POSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_POSITION_FIXED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_MANDATORY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_VISIBLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_SORT_POSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_SORT_ORDER" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_DATA_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_HIDDEN_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_SORTABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_GROUPED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_REL_POS_IN_GROUP" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="POS_IN_GRP" jdbcType="VARCHAR"
+			javaType="java.lang.Integer" />
+		<parameter property="FLD_MAND_GROUP_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_GROUPABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DRILL_DOWN_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_X_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_Y_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_DATA_SERIES_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_FILTER_ENABLE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_IS_DISABLED" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SOURCE_AMT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LINKED_SOURCE_CCY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LOOKUP_FILTER_EXTPARAMS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_PARENT_COLUMN_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PRIMARY" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="SECONDARY_1" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="SECONDARY_2" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_SUMMARY_TYPE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_APPEND_CURRENCY_MODE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_LINKED_DATA_SERIES" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_CUSTOM_TOOLTEXT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_CHANNEL_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="FLD_PRIORITY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="TEMPLATE_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="PRIMARY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+
+	<insert id="CTSTUDIO_INSERT_VIEW_COL_DATA" parameterMap="VIEW_COL_DATA_MAP">
+		INSERT INTO VIEW_COLUMN_DEFINITION
+		(
+		VIEW_ID,
+		COLUMN_ID,
+		COLUMN_DISPLAY_NM_KEY,
+		POSITION,
+		POSITION_FIXED_IND,
+		MANDATORY_IND,
+		VISIBLE_IND,
+		SORT_POSITION,
+		SORT_ORDER,
+		DATA_TYPE,
+		HIDDEN_IND,
+		SORTABLE_IND,
+		GROUPABLE_IND,
+		REL_POS_IN_GRP,
+		POS_IN_GRP,
+		MANDATORY_IN_GRP_IND,
+		IS_GROUPED,
+		DRILL_DOWN_IND,
+		X_SERIES_IND,
+		Y_SERIES_IND,
+		DATA_SERIES_IND,
+		FILTERING_ENABLED_IND,
+		IS_DISABLED,
+		LINKED_SOURCE_AMT,
+		LINKED_SOURCE_CCY,
+		LOOKUP_FILTER_EXTPARAMS,
+		PARENT_COLUMN_ID,
+		PRIMARY,
+		SECONDARY_1,
+		SECONDARY_2,
+		SUMMARY_TYPE,
+		APPEND_CURRENCY_MODE,
+		LINKED_DATA_SERIES,
+		CUSTOM_TOOLTEXT,
+		CHANNEL_ID,
+		PRIORITY,
+		TEMPLATE_ID,
+		PRIMARY_IND
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<parameterMap id="VIEW_DEFINITION_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="VIEW_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DEFAULT_VIEW_IND" javaType="java.lang.String"
+			jdbcType="CHAR" />
+		<parameter property="INSTRUCTION_CLASS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PARENT_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PRODUCT_CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SUB_PRODUCT_CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_OD_USER_NO" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_OD_GCIF" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_RECORDS_PER_PAGE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SQL_PARAM_MAP_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OVERRIDDEN_VIEW_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SYSTEM_VIEW_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_FILTER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_COL_ORDER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_GROUPED_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_VIEW_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CHART_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CONTEXT_ACTION_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CONTEXT_COLUMN" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_DATA_SRC_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_DETAIL_ACTION_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_TOTAL_RESULT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FUNCTION_CODE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_GLOBAL_DATE_FILTER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_GROUP_HEADER_REQD" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_HIGHLIGHT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_INIT_COLLAPSED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_INIT_GROUP_STAGE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_IS_DATA_CACHED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_IS_GROUP_MODIFIABLE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_IS_SUMMARY_REQUIRED" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_SELECTION_TYPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_DATA_CACHE_SCOPE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_DETAIL_MSG_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_DETAIL_MSG_LBL" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="INITIAL_RECORDS_COUNT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CHART_Y_MAX" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CHART_Y_MIN" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_CHART_NO_TREAD_LINES" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_LOGO_URL" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_LOGO_PROPERTY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="BORDER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_SWITCHING_CHARTS" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_BUNDLE_KEY" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_RESPONSIVE_TEMPLATE" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="TEMPLATE_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FLD_AUTOLOAD_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_VIEW_DATA" parameterMap="VIEW_DEFINITION_MAP">
+		INSERT INTO VIEW_DEFINITION
+		(
+		VIEW_ID,
+		VIEW_DISPLAY_NM,
+		DEFAULT_VIEW_IND,
+		INSTRUCTION_CLASS,
+		PARENT_VIEW_ID,
+		PRODUCT,
+		SUB_PRODUCT,
+		USER_NO,
+		GCIF,
+		RECORDS_PER_PAGE,
+		SQL_PARAM_MAP_ID,
+		OVERRIDDEN_FLAG,
+		SYSTEM_VIEW_ID,
+		FILTER_ENABLED,
+		COLUMN_ORDERING,
+		GROUPING_ENABLED_IND,
+		VIEW_TYPE,
+		CHART_TYPE,
+		CONTEXT_ACTION_IND,
+		CONTEXT_COLUMN,
+		DATA_SRC_ID,
+		DETAIL_ACTION_IND,
+		DISPLAY_TOTAL_RESULT_IND,
+		FUNCTION_CODE,
+		GLOBAL_DATE_FILTER_IND,
+		GROUP_HEADER_REQD_IND,
+		HIGHLIGHT_IND,
+		INIT_COLLAPSED,
+		INIT_GROUP_STAGE,
+		IS_DATA_CACHED,
+		IS_GROUP_MODIFIABLE,
+		IS_SUMMARY_REQUIRED,
+		SELECTION_TYPE,
+		DATA_CACHE_SCOPE,
+		DETAIL_MSG_IND,
+		DETAIL_MSG_LBL,
+		INITIAL_RECORDS_COUNT,
+		CHART_YAXIS_MAX,
+		CHART_YAXIS_MIN,
+		CHART_NO_TREAD_LINES,
+		LOGO_URL,
+		LOGO_PROPERTY,
+		BORDER_IND,
+		SWITCHING_CHARTS,
+		BUNDLE_KEY,
+		RESPONSIVE_TEMPLATE,
+		TEMPLATE_ID,
+		AUTOLOAD_IND
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<parameterMap id="VIEW_DEFINITION_TOOL_PREF_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_SUB_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HISTORY_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FILTER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PULL_OUT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PRINT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_EXCEL_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_JPG_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CUSTOMIZE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HELP_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="REFRESH_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_PDF_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_CSV_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CHART_TOOL_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="COLLAPSE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_RTF_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HIGHLIGHT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="MAXIMIZE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SHOW_AS_TOOLBAR_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CUSTOM_TOOLS_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_VIEW_DEFINITION_TOOL_PREF"
+		parameterMap="VIEW_DEFINITION_TOOL_PREF_MAP">
+		INSERT INTO
+		VIEW_DEFINITION_TOOL_PREF
+		(
+		VIEW_ID,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		HISTORY_IND,
+		FILTER_IND,
+		PULL_OUT_IND,
+		PRINT_IND,
+		EXP_TO_EXCEL_IND,
+		EXP_TO_JPG_IND,
+		CUSTOMIZE_IND,
+		HELP_IND,
+		REFRESH_IND,
+		EXP_TO_PDF_IND,
+		EXP_TO_CSV_IND,
+		CHART_TOOL_IND,
+		COLLAPSE_IND,
+		EXP_TO_RTF_IND,
+		HIGHLIGHT_IND,
+		MAXIMIZE_IND,
+		SHOW_AS_TOOLBAR_IND,
+		CUSTOM_TOOLS_ID
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+
+	<parameterMap id="WIDGET_DEFINITION_TOOL_PREF_MAP" class="java.util.HashMap">
+		<parameter property="WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="OD_SUB_PRODUCT" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HISTORY_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="FILTER_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PULL_OUT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="PRINT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_EXCEL_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_JPG_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CUSTOMIZE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HELP_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="REFRESH_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_PDF_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_CSV_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CHART_TOOL_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="COLLAPSE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="EXP_TO_RTF_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="HIGHLIGHT_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="MAXIMIZE_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="SHOW_AS_TOOLBAR_IND" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+		<parameter property="CUSTOM_TOOLS_ID" javaType="java.lang.String"
+			jdbcType="VARCHAR" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_WIDGET_DEFINITION_TOOL_PREF"
+		parameterMap="WIDGET_DEFINITION_TOOL_PREF_MAP">
+		INSERT INTO
+		WIDGET_DEFINITION_TOOL_PREF
+		(
+		WIDGET_ID,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		HISTORY_IND,
+		FILTER_IND,
+		PULL_OUT_IND,
+		PRINT_IND,
+		EXP_TO_EXCEL_IND,
+		EXP_TO_JPG_IND,
+		CUSTOMIZE_IND,
+		HELP_IND,
+		REFRESH_IND,
+		EXP_TO_PDF_IND,
+		EXP_TO_CSV_IND,
+		CHART_TOOL_IND,
+		COLLAPSE_IND,
+		EXP_TO_RTF_IND,
+		HIGHLIGHT_IND,
+		MAXIMIZE_IND,
+		SHOW_AS_TOOLBAR_IND,
+		CUSTOM_TOOLS_ID
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+
+	<parameterMap id="LAYOUT_WIDGET_MAP_DATA" class="java.util.HashMap">
+		<parameter property="WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="LAYOUT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="NUMBER" javaType="java.lang.String" />
+		<parameter property="BLOCK_POSITION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CLOSED_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="DEFAULT_WIDGET_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_LAYOUT_WIDGET_MAP" parameterMap="LAYOUT_WIDGET_MAP_DATA">
+		INSERT INTO LAYOUT_WIDGET_MAP
+		(
+		WIDGET_ID,
+		LAYOUT_ID,
+		POSITION,
+		BLOCK_POSITION,
+		CLOSED_IND,
+		DEFAULT_WIDGET_IND
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<parameterMap id="WIDGET_DEFINITION_DATA" class="java.util.HashMap">
+		<parameter property="WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="DEFAULT_VIEW_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_GCIF" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="OD_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_SUB_PRODUCT" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CONTAINER_FLAG" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="LAYOUT" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="WGT_DISPLAY_NM" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CLIENT_DEVICE" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="EXTERNAL_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="IN_CATALOGUE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="NEW_APP_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="NO_OF_ROWS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="OD_FUNCTION" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="THIRD_PARTY_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="UPGRADE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WGT_HT_IN_PIXELS" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WGT_RESIZE_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="APPS_IN_A_ROW" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="WIDGET_HEADER_IND" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="CHANNEL_ID" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="BUNDLE_KEY" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_WIDGET_DEFINITION" parameterMap="WIDGET_DEFINITION_DATA">
+		INSERT INTO WIDGET_DEFINITION
+		(
+		WIDGET_ID,
+		DEFAULT_VIEW_ID,
+		OD_USER_NO,
+		OD_GCIF,
+		OD_PRODUCT,
+		OD_SUB_PRODUCT,
+		CONTAINER_FLAG,
+		LAYOUT,
+		WGT_DISPLAY_NM,
+		CLIENT_DEVICE,
+		EXTERNAL_IND,
+		IN_CATALOGUE_IND,
+		NEW_APP_IND,
+		NO_OF_ROWS,
+		OD_FUNCTION,
+		THIRD_PARTY_IND,
+		UPGRADE_IND,
+		WGT_HT_IN_PIXELS,
+		WGT_RESIZE_IND,
+		APPS_IN_A_ROW,
+		WIDGET_HEADER_IND,
+		CHANNEL_ID,
+		BUNDLE_KEY
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<delete id="CTSTUDIO_DELETE_LAYOUT_WIDGET_MAP">
+		DELETE FROM LAYOUT_WIDGET_MAP
+	</delete>
+	<resultMap id="GET_DYC_METADATA_MAP" class="java.util.HashMap">
+		<result property="WIDGET_ID" nullValue="" column="WIDGET_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BLOCK_POSITION" nullValue="" column="BLOCK_POSITION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="SUB_WORKSPACE_LAYOUT" nullValue="" column="SUB_WORKSPACE_LAYOUT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_DISPLAY_NM" nullValue="" column="WORKSPACE_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="PROPORTION" nullValue="" column="PROPORTION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="WORKSPACE_LAYOUT" nullValue="" column="WORKSPACE_LAYOUT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="POSITION" nullValue="" column="POSITION" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="VIEW_DISPLAY_NM" nullValue="" column="VIEW_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_DYC_METADATA"	parameterClass="java.util.HashMap" resultMap="GET_DYC_METADATA_MAP">
+SELECT VD.VIEW_DISPLAY_NM,VD.BUNDLE_KEY,WGD.DEFAULT_VIEW_ID,LWM.WIDGET_ID,LWM.BLOCK_POSITION,LWM.POSITION,LD.LAYOUT AS SUB_WORKSPACE_LAYOUT,LD.PROPORTION,WD.WORKSPACE_DISPLAY_NM,WD.LAYOUT AS WORKSPACE_LAYOUT
+FROM 
+WORKSPACE_LAYOUT_MAP  WLM,
+LAYOUT_WIDGET_MAP LWM, 
+LAYOUT_DEFINITION LD,
+WORKSPACE_DEFINITION WD,
+WIDGET_DEFINITION WGD,
+VIEW_DEFINITION VD
+WHERE 
+VD.VIEW_ID=WGD.DEFAULT_VIEW_ID AND
+WLM.LAYOUT_ID=LWM.LAYOUT_ID AND 
+WLM.LAYOUT_ID=LD.LAYOUT_ID AND
+WLM.WORKSPACE_ID=WD.WORKSPACE_ID AND 
+WLM.WORKSPACE_ID=#WORKSPACE_ID# AND 
+WGD.WIDGET_ID=LWM.WIDGET_ID
+	</select>
+	
+
+	<resultMap id="GET_APP_NAMEFORDYC_MAP" class="java.util.HashMap">
+		<result property="VIEW_DISPLAY_NM" nullValue="" column="VIEW_DISPLAY_NM" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="BUNDLE_KEY" nullValue="" column="BUNDLE_KEY" javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_APP_NAMEFORDYC"	parameterClass="java.util.HashMap" resultMap="GET_APP_NAMEFORDYC_MAP">
+	SELECT VD.VIEW_DISPLAY_NM,VD.BUNDLE_KEY  FROM WIDGET_DEFINITION WGD, VIEW_DEFINITION VD
+WHERE WGD.DEFAULT_VIEW_ID=VD.VIEW_ID AND
+WGD.WIDGET_ID=#WIDGET_ID#
+	</select>
+	
+	<delete id="CTSTUDIO_DELETE_VIEW_COLUMN_DEFINITION">
+		DELETE FROM VIEW_COLUMN_DEFINITION
+	</delete>
+	<delete id="CTSTUDIO_DELETE_VIEW_DEFINITION">
+		DELETE FROM VIEW_DEFINITION
+	</delete>
+	<delete id="CTSTUDIO_DELETE_ALL_WIDGET_DEFINITION_TOOL_PREF">
+		DELETE FROM WIDGET_DEFINITION_TOOL_PREF
+	</delete>
+	<delete id="CTSTUDIO_DELETE_ALL_VIEW_DEFINITION_TOOL_PREF">
+		DELETE FROM VIEW_DEFINITION_TOOL_PREF
+	</delete>
+	<delete id="CTSTUDIO_DELETE_WIDGET_DEFINITION">
+		DELETE FROM WIDGET_DEFINITION
+	</delete>
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_FETCH_CONNECTION_DETAILS" resultClass="java.util.HashMap">
+		SELECT
+		CD.CONNECTION_TYPE,
+		CD.DRIVER_CLASS,
+		CD.CONNECTION_STRING,
+		CD.USER_NAME,
+		CD.USER_PASSWORD,
+		CD.WS_TOKEN,
+		CD.WS_URL,
+		CD.INPUT_PARAMS,
+		CD.WS_TRANS_CODE
+		FROM
+		CONNECTION_DEFINITION CD
+		JOIN
+		DATA_SOURCE_DEFINITION DSD ON (DSD.CONNECTION_NAME =
+		CD.CONNECTION_NAME)
+		WHERE
+		DSD.DATA_SRC_ID = #DATA_SRC_ID#
+	</select>
+	<select id="CTSTUDIO_SELECT_MH_TOKENS_FOR_WS" resultClass="java.util.HashMap">
+		SELECT
+		WS_TOKEN,TRANSACTION_CODE,DESCRIPTION
+		FROM
+		LSTNR007,TR910MB
+	</select>
+	<select id="CTSTUDIO_SELECT_MH_TRANS_DETAILS" resultClass="java.util.HashMap">
+		select FIELD_REFERENCE from TR910MB t1
+		left join
+		TR920MB t2 on t1.TRANSACTION_ID=t2.PARENT_TRANSACTION_ID
+		left join ML001MB m1 on m1.msg_id=t2.host_out_format
+		left join
+		ML003MB m2 on m2.TRAN_FMT_ID=m1.infmt_id AND field_type='S'
+		where t1.transaction_code=#TRANS_CODE#
+	</select>
+	<parameterMap id="CTSTUDIO_INSERT_CONTEXT_MENU_MAP" class="java.util.HashMap">
+		<parameter property="VIEW_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="MENU_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="PARENT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="POSITION" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="DISPLAY_KEY_NM" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="CONTAINER_FLAG" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="MENU_SEPARATOR" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="FORM_CONTAINER_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="EVENT_ID" jdbcType="NUMBER" javaType="java.lang.String" />
+		<parameter property="CONTEXT_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="DEFAULT_MENU_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="APP_WIDGET_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="CHANNEL_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="CTSTUDIO_INSERT_CONTEXT_MENU" parameterMap="CTSTUDIO_INSERT_CONTEXT_MENU_MAP">
+		INSERT INTO VIEW_CONTEXT_MENU_DEFINITION
+		(VIEW_ID,
+		MENU_ID,
+		PARENT_ID,
+		POSITION,
+		DISPLAY_KEY_NM,
+		CONTAINER_FLAG,
+		MENU_SEPARATOR,
+		FORM_CONTAINER_ID,
+		EVENT_ID,
+		CONTEXT_TYPE,
+		DEFAULT_MENU_ID,
+		APP_WIDGET_ID,
+		CHANNEL_ID
+		)
+		VALUES
+		(?,?,?,?,?,?,?,?,?,?,?,?,?)
+	</insert>
+	<delete id="CTSTUDIO_DELETE_CONTEXT_MENU" parameterClass="java.util.HashMap">
+		DELETE FROM
+		VIEW_CONTEXT_MENU_DEFINITION
+	</delete>
+	
+	<!-- This query is used within the Dynamic data source support construct that fetches the details of the data source -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_DATA_SOURCE_DETAILS" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+		SELECT
+			DATA_SRC_ID, DATA_SOURCE_NAME, CONNECTION_NAME, TABLE_NAMES, COLUMN_IDS, WHERE_CLAUSE, GROUPBY_COLUMN_IDS,
+			ORDERBY_COLUMN_IDS, CONNECTION_ID
+		FROM DATA_SOURCE_DEFINITION DSD
+		WHERE DATA_SRC_ID = #DATA_SRC_ID#
+	</select>
+	
+	<!-- This query is used within the Dynamic data source support construct that fetches the details of the connection -->
+	<select id="VIEW_MGR_FRMWK_MNT_SELECT_GET_CONNECTION_DETAILS" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+		SELECT
+			CONNECTION_NAME, CONNECTION_TYPE, DRIVER_CLASS, CONNECTION_STRING, USER_NAME, USER_PASSWORD, CONNECTION_ID, 
+			WS_URL, INPUT_PARAMS, WS_TOKEN, WS_TRANS_CODE
+		FROM CONNECTION_DEFINITION
+		WHERE CONNECTION_ID = #CONNECTION_ID#
+	</select>
+
+</sqlMap>

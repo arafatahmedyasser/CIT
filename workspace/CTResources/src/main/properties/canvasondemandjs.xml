@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JsFiles>
+
+	<fileset id = "CT_ENCRYPTION" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/core/CBXEncryptDecrypt.js"/>
+	</fileset>
+	
+	<fileset id = "CT_CORE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/core/browserDetect.js"/>
+		<file url="/CTRIAFramework/javascript/core/jsface.js"/>
+		<file url="/CTRIAFramework/javascript/core/jsface.pointcut.js"/>
+		<file url="/CTRIAFramework/javascript/core/reqwest.js"/>
+		<file url="/CTRIAFramework/javascript/core/qwery.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.js"/>
+		<file url="/CTRIAFramework/javascript/core/cssua.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.initializer.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.wsmanager.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.layoutmanager.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.loadMaskManager.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.core.multiappmanager.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.widget.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.registry.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.dynamicWidgetManager.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.core.appEventRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/core/CBXJsLoader.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.env.chart.options.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.core.metadatamanager.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.env.js"/>
+		
+	</fileset>
+		
+	<fileset id = "CT_METADATA_JS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.appContainer.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.entitlement.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.globalCurrency.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.jsFilesLoader.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.menu.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.preferences.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.applicationLayout.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.workspace.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.zolog.js"/>
+		<file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.URLhashencryption.js"/>
+	</fileset>
+		
+	<fileset id = "CT_METADATA_SER" preserveOrder = "Y">
+		<file url="/CanvasJsDataServlet?module=JSLOADER"/>
+		<file url="/CanvasJsDataServlet?module=WORKSPACE"/>
+		<file url="/CanvasJsDataServlet?module=MENU"/>
+		<file url="/CanvasJsDataServlet?module=ZOLOG"/>
+		<file url="/CanvasJsDataServlet?module=APP_CONTAINER"/>
+		<file url="/CanvasJsDataServlet?module=ENTITLEMENT"/>
+		<file url="/CanvasJsDataServlet?module=PREFERENCES"/>
+		<file url="/CanvasJsDataServlet?module=GLOBAL_CURRENCY"/>
+		<file url="/CanvasJsDataServlet?module=URLHASHENCRYPTION"/>
+	</fileset>
+	
+	<fileset id = "CT_METADATA_SYNC" preserveOrder = "Y">	
+	     <file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.sync.js"/>
+	</fileset>
+	<fileset id = "CT_METADATA_PERSIST" preserveOrder = "Y">	
+	     <file url="/CTRIAFramework/javascript/model/metadata/canvas.metadata.persist.js"/>
+	</fileset>
+	<fileset id = "CT_RESOURCE_BUNDLE_JS" preserveOrder = "Y">		
+		<file url="/CTRIAFramework/javascript/properties/canvas.resourcebundle.js"/>
+	</fileset>
+	
+	<fileset id = "CT_RESOURCE_BUNDLE_SER" preserveOrder = "Y">		
+		<file url="/CanvasJsDataServlet?module=JSRBL"/>
+	</fileset>
+	
+	<fileset id = "CT_CONTROLLERS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/controller/canvas.lib.componentRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.lib.headerFooterRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.core.workspaceChangeHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.view.templateRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.globalhandlers.js"/>
+		<file url="/CTRIAFramework/javascript/controller/iportal.workspace.menu.handlers.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.CustomMenuSpaceHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.comm.MessageBusProxy.js"/> 
+		<file url="/CTRIAFramework/javascript/controller/iportal.widget.CellClickHandlerFactory.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.form.listeners.Register.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.app.formview.Listener.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.formcontainer.CustomActionBtnRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/controller/canvas.appHeader.customToolsHandler.js"/>
+		<file url="/CTRIAFramework/javascript/properties/canvas.componentproperties.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.widget.SystemButtonsHandlerFactory.js"/>
+		<file url="/CTRIAFramework/javascript/core/canvas.core.communication.appMVRegistry.js"/>
+		<file url ="/CTRIAFramework/javascript/controller/canvas.preferences.amountFormatter.js"/>
+		<file url ="/CTRIAFramework/javascript/controller/canvas.store.dataController.js"/>	
+	</fileset>
+	
+	<fileset id = "ext" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext-base.js" preserveOrder = "Y"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ext-all-debug.js" preserveOrder = "Y"/>
+	</fileset>
+	
+	<fileset id = "jqm" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/build/jquery-1.9.1.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/jquery-mobile-defaults.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/build/jquery.mobile-1.3.0.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/base/handlebars-v2.0.0.js"/>
+	</fileset>
+	
+	<fileset id = "jqui" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jquery/base/jquery-1.10.2.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/base/jquery-ui-1.10.4.js"/>
+	</fileset>
+	
+	<fileset id = "ext_CT_VIEW_BASE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/common/canvas.datePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/canvas.lib.metadataProgress.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.appEvaluator.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.downloadManager.js"/>
+		<file url="/CTRIAFramework/javascript/core/ct.core.dockModel.js"/>
+		<file url="/CTRIAFramework/javascript/core/ct.core.dockController.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/addons/ext-tree.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/form/DDView.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.AppContainerUtil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/form/Multiselect.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/form/ItemSelector.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/dynamicColumnHeader/CT.listview.DynamicColumnHeaderPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/tabpanel/AddTabButton.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/Portal.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/Portlet.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/PortalColumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/SpinnerField.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/Spinner.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/LockingGridView.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/FisheyeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/FisheyeMenuWorkspace.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/iportal.ext_overrides.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.js_prototypes.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.jsutil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.framework.util.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/canvas.ajaxPiggyback.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/canvas.alertsPiggybackListner.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.dialog.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumberFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumber.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.preferences.TimezoneManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/extLibComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.window.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/library/cbx.lib.Viewport.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.app.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.card.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.excard.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.menu.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.tab.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/applnlayout.tabletop.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.excard.master.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/scrollingpanel/ScrollingPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.tab.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.tab.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.card.catalog.icon.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.card.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.card.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.excard.master.icon.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.workspace.container.master.icon.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.workspace.container.master.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.excard.container.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.excard.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.excard.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.app.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.app.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.tabletop.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.tabletop.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/library/cbx.lib.ApplicationContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.widgetUtil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.layout.RColumnLayout.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.layout.MenuRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.layout.MenuContainerPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.layout.MenuTreePanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wsmenu/iportal.menuitems.metadata.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.Widget.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/contextmenu/cbx.contextMenuRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.groupview.GroupViewPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewConstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiView.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewHeader.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidget.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidgetTab.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidgetCard.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/widget_multiWidgetExplorer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidgetStack.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidgetTwoColumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.MultiWidgetSwitch.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.IndexedMultiWidget.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.widget.IndexedMultiWidgetWindow.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.widgetcontainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.tablayout.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.stack.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.twocolumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.threecolumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.groupgrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.Panel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/cbx.applicationlayout.container.Register.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewrenderermap.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.columnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.widget.manager.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.lockingColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.gridpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/contextmenu/cbx.ContextMenuHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/iportal.layout.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.lib.workspaceContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/cbx.lib.layoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/wslayout/cbx.lib.layoutContainerComponent.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.lib.dynamicWidgetRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.menu.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/applnlayout/canvas.applnlayout.menu.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.applnlayout.menu.icons.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.ui.Tabletop.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.MessageWindow.js"/>		
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.headerlogo.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.headerlogo_menu.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/calendar.js"/>
+		<file url="/CTRIAFramework/javascript/user/preferences/canvas.preferences.updatePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/core/BackSpaceDisable.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CheckboxSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.RowSelectionModel.js"/>
+		
+		
+	</fileset>
+	
+	<fileset id = "jqui_CT_VIEW_BASE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jquery/common/cbx.jqui.util.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.js_prototypes.js"/>		
+		<file url="/CTRIAFramework/javascript/core/cbx.core.downloadManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/easyResponsiveTabs.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.jsutil.js"/> 
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/footable.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/select2.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.format-1.2.min.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.loadmask.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.magnific-popup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.jcryption.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.ba-hashchange.min.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/persist.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.tmpl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.bxslider.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.elevatezoom.min.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.SuperCookie.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/cbx.HashManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.secure.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.hashchange.js"/>		
+		<file url="/CTRIAFramework/javascript/user/preferences/canvas.preferences.updatePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/applnlayout/canvas.applnlayout.stack.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/applnlayout/canvas.applnlayout.stack.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/cbx.lib.layer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.ApplicationContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.breadCrumbManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.childWidgetContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.layoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.Viewport.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.widgetContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/library/canvas.lib.workspaceContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.footable.sortable.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.app.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.applauncher.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.app.multiappcard.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.app.multiapptab.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.layout.stack.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.layout.twocolumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.coldatatype.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.bannerview.js"/>		
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.mapview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.carouselview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.chartview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.formview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.formwidgetview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.groupview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.listview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.outlook.js"/>		
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.singlerowlistview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.templateview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.tileview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.lib.view.verticalscollerlistview.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/VDF/canvas.pagination.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/window/canvas.lib.window.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/common/cbx.progressBar.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jquery/common/cbx.lib.cbxdialog.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/contextmenu/cbx.ContextMenuHandlerRegistry.js"/>	
+		
+	</fileset>
+
+	<fileset id = "jqm_CT_VIEW_BASE">
+		<file url="/CTRIAFramework/javascript/view/jqm/common/canvas.datePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/canvas.lib.metadataProgress.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.downloadManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/ct.mobile.dom.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/fastClick.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.jsutil.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.AppContainerUtil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.js_prototypes.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumberFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumber.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.jqmPrototypes.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.jqm.navigationListeners.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.workspacehandler.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.workspace.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.layoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.portlet.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.layer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/applnlayout/cbx.lib.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.simplelist.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.group.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/chart/cbx.lib.chart.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.List.utility.js"/>
+		<file url="/CTRIAFramework/javascript/user/preferences/canvas.preferences.updatePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/calendar.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.utility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/wslayout/cbx.lib.stack.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/contextmenu/cbx.lib.contextAppPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/contextmenu/cbx.lib.contextMenuGenerator.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/iscroll/iscroll.js"/>
+		<file url="/CTRIAFramework/javascript/view/jquery/plugins/iscroll/hammer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.popup.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.jsutil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.AppContainerHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/contextmenu/cbx.ContextMenuHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.multiView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.dynamicWidgetRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.cbxdialog.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/stringFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/DateParser.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.progressBar.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqm/common/cbx.lib.EXIF.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/idleSessionTimeout.js"/>
+	</fileset>
+	
+	<fileset id ="GLOBAL_DATE_FILTER">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/globaldatefilter/cbx.globaldatefilterform.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/globaldatefilter/cbx.globaldatefilterform.listeners.js"/>
+	</fileset>
+	
+	<fileset id ="ZOLOG_SEARCH">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zologsearch.constants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zologsearch.zologSearchBar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zolosearch.zologSearchHandler.js"/>
+	</fileset>
+	
+	<fileset id = "FORM_FRAMEWORK" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormScreenView.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormExportManager.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormCreator.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormManager.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormModel.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormRegistery.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.form.FormRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.jsutil.js"/>
+	</fileset>
+	
+	<fileset id = "ext_FORM_COMPONENTS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/CBXFormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/Ext.ux.layout.TableFormLayout.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/cbx.lib.FormPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/cbx.form.VtypeRegistry.js"/>		
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.lookupTools.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.Lookup.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.showLookupWin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zologsearch.constants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zologsearch.zologSearchBar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/zologsearch/cbx.zolosearch.zologSearchHandler.js"/>
+	</fileset>
+	<fileset id = "FORM_CONTAINER_FRAMEWORK" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.framework.constants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.formcontainer.FormContainerManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.formcontainer.FormContainerTools.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.formcontainer.FormContainerBbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.formcontainer.ActionButtonRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FormContainer/cbx.formcontainer.HelpFileRegistry.js"/>
+		
+	</fileset>
+	
+	<fileset id = "ext_FORM_CONTAINER_FRAMEWORK" preserveOrder = "Y">
+	
+	</fileset>
+	
+	<fileset id = "jqm_FORM_CONTAINER_FRAMEWORK" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.lib.formContainer.js"/>
+	</fileset>
+	
+	
+		<fileset id = "jqm_FORM_COMPONENTS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jquery.jcarousel.min.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jquery.ui.datepicker.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jqm-datebox.core.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jqm-datebox.mode.calbox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jqm-datebox.mode.datebox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/datepicker/jqm-datebox.mode.flipbox.js"/>		
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/fileupload/fileUploader.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/fileupload/fileProcessor.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/fileupload/uploadPanel.js"/>		
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.lib.calendar.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.lib.form.CBXFormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/CBXFormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.lib.FormPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.form.VtypeRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/FDF/cbx.lib.layout.TableFormLayout.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/iconcombo/jquery.dd.js"/>
+	</fileset>
+	
+
+	<fileset id = "MULTIAPP_jqm_TAB_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>  
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_INDEXED_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>  
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_STACK_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>  
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_CARD_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>    
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_EXPLORER_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>   
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_SWITCH_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>  
+	</fileset>
+	<fileset id = "MULTIAPP_jqm_TWO-COLUMN_VIEW">
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/easyResponsiveTabs.js"/>		
+		<file url ="/CTRIAFramework/javascript/view/jqm/common/ct.lib.jqm.fluidWidgetContainer.js"/>   
+	</fileset>
+	
+	
+	
+
+	<fileset id = "MV_ext_ADVGROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/addons/ext-slider.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/RowExpander.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/Ext.ux.GridTotals.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/canvas.formComponent.editableLookUpFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/livegrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/CellActions.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/RadioSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/GridFilters.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/ListMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu_String.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/Filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/BooleanFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/DateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/ListFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/NumericFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/StringFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/RateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/cbx.listview.GroupingHeaderModel.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.CustomMenuSpaceHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CheckboxSelectionModel.js"/> 
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.listview.paginggrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.paginggrid.toolbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.grid.store.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.paginggrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.listview.simplepaginggrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.listview.advancegroupinggrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.RowSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CellSelectionModel.js"/>			
+	</fileset>
+	
+	<fileset id = "MV_ext_GROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/canvas.formComponent.editableLookUpFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/livegrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/CellActions.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/RadioSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/GridFilters.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/ListMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu_String.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/Filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/BooleanFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/DateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/ListFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/NumericFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/StringFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/RateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/cbx.listview.GroupingHeaderModel.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.CustomMenuSpaceHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CheckboxSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.RowSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.FormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewConstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.view.WidgetPreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.groupgrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CellSelectionModel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_PAGING"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/canvas.formComponent.editableLookUpFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/livegrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/CellActions.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/RadioSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/GridFilters.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/ListMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu_String.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/Filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/BooleanFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/DateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/ListFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/NumericFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/StringFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/RateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/cbx.listview.GroupingHeaderModel.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.CustomMenuSpaceHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CheckboxSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.RowSelectionModel.js"/>
+
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.FormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewConstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.view.WidgetPreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.toolbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.listview.paginggrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.paginggrid.toolbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.grid.store.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.paginggrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CellSelectionModel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_LIST"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/canvas.formComponent.editableLookUpFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/CellActions.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/livegrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/RadioSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/GridFilters.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/ListMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu_String.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/Filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/BooleanFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/DateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/ListFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/NumericFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/StringFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/RateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/cbx.listview.GroupingHeaderModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/GroupheaderGrid.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.CustomMenuSpaceHandlerRegistry.js"/>
+	   	<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.grid.checkboxSelectionModel.js"/> 
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.FormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewConstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.view.WidgetPreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.toolbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.livegrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CellSelectionModel.js"/>		
+	</fileset>
+	
+	<fileset id = "MV_ext_CLASSIC_GRID"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/canvas.formComponent.editableLookUpFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/CellActions.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/livegrid-all.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/livegrid/RadioSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/GridFilters.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/ListMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/menu/RangeMenu_String.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/Filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/BooleanFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/DateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/ListFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/NumericFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/StringFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/gridfilters/filter/RateFilter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/cbx.listview.GroupingHeaderModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/groupheader/GroupheaderGrid.js"/>
+		<file url="/CTRIAFramework/javascript/controller/cbx.CustomMenuSpaceHandlerRegistry.js"/>
+		
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CheckboxSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.RowSelectionModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/FDF/iportal.formview.FormComponents.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.MultiViewConstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.view.WidgetPreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.toolbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.grid.store.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.simplelivegrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.AppContainerUtil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.grid.CellSelectionModel.js"/>	
+	</fileset>
+	
+	
+	<fileset id = "MV_ext_TREEGRID"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridSorter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridColumnResizer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridNodeUI.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridLoader.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridColumns.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGrid.js"/>
+        <file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.treegrid.js"/>
+	</fileset>
+	
+	
+	<fileset id = "MV_ext_ADS"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/miframe-debug.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.adsviewpanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_ORG" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/chartcomponent_orgView.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/chartcomponent_wrapper.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.chartcomponent.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_IFRAME"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/ux/miframe-debug.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.view.iframepanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_FORM"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.form.formviewpanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_CALENDAR"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/util_holidaycalendar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.calendar.calendarviewpanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_PROPERTY"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.listviewconstants.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.grid.store.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.listview.propertygrid.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/responsiveGrid/CT.listview.ResponsiveGridPlugin.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/CT.listview.ResponsiveColumnModel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.listview.listviewpanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_CHART"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/charts/canvas.chart.engine.js"/>
+	</fileset>
+	
+	<!-- 	Changes mades for CT Charts -->
+	
+	<fileset id = "MV_FUSION_CHART" preserveOrder = "Y">
+		
+		<file url="/CTRIAFramework/javascript/charts/fusionCharts.js"/>
+		<file url="/CTRIAFramework/javascript/charts/fusionCharts.charts.js"/>
+		<file url="/CTRIAFramework/javascript/charts/fusioncharts.widgets.js"/>
+		<file url="/CTRIAFramework/javascript/charts/themes/fusioncharts.theme.zune.js"/>		
+		<file url="/CTRIAFramework/javascript/charts/fusion.chart.components.js"/>
+		
+	</fileset>
+	
+	
+	
+	<fileset id = "MV_ext_TREE"  preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/treeview_treeLoader.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/treeview_tree.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/treeview_treePanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridSorter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridColumnResizer.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridNodeUI.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridLoader.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGridColumns.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/plugins/treegrid/TreeGrid.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_EMPTY">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/iportal.empty.emptyviewpanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_TEMPLATE">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/canvas.lib.view.TemplateViewPanel.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_APP">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.view.appViewPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.AppContainerHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.AppContainerUtil.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.appcontainer.favoritesWindow.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/appcontainer/cbx.appContainer.appIcon.js"/>
+	</fileset>
+	
+	<fileset id = "MV_ext_MAP">
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/cbx.view.MapViewPanel.js"/>
+	</fileset>
+	
+	<fileset id = "jqm_RTL">
+		<file url="/CTRIAFramework/javascript/view/jqm/build/rtl.jquery.mobile-1.3.0.js"/>
+	</fileset>
+	
+	<fileset id = "jqm_RTL_FORM">
+		<file url="/CTRIAFramework/javascript/view/jqm/build/rtlform.jquery.mobile.js"/>
+	</fileset>
+	
+
+	<fileset id = "ext_RTL">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/cbx_rtl/extjs_rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/cbx_rtl/extjs_rtl-form.js"/>
+	</fileset>
+	
+	<fileset id = "ext_RTL_FORM">
+		<file url="/CTRIAFramework/javascript/view/extjs/base/ext/cbx_rtl/extjs_rtl-form.js"/>
+	</fileset>
+	
+	
+	<fileset id = "MV_jqm_LIST" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.js"/>,
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.sort.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.striping.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+		
+	</fileset>
+		
+	
+	<fileset id = "MV_jqm_TEMPLATE" preserveOrder = "Y"> 
+	     <file url="/CTRIAFramework/javascript/view/jqm/VDF/list/ct.lib.tmplLayer.js"/>
+	     <file url="/CTRIAFramework/javascript/view/jqm/VDF/list/ct.impl.tmplLayer.js"/>
+	     <file url="/CTRIAFramework/javascript/view/jquery/plugins/jquery.tmpl.js"/>
+	     <file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.Template.js"/>
+	     <file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.Template.js"/>
+ 	</fileset>
+	
+	<fileset id = "MV_jqm_EMPTY" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.Empty.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqm_PAGING" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.js"/>,
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.sort.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.striping.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqm_CLASSIC_GRID" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.js"/>,
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.sort.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.striping.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.view.simplelist.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqm_ADVGROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.js"/>,
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.sort.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.striping.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+	</fileset>
+	
+	
+	<fileset id = "MV_jqm_GROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.js"/>,
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.filter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.sort.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/plugins/footable/footable.striping.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/list/cbx.lib.view.List.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.view.group.js"/>
+	</fileset>
+	
+	
+	
+	<fileset id = "MV_jqm_APP">
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.view.app.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.view.group.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.view.icon.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/appcontainer/cbx.lib.appContainerHandler.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqm_FORM">
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.formApp.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqm_CHART" preserveOrder = "Y">	
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/cbx.lib.widget.listeners.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/VDF/chart/cbx.lib.view.chart.js"/>
+	</fileset>
+	
+	<fileset id = "jqm_CHART_PLUGIN" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.jqueryplugin.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.Charts.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.Widgets.js"/>
+	</fileset>
+	
+	<fileset id = "FORMATTER" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.js_prototypes.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumberFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.util.numutil.StringNumber.js"/>
+		<file url ="/CTRIAFramework/javascript/controller/canvas.preferences.amountFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/canvas.datePreferences.js"/>
+	</fileset>
+	
+	<fileset id = "APPSTORE">
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.DataViewTransition.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.DataModel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.Jsutil.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.AjaxRepo.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.Splitter.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.AvailableWidgetPanel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.CategoryPanel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.LayoutListPanel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.PropertyPanel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.SelectedWidgetPanel.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.Canvas.js"/>   
+		<file url ="/CTRIAFramework/javascript/view/extjs/VDF/appstore/cbx.appstore.Manager.js"/>   
+	</fileset>
+	
+	<fileset id="jqui_FORM_COMPONENTS" preserveOrder="Y">
+		<file url="/CTRIAFramework/javascript/view/jquery/FDF/cbx.lib.form.CBXFormComponents.js" />
+		<file url="/CTRIAFramework/javascript/view/jquery/FDF/CBXFormComponents.js" />
+		<file url="/CTRIAFramework/javascript/view/jquery/FDF/canvas.lib.FormPanel.js" />
+		<file url="/CTRIAFramework/javascript/view/jquery/FDF/canvas.form.VtypeRegistry.js" />
+		<file url="/CTRIAFramework/javascript/view/jquery/FDF/cbx.lib.layout.TableFormLayout.js" />
+	</fileset>
+	
+	<fileset id="ext-lang-zh_CH" preserveOrder="Y">
+		<file url="/CTRIAFramework/javascript/properties/ext-lang-zh_CN.js" />
+	</fileset>
+	
+	<fileset id="ext-lang-de_DE" preserveOrder="Y">
+		<file url="/CTRIAFramework/javascript/properties/ext-lang-de_DE.js" />
+	</fileset>
+	
+	<fileset id="ext-lang-ar_SA" preserveOrder="Y">
+		<file url="/CTRIAFramework/javascript/properties/ext-lang-ar_SA.js" />
+	</fileset>
+	
+	<fileset id = "NOTES">   
+		<file url ="/CTRIAFramework/javascript/view/extjs/notes/cbx.form.noteslisteners.js"/> 
+		<file url ="/CTRIAFramework/javascript/view/extjs/notes/cbx.form.notesForm.js"/>  
+	</fileset>
+	
+	<fileset id = "jqtbs" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/base/jquery-1.11.1.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/base/bootstrap.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/base/handlebars-v2.0.0.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/moment.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.mobile-events.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.loadmaskcomplete.js"/>
+	</fileset>
+	<fileset id = "jqtbs_CT_VIEW_BASE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.datePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.metadataProgress.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.sessionExpireHandler.js"/>
+	    <file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.actionDisable.js"/>
+		<file url="/CTRIAFramework/javascript/core/cbx.core.downloadManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/cbx.lib.layer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/ct.lib.tmplLayer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/ct.impl.tmplLayer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/ct.jqtbs.util.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/ct.fileUpload.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.jsutil.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqm/common/stringFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.mousewheel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.mCustomScrollbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/iportal.js_prototypes.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/common/DateParser.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas-dragdrop-helper.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.DraggableWidget.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.ba-hashchange.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.loadmask.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.jcryption.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-datetimepicker.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-tabdrop.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-modal-carousel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.tab.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.tab.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.card.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.card.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.landingpage.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.excard.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.excard.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.app.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.app.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.tabletop.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.tabletop.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.menu.header.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.applnlayout.menu.footer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.app.component.js"/>
+        <file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.card.component.js"/>
+        <file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.excard.component.js"/>
+       	<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.menu.component.js"/>
+       	<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.tab.component.js"/>
+        <file url="/CTRIAFramework/javascript/view/jqtbs/layouts/applnlayout.tabletop.component.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/ct.progressbar.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/cbx.HashManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.loadmaskinit.js"/>
+		<file url="/CTRIAFramework/javascript/user/preferences/canvas.preferences.updatePreferences.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.form.VtypeRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.tabLayout.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.Viewport.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.appdock.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.cardmaster.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.ApplicationContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.workspaceContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.parentLayoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.stackLayoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.tabLayoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.menuLayoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.layout.stack.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.layout.twocolumn.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.layout.threecolumn.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multicol.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.ncol.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.widgetContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.designyourcanvas.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.JQTBSportlet.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.app.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.appwindow.js"/>		
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.Dialog.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.dialogBoxConfig.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.modalwindow.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.secure.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.formView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.templateView.js"/>
+		<file url="/CTRIAFramework/javascript/view/extjs/VDF/contextmenu/cbx.ContextMenuHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.favouriteApps.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/common/canvas.lib.sessionExpireHandler.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.dynamicWidget.js"/>
+			
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_TAB_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.tab.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_STACK_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.multicol.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_INDEXED_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.tab.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_TWO-COLUMN_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.multicol.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_SWITCH_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.tab.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_EXPLORER_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.border.js"/>
+	</fileset>
+	
+	<fileset id = "MULTIAPP_jqtbs_CARD_VIEW" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.multiapp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/layouts/canvas.lib.multiapp.tab.js"/>
+	</fileset>
+	
+	
+	<fileset id = "MV_jqtbs_EMPTY" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.emptyView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_CHART" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.Charts.js"/>
+		<file url="/CTRIAFramework/javascript/CBXCharts/FusionCharts.HC.Widgets.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.chartView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_IFRAME" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.iframeAdsView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_ADS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.iframeAdsView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_TREE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.treeView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_CALENDAR" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.calendarView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_MAP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.mapView.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_CLASSIC_GRID" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listGroup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlers.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	<fileset id = "MV_jqtbs_PROPERTY" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listGroup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlers.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	<fileset id = "MV_jqtbs_GROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listGroup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlers.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_LIST" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.pagingGridView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listMetadataMassage.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listParamsReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listAjaxCall.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataStore.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderDataReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_ADVGROUP" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.pagingGridView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listMetadataMassage.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listParamsReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listAjaxCall.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataStore.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderDataReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_PAGING" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listContext.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listFilters.js"/>	
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listUtility.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.pagingGridView.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listMetadataMassage.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listParamsReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listAjaxCall.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataStore.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listRenderDataReady.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listDataRenderer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.listEventHandlerRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/canvas.lib.saveAsRevert.js"/>
+	</fileset>
+	
+	<fileset id = "MV_jqtbs_TEMPLATE" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/VDF/ct.view.template.js"/>
+	</fileset>
+	<fileset id = "MV_jqtbs_FORM" preserveOrder = "Y">
+	</fileset>
+	<fileset id = "jqtbs_FORM_CONTAINER_FRAMEWORK" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/cbx.lib.formContainer.js"/>
+	</fileset>
+	
+	<fileset id = "jqtbs_FORM_COMPONENTS" preserveOrder = "Y">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.DatatypeFormatter.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormItemRegistry.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormWrapper.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormCmpManager.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormLayoutContainer.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.LazzyFormPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormElements.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FormComposite.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.formCompositeDOM.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Fieldset.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.lazzyPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.TabPanel.js"/> 
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.AmountField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.auto-complete.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-htmlEditor.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/jquery.hotkeys.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.AutoSuggest.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Button.js"/>
+<!-- 		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-colorpicker.js"/> -->
+<!-- 		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ColorPicker.js"/> -->
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.CheckBox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.CheckBoxGroup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ComboBox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.DateField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.DisplayField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.FileUploadPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Hidden.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Hyperlink.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.IconComboBox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.IndependentLookup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.InfoPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ItemSelector.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Label.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Line.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.LookUp.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Password.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.RadioGroup.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.SpinnerField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticAmountField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticTextarea.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticDateField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticRateField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Textarea.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.TextField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Title.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.WidgetPanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.RateField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.RadioGroupStaticField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.CheckboxGroupStaticField.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.HtmlEditor.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.StaticItemSelector.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ImagePanel.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.staticcombobox.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ConditionalMandatory.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.Mandatory.js"/>
+<!-- 		<file url="/CTRIAFramework/javascript/view/jqtbs/plugins/bootstrap-colorpicker.js"/> -->
+<!-- 		<file url="/CTRIAFramework/javascript/view/jqtbs/FDF/canvas.lib.ColorPicker.js"/> -->
+	</fileset>
+		<fileset id = "INF_REPORT">
+		<file url ="/CTRIAFramework/javascript/reportframework/cbx.form.ReportDefinitionListener.js"/>
+		<file url ="/CTRIAFramework/javascript/reportframework/cbx.form.ReportScheduleForm.js"/>
+		<file url ="/CTRIAFramework/javascript/reportframework/cbx.form.ReportScheduleListener.js"  />
+		<file url ="/CTRIAFramework/javascript/reportframework/appEventhandlerInformationReporting.js"  />
+		<file url ="/CTRIAFramework/javascript/reportframework/iportal.widget.InfoRptBtnListener.js"  />
+	</fileset>
+	
+	<fileset id = "jqtbs_RTL">
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.card.rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.excard.rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.tab.rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.app.rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.tabletop.rtl.js"/>
+		<file url="/CTRIAFramework/javascript/view/jqtbs/RTL/canvas.applnlayout.menu.rtl.js"/>
+		
+	</fileset>
+	
+	<fileset id = "jqtbs_RTL_FORM">
+	</fileset>
+</JsFiles> 

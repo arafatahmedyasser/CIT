@@ -1,0 +1,23 @@
+{{!-- ct-app ct-app-tm begins --}}
+<div data-item-id="portlet" class="{{WIDGET_CLASS}} ct-app ct-app-tm ">
+	{{#if HEADER_REQ}} {{!-- ct-app__header ct-app__header-tm begins --}}
+	<div data-item-id="portlet-header" class="{{WIDGET_HEADER_CLASS}} ct-app__header ct-app__header-tm ct-app__panel-header-bg"></div>
+	{{!-- ct-app__header ct-app__header-tm ends --}} {{/if}} {{!-- portlet-body begins --}}
+	<div data-item-id="portlet-body" data-item-type={{#condchk CONTAINER_FLAG 'N'}} "SINGULAR" {{else}} "MULTIAPP" {{/condchk}} class="row {{WIDGET_BODY_CLASS}} ct-app__content" {{#if COLLAPSED_IND}} style="display: none;"{{/if}}>
+		{{!-- portlet-global-date begins --}} {{#if GLOBAL_DATE_FILTER}}
+		<div data-item-id="portlet-global-date" class="{{WIDGET_GLOBAL_DATE_CLASS}}"></div>
+		{{/if}} {{!-- portlet-global-date ends --}} {{!-- portlet-tbar begins --}} {{#if TBAR_REQD}}
+		<div data-item-id="portlet-tbar" class="col-md-3 {{WIDGET_TBAR_CLASS}}"></div>
+		{{/if}} {{!-- portlet-tbar ends --}} {{!-- portlet-main-content begins --}}
+		<div data-item-id="portlet-main-content" name="content-panel" class="col-md-12 {{WIDGET_MAIN_CONTENT_CLASS}} ct-app__content"></div>
+		{{!-- portlet-main-content ends --}}
+	</div>
+	{{!-- portlet-body ends --}} {{#if WGT_DETL_MSG_IND}} {{!-- portlet-detail begins --}}
+	<div data-item-id="portlet-detail" class="{{WIDGET_DETL_MSG_CLASS}}" {{#if COLLAPSED_IND}} hidden {{/if}}>
+		<div data-item-id="portlet-detail-message" class="ct-detail-message"></div>
+	</div>
+	{{!-- portlet-detail ends --}} {{/if}} {{#if WGT_FOOTER_IND}} {{!-- portlet-footer begins --}}
+	<div data-item-id="portlet-footer" class="{{WIDGET_FOOTER_CLASS}}" {{#if COLLAPSED_IND}} style="display: none;"{{/if}}></div>
+	{{!-- portlet-footer ends --}} {{/if}}
+</div>
+{{!-- ct-app ct-app-tm ends --}}

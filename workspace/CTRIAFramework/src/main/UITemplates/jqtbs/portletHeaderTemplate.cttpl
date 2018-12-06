@@ -1,0 +1,278 @@
+{{!-- ct-app__header-container begins --}}
+<div class="ct-app__header-container">
+	{{!-- app title section begins --}} {{!-- missing ct-class 1 begins begins --}}
+	<div class="pull-left" data-item-id="ct-portlet__title">
+		<span class="flaticon-default_a ct-app__icon ct-app__icon-tm pull-left"></span>
+		<h3 data-item-id="portlet-title" class="{{WGT_HEADER_TITLE_CLASS}} ct-app__title ct-app__title-tm pull-left">{{WGT_TITLE}}</h3>
+	</div>
+	{{!-- missing ct-class 1 ends --}} {{!-- app title section ends --}}
+	{{!-- app tools section begins --}} {{!-- pull right begins --}}
+	<div class="pull-right" data-item-id="ct-portlet__tools">
+		{{!-- ct-dropdown begins --}}
+		<div class="ct-dropdown">
+			{{!-- ct-no-margin begins --}}
+			<ul class="list-inline ct-no-margin">
+				{{#if COLLAPSED_IND}} {{!-- expand tool begins --}}
+				<li class="ct-app__tools-collapse-con">
+					<span data-item-id="portlet_collapseTool" class="panel-collapsed ct-app__tools flaticon-expand_down flaticon_widget_header" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_COLLAPSE}}"> </span>
+				</li> 
+				{{!-- expand tool ends --}} {{else}} {{!-- collapse tool begins --}}
+				<li class="hidden ct-app__tools-minus-con">
+					<span data-item-id="portlet_collapseTool" class="ct-app__tools flaticon-expand_up flaticon_widget_header" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_COLLAPSE}}"> </span>
+				</li> 
+				{{!-- collapse tool ends --}} {{/if}} {{!-- maximize tool begins --}}
+				<li class="hidden ct-app__tools-max-con">
+					<a data-item-id="portlet_maxTool" class="ct-app__tools flaticon-maximize_2 flaticon_widget_header" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_MAXIMIZE}}"> </a>
+				</li> 
+				{{!-- expand tool ends --}} {{!-- edit tool begins --}}
+				<li class="hidden ct-app__tools-edit-con">
+					<a data-item-id="portlet_editTool" class="ct-app__tools ct-app__tools-edit" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_EDIT}}"></a>
+				</li> 
+				{{!-- edit tool ends --}} {{!-- chart tool begins --}}
+				<li class="hidden ct-app__tools-chart-con">
+					<div class="" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_SWITCHCHART}}">
+						<div class="dropdown ct-dropdown">
+							<a id="chart_tool" data-target="#" href="javascript:void(0)" data-toggle="dropdown" role="button"> 
+								<span data-item-id="portlet_chartTool" class="ct-app__tools ct-app__tools-chart flaticon-barsgraphic flaticon_widget_header"></span>
+							</a>
+							<ul class="dropdown-menu pull-right ct-dropdown-menu ct-portlet_icon__dropdown" role="menu" aria-labelledby="chart_tool">
+							</ul>
+						</div>
+					</div>
+				</li> {{!-- chart tool ends --}} {{!-- custom tool begins --}}
+				{{#each CUSTOM_TOOLS_LIST}}
+				<li class="hidden ct-app__tools-custom-con">
+					<span id="custom_tool" data-item-id="{{CUSTOM_TOOLS_ID}}" class="" data-toggle="tooltip" data-placement="top" data-original-title="{{DISPLAY_NAME}}">
+						<div class="dropdown">
+							<a data-item-id="{{CUSTOM_TOOLS_ID}}" name="portlet_customTool" class="ct-app__tools flaticon-pref_settings flaticon_widget_header" data-target="#" href="javascript:void(0)" data-toggle="dropdown" role="button">
+								<span class="ct-app__tools ct-app__tools-custom"></span>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="custom_tool" data-item-id="portlet_customTool">
+							</ul>
+						</div>
+				</span></li> {{!-- custom tool ends --}} {{!-- preference tool begins --}}
+				{{/each}}
+				<li class="hidden ct-app__tools-pref-con">
+					<span id="preferences_tool" class="" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_GEAR}}">
+						<div class="dropdown">
+							<a data-item-id="portlet_preferencesTool" class="ct-app__tools flaticon-pref_settings flaticon_widget_header" data-target="#" href="javascript:void(0)" data-toggle="dropdown" role="button"> </a>
+							<ul class="dropdown-menu pull-right ct-portlet_icon__dropdown" role="menu" aria-labelledby="preferences_tool">
+								{{#if PREFERENCES_GRID}}
+								<li class="">
+									<a data-item-id="portlet_saveAsTool" class="" href="javascript:void(0)">
+										<span class="ct-app__tools flaticon-save-file1 flat"></span>{{SAVE_AS_APP_TOOL}}
+									</a>
+								</li>
+								<li class="">
+									<a data-item-id="portlet_revertTool" class="" href="javascript:void(0)">
+										<span class="ct-app__tools flaticon-undo2 flat"></span>{{REVERT_APP_TOOL}}
+									</a>
+								</li>
+								{{/if}}
+								<li class="hidden">
+									<a data-item-id="portlet_updateTool" class="" href="javascript:void(0)">
+										<span class="ct-app__tools flaticon-default_grid flat ct-app__tools-switchview"></span>{{UPDATE_APP_TOOL}}
+									</a>
+								</li>
+								<li class="dropdown dropdown-submenu hidden" data-action-id="switchViewDropdown">
+									<a data-item-id="portlet_switchTool" id="Switch-View" href="javascript:void(0)" class="" dropdown-toggle" data-toggle="dropdown">
+										<span class="ct-app__tools flaticon-direction2 flat"></span>{{SWITCH_VIEW_APP_TOOL}}
+									</a>
+									<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="Switch-View">
+									</ul>
+								</li>
+								<li class="" data-action-id="removeViewDropdown">
+									<a data-item-id="portlet_removeTool" class="ct-app__tools-remove dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+										<span class="ct-app__tools flaticon-close2 flat"></span>{{REMOVE_APP_TOOL}}
+									</a>
+								</li>
+							</ul>
+						</div>
+				</span></li> 
+				{{!-- preference tool ends --}} {{#if WGT_TOOLS_IS_LINEAR}} {{!-- help tool begins --}}
+				<li class="hidden ct-app__tools-help-con">
+					<a data-item-id="portlet_helpTool" class="ct-app__tools ct-app__tools-help" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_HELP}}"> </a>
+				</li> 
+				{{!-- help tool ends --}} {{!-- export to excel begins --}}
+				<li class="hidden ct-app__tools-excel-con">
+					<a data-item-id="portlet_excelTool" class="ct-app__tools flaticon-xlsx flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_EXCEL}}"></a>
+				</li>
+				{{!-- export to excel ends --}} {{!-- export to pdf begins --}}
+				<li class="hidden ct-app__tools-pdf-con">
+					<a data-item-id="portlet_pdfTool" class="ct-app__tools flaticon-pdf flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PDF}}"></a>
+				</li>
+				{{!-- export to pdf ends --}} {{!-- export to csv begins --}}
+				<li class="hidden ct-app__tools-csv-con">
+					<a data-item-id="portlet_csvTool" class="ct-app__tools flaticon-csv flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_CSV}}"></a>
+				</li>
+				{{!-- export to csv ends --}} {{!-- export to rtf begins --}}
+				<li class="hidden ct-app__tools-rtf-con">
+					<a data-item-id="portlet_rtfTool" class="ct-app__tools flaticon-rtf flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_RTF}}"></a>
+				</li>
+				{{!-- export to rtf ends --}} {{!-- export to jpeg begins --}}
+				<li class="hidden ct-app__tools-jpeg-con">
+					<a data-item-id="portlet_jpegTool" class="ct-app__tools flaticon-jpg flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_JPGEXPORT}}"></a>
+				</li> 
+				{{!-- export to jpeg ends --}} {{!-- clear filter begins --}}
+				<li class="hidden ct-app__tools-filter-con">
+					<a data-item-id="portlet_clearFilterTool" class="ct-app__tools flaticon-filter flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOL_TIPS_CLEAR_FILTER}}"></a>
+				</li> 
+				{{!-- clear filter ends --}} {{!-- refresh tool begins --}}
+				<li class="hidden ct-app__tools-refresh-con">
+					<a data-item-id="portlet_refreshTool" class="ct-app__tools flaticon-refresh_3 flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_REFRESH}}"></a>
+				</li>
+				{{!-- refresh tool ends --}} {{!-- print tool begins --}}
+				<li class="hidden ct-app__tools-print-con">
+					<a data-item-id="portlet_printTool" class="ct-app__tools flaticon-print flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PRINT}}"></a>
+				</li>
+				{{!-- print tool begins --}} {{else}} {{!-- more begins --}}
+				<li class="hidden  ct-app__tools-more-con">
+					<div class="tool" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PIN}}">
+						{{!-- ct-dropdown begins --}}
+						<div class="dropdown ct-dropdown">
+							<a id="more_tool" data-target="#" href="javascript:void(0)" data-toggle="dropdown" role="button"> 
+								<span data-item-id="portlet_moreTool" class="flaticon-more-icon flaticon_widget_header"></span>
+							</a> 
+							{{!-- dropdown-menu pull-right ct-dropdown-menu begins --}}
+							<ul class="dropdown-menu pull-right ct-dropdown-menu ct-portlet_icon__dropdown" role="menu" aria-labelledby="more_tool">
+								{{!-- dropdown-menu help begins --}}
+								<li class="hidden  ct-app__tools-help-con">
+									<a data-item-id="portlet_helpTool" class="" href="javascript:void(0)"> 
+									<span class="flaticon-info flat"></span>
+									<span class="ct-dropdown-menu-txt">{{TOOLTIP_HELP}}</span>
+									</a>
+								</li> 
+								{{!-- dropdown-menu help ends --}} {{!-- dropdown-menu export begins --}}
+								<li class="dropdown dropdown-submenu hidden ct-dropdown  ct-app__tools-export-con">
+									<a data-item-id="portlet_exportTool" id="export-menu" data-target="#" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button">
+										<span class="flaticon-export flat"></span> 
+										<span class="ct-dropdown-menu-txt">{{EXPORT_APP_TOOL}}</span>
+									</a> 
+									{{!-- dropdown-menu pull-right export-menu begins --}}
+									<ul class="dropdown-menu pull-right ct-portlet_icon__dropdown" role="menu" aria-labelledby="export-menu">
+										{{!-- dropdown-menu pull-right export to excel begins --}}
+										<li class="hidden  ct-app__tools-excel-con">
+											<a data-item-id="portlet_excelTool" class="" href="javascript:void(0)"> 
+											<span class="flaticon-xlsx flat"></span> 
+											<span class="ct-dropdown-menu-txt">{{TOOLTIP_EXCEL}}</span>
+											</a>
+										</li> 
+										{{!-- dropdown-menu pull-right export to excel ends --}}
+										{{!-- dropdown-menu pull-right export to pdf begins --}}
+										<li class="hidden ct-app__tools-pdf-con">
+											<a data-item-id="portlet_pdfTool" class="" href="javascript:void(0)"> 
+												<span class="flaticon-pdf flat"></span> 
+												<span class="ct-dropdown-menu-txt">{{TOOLTIP_PDF}}</span>
+											</a>
+										</li> 
+										{{!-- dropdown-menu pull-right export to pdf ends --}} {{!-- dropdown-menu pull-right export to csv begins --}}
+										<li class="hidden  ct-app__tools-csv-con">
+											<a data-item-id="portlet_csvTool" class="" href="javascript:void(0)"> 
+											<span class="flaticon-csv flat"></span> 
+											<span class="ct-dropdown-menu-txt">{{TOOLTIP_CSV}}</span>
+											</a>
+										</li> 
+										{{!-- dropdown-menu pull-right export to csv ends --}} {{!-- dropdown-menu pull-right export to rtf begins --}}
+										<li class="hidden  ct-app__tools-rtf-con">
+											<a data-item-id="portlet_rtfTool" class="" href="javascript:void(0)"> 
+												<span class="flaticon-rtf flat"></span> 
+												<span class="ct-dropdown-menu-txt">{{TOOLTIP_RTF}}</span>
+											</a>
+										</li> 
+										{{!-- dropdown-menu pull-right export to rtf ends --}} {{!-- dropdown-menu pull-right export to jpeg begins --}}
+										<li class="hidden  ct-app__tools-jpeg-con">
+											<a data-item-id="portlet_jpegTool" class="" href="javascript:void(0)"> 
+												<span class="flaticon-jpg flat"></span> 
+												<span class="ct-dropdown-menu-txt">{{TOOLTIP_JPEGEXPORT}}</span>
+											</a>
+										</li> 
+										{{!-- dropdown-menu pull-right export to jpeg ends --}}
+									</ul> 
+									{{!-- dropdown-menu pull-right export-menu ends --}}
+								</li> 
+								{{!-- dropdown-menu export ends --}} {{!-- dropdown-menu clear refresh begins --}}
+								<li class="hidden  ct-app__tools-refresh-con">
+									<a data-item-id="portlet_refreshTool" class="" href="javascript:void(0)"> 
+										<span class="flaticon-refresh_3 flat"></span> 
+										<span class="ct-dropdown-menu-txt">{{TOOLTIP_REFRESH}}</span>
+									</a>
+								</li> 
+								{{!-- dropdown-menu clear refresh ends --}} {{!-- dropdown-menu clear print begins --}}
+								<li class="hidden  ct-app__tools-print-con">
+									<a data-item-id="portlet_printTool" class="" href="javascript:void(0)"> 
+										<span class="flaticon-print flat"></span> 
+										<span class="ct-dropdown-menu-txt">{{TOOLTIP_PRINT}}</span>
+									</a>
+								</li> 
+								{{!-- dropdown-menu clear print ends --}} {{!-- dropdown-menu clear show as tool bar begins --}}
+								<li class="hidden  ct-app__tools-showas-menu-con">
+									<a data-item-id="portlet_showAsToolBar" class="" href="javascript:void(0)"> 
+										<span class="flaticon-preview2 flat"></span> 
+										<span class="ct-dropdown-menu-txt">{{TOOLTIP_SHOWASTOOLBAR}}</span>
+									</a>
+								</li> 
+								{{!-- dropdown-menu clear show as tool bar ends --}}
+							</ul>
+							{{!-- dropdown-menu pull-right ct-dropdown-menu ends --}}
+						</div>
+						{{!-- ct-dropdown ends --}}
+				</li> {{!-- more ends --}} {{/if}}
+				<li class="hidden  ct-app__tools-close-con">
+					<span data-item-id="portlet_closeTool" class="flaticon-close flaticon_widget_header" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_CLOSE}}"></span>
+				</li>
+			</ul>
+			{{!-- ct-no-margin begins --}}
+		</div>
+	</div>
+	{{!-- ct-dropdown ends --}} {{!-- pull right ends --}} {{!--
+	ct-app__showas-menu row begins --}}
+	<div data-item-id="portlet_toolBar" data-item-id="ct-portlet__tools" class="ct-app__showas-menu row hidden">
+		{{!-- pull-left begins --}}
+		<div class="pull-left">
+			<div class="ct-dropdown">
+				<ul class="list-inline">
+					<li class="hidden ct-app__tools-help-conf">
+						<a data-item-id="portlet_helpTool" class="ct-app__tools flaticon-info flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_HELP}}"> </a>
+					</li>
+					<li class="hidden ct-app__tools-excel-conf">
+						<a data-item-id="portlet_excelTool" class="ct-app__tools flaticon-xlsx flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_EXCEL}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-pdf-conf">
+						<a data-item-id="portlet_pdfTool" class="ct-app__tools flaticon-pdf flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PDF}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-csv-conf">
+						<a data-item-id="portlet_csvTool" class="ct-app__tools flaticon-csv flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_CSV}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-rtf-conf">
+						<a data-item-id="portlet_rtfTool" class="ct-app__tools flaticon-rtf flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_RTF}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-jpeg-conf">
+						<a data-item-id="portlet_jpegTool" class="ct-app__tools flaticon-jpg flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_JPEGEXPORT}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-nofilter-conf">
+						<a
+						data-item-id="portlet_clearFilterTool"
+						class="ct-app__tools flaticon-filter-o flaticon_showAsLinear"
+						href="javascript:void(0)" data-toggle="tooltip"
+						data-placement="top"
+						data-original-title="{{TOOL_TIPS_CLEAR_FILTER}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-refresh-conf">
+						<a data-item-id="portlet_refreshTool" class="ct-app__tools flaticon-refresh_3 flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_REFRESH}}"></a>
+					</li>
+					<li class="hidden ct-app__tools-print-conf">
+						<a data-item-id="portlet_printTool" class="ct-app__tools flaticon-print flaticon_showAsLinear" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOLTIP_PRINT}}"></a>
+					</li>
+					<li class=" ct-app__tools-restore-conf">
+						<span data-item-id="portlet_restoreTools" class="ct-app__tools flaticon-undo2 flaticon_showAsLinear" data-toggle="tooltip" data-placement="top" data-original-title="{{TOOL_TIPS_REVERT_IN_MORE}}"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		{{!-- pull-left ends --}}
+	</div>
+	{{!-- ct-app__showas-menu row ends --}} {{!-- app tools section ends --}}
+	<div class="clearfix"></div>
+	{{!-- clearing the floating div's --}}
+</div>
+{{!-- ct-app__header-container ends --}}

@@ -1,0 +1,191 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.cardheaderpanel{ /* header panel */
+    padding: 0 0 0px 0px;
+    z-index: 1;	
+}
+.workspacetitle { /* header workspace title */
+	display: table-cell;
+    height: 75px;
+	float: right;
+    vertical-align: middle;
+    padding: 25px 110px 0 0;
+}
+.carduserdetails-con{
+    display: table-cell;
+    height: 68px;
+    margin-bottom: 7px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    vertical-align: bottom;
+}
+.cardlogo-con{
+	/*float:right;*/
+	padding-right:10px;	
+}
+.cardlogo{
+	/*float: right;*/
+    height: 75px;
+    width: 200px;
+}
+.cardws_text {
+    padding: 6px 0 0;
+}
+
+.MASTER_SCREEN {
+    padding-left: 0px !important;
+    padding-top: 0px;
+}
+.master {
+    display: inline-block;
+    height: 36px;
+    text-align: center;
+    width: 36px;
+}
+.cardwsiconDefault{
+	background-position: 0 0px;
+    background-repeat: no-repeat;
+    clear: both;
+    cursor: pointer;
+   	height: 107px;
+    width: 107px; 
+}
+.addnewworkspaceMaster {
+    background-position: 0 -1022px;
+}
+.center-warp .x-tab-panel-body{
+	border:solid 0px;
+}
+.cardwidgetcatalogue_left {	
+	width: 22px;
+	height: 74px;
+}
+.widgetcatlContainer{
+	padding:6px 0px 0px 0px;
+	min-height:68px;
+}
+.cardwidgetcatalogue_mid {
+	text-align:left;
+	height: 74px;
+	width:100%!important;
+	border:solid 0px red!important;
+}
+.cardwidgetcatalogue_right {	
+	width: 22px;
+	height: 74px;
+}
+.cardwidgetcatalogicon-con{
+	text-align:center;
+	position:absolute;
+	bottom:0px;
+	padding-bottom:5px;
+}
+.cardcatalog_icon_holder {
+ 	cursor: pointer;
+    height: 68px;
+    text-align: center;
+   	width: 70px;
+}
+.cardcatalog_icon_text {
+	clear: both;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px
+}
+.cardcatalog_iconDefault {
+	width: 45px !important;
+	height: 36px !important;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top left;
+	cursor: pointer;
+}
+.activews{ 
+	/*height: 48px!important;
+    width: 48px!important;*/
+    cursor: pointer;
+    text-align: left;
+ }
+ .cardlogout-con{
+  padding: 0px 0 0;
+  text-decoration:none !important;
+}
+ .cardlogout-con{
+  padding: 0px 0 0;
+  text-decoration:none !important;
+}
+.cardlogout{
+	display: inline-block;
+	margin-top: 30px;
+	height:20px;
+	width:20px;
+}
+.cardlogouttext{
+    bottom: 1px;
+    padding: 5px 18px 0 28px;
+    position: relative;
+    display: inline-block;
+}
+
+/* workspace icons */
+
+.CT_CHART_WSMaster{
+	background-position: 0 -107px;	
+}
+.CT_TAB_WSPACEMaster{
+	background-position: 0 -557px;	
+}
+.CT_L_MENU_WSPACEMaster{
+	background-position: 0 -785px;	
+}
+.CT_R_MENU_WSPACEMaster{
+	background-position: 0 -670px;
+}
+.CT_MULTI_WSPACEMaster{
+	background-position: 0 -439px;
+}
+.cardsettings-con{
+	padding-right:10px;	
+}
+.cardsettings {
+    display: inline-block;
+    height: 33px;
+    margin-top: 22px;
+    width: 32px;
+    margin-left: 10px;
+}
+
+.floatingbanner{
+    bottom: 0;
+    cursor: pointer;
+    height: 20px;
+    left: 0;
+    margin: 0 auto;
+    padding: 30px 30px 0;
+    position: fixed;
+    right: 0;
+    width: 464px;
+    z-index: 99999999;
+} 
+
+.footerWin {
+    bottom: 0 !important;
+    height: 62px;
+    left: 25% !important;
+    margin: 0 auto;
+    right: 25% !important;
+    top: auto !important;
+}
+.CT_STACK_WSPACEMaster {
+    background-position: 0 -1143px;
+}
+.PAYMENT_WSMaster {
+    background-position: 0 -1266px;
+}
+.LIQUIDITY_WSMaster {
+    background-position: 0 -1387px;
+}	
+.REC_WSMaster {
+    background-position: 0 -1518px;
+}

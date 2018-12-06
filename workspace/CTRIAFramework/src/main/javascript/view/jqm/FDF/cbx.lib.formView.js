@@ -1,0 +1,43 @@
+/**
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+ * 
+ * These materials are confidential and proprietary to Intellect Design Arena 
+ * Limited and no part of these materials should be reproduced, published, transmitted
+ * or distributed in any form or by any means, electronic, mechanical, photocopying, 
+ * recording or otherwise, or stored in any information storage or retrieval system 
+ * of any nature nor should the materials be disclosed to third parties or used in any 
+ * other manner for which this is not authorized, without the prior express written 
+ * authorization of Intellect Design Arena Limited.
+ * 
+ */
+// For testing purpose we modified the above file
+cbx.ns("cbx.lib");
+cbx.lib.FormView = Class(cbx.core.Component,{
+	formID: '',
+	initialize:function(){
+		this.form_opts = {
+				// Make's your form elements smaller or bigger
+				// Options : NORMAL, MINI; Default : NORMAL
+				'FORM_TYPE' : 'MINI',
+				// Options : YES, NO; Default : YES
+				// if YES lables shows as regular lables where as its NO lables act as PLACEHOLDER
+				'SHOW_LABELS' : 'NO',
+				'FORM_THEME' : 'e'
+		};
+		var fm = new cbx.form.FormManager({
+			formId : this.formID,
+			mode : 'view',
+			modelData : {
+				FORM_ATTR : this.form_opts,
+				MAIL_TO : "abc@intellectdesign.com",
+				
+				MAIL_BCC : "pqr@intellectdesign.com"
+			}
+		});	
+		this.addItem(fm.getFormView());
+	},
+	getFormView: function() {
+		return this.getItem(0);
+	}
+});
+CLCR.registerCmp({'COMP_TYPE':'FORM'}, cbx.lib.FormView);

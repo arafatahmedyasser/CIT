@@ -1,0 +1,5 @@
+<div data-item-id="ct_list_main_content" class="col-md-12 yscroll-wrapper-container">
+	<div data-item-id="list-toolbar"></div>
+	<div data-item-id="ct_listWrapper" class="col-sm-12 col-xs-12 col-lg-12 yscroll-wrapper-container"></div>
+	<div data-item-id="ct_listFoot"></div>
+</div>

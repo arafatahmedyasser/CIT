@@ -1,0 +1,270 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/* Portal Positive Buttons */
+.x-btn-noicon .x-btn-small .x-btn-text {
+    font-family: helvetica,arial,sans-serif;
+    font-size:1.167em;
+    font-weight: normal;
+}
+.portal_pos_btn .x-btn-tl{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-tr{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-tc{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-ml{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-mr{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-mc{
+	background:none!important;		
+}
+.portal_pos_btn .x-btn-bl{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-br{
+	background:none!important;	
+}
+.portal_pos_btn .x-btn-bc{
+	background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-tl {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-tr {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-tc {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-ml {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-mr {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-mc {
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-bl{
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-br{ 
+		background-position: 0 0px;
+		background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-bc{
+	background-position: 0 0px;
+	background:none!important;	
+}
+.portal_pos_btn_hover .x-btn-mc{
+	background:none!important;	
+}
+.x-toolbar  .portal_pos_btn button,.x-toolbar .portal_pos_btn_hover button{color:#fff!important;}
+.portal_pos_btn button{
+	color:#fff;
+	}
+.portal_pos_btn_hover button{
+	color:#fff;
+}
+/* portal neg Buttons */
+.portal_neg_btn .x-btn-tl{
+	background:none!important;	
+}
+.portal_neg_btn .x-btn-tr{
+	background:none!important;	
+}
+.portal_neg_btn .x-btn-tc{
+	background:none!important;	
+}
+
+.portal_neg_btn .x-btn-ml{
+	background:none!important;	
+}
+.portal_neg_btn .x-btn-mr{
+	background:none!important;	
+}
+
+.portal_neg_btn .x-btn-mc{
+	background:none!important;		
+}
+.portal_neg_btn .x-btn-bl{
+	background:none!important;	
+}
+.portal_neg_btn .x-btn-br{
+	background:none!important;	
+}
+.portal_neg_btn .x-btn-bc{
+	background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-tl {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-tr {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-tc {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-ml {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-mr {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-mc {
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-bl{
+		background:none!important;	
+}
+.portal_neg_btn_hover .x-btn-br{ 
+		background:none!important;	
+}
+.portal_neg_btn_hover  .x-btn-bc{
+	background:none!important;	
+}
+
+.portal_neg_btn_hover .x-btn-mc{
+	background:none!important;		
+}
+.portal_neg_btn button{
+	color:#000!important;
+	}
+.portal_neg_btn_hover button{
+	color:#000!important;
+}
+/* neg end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portal_cbxform_btn .x-btn-tl{
+	background:url(../images/ctbuttons/positive/lt.jpg) 0px 0px no-repeat!important;
+}
+.portal_cbxform_btn .x-btn-tr{
+	background:url(../images/ctbuttons/positive/rt.jpg) 0px 0px no-repeat!important;
+}
+.portal_cbxform_btn .x-btn-tc{
+	background:url(../images/ctbuttons/positive/tm.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn .x-btn-ml{
+	background:url(../images/ctbuttons/positive/lm.jpg) 0px 0px repeat-y!important;
+}
+.portal_cbxform_btn .x-btn-mr{
+	background:url(../images/ctbuttons/positive/rm.jpg) 0px 0px repeat-y!important;
+}
+.portal_cbxform_btn .x-btn-mc{
+	background:url(../images/ctbuttons/positive/bc-bg.jpg) 0px 0px repeat-x!important;	
+}
+.portal_cbxform_btn .x-btn-bl{
+	background:url(../images/ctbuttons/positive/lb.jpg) 0px 0px no-repeat!important;
+}
+.portal_cbxform_btn .x-btn-br{
+	background:url(../images/ctbuttons/positive/rb.jpg) 0px 0px no-repeat!important;
+}
+.portal_cbxform_btn .x-btn-bc{
+	background:url(../images/ctbuttons/positive/bm.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-tl {
+		background:url(../images/ctbuttons/positive/lt-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-tr {
+		background:url(../images/ctbuttons/positive/rt-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-tc {
+		background:url(../images/ctbuttons/positive/tm-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-ml {
+		background:url(../images/ctbuttons/positive/lm-over.jpg) 0px 0px repeat-y!important;
+}
+.portal_cbxform_btn_hover .x-btn-mr {
+		background:url(../images/ctbuttons/positive/rm-over.jpg) 0px 0px repeat-y!important;
+}
+.portal_cbxform_btn_hover .x-btn-mc {
+		background:url(../images/ctbuttons/positive/bc-bg-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-bl{
+		background:url(../images/ctbuttons/positive/lb-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-br{ 
+		background:url(../images/ctbuttons/positive/rb-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-bc{
+	background:url(../images/ctbuttons/positive/bm-over.jpg) 0px 0px repeat-x!important;
+}
+.portal_cbxform_btn_hover .x-btn-mc{
+	background:url(../images/ctbuttons/positive/bc-bg-over.jpg) 0px 0px repeat-x!important;	
+}
+.x-toolbar  .portal_cbxform_btn button,.x-toolbar .portal_cbxform_btn_hover button{color:#000!important;}
+.portal_cbxform_btn button, .portal_cbxform_btn_hover button{
+	color:#000;
+	font-weight:bold!important;
+}
+
+.x-toolbar-ct .portal_pos_btn, .x-date-bottom .portal_pos_btn {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #3e5da4;
+    background-image: linear-gradient(to bottom, #5470af, #1c4094);
+    background-repeat: repeat-x;
+    border-color: #385493;
+    border-image: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+.x-toolbar-ct .portal_pos_btn_hover, .x-date-bottom .portal_pos_btn_hover {
+    background-color: #3e5da4;
+    background-image: linear-gradient(to bottom, #1c4094, #5470af);
+    background-image: -webkit-linear-gradient(to bottom, #1c4094, #5470af);
+    background-image: -moz-linear-gradient(to bottom, #1c4094, #5470af);
+    background-image: -o-linear-gradient(to bottom, #1c4094, #5470af);
+    background-image: -ms-linear-gradient(to bottom, #1c4094, #5470af);
+    background-repeat: repeat-x;
+    border-color:#385493;
+}
+.x-toolbar-ct .portal_neg_btn {
+    background-image: linear-gradient(#fdfdfd, #e8e8e8) !important;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+}
+.x-toolbar-ct .portal_neg_btn_hover {
+    background-image: linear-gradient(#e8e8e8, #fdfdfd) !important;
+}
+.portal_pos_btn button {
+    color: #fff;
+}
+.portal_pos_btn_hover button {
+    color: #fff;
+}

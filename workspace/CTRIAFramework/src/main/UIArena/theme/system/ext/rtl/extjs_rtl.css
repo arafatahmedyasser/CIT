@@ -1,0 +1,1097 @@
+/*!
+ * This file contains the overriding behaviors of Extjs components to enable the RTL rendering 
+ * which are we used in our CBX framework.
+ * 
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+ /**
+ * <pre>
+ * ===============================================================================================
+ * CHANGE CODE 		AUTHOR 			DESCRIPTION 								DATE 
+ * CBXQ113U06		Murali R	CBX 3.0	Customization-Adding Black theme			  21/06/2013       
+ * ===============================================================================================            				
+ * * 
+
+ </pre>
+ */
+ 
+div.signoffLogo {
+    color: #00A850;
+    float: left;
+    height: 31px;
+    margin-top: 6px;
+    padding-left: 26px;
+    padding-top: 7px;
+    width: 83px;
+    background-position: right 0;
+}
+
+.intellect_logo {
+    background-position: left 7px;
+    background-repeat: no-repeat;
+    float: left;
+    height: 65px;
+    margin-left: 0;
+    margin-top: 0;
+    width: 435px;
+}
+div.user-loginname, div.user-logininfo{ /* CHGFW08EXCARD */
+    text-align: right;
+    color:#000;
+}
+/*  //  CH00WSMENU starts  css restructure */
+.cardinformation-wrap div.user-loginname,.cardinformation-wrap div.user-logininfo, .appinformation-wrap div.user-loginname,.appinformation-wrap div.user-logininfo{ /* CHGFW08EXCARD*/
+	text-align: right;
+    color:#fff
+}
+/*  //  CH00WSMENU ends  css restructure */
+.workspaceTitle .x-panel-body-noborder { /* CH00WSMENU */
+    padding-right: 10px;
+}
+.topheaderpanel {
+    padding: 0 0 5px 0px;
+}
+.Signoff_style a {
+    padding: 5px 0 0 25px;
+    background-position:left 0!important;
+}
+.x-footer-signoff-wrap{
+	padding-bottom:4px;
+	padding-right:4px;
+	padding-left:0px;		
+}
+.intellect_signoff{
+	float: left!important;
+}
+/* CH00WSMENU css restructure start*/
+.logo-wrap {
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+    float: left !important;
+}
+/* CBXQ113U06 starts */ 
+.card-logo-wrap{
+	float: left;
+}
+.card-logo-wrap .intellect_logo{
+	float:left;
+}
+/* CBXQ113U06 ends */
+/* CH00WSMENU css restructure end */
+div.tab-signoffLogo {
+    color: #00A850;
+    float: left;
+    height: 31px;
+    margin-top: 6px;
+    padding-right: 20px;
+    padding-left: 0px;
+    padding-top: 7px;
+    width: 90px;
+    background-position: 10px 0;
+}
+.tab-toppanel .tab-intellect_logo {
+    background-position: right 10px;
+    background-repeat: no-repeat;
+    float: right;
+    height: 65px;
+    margin-right: 10px;
+    margin-top: 0;
+    width: 435px;
+}
+.widgetcatalogue_mid{
+	text-align:right;
+}
+/* buttons */
+.x-btn { direction: ltr; }
+.x-btn-text {direction: rtl; }
+
+.x-btn-mc em.x-btn-arrow { background-position:left center; padding-right:0; padding-left:10px; }
+.x-btn-mc em.x-btn-split { background-position:left center; display:block; padding-right:0; padding-left:14px; }
+.x-btn-mc em.x-btn-split { background-image:url(../images/default/button/s-arrow-rtl.gif); }
+.x-btn-over .x-btn-mc em.x-btn-split, .x-btn-click .x-btn-mc em.x-btn-split, .x-btn-menu-active .x-btn-mc em.x-btn-split, .x-btn-pressed .x-btn-mc em.x-btn-split {
+    background-image:url(../images/default/button/s-arrow-o-rtl.gif);
+}
+
+/* menus */
+.x-menu { background-image:url(../images/default/menu/menu-rtl.gif); background-position: top right; background-repeat:repeat-y; }
+.x-menu-item-arrow{ background-image:url(../images/menu/menu-parent-rtl.gif); background-position:left center;}
+a.x-menu-item { padding:3px 27px 3px 21px; }
+.x-menu-item-icon { left:auto; right:3px; top: auto !important; }
+.x-menu .x-color-palette { margin-right:26px; margin-left:4px; }
+.x-menu-list-item-indent { padding-left:auto; padding-right:27px; }
+
+/* Panels */
+.x-tool {float:left;}
+.x-panel-tl .x-panel-icon, .x-window-tl .x-panel-icon { background-position:100% 4px; padding-right:20px !important; padding-left:0 !important; }
+
+/*Layouts*/
+.x-column { float:right;}
+.x-panel-inline-icon { margin-left:4px; margin-right:0; }
+.x-tool-expand-east, .x-tool-expand-west { float:none }
+
+/*Tabs*/
+ul.x-tab-strip li{direction:ltr; float:right;margin-right:2px; margin-left:0; width:120px;}
+ul.x-tab-strip > li{width:auto;}
+.x-tab-strip-text {direction: rtl;}
+ul.x-tab-strip li.x-tab-edge { float:right;}
+.x-tab-strip .x-tab-with-icon span.x-tab-strip-text { background-position:100% 3px; background-repeat:no-repeat; padding-right:20px; padding-left:0; }
+.x-tab-strip .x-tab-strip-closable a.x-tab-strip-close {right:auto; left:3px;}
+.x-tab-strip-closable .x-tab-left { padding-left:3px;padding-right:3px; }
+
+/*Grids*/
+.x-props-grid .x-grid3-td-name .x-grid3-cell-inner {
+    background-image:url(../images/default/grid/grid3-special-col-bg-1-rtl.gif) !important;
+    padding-left: 0; padding-right: 12px; background-position: 100% 0% !important;
+}
+.x-grid3-hd-btn { left:0; right:auto;background-position: -1px -15px; }
+.x-grid3-body .x-grid3-td-numberer, .x-grid3-body .x-grid3-td-expander, .x-grid3-body .x-grid3-td-checker {
+    background-image:url(../images/default/grid/grid3-special-col-bg-rtl.gif);
+}
+.x-grid-group-hd div { background-position: 99% -47px; padding:4px 20px 4px 17px; }
+.x-grid-group-collapsed .x-grid-group-hd div { background-position:99% 3px; }
+
+/* Grid panel, grouping grid, propertygrid & Checkbox selection model scrollbar issue fix in firefox */
+.x-grid3-header-inner {
+    float: right;
+}
+.x-grid3-header-offset  { 
+	text-align:right; 
+	padding-right: 1px; /* for firefox latest version *//* LG&AC-001  CHGLOCKINGGRID*/
+ }
+.x-grid3-body {
+    padding-right: 0px;/* for firefox latest version *//* LG&AC-001  CHGLOCKINGGRID*/
+}
+.x-grid-group{
+    margin-right: 0px;/* for firefox latest version *//*  LG&AC-001  CHGLOCKINGGRID*/
+}
+/* Grid panel, grouping grid, propertygrid & Checkbox selection model scrollbar issue fix in ie */
+ .ext-ie .liveScroller{ 
+	left: 0px;
+	right: auto;
+}
+.liveScroller {   /* for grid alignment//  LG&AC-001  CHGLOCKINGGRID*/
+    right: auto;
+    left: 0;
+}
+.ext-ie .x-grid3-header-offset  { 
+	text-align:right; 
+	padding-right: 0px;
+ }
+.ext-ie .x-grid3-body {
+    padding-right: 0px;
+}
+.ext-ie .x-grid-group{
+    margin-right: 0px;
+}
+/* for locking grid alignment// START LG&AC-001  CHGLOCKINGGRID*/
+
+/* Note : At the time of Locking Grid integration - enable this code.*/
+.x-grid3-locked, .x-grid3-unlocked {
+    border-right: 1px solid #99BBE8;
+}
+.x-grid3-locked .x-grid3-row {
+    border-left: 0 none;
+    border-right: 0 none;
+}
+.x-grid3-unlocked .x-grid3-header-offset{
+	padding-right: 0px;
+ }
+.ext-ie .x-grid3-header-offset  { 
+	text-align:right; 
+	padding-right: 0px;
+ }
+.ext-ie .x-grid3-unlocked .x-grid3-header-offset{
+	padding-right: 0px;
+ }
+/*// END LG&AC-001 CHGLOCKINGGRID */
+/*Forms*/
+/*.x-form-item label { float:right; }*/
+.x-form-label-left label { text-align: right }
+.mandatory_fx{position:relative;}
+.x-form-label-left label.x-form-item-label { text-align:right; }
+.x-form-item label.x-form-item-label { clear:right; display:block; float:right; padding:3px 0 3px 3px; }
+
+.ext-safari .x-form-field-wrap .x-form-trigger,.ext-gecko .x-form-field-wrap .x-form-trigger ,.ext-webkit .x-form-field-wrap .x-form-trigger{
+    right:auto; 
+}
+/* commented for combo box,multiselect combobox and icon combobox 
+
+ .x-form-field-wrap .x-form-trigger {background-image:url(../images/default/form/trigger-rtl.gif)}
+
+*/
+.x-form-field-wrap .x-form-date-trigger { background-image: url(../images/default/form/date-trigger-rtl.gif); }
+.x-form-field-wrap .x-form-c
+lear-trigger { background-image: url(../images/default/form/clear-trigger-rtl.gif); }
+.x-form-field-wrap .x-form-search-trigger { background-image: url(../images/default/form/search-trigger-rtl.gif); }
+
+/*Date picker*/
+.x-date-middle .x-btn-mc em.x-btn-arrow { background-position: 0 0; }
+x-btn-mc em.x-btn-arrow { padding-left: 12px }
+.x-date-mp-ybtn a.x-date-mp-next { background-position:0 -105px; }
+.x-date-mp-ybtn a.x-date-mp-prev { background-position:0 -120px; }
+.x-date-mp-ybtn a.x-date-mp-next:hover { background-position:-15px -105px; }
+.x-date-mp-ybtn a.x-date-mp-prev:hover { background-position:-15px -120px; }
+
+/*Toolbar icons*/
+.x-tbar-page-first{ background-image: url(../images/default/grid/page-first-rtl.gif) !important; }
+.x-tbar-page-last{ background-image: url(../images/default/grid/page-last-rtl.gif) !important; }
+.x-tbar-page-next{ background-image: url(../images/default/grid/page-next-rtl.gif) !important; }
+.x-tbar-page-prev{ background-image: url(../images/default/grid/page-prev-rtl.gif) !important; }
+.x-item-disabled .x-tbar-page-first{ background-image: url(../images/default/grid/page-first-disabled-rtl.gif) !important; }
+.x-item-disabled .x-tbar-page-last{ background-image: url(../images/default/grid/page-last-disabled-rtl.gif) !important; }
+.x-item-disabled .x-tbar-page-next{ background-image: url(../images/default/grid/page-next-disabled-rtl.gif) !important; }
+.x-item-disabled .x-tbar-page-prev{ background-image: url(../images/default/grid/page-prev-disabled-rtl.gif) !important; }
+
+/*Toobar elements*/
+.x-toolbar .x-btn-over .x-btn-mc em.x-btn-split, .x-toolbar .x-btn-click .x-btn-mc em.x-btn-split,
+.x-toolbar .x-btn-menu-active .x-btn-mc em.x-btn-split, .x-toolbar .x-btn-pressed .x-btn-mc em.x-btn-split
+{
+    background-image:url(../images/default/button/s-arrow-o-rtl.gif);
+}
+.x-toolbar .x-btn-mc em.x-btn-split { background-image:url(../images/default/button/s-arrow-noline-rtl.gif); }
+.x-toolbar-more-icon { background-image:url(../images/default/toolbar/more-rtl.gif) !important; }
+.x-btn-mc em.x-btn-arrow { background-position:left center; padding-right:0; padding-left:10px; }
+.x-toolbar-more em.x-btn-arrow { padding-left:0}
+.x-toolbar-right td .x-form-field-trigger-wrap { text-align:right }
+
+/*MessageBox and Window*/
+.x-window-dlg .ext-mb-icon {float:right;}
+.x-window-dlg .ext-mb-info, .x-window-dlg .ext-mb-warning, .x-window-dlg .ext-mb-question, .x-window-dlg .ext-mb-error {
+    background-position: right top;
+}
+.x-window-dlg .x-dlg-icon .ext-mb-content { margin-left:0; margin-right:47px }
+.x-hidden, .x-hide-offsets { left:0px; }
+
+/* ProgressBar */
+.x-progress-bar { float:right }
+.x-progress-text { left:auto; right:0; }
+
+/* Tree */
+.x-tree-lines .x-tree-elbow { background-image:url("../images/default/tree/elbow-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-plus { background-image:url("../images/default/tree/elbow-plus-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-minus { background-image:url("../images/default/tree/elbow-minus-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-end { background-image:url("../images/default/tree/elbow-end-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-end-plus { background-image:url("../images/default/tree/elbow-end-plus-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-end-minus { background-image:url("../images/default/tree/elbow-end-minus-rtl.gif"); }
+.x-tree-lines .x-tree-elbow-line { background-image:url("../images/default/tree/elbow-line-rtl.gif"); }
+
+/* Form components */
+/* 
+commented for fileupload 
+
+.x-toolbar-left {
+    text-align: right!important;
+ }
+ */
+.x-form-field-wrap {
+    text-align: right;
+    white-space: nowrap;
+}
+.ext-gecko .x-window-body .x-form-item {
+    outline: medium none;
+    overflow: visible;
+}
+.x-form-field-wrap .x-form-spinner-trigger {
+	background: transparent url('../images/spinner.gif') no-repeat 0 0!important
+}
+.rtl-x-form-textArea{
+padding:0px!important;
+}
+.rtl-Ext-form-TextField{
+	padding:0px!important;
+}
+.editablelookup-btn .buttonCls {
+    float: right;
+    margin:4px 0 0 4px;
+}
+.editablelookup-btn .x-form-item {
+    float: right;
+}
+.x-form-item label {
+    width: auto;
+}
+.rtl-style{
+padding:0px!important;
+}
+/* Grouping Grid */
+.x-grid-group-hd div.x-grid-group-title {
+    background-position: right center!important;
+    padding-right: 20px;
+}
+/* textarea */
+textarea.x-form-field {
+     overflow: auto!important;
+}
+
+/* buttons */
+.inbox_btn_alert {
+    background: url("../images/inbox.png") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+.viewTrash_btn_alert {
+    background: url("../images/view_trash.png") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+.sentmail_btn_alert {
+    background: url("../images/sentmail.png") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+.alerts_btn_alert {
+    background: url("../images/alert.png") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+.notifications_btn_alert {
+    background: url("../images/notification.jpeg") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+.download_btn_alert{
+	background: url("../images/download_icon.PNG") no-repeat scroll right center transparent !important;
+    padding-right: 25px !important;
+    text-align: left !important;
+}
+
+
+
+/* CHG_ALERTS_WIDGETIZATION starts */
+
+.btn-WGT_TRASH{
+	
+	background: url(../images/view_trash.png)  no-repeat scroll 0 1px !important;
+	background-position: right 0 !important;
+    padding-left: 0;
+    padding-right: 22px !important;
+}
+.btn-WGT_INBOX{
+	
+	background: url(../images/inbox.png)  no-repeat scroll 0 1px !important;
+	background-position: right 0 !important;
+    padding-left: 0;
+    padding-right: 22px !important;
+}
+.btn-WGT_NOTIFY{
+	
+	background: url(../images/notification.jpeg)  no-repeat scroll 0 1px !important;
+	background-position: right 0 !important;
+    padding-left: 0;
+    padding-right: 22px !important;
+}
+.btn-WGT_ALERT{
+	
+	background: url(../images/alert.png)  no-repeat scroll 0 1px !important;
+	background-position: right 0 !important;
+    padding-left: 0;
+   /* padding-right: 22px !important;*/
+	
+}
+.btn-WGT_SENT_MAIL{
+	
+	background: url(../images/sentmail.png)  no-repeat scroll 0 1px !important;
+	background-position: right 0 !important;
+    padding-left: 0;
+    padding-right: 41px !important;
+	
+}
+/* CBXQ313F61 start */
+.MESSAGES{
+	background-position: right 0 !important;
+    padding-left: 0 !important;
+    padding-right: 6px !important;
+}
+
+
+.NOTIFICATION{
+    background-position: right 0 !important;
+    padding-left: 0 !important;
+    padding-right: 6px !important;
+}
+/* CBXQ313F61 End */
+h1.severityHigh{	
+	background: url("../../../images/high.png") no-repeat scroll 20px transparent;
+    color: #000000;
+    margin: 0;
+    min-height: 31px;
+    padding: 8px 0px 4px 35px;	
+}
+
+h1.severityMedium {
+    background: url("../../../images/normal.png") no-repeat scroll 20px top transparent;
+    color: #000000;
+    margin: 0;
+    min-height: 31px;
+    padding: 8px 0px 4px 35px;
+}
+
+h1.severityLow{
+	background: url("../../../images/low.png") no-repeat scroll 20px transparent;
+    color: #000000;
+    margin: 0;
+    min-height: 31px;
+    padding: 8px 0px 4px 35px;
+	
+}
+
+
+#download_btn .x-btn-icon-medium-right{
+	margin-left: 20px;
+}
+
+.x-btn-txt-wrap .x-btn-mc em, .alert_center_region .x-btn-mc em{
+	padding-right: 5px;
+}
+.x-btn-txt-wrap .x-btn-mc em,.x-btn-txt-wrap .x-btn-mc, .alert_center_region .x-btn-mc {
+	text-align:right!important;
+}
+.x-btn-txt-wrap .x-btn-text,.alert_center_region .x-btn-text{
+    background-position: right center!important;
+    background-repeat: no-repeat!important;
+    height: 24px;
+    padding-right: 26px!important;
+}
+.x-btn-txt-wrap .x-btn-text,.alert_center_region .x-btn-text{
+    background-position: right center!important;
+    background-repeat: no-repeat!important;
+    height: 24px;
+    padding-right: 26px!important;
+}
+.alert_center_region .x-btn-text{
+    background-position: right center!important;
+    background-repeat: no-repeat!important;
+    height: 24px;
+    padding-right: 38px!important;
+}
+.alert_title {
+    padding: 0 0 0 0;
+}
+
+.MSG_title{
+	float:right;
+	width:450px;
+	padding-right:10px;
+	
+}
+.High_SEVERITY{
+	float:right;
+	width: 42px!important;
+	background-position: 15px 0px!important;
+}
+.Medium_SEVERITY{
+	float:right;
+	width: 42px!important;
+	background-position: 15px 0px!important;
+}
+.low_SEVERITY{
+	float:right;
+	width: 42px!important;
+	background-position: 15px 0px!important;
+}
+
+.menu_label {
+    padding: 10px 2px 0 0;
+}
+.alerts_count {
+	float: right;
+	padding : 0px 2px 0 0; 
+}
+.menu_Panel .iportal-menu-item .x-btn-text {
+    height: 22px !important;
+    padding-right: 23px;
+}
+/*  CBXQ313F61 Start */
+.ALERTS{
+	padding-left: 0px!important;
+    padding-right: 6px !important;
+ 	background-position: right 0px !important;
+}
+.TRANS_SUMM_ACC,.INIT_MENU_INVST { 
+   background-position: right 0 !important;
+    padding-left: 0!important;
+    padding-right: 25px !important;
+}
+.ACTI_SUMMARY_ACC {
+   background-position: right 0 !important;
+    padding-left: 0!important;
+    padding-right: 25px !important;
+}
+.INIT_ACC,.INVST_ACTIVITYSUMMARY_WGT{
+	background-position: right 0 !important;
+    padding-left: 0!important;
+    padding-right: 25px !important;
+}
+/* CBXQ313F61 End */
+
+
+
+.ext-strict .ext-ie8 .x-toolbar-cell .x-form-field-trigger-wrap .x-form-trigger {
+right:auto!important;
+}
+
+
+/* menu */
+.clsActionLayer {
+    float: right !important;
+}
+
+/* CHG_ALERTS_WIDGETIZATION ends */
+
+.INIT_MENU, .INIT_DASH {
+    background-position : right 0px !important;
+    padding-left: 0px !important;
+}
+.DATA_MAINTENANCE,.OTHER_SERVICES, .OTHER_SERVICES_DASH ,.ACTIVITY_SUMMARY, .TRANS_SUMMARY  {
+	background-position : right 0px !important;
+}
+.DATA_MAINTENANCE, .LQDY_DATAMAINTENANCE {
+   background-position : right 0px !important;
+}
+.ACTIVITY_SUMMARY{
+	padding-left: 0px;
+    padding-right: 22px !important;
+ 	background-position: right 0px !important;
+ }
+
+.menu_Panel .iportal-menu-item .x-btn-mc em.x-btn-arrow {
+	padding-left: 18px;
+    padding-right: 0;
+}
+/*  CBXQ313F61 starts  */
+/*
+.iportal-menu-item .x-btn-mc .x-btn-icon-small-left, .noborder-icon-text .x-btn-mc .x-btn-text {
+    height: 25px;
+    padding-left: 0 !important;
+    padding-right: 22px !important;
+    padding-right: 25px !important;
+    background-position: right 0 !important;
+}*/
+
+.INITIATE_COLREC{
+	background-position: right 0 !important;
+}
+/*  CBXQ313F61 ends*/
+.menu-left-wrap .x-btn{
+left:360px!important;
+}
+
+/* Org Component */
+/*
+.ccy_org {
+    padding-left: 0px;
+}
+.nodeText {
+    padding: 0px 0px 0;
+}
+.ccy_org th{
+	 text-align: right!important;
+}
+.ccy_org td div{
+	 text-align: right!important;
+}
+*/
+
+.ux-cal-header th .x-date-right {
+    float: left !important;
+}
+/* cbx form */
+.x-form-field-wrap .x-form-spinner-splitter {
+    background: url(../images/spinner-split.gif) no-repeat scroll 0 0 transparent;
+    cursor: n-resize;
+    float: left;
+    font-size: 1px;
+    right: auto !important;
+    left: 2px !important;
+    line-height: 1px;
+    position: absolute;
+}
+
+.x-panel-combo .x-form-field-trigger-wrap{
+	float:right!important;
+	 margin-right: 6px;
+}
+.x-panel-combo .x-panel-header-text{
+	float:right!important;
+}
+/*CBX-ITEMSELECTOR Starts*/	
+.cbx-itemselector .x-list-body dt {
+    text-align: right !important;
+}
+/*CBX-ITEMSELECTOR Ends*/
+
+/* For file upload Start*/
+.ux-up-icon-file{
+	 float: right;
+	 margin-left: 4px;
+}
+.ux-up-text{
+	 float: right;
+}
+/* For file upload End*/
+
+/* Start String filter */
+.c-form-lookup .x-menu-list-item-indent {
+    padding-left: 0px;
+}
+.x-menu-list-item-indent .x-menu-item-icon {
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+/* End String filter */
+/*CHGCONTEXTCOUMN Starts */
+.x-stdnote-panel {
+    padding: 3px 5px 3px 3px;
+}
+/*CHGCONTEXTCOUMN Ends */
+
+/** 551_CBX_111  starts */
+.textareamargin{
+	margin-right:10px;
+}
+/** 551_CBX_111  ends */
+/* Issue fix tab with icon /CHG_CBT_Q2 FIX starts */
+.x-tab-strip .tab-icon span.x-tab-strip-text{
+	 padding-right:1px;
+}
+.x-tab-strip-top .tab-icon .x-tab-left {
+    padding-left: 4px;
+}
+
+.icon-PYMNTS{
+	background-position: right 5px !important;
+    display: inline-block !important;
+    height: 16px;
+    padding-right: 22px !important;
+    padding-left: 0px !important;
+}
+.x-tab-strip-active .icon-PYMNTS{
+		background-position: right 5px !important;		
+}
+/* icon for workspace CBXQ212U07 / CHG_CBT_Q2 FIX ends */
+
+/** FILE_UPLOAD_ENHANCEMENTS -- Starts*/
+.uploadpanelinvalid-icon{
+	left :12px;
+	top:5px;
+	}
+/** FILE_UPLOAD_ENHANCEMENTS -- Ends*/
+/*  Ext rtl header issue fix */
+.cardlogo
+{
+	float:right!important;
+	margin-right:20px
+}
+
+
+/* Ext rtl header issue fix ends */
+
+/* Fix for the alert message overlapping issue */
+
+.alert-count {
+left: initial;
+top: 1px;
+right: -7px;
+}
+
+
+.iportal-menu-item .x-btn-mc .x-btn-icon-small-left, .noborder-icon-text .x-btn-mc .x-btn-text {
+	height: 25px;
+	padding-left: 0 !important;
+	padding-right: 33px !important;
+	/*background-position: right 0 !important;*/
+	float: right;
+	text-align: right;
+	direction: rtl;
+}
+.INIT_PAY {
+    position: relative;
+    right: -92px !important;
+    top: -3px;
+}
+/* Fix for the alert message overlapping issue ends */
+
+/*Fix for header right-alignment in widgets */
+.x-window-header-text{
+float:right!important;
+}
+
+.x-panel-header-text{
+float:right!important;
+}
+/*Fix for header right-alignment in widgets ends */
+
+/* Fix for the update pref. tool misalignment */
+
+.x-window .x-tool {
+float: left;
+margin: 0 2px;
+}
+
+ .x-window-draggable .x-window-header-text
+ {
+ 	text-align:right;
+ }
+
+/* Fix for the update pref. tool misalgnment ends */
+
+/* Fix for menu icon spacing  in create new workspace */
+.x-btn-text-icon .x-btn-icon-small-right .x-btn-text{
+   padding-right: 28px!important;
+}
+/* Fix for menu icon spacing  in create new workspace ends */
+
+
+.menu-left-wrap .x-btn {
+left: 255px!important;
+}
+
+/*dialog box image */
+
+.error-image {
+  background: url("../images/error-image.png") no-repeat scroll 0 25px rgba(0, 0, 0, 0);
+  height: 65px;
+  width: 45px;
+  margin: 27px 6px;
+  float: right;
+}
+
+.warning-image {
+  background: url("../images/warning-image.png") no-repeat scroll 0 25px rgba(0, 0, 0, 0);
+  height: 65px;
+  width: 45px;
+  margin: 27px 6px;
+  float: right;
+}
+.confirmation-image {
+  background: url("../images/confirmation-image.png") no-repeat scroll 0 25px rgba(0, 0, 0, 0);
+  height: 65px;
+  width: 45px;
+  margin: 27px 6px;
+  float: right;
+}
+.info-image {
+  background: url("../images/info-image.png") no-repeat scroll 0 25px rgba(0, 0, 0, 0);
+  height: 65px;
+  width: 45px;
+  margin: 27px 6px;
+  float: right;
+}
+.x-combo-list-inner{
+	text-align : right;	
+}
+
+.x-form-file {
+    direction: rtl;
+}
+.x-fieldset{
+	direction: rtl;
+    margin-right: 5px !important;
+}
+.x-menu li , .message-window {
+	direction: rtl;
+} 
+.x-layout-split{
+	 margin-right: -17px;
+}
+
+.x-mask-loading div {
+	background-position: 160px center;
+    padding: 5px 25px 5px 10px;
+}
+
+.x-grid-empty {
+    direction: rtl;
+}
+
+/* fix for app dock icon */
+.dockMenuCls {
+    left: 10px;
+    float: left;
+    right: initial;
+}
+.closed-app-counter {
+   
+    top: -10px;
+    left: 10px;
+}
+/* fix for workspace title */
+.workspacetitle {
+    float: left;
+}
+/*fix for user details */
+.menulayoutuserdetails-con {
+	direction: rtl;
+    left: 100px;
+    right: initial !important;
+}
+.cbxuserimage-wrap-layoutmenu {
+    left: 300px;
+    float: left;
+    right: initial !important;
+}
+/* fix for menu layout show icon */
+.menu_layout_show_icon {
+        width: 42px;
+    float: right;
+}
+/*appdock dropdown ^ span*/
+.widgetCatOuterCls {
+    left: -1px;
+    right: initial;
+}
+.dock_menu_layout_show_icon {
+    float: left;
+}
+.wsconMENU_visible {
+    left: -210px!important;
+}
+.x-grid3-locked{
+    right:0px;
+}
+
+/* user image dropdown fix*/
+.menu-pic-icon-cls {
+    padding: 5px 35px 6px 21px !important;
+}
+.x-menu .x-menu-list .x-menu-list-item a.x-menu-item {
+    text-align: right !important;
+}
+
+.menulayoutwsiconDefault {
+    float: right;
+    margin-right: 7px;
+}
+.menulayoutws_text {
+    text-align: right;
+    padding: 7px 45px 2px 0px !important;
+}
+.menulayoutwsicon_holder {
+    padding: 10px 0 10px 0px !important;
+}
+
+/*list data alignment*/
+.x-grid-panel .x-panel-body{
+	direction : rtl;
+}
+
+/* Mandatory alignment fix */
+.mandatory {
+	float:none;
+}
+/* Form BBar */
+.x-window-bbar {
+	direction: rtl;
+}
+
+.x-form-field-wrap .x-form-date-trigger {
+	background-image: url("../images/form/trigger.gif");
+}
+
+.x-form-check-wrap .x-form-cb-label { 
+	padding-right: 5px;
+}
+
+/* Mandatory alignment fix */
+.cbx-mandatory-fx, .mandatory, .non_mandatory {
+	float: none
+}
+/*Action column alignment*/
+.x-action-col-cell .x-grid3-cell-inner {
+    padding: 3px 10px 3px 5px !important;
+}
+/*list alignment*/
+.liveScroller {   
+    left: 0px;
+    right: initial !important;
+}
+/*user details*/
+.menulayoutusername, .menulayoutlastlogin {
+    float: right;
+}
+/*Indexed panel fix*/
+.x-btn-txt-wrap button.indexedPanel-btn {
+    text-align: right!important;
+}
+.index-indexedPanel .x-panel-body .x-btn{
+	float:right !important;
+}
+/*tree alignment fix*/
+.x-tree-root-ct {
+    direction: rtl;
+    padding-right: 15px;
+}
+/*Explorer multi app fix*/
+#legend table.x-toolbar-left-ct td>div {
+	background-color: aliceblue;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 13px;
+	padding: 4px;
+	border: 1px solid gray;
+	border-right: 0;
+	margin-top: -3px;
+}
+.x-toolbar{
+	direction: rtl;
+}
+/* For Date Field Trigger Icon */
+.x-form-field-wrap .x-form-trigger.x-form-date-trigger {
+	background-image: url("../images/form/date-trigger.gif");
+	background-position: -50px 0 !important;
+}
+/* For DropDown Icon */
+.x-form-field-wrap .x-form-trigger {
+	background-image: url("../images/form/trigger.gif");
+	border-bottom-color: #b5b8c8;
+}
+/* For spinner Icon*/
+.x-form-field-wrap .x-form-spinner-trigger {
+background: url("../images/form/spinner.gif") no-repeat scroll 0 0
+ !important;
+ background-position: 0px 0px !important;
+}
+/* For BBar in Widget */
+.x-panel-bbar {
+	direction: rtl;
+}
+/* For Panel in form */
+form.x-panel-body.x-form {
+	direction: rtl;
+}
+
+.x-table-layout-cell {
+	direction: rtl;
+}
+
+/* For Fildset toggle*/
+form div.x-tool.x-tool-toggle {
+	float: right !important;
+}
+/* For icon in date field*/
+.x-date-left a {
+	background-position: 0 -753px !important;
+} 
+
+/*list column header option alignment*/
+.ext-gecko .x-grid3-cell-inner, .x-grid3-hd-inner{
+	    padding-left: 15px;
+}
+/* For icon in date field*/
+.x-date-right a {
+	background-position: 0 -737px !important;
+}
+
+/*scroll on left side*/
+body{
+    direction: rtl;
+}
+.x-tab-scroller-left-disabled{
+	pointer-events: none;
+}
+.x-tab-scroller-right-disabled{
+	pointer-events: none;
+}
+.x-form-text, textarea.x-form-field{
+	padding : 1px 4px 1px 0px;
+}
+
+
+/* For Global date Filter*/
+.x-panel.date-scroll-panel {
+	direction: rtl;
+}
+/* For Label alignment in Form */
+.x-form-item-label {
+	padding-right: 0px !important;
+}
+
+.date-scroll-panel .scroll-right-icon {
+	background: url("images/globaldatefilter/scroll-right-rtl.png") no-repeat scroll 0 center transparent !important;
+}
+
+.date-scroll-panel .scroll-left-icon {
+	background: url("images/globaldatefilter/scroll-left-rtl.png") no-repeat scroll 0 center transparent !important;
+}
+div.x-panel-body.x-panel-body-noheader.x-panel-appstore {
+	direction: rtl;
+}
+
+
+/* Workspace menu dock alignment fix */
+#MENU_HEADER_LAYOUT #MENU_LAYOUT_PANEL_INNER .x-panel:after {
+    left: 4px;
+    right: initial !important;
+    background-image: url('images/menu-right-arrow-rtl.png');
+}
+
+.highcharts-container{
+	direction : ltr;
+}
+/*New Changes*/
+
+.x-panel-appstore .x-btn-text-icon .x-btn-icon-small-right .x-btn-text.Stack ,
+.x-panel-appstore .x-btn-text-icon .x-btn-icon-small-right .x-btn-text.Two-Column,
+.x-panel-appstore .x-btn-text-icon .x-btn-icon-small-right .x-btn-text.Three-Column{
+	float: right !important;
+	margin-right: 10px !important;
+}
+
+h1.widgetTitle {
+	float:right !important;
+}
+
+.description-text {
+	padding: 1px 54px 0 5px;
+	text-align: right !important;
+	float: right !important;
+	word-wrap: break-word;
+}
+
+.node {
+	text-align: right;
+	background: transparent url("images/org/boxround5g-rtl.gif") no-repeat center !important;
+}
+.imgClone {
+background: transparent url("images/org/boxround5a_curve-rtl.gif") no-repeat !important;
+}
+
+.orgLegendClone {
+	border-width: 11px 12px 0px 0 !important;
+	border-color: #155697 transparent transparent transparent !important;
+	background-image: none !important;
+}
+
+.template-wrap {
+    float: right;
+}
+
+.x-grid3-row-expander {
+    width: 10px;
+}
+.orgLegendSuspend {
+	border-left-color: rgb(81, 125, 168);
+	border-left-style: dotted;
+	border-left-width: 2px;
+	border-right: none !important;
+	margin-right: 0px !important
+}
+.orgLegendEntitled , .orgLegendInstruction , .orgLegendNonEntitled , .orgLegendNonEntitled , .orgLegendSuspend , .orgLegendClone {
+	float: right !important;
+	margin-left: 10px !important;
+}
+
+.dottedLineAbt {
+	border-right: #517DA8 2px dotted !important;
+	border-left: none !important;
+}
+
+.lineAbt {
+	border-right: #517DA8 2px solid !important;
+	border-left: none !important;
+}
+
+/**CBX_15.2_RTL -- Ends**/	
+
+

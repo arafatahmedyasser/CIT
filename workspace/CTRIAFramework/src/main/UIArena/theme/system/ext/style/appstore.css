@@ -1,0 +1,115 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved. */
+/* AppstoreFramework enhancement*/
+
+.x-select{
+	border:solid 1px #F0F0F0;
+}
+.x-select-over{
+	background-color: red;
+}
+.template{
+	 border:solid 0px #cacaca;
+	 background: url("../images/designCanvas/widget_cont_bg.gif") no-repeat scroll 0 0 transparent !important;
+}
+.template-selected{
+	 background: url("../images/designCanvas/widget_cont_selected_bg.gif") no-repeat scroll 0 0 transparent !important;
+}
+ h1.widgetTitle{
+	color: #070E5F;
+}
+.description-text{
+ 	color: #000000;
+}
+.x-tool-iportalAdd{
+  	background:url(../images/panel/tool-sprites.gif) 0 -240px!important;
+} 
+ .x-tool-iportalRemove{
+  	background: url(../images/panel/tool-sprites.gif) 0 0;
+} 
+div.icon-default{
+	background: url("../images/designCanvas/default_view_small.png") no-repeat scroll 0 0 transparent;
+}
+.x-tool-iportalMove{
+  	background: url("../images/designCanvas/move.png") no-repeat scroll 0 0px transparent !important;
+ } 
+.Up{
+  background: url('../images/designCanvas/top1.gif') no-repeat scroll 0 0px transparent;
+} 
+.Down{
+  background: url('../images/designCanvas/bottom1.gif') no-repeat scroll 0 0px transparent;
+}
+.Left{
+  background: url('../images/designCanvas/left1.gif') no-repeat scroll 0 0px transparent;
+}
+.Right{
+  background: url('../images/designCanvas/right1.gif') no-repeat scroll 0 0px transparent;
+} 
+.Up-over .Up{
+  background: url('../images/designCanvas/top1-over.gif') no-repeat scroll 0 -2px transparent;
+} 
+.Down-over .Down{
+  background: url('../images/designCanvas/bottom1-over.gif') no-repeat scroll 0 -2px transparent;
+}
+.Left-over .Left{
+  background: url('../images/designCanvas/left1-over.gif') no-repeat scroll 0 -2px transparent;
+}
+.Right-over .Right{
+  background: url('../images/designCanvas/right1-over.gif') no-repeat scroll 0 -2px transparent;
+} 
+.template-left{
+	background:url("../images/designCanvas/templateL.gif") left center no-repeat;
+}
+.template-right{
+	background: #F8f9f9;
+	border: 1px solid #F0F0F0;
+}
+.template-wrap-inner{	
+	background:url("../images/designCanvas/templateM.gif") 0px 0px repeat-x;
+}
+.template-wrap-over .template-left{
+	background:url("../images/designCanvas/templateL-over.gif") left center no-repeat;
+}
+.template-wrap-over .template-right{
+		background:#DCEEFE;
+}
+.template-wrap-over .template-wrap-inner{
+	background:url("../images/designCanvas/templateM-over.gif") 0px 0px repeat-x;
+} 
+.Stack{
+	  background: url('../images/designCanvas/icon-stack.png') no-repeat scroll 0 0px transparent;
+	  margin-left: 5px!important;
+}
+.Two-Column{
+	 background: url('../images/designCanvas/two-column.png') no-repeat scroll 0 0px transparent;
+	  margin-left: 5px!important;
+}
+.Three-Column{
+    background: url('../images/designCanvas/three-column.png') no-repeat scroll 0 0px transparent;
+    margin-left: 5px!important;
+}
+.ALL {
+	background: url('../images/designCanvas/default_view_small.png') no-repeat scroll 10px 0 transparent !important;
+   padding-left: 65px !important;
+	height: 60px!important;
+	padding-bottom: 15px!important;
+}
+.CUSER{
+   background: url('../images/designCanvas/default_view_small.png') no-repeat scroll 10px 0 transparent !important;
+   padding-left: 65px !important;
+	height: 60px!important;
+	padding-bottom: 14px!important;
+}
+.icon-WGT_DEFAULT{
+	background: url("../images/designCanvas/default_view_small.png") no-repeat scroll 0 0 transparent;
+}
+
+.x-tool-iportalHelp {
+	background-position: 0 -465px;
+}
+.x-tool-iportalAdd{
+	background-image: url(../images/panel/tool-sprites.gif) 0 -239px;
+}
+.x-btn button{
+	text-decoration:none;
+}

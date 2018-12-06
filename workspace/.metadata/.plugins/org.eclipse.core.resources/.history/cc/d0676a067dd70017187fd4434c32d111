@@ -1,0 +1,30 @@
+package com.ccjp.creditmanagement;
+
+public class creditcardException extends Exception {
+
+	public creditcardException() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public creditcardException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	public creditcardException(Throwable cause) {
+		super(cause);
+		// TODO Auto-generated constructor stub
+	}
+
+	public creditcardException(String message, Throwable cause) {
+		super(message, cause);
+		// TODO Auto-generated constructor stub
+	}
+
+	public creditcardException(String message, Throwable cause,
+			boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+		// TODO Auto-generated constructor stub
+	}
+
+}

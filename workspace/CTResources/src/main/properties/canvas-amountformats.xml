@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas-formats type="amount">
+
+	<format Id="INDIA" description="Indian Currency Format"
+		groupSeparator="," decimalSeparator="." groupSize="3" negativeSignPosition="PREFIX"
+		leadingGroupSize="2" formatter-class="com.intellectdesign.canvas.pref.amount.CanvasAmountFormatter"
+		client-formatter-class="" canOverride="true" isEnabled="true"/>
+	<format Id="USA" description="US Currency Format"
+		groupSeparator="," decimalSeparator="." groupSize="3" negativeSignPosition="PREFIX"
+		leadingGroupSize="3" canOverride="true" isEnabled="true"/>
+	<format Id="EURO" description="EURO Currency Format" groupSeparator="." decimalSeparator="," 
+			groupSize="3" negativeSignPosition="PREFIX"	leadingGroupSize="3" 
+			canOverride="true" isEnabled="true"/>
+	
+</canvas-formats>

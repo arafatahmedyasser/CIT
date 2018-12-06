@@ -1,0 +1,42 @@
+<div class='ct-global-menu' data-item-id='ct-menuBar'>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			{{#each child_nodes}}
+			<div class='ct-global-menu__each {{#condchk block_position "LEFT"}} pull-left {{else}} pull-right {{/condchk}}'>
+				{{#if child_nodes}}
+				<div class='dropdown ct-dropdown'>
+					<a class='dropdown-toggle' data-item-id='{{item_id}}' data-target='#' href='javascript:void(0)' data-toggle='dropdown' aria-expanded='false'> 
+						<span class=''> {{#display-name @root.bundle_key display_key_nm}}{{/display-name}} </span> 
+						<span class='flaticon-down-arrow2'></span>
+					</a>
+					<ul class='dropdown-menu {{#condchk block_position "LEFT"}} pull-left {{else}} pull-right {{/condchk}} ct-dropdown-menu' data-toggle='dropdown' role='menu' aria-labelledby='{{item_id}}'>
+						{{#recursive child_nodes}} {{#updateObjValue this "block_position" ../block_position}}{{/updateObjValue}} {{#if child_nodes}}
+						<li class='dropdown dropdown-submenu ct-dropdown'>
+						<a class='dropdown-toggle' data-item-id='{{item_id}}' data-target='#' href='javascript:void(0)' data-toggle='dropdown' aria-expanded='false'> 
+							<span class=''> {{#display-name @root.bundle_key display_key_nm}}{{/display-name}} </span>
+						</a>
+							<ul class='dropdown-menu pull-right ct-dropdown-menu' role='menu' data-toggle='dropdown' aria-labelledby='{{item_id}}'>{{{recursive child_nodes}}}</ul> 
+							{{else}} 
+							{{#updateMenuData this}}{{/updateMenuData}}
+						<li class=''>
+							<a data-item-id='{{item_id}}'>
+								<span class=''>{{#display-name @root.bundle_key display_key_nm}}{{/display-name}}</span>
+							</a> 
+						{{/if}}
+						</li> 
+						{{/recursive}}
+					</ul>
+				</div>
+				{{else}} {{#updateMenuData this}}{{/updateMenuData}}
+				<div>
+					<a class='' data-item-id='{{item_id}}'> 
+						<span class=''>{{#display-name @root.bundle_key display_key_nm}}{{/display-name}}</span>
+					</a>
+				</div>
+				{{/if}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

@@ -1,0 +1,37 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.ext-ux-livegrid-drop-waiting {
+    background-image:url(../images/loading.gif) !important;
+}
+
+.ext-ux-livegrid-liveScroller {
+    z-index:1;
+    position:absolute;
+    height:3px;
+    right:0px;
+    width:18px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.ext-ux-livegrid-liveScroller div {
+    width:1px;
+    overflow:hidden;
+    height:0px;
+}
+.liveScroller {
+    z-index:1;
+    position:absolute;
+    height:3px;
+    right:0px;
+    width:21px; /* Scroll bar width updated 10/01/2011*/
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.liveScroller div {
+    width:1px;
+    overflow:hidden;
+    height:0px;
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>DataTables and Bootstrap 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+
+        <script type="text/javascript" src="js/jquery.js"> </script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"> </script>
+        <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+        <script type="text/javascript" src="js/dataTables.bootstrap.js"> </script>
+        <script type="text/javascript" src="js/dataTables.bootstrapPagination.js"> </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable( {
+                	 "paging":   false,
+                     "ordering": false,
+                     "info":     false,
+                     "bPaginate": false, //hide pagination
+                     "bFilter": false, //hide Search bar
+                     "bInfo": false, // hide showing entries
+						"aaData" : [
+								[ "Sitepoint", "http://sitepoint.com", "Blog",
+										"2013-10-15 10:30:00" ],
+								[ "Flippa", "http://flippa.com", "Marketplace",
+										"null" ],
+								[ "99designs", "http://99designs.com",
+										"Marketplace", "null" ],
+								[ "Learnable", "http://learnable.com",
+										"Online courses", "null" ],
+								[ "Rubysource", "http://rubysource.com",
+										"Blog", "2013-01-10 12:00:00" ] ],
+						"aoColumnDefs" : [
+								{
+									"sTitle" : "Site name",
+									"aTargets" : [ 0 ]
+								},
+								{
+									"bSortable" : false,
+									"sTitle" : "Type",
+									"aTargets" : [ 2 ]
+								},
+								{
+									"aTargets" : [ 1 ],
+									"bSortable" : false,
+									"sTitle" : "URL",
+									"mRender" : function(url, type, full) {
+										return '<a href="'+url+'">' + url
+												+ '</a>';
+									}
+								},
+								{
+									"aTargets" : [ 3 ],
+									"sTitle" : "Last modified",
+									"sType" : "date",
+									"mRender" : function(date, type, full) {
+										return (full[2] == "Blog") ? new Date(
+												date).toDateString() : "N/A";
+									}
+								} ]
+					});
+            } );
+        </script>
+    </head>
+    <body id="body">
+       <div class="container">
+        <h1>DataTables and Bootstrap 3</h1>
+          <p>Minimal setup of DataTables with Bootstrap 3.  It uses the following versions:</p>
+          <table cellpadding="0" cellspacing="0" border="0"
+                 class="table table-striped table-bordered" id="datatable">
+             
+          </table>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,178 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/* Portal Positive Buttons */
+.x-btn-noicon .x-btn-small .x-btn-text {
+    height: 16px;
+}
+.x-btn-mc {
+    text-align: center;
+}
+.portal_pos_btn .x-btn-tl{
+	width:6px;
+	height:3px;
+}
+.portal_pos_btn .x-btn-tr{
+	width:6px;
+	height:3px;
+}
+.portal_pos_btn .x-btn-tc{
+	height:3px;
+}
+.portal_pos_btn .x-btn-ml{
+	width:6px;
+}
+.portal_pos_btn .x-btn-mr{
+	width:6px;
+}
+.portal_pos_btn .x-btn-mc{	
+    vertical-align: middle;
+	text-align:center;
+	padding:0px 3px 0px 3px !important;
+	cursor:pointer;
+	white-space:nowrap;
+}
+.portal_pos_btn .x-btn-bl{
+	width:6px;
+	height:3px;
+}
+.portal_pos_btn .x-btn-br,.portal_pos_btn .x-btn-br i{
+	width:6px;
+	height:3px;
+}
+.portal_pos_btn .x-btn-bc{
+	height:3px;
+}
+.portal_pos_btn .x-btn-tr i, .portal_pos_btn .x-btn-tl i,.portal_pos_btn .x-btn-mr i, .portaportal_pos_btnl_neg_btn .x-btn-ml i, .portal_pos_btn  .x-btn-br i, .portal_pos_btn .x-btn-bl i{
+ 	width: 6px!important;
+}
+/* portal neg Buttons */
+.portal_neg_btn .x-btn-tl{
+	width:6px;
+	height:3px;
+}
+.portal_neg_btn .x-btn-tr{
+	width:6px;
+	height:3px;
+}
+.portal_neg_btn .x-btn-tc{
+	height:3px;
+}
+.portal_neg_btn .x-btn-ml{
+	width:6px;
+}
+.portal_neg_btn .x-btn-mr{
+	width:6px;
+}
+.portal_neg_btn .x-btn-mc{	
+    vertical-align: middle;
+	text-align:center;
+	padding:0px 3px 0px 3px !important;
+	cursor:pointer;
+	white-space:nowrap;
+}
+.portal_neg_btn .x-btn-bl{
+	width:6px;
+	height:3px;
+}
+.portal_neg_btn .x-btn-br{
+	width:6px;
+	height:3px;
+}
+.portal_neg_btn .x-btn-bc{
+	height:3px;
+}
+/* neg end */
+
+
+.btnbar .noborder-icon-text .x-btn-mc .x-btn-text{
+	height: 16px;
+	width: 16px;
+	font-size: 0px!important;
+	line-height: 0px!important; 
+}
+.portal_pos_btn button.x-btn-text, .portal_pos_btn_hover button.x-btn-text{
+	font-weight:bold;
+}
+.portal_neg_btn button.x-btn-text, .portal_neg_btn_hover button.x-btn-text{
+	font-weight:bold;
+}
+.portal_neg_btn .x-btn-tr i, .portal_neg_btn .x-btn-tl i,.portal_neg_btn .x-btn-mr i, .portal_neg_btn .x-btn-ml i, .portal_neg_btn  .x-btn-br i, .portal_neg_btn .x-btn-bl i{
+ 	width: 6px!important;
+}
+.portal_pos_btn {
+	margin-right: 3px;
+	display:inline-block !important; /* clear button fix*/
+}
+.portal_neg_btn {
+	margin-right: 3px;
+}
+.ext-ie6  .portal_neg_btn em, .ext-ie6 .portal_neg_btn_hover em, .ext-ie6 .portal_pos_btn  em, .ext-ie6  .portal_pos_btn_hover em{
+    display: block!important;
+    overflow: hidden!important;    
+	height:16px!important;
+}
+.portal_cbxform_btn .x-btn-tl{
+	width:6px;
+	height:3px;
+}
+.portal_cbxform_btn .x-btn-tr{
+	width:6px;
+	height:3px;
+}
+.portal_cbxform_btn .x-btn-tc{
+	height:3px;
+}
+
+.portal_cbxform_btn .x-btn-ml{
+	width:6px;
+}
+.portal_cbxform_btn .x-btn-mr{
+	width:6px;
+}
+.portal_cbxform_btn .x-btn-mc{	
+    vertical-align: middle;
+	text-align:center;
+	padding:0px 3px 0px 3px !important;
+	cursor:pointer;
+	white-space:nowrap;
+}
+.portal_cbxform_btn .x-btn-bl{
+	width:6px;
+	height:3px;
+}
+.portal_cbxform_btn .x-btn-br{
+	width:6px;
+	height:3px;
+}
+.portal_cbxform_btn .x-btn-bc{
+	height:3px;
+}
+.portal_cbxform_btn_hover .x-btn-tl {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-tr {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-tc {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-ml {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-mr {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-mc {
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-bl{
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-br{ 
+		background-position: 0 0px;
+}
+.portal_cbxform_btn_hover .x-btn-bc{
+	background-position: 0 0px;
+}
+

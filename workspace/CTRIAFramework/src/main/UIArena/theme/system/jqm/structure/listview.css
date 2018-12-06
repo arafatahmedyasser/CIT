@@ -1,0 +1,74 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+.displayinline {
+	display: inline-block;
+}
+
+.ctlistviewli {
+	width: 100%;
+	padding-bottom: 8px;
+}
+
+.ctlistviewli_col1 {
+	display: inline-block;
+	text-align: right;
+}
+
+.ctlistviewli_col2 {
+	vertical-align: top;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.listcol_50 {
+	margin-right: 1%;
+	width: 49%;
+}
+
+.textalignright {
+	text-align: right;
+}
+
+.li-data {
+	padding-left: 7px;
+}
+
+.displaynone {
+	display: none;
+}
+
+.headercol1 {
+	text-align: right;
+}
+
+.ui-icon-minus {
+	background-position: -180px -1px !important;
+}
+
+.ui-btn-icon-left .ui-icon {
+	right: 10px !important;
+}
+
+.ui-icon,.ui-icon-searchfield:after {
+	border-radius: 5px !important;
+}
+
+.ui-icon-plus {
+	background-position: -216px -1px !important;
+}
+
+.ctlistviewli .ctlistviewli_col_header:nth-child(2){
+	display:inline-block;
+	text-align:right;	
+}
+.listcol_50 {
+	display: inline-block;
+}
+.ctlistviewli_col_header span{
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

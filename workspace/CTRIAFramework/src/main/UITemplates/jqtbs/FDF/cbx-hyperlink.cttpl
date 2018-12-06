@@ -1,0 +1,34 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	{{#if hideLabel}} {{#unless onlyInput}}
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} {{/unless}}
+		<div class="input-group"{{anchorStyle}}>
+			{{!--input-group--}} {{else}} {{#condchk labelAlignType 'TOP'}}
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}} 
+				<label class="ct-form__label"> 
+					<span class="ct-form__label-val">{{{fieldLabel}}}</span>
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"{{anchorStyle}}>
+				{{!--col-sm-12 begins--}} {{else}}
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					{{!--col-sm-2 begins--}} 
+					<label for="static-text" class="ct-form__label"> 
+					{{!--control-label begins--}} 
+						<span class="ct-form__label-val">{{{fieldLabel}}}</span>
+					</label> 
+					{{!--control-label ends--}}
+				</div>
+				{{!--col-sm-2 ends--}}
+				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10"{{anchorStyle}}>
+					{{!--col-sm-10 begins--}} {{/condchk}} {{/if}} 
+					<a href="javascript:void(0)" name={{itemId}} {{#unless editableInd}}disabled{{/unless}}> {{{fieldName}}} </a> 
+					{{#unless onlyInput}}
+				</div>
+				{{!--col-sm-12 ends--}} {{!--col-sm-10 ends--}} {{/unless}}
+				<div class='clearfix'></div>
+			</div>
+		</div>
+	</div>
+</div>

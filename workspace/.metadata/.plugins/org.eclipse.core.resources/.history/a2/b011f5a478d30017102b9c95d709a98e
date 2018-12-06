@@ -1,0 +1,26 @@
+package com.ccp.sample.dateHandling;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class dateformattingAndParsing {
+
+	public static void main(String[] args) {
+	
+		String dd="27/11/2017";
+		SimpleDateFormat sf= new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sf1= new SimpleDateFormat("K, dd-MM-yyyy hh:mm:ss a zzz");
+		try {
+			System.out.println(sf.parse(dd));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Date date=new Date(System.currentTimeMillis());
+		System.out.println(dd.toString());
+		System.out.println(sf1.format(date));
+
+	}
+
+}

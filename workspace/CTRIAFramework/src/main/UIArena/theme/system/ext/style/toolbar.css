@@ -1,0 +1,297 @@
+/*!
+ * Ext JS Library 3.4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+.x-toolbar{
+	border-color:#d0d0d0;
+    background-color:#f0f0f0;
+    background-image:url(../images/toolbar/bg.gif);
+}
+
+.x-toolbar td,.x-toolbar span,.x-toolbar input,.x-toolbar div,.x-toolbar select,.x-toolbar label{
+    font-family:  Arial, Tahoma, Helvetica, Sans-serif;
+	font-size:0.917em;
+	font-weight:normal;
+}
+
+.x-toolbar .x-item-disabled {
+	color:gray;
+}
+
+.x-toolbar .x-item-disabled * {
+	color:gray;
+}
+
+.x-toolbar .x-btn-mc em.x-btn-split {
+    background-image:url(../images/button/s-arrow-noline.gif);
+}
+
+.x-toolbar .x-btn-over .x-btn-mc em.x-btn-split, .x-toolbar .x-btn-click .x-btn-mc em.x-btn-split, 
+.x-toolbar .x-btn-menu-active .x-btn-mc em.x-btn-split, .x-toolbar .x-btn-pressed .x-btn-mc em.x-btn-split 
+{
+    background-image:url(../images/button/s-arrow-o.gif);
+}
+
+.x-toolbar .x-btn-mc em.x-btn-split-bottom {
+    background-image:url(../images/button/s-arrow-b-noline.gif);
+}
+
+.x-toolbar .x-btn-over .x-btn-mc em.x-btn-split-bottom, .x-toolbar .x-btn-click .x-btn-mc em.x-btn-split-bottom, 
+.x-toolbar .x-btn-menu-active .x-btn-mc em.x-btn-split-bottom, .x-toolbar .x-btn-pressed .x-btn-mc em.x-btn-split-bottom 
+{
+    background-image:url(../images/button/s-arrow-bo.gif);
+}
+
+.x-toolbar .xtb-sep {
+	background-image: url(../images/grid/grid-split.gif);
+}
+
+.x-tbar-page-first{
+	background-image: url(../images/grid/page-first.gif) !important;
+}
+
+.x-tbar-loading{
+	background-image: url(../images/grid/refresh.gif) !important;
+}
+
+.x-tbar-page-last{
+	background-image: url(../images/grid/page-last.gif) !important;
+}
+
+.x-tbar-page-next{
+	background-image: url(../images/grid/page-next.gif) !important;
+}
+
+.x-tbar-page-prev{
+	background-image: url(../images/grid/page-prev.gif) !important;
+}
+
+.x-item-disabled .x-tbar-loading{
+	background-image: url(../images/grid/loading.gif) !important;
+}
+
+.x-item-disabled .x-tbar-page-first{
+	background-image: url(../images/grid/page-first-disabled.gif) !important;
+}
+
+.x-item-disabled .x-tbar-page-last{
+	background-image: url(../images/grid/page-last-disabled.gif) !important;
+}
+
+.x-item-disabled .x-tbar-page-next{
+	background-image: url(../images/grid/page-next-disabled.gif) !important;
+}
+
+.x-item-disabled .x-tbar-page-prev{
+	background-image: url(../images/grid/page-prev-disabled.gif) !important;
+}
+
+.x-paging-info {
+    color:#444;
+}
+.x-toolbar-more-icon {
+    background-image: url(../images/toolbar/more.gif) !important;
+}
+
+
+
+/* header tools/x-tool */
+.export {
+    background: url("../images/tools/export.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.print {
+    background: url("../images/tools/print.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.pdf {
+    background: url("../images/tools/pdf.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.csv {
+    background: url("../images/tools/page_csv.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.excel {
+    background: url("../images/tools/page_excel.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.rtf {
+    background: url("../images/tools/rtf.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.help {
+    background: url("../images/tools/help.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.x-tool-pref, .x-tool-pref-over  {
+	background-position:0 -405px;
+}
+.x-tool-pdf, .x-tool-pdf-over { 
+	background-position:0 -480px;
+}
+.x-tool-excel, .x-tool-excel-over  {
+	background-position:0 -495px;
+}
+.x-tool-rtf, .x-tool-rtf-over  {
+	background-position:0 -495px;
+}
+.x-tool-csv, .x-tool-csv-over  {
+	background-position: 0 -510px;
+}
+.x-tool-clearFilter, .x-tool-clearFilter-over  {
+	background-position: 0 -525px;
+} 
+.x-tool-switchView, .x-tool-switchView-over{
+	background-position: 0 -435px;
+}
+.x-tool-switchChart, .x-tool-switchChart-over{
+	background-position: 0 -390px;
+}
+
+.switch-preference {
+    background: url(../images/tools/switch-preference.gif) no-repeat !important;
+}
+
+.selected-preference {
+	background: url(../images/panel/tool-sprites.gif) no-repeat !important;
+}
+.default-preference {
+	background: url(../images/tools/default-preference.gif) no-repeat !important;
+}
+.unsaved-preference {
+	background: url(../images/tools/unsaved-preference.gif) no-repeat !important;
+}
+.delete-preference {
+	background: url(../images/tools/delete-small.gif) no-repeat !important;
+}
+.revert-preference {
+	background: url(../images/tools/revert-preference.gif) no-repeat !important;
+}
+.save-preference {
+	background: url(../images/tools/save-preference.gif) no-repeat !important;
+}
+.update-preference {
+	background: url(../images/tools/update-preference.gif) no-repeat !important;
+}
+.user-defined-preference {
+	background: url(../images/tools/userdefined-preference.gif) no-repeat !important;
+}
+
+/* for charts */
+/* CHG_CHART_TOOL -- starts */
+
+.x-tool-switchChartTypes {
+	background: url(../images/tools/switch-view.gif) no-repeat scroll 0px -16px
+		transparent !important;
+}
+.LINE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px 0px
+		transparent !important;
+}
+
+.LINE2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px 0px
+		transparent !important;
+}
+
+.ZOOMLINE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -16px
+		transparent !important;
+}
+
+.ZOOMLINE2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -16px
+		transparent !important;
+}
+
+.BAR_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -32px
+		transparent !important;
+}
+
+.HBAR_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -48px
+		transparent !important;
+}
+
+.SBAR_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -64px
+		transparent !important;
+}
+
+.HSBAR_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -80px
+		transparent !important;
+}
+
+.PIE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -96px
+		transparent !important;
+}
+
+.BAR2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -32px
+		transparent !important;
+}
+
+.HBAR2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -48px
+		transparent !important;
+}
+
+.SBAR2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -64px
+		transparent !important;
+}
+
+.HSBAR2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -80px
+		transparent !important;
+}
+
+.PIE2D_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -96px
+		transparent !important;
+}
+
+.MPIE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -96px
+		transparent !important;
+}
+
+.DONUT_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-112px transparent !important;
+}
+
+.PYRAMID_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-128px transparent !important;
+}
+
+.FUNNEL_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-144px transparent !important;
+}
+
+.AGAUGE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-160px transparent !important;
+}
+
+.LGAUGE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-176px transparent !important;
+}
+
+.HLED_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-192px transparent !important;
+}
+
+.VLED_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px
+		-208px transparent !important;
+}
+
+.MPIE_CHART {
+	background: url(../images/tools/chart-sprite.gif) no-repeat scroll 0px -96px
+		transparent !important;
+}

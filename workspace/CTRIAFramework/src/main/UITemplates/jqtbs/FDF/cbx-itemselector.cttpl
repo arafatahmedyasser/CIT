@@ -1,0 +1,72 @@
+<div class="form-group selectpicker ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	{{#if hideLabel}} {{#unless onlyInput}}
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} {{/unless}}
+		<div class="input-group"{{anchorStyle}}>
+			{{!--input-group--}} {{else}} {{#condchk labelAlignType 'TOP'}}
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}} 
+				<label class="ct-form__label"> 
+					<span class="ct-form__label-val" data-item-type='ct-fieldlabel'>{{{fieldLabel}}}</span>
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				{{!--col-sm-12 begins--}}
+				<div class="input-group"{{anchorStyle}}>
+					{{!--input-group--}} {{else}}
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						{{!--col-sm-2 begins--}} 
+						<label for="password" class="ct-form__label"> 
+						{{!--control-label begins--}} 
+							<span class="ct-form__label-val" data-item-type='ct-fieldlabel'> {{{fieldLabel}}} </span>
+						</label> 
+						{{!--control-label ends--}}
+					</div>
+					{{!--col-sm-2 ends--}}
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						{{!--col-sm-10 begins--}}
+						<div class="input-group" {{anchorStyle}} {{#if editableInd}}disabled{{/if}}>
+							{{!--input-group--}} {{/condchk}} {{/if}}
+							<ul>
+								{{#each rawKeys}}
+								<li data-item-type="itemSelectorItemCont" class="ct-form__item-sel">
+									<span class="ct-form__item-sel-each" data-item-type="itemSelectorItem" class="">
+										<span class="ct-form__item-sel-val" data-item-id={{itemId}} data-item-type={{xtype}}>{{getOf ../rawValues @index}}</span>
+										<span class="ct-form__item-sel-action"> 
+											<span class="ct-form__item-sel-up" data-item-type="itemselector_up">
+												<i class="glyphicon glyphicon-arrow-up"></i>
+											</span> 
+											<span class="ct-form__item-sel-down" data-item-type="itemselector_down">
+												<i class="glyphicon glyphicon-arrow-down"></i>
+											</span>
+										</span>
+									</span> 
+								<span class="clearfix"></span>
+								</li> 
+								{{/each}}
+							</ul>
+							<span type="error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container">
+								{{!--error_Msg_Container begins--}} 
+								<span type="error_Msg" class="ct-form__err hidden"> 
+								{{!--error_Msg begins--}} 
+								<i class="flaticon-warning11"></i>
+							</span> 
+								{{!--error_Msg ends--}}
+							</span> 
+							{{!--error_Msg_Container ends--}} 
+							{{#if helpInd}}
+							<span class="input-group-addon ct-form__addon">
+								<i class="glyphicon glyphicon-question-sign"></i>
+							</span>
+							{{/if}}
+						</div>
+						{{!--input-group ends--}} {{#unless onlyInput}}
+					</div>
+					{{!--col-sm-12 ends--}} {{!--col-sm-10 ends--}} {{/unless}}
+					<div class='clearfix'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+				

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+<!--
+ *
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ *
+ -->
+<ejb-jar>
+	<enterprise-beans>
+		<!-- Login EJB -->
+		<session>
+			<ejb-name>LoginEJB</ejb-name>
+			<home>com.intellectdesign.canvas.login.bean.LoginHome</home>
+			<remote>com.intellectdesign.canvas.login.bean.LoginRemote</remote>
+			<ejb-class>com.intellectdesign.canvas.login.bean.LoginBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session>
+		<!-- Cache delegate EJB -->
+		<session>
+			<ejb-name>CacheDelegateEJB</ejb-name>
+			<home>com.intellectdesign.canvas.cache.bean.CacheDelegateHome</home>
+			<remote>com.intellectdesign.canvas.cache.bean.CacheDelegateRemote</remote>
+			<ejb-class>com.intellectdesign.canvas.cache.bean.CacheDelegateBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session>
+		<!-- Request Handler EJB -->
+		<session>
+			<ejb-name>RequestHandlerInvokerEJB</ejb-name>
+			<home>com.intellectdesign.canvas.handler.bean.RequestHandlerInvokerBeanHome</home>
+			<remote>com.intellectdesign.canvas.handler.bean.RequestHandlerInvokerBeanRemote</remote>
+			<ejb-class>com.intellectdesign.canvas.handler.bean.RequestHandlerInvokerBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session> 
+		
+		<!-- HAL EJB -->
+		<session>
+			<ejb-name>HAResolver</ejb-name>
+			<home>com.intellectdesign.canvas.hal.bean.HAResolverRemoteHome</home>
+			<remote>com.intellectdesign.canvas.hal.bean.HAResolverRemote</remote>
+			<local-home>com.intellectdesign.canvas.hal.bean.HAResolverLocalHome</local-home>
+			<local>com.intellectdesign.canvas.hal.bean.HAResolverLocal</local>
+			<ejb-class>com.intellectdesign.canvas.hal.bean.HAResolverSSB</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session>
+		
+		<!-- Alert Async handler MDB -->
+		<message-driven>
+			<ejb-name>AlertMessageListener</ejb-name>
+			<ejb-class>com.intellectdesign.canvas.alert.handler.bean.AlertMessageListener</ejb-class>
+			<transaction-type>Bean</transaction-type>
+			<activation-config>
+				<activation-config-property>
+					<activation-config-property-name>destinationType</activation-config-property-name>
+					<activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+				</activation-config-property>
+			</activation-config>
+		</message-driven>
+		
+		<!-- Info Reports Async request processor MDB -->
+		<message-driven>
+			<ejb-name>InfoReportsAsyncMessageListener</ejb-name>
+			<ejb-class>com.intellectdesign.canvas.report.queue.listener.InfoReportsAsyncMessageListener</ejb-class>
+			<transaction-type>Bean</transaction-type>
+			<activation-config>
+				<activation-config-property>
+					<activation-config-property-name>messagingType</activation-config-property-name>
+					<activation-config-property-value>javax.jms.MessageListener</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>destination</activation-config-property-name>
+					<activation-config-property-value>ASYNC_REPORT_QUEUE</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>destinationType</activation-config-property-name>
+					<activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>acknowledgeMode</activation-config-property-name>
+					<activation-config-property-value>Auto-acknowledge</activation-config-property-value>
+				</activation-config-property>
+			</activation-config>
+		</message-driven>
+		
+		<!-- Info Reports Sync request processor MDB -->
+		<message-driven>
+			<ejb-name>InfoReportsSyncMessageListener</ejb-name>
+			<ejb-class>com.intellectdesign.canvas.report.queue.listener.InfoReportsSyncMessageListener</ejb-class>
+			<transaction-type>Bean</transaction-type>
+			<activation-config>
+				<activation-config-property>
+					<activation-config-property-name>messagingType</activation-config-property-name>
+					<activation-config-property-value>javax.jms.MessageListener</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>destination</activation-config-property-name>
+					<activation-config-property-value>SYNC_REPORT_QUEUE</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>destinationType</activation-config-property-name>
+					<activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>acknowledgeMode</activation-config-property-name>
+					<activation-config-property-value>Auto-acknowledge</activation-config-property-value>
+				</activation-config-property>
+			</activation-config>
+		</message-driven>
+        
+        <!-- MDB for Async processing through JMS-->
+        <message-driven>
+            <ejb-name>AsyncMDBListener</ejb-name>
+            <ejb-class>com.intellectdesign.canvas.async.jms.AsyncMDBListener</ejb-class>
+            <transaction-type>Bean</transaction-type>
+            <activation-config>
+                <activation-config-property>
+                    <activation-config-property-name>messagingType</activation-config-property-name>
+                    <activation-config-property-value>javax.jms.MessageListener</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>destination</activation-config-property-name>
+                    <activation-config-property-value>ASYNC_ACTIVITY_QUEUE</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>destinationType</activation-config-property-name>
+                    <activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>acknowledgeMode</activation-config-property-name>
+                    <activation-config-property-value>Auto-acknowledge</activation-config-property-value>
+                </activation-config-property>
+            </activation-config>
+        </message-driven>
+	</enterprise-beans>
+
+	<assembly-descriptor>
+		<!-- For HAL indicate that it always requires a new transaction -->
+		<container-transaction>
+			<method>
+				<ejb-name>HAResolver</ejb-name>
+				<method-name>*</method-name>
+			</method>
+			<trans-attribute>RequiresNew</trans-attribute>
+		</container-transaction>
+	</assembly-descriptor>
+</ejb-jar>

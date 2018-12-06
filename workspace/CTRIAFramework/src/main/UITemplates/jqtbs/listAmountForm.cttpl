@@ -1,0 +1,51 @@
+
+{{#if greater}}
+	{{!-- input-group begins --}}
+	<span class="input-group-addon visible-xs" id="submenu-greater"><strong> {{field_Name}} &gt;</strong></span>
+	<div class="input-group input-submenu-error inputAmount" data-item-id="submenuError">
+	
+	  <span class="input-group-addon hidden-xs" id="submenu-greater"><strong> {{field_Name}} &gt;</strong></span>
+	  <input type="text" class="form-control ct-mobile-filter-padd" name="amount_greater" vtype="numeric" placeholder="{{GreaterThan}}" aria-describedby="submenu-greater">
+	   <span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_position ct_err_default">
+	  <span type="Error_Msg" data-item-id="errorMsgListForm" class="ct-form__err hidden">  
+	   <i class="ct-app__tools ct-app__tools-exclamation"></i>
+	  </span>
+	  </span>
+	</div>
+	{{!-- input-group ends --}}
+{{else}}
+	{{#if lesser}}
+		{{!-- input-group begins --}}
+		<span class="input-group-addon visible-xs" id="submenu-lesser"><strong>{{field_Name}} &lt;</strong></span>
+		<div class="input-group input-submenu-error inputAmount" data-item-id="submenuError">
+		
+		  <span class="input-group-addon hidden-xs" id="submenu-lesser"><strong>{{field_Name}} &lt;</strong></span>
+		  <input type="text" class="form-control ct-mobile-filter-padd" name="amount_lesser" vtype="numeric" placeholder="{{LessThan}}" aria-describedby="submenu-lesser">
+		   <span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_position ct_err_default">
+	  		<span type="Error_Msg" data-item-id="errorMsgListForm" class="ct-form__err hidden">  
+	   		<i class="flaticon-alert"></i>
+	  		</span>
+	  		</span>
+		</div>
+		{{!-- input-group ends --}}
+	{{else}}
+		{{#if equals}}
+			{{!-- input-group begins --}}
+			<span class="input-group-addon visible-xs" id="submenu-equals"><strong>{{field_Name}} =</strong></span>
+			<div class="input-group input-submenu-error inputAmount" data-item-id="submenuError">
+			
+			  <span class="input-group-addon hidden-xs" id="submenu-equals"><strong>{{field_Name}} =</strong></span>
+			  <input type="text" class="form-control ct-mobile-filter-padd" name="amount_equals" vtype="numeric" placeholder="{{equals}}" aria-describedby="submenu-equals">
+			   <span type="Error_Msg_Container" class="input-group-addon ct-form__addon ct-form__err-container ct_err_position ct_err_default">
+	  			<span type="Error_Msg" data-item-id="errorMsgListForm" class="ct-form__err hidden">  
+	   			<i class="flaticon-alert"></i>
+	 			</span>
+	 			</span>
+			</div>
+			{{!-- input-group ends --}}
+		{{/if}}
+	{{/if}}
+{{/if}}
+<button type="button" data-action="submit" class="btn ct_btn">{{btnSearch}}</button>
+<button type="button" data-action="cancel" class="btn ct_btn">{{btnCancel}}</button>
+<span class="input-amount-error"></span>

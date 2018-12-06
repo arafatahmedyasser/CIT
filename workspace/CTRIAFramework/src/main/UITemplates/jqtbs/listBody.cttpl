@@ -1,0 +1,54 @@
+
+       {{#unless NODATA}}
+         {{#each LIST_DATA}}
+         <tr data-grid-records data-rowIndex="{{this.ROW_INDEX}}" data-row-id="{{this.ROW_INDEX}}"{{#condchk ../VIEW_TYPE 'ADVGROUP'}} data-group-id=""{{/condchk}}>
+         	{{#if ../colspace}}
+         		<td class='spacer' colspan="{{../../colspace}}"></td>
+         	{{/if}}
+         	{{#if ../ROWSELECTION}}
+         	<td class="{{this.cssClass}} text-center ct-rowselection" data-item-data="{{this.ROW_INDEX}}">
+         		<span><input data-item-id = "ct_rowSelector" type="checkbox" data-item-checker="true" /></span>
+         	</td>
+         	{{/if}}
+         	{{#if ../ACTION_COLUMN}}
+         		<td data-column="paging-action" class="{{this.cssClass}} ct-paging-action text-center {{../../IS_LIST_VIEW_TYPE_CLASS}}" data-item-data="{{this.COL_ID}}">
+         			<div class="btn-group" style="cursor:not-allowed;">       			
+         			<span data-icon-action="detail" data-toggle="tooltip" class = "btn {{../../DETAIL_ACTION}} ct-paging_action-column ct_paging_struc" data-placement="right" data-original-title="Detail_Click_Action">
+					    <span class="ct-detailaction-fld flaticon-report_2" aria-hidden="true"></span>
+				    </span> {{!-- double click action ends --}}
+				    
+					<span class="ct-listview__context-menu" data-context-paging="true">
+						<span data-icon-action="context" class = "btn {{../../CONTEXT_ACTION}} ct-paging_action-column" data-placement="right" data-toggle="tooltip" data-original-title="Context_Action">
+					  	<span class="ct-contextaction-fld flaticon-right_click" aria-hidden="true"></span>
+					</span>
+					</span> {{!-- context click action ends --}}
+					</div>
+         		</td>
+         	{{/if}}
+         	<td class="text-center ct-rowexpand {{this.rowExpand}}">
+			         		<div data-item-id="row-expander" class="ct-row-expander ct-row-expand flaticon-add f_gr" data-item-data="{{this.COL_ID}}|{{this.ROW_INDEX}}" data-rowIndex="{{this.ROW_INDEX}}"></div>
+			</td>
+		
+         	{{#each this.rowData}}
+				{{#if this.enableContext}}
+					<td  data-grid-record class="{{this.cssClass}} text-center" data-item-data="{{this.COL_ID}}|{{@index}}">{{#canvas-context-icon 'glyphicon-list-alt' this.enableContext}}{{/canvas-context-icon}}</td>
+				{{else}}
+            <td  data-grid-record class="{{this.cssClass}}" data-item-data="{{this.COL_ID}}|{{@index}}" data-item-id="{{this.COL_ID}}">
+               <span>{{{VALUE}}}</span>
+            </td>
+				{{/if}}
+            {{/each}}
+         </tr>
+         
+        {{/each}}
+       
+		
+      {{/unless}}
+      {{#if NODATA}}
+	  	<tr class="no-data" {{#condchk ../VIEW_TYPE 'ADVGROUP'}} data-group-id=""{{/condchk}}>
+	  		{{#if ../colspace}}
+         		<td class='spacer' colspan="{{../../colspace}}"></td>
+         	{{/if}}
+	  		<td colspan="{{../colLen}}"><span class="text-info">{{../NODATA_MSG}}</span></td>
+	  	</tr>
+	  {{/if}}

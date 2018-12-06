@@ -1,0 +1,654 @@
+@CHARSET "ISO-8859-1";
+
+/*
+  Purpose : File contains design your canvas css.
+  Contains: This contains structures by which we can style dyc                 
+*/
+
+/* 
+=============================
+==== DESIGN YOUR CANVAS =====
+============================= 
+*/
+
+.dyc-addwidget {
+	width: 35px;
+	height: 35px;
+	margin: 5px auto;
+	cursor: pointer;
+	text-align: center;
+	font-size: 24px;
+}
+
+.dyc-workspace-container {
+	width: 100%;
+
+	clear: both;
+	background: #EEE;
+	white-space: nowrap;
+	padding: 0 10px;
+}
+
+.dyc-ws-container-inner {
+    display: inline;
+    padding-left: 0;
+}
+
+.dyc-ws-cards {
+    white-space: nowrap;
+    display: inline;
+}
+
+.dyc-ws-icon {
+    color: #fff;
+    /* width: 100px; */
+    height: 28px;
+    float: left;
+    background-color: #00695C;
+    margin: 5px;
+    border-radius: 5px;
+    position: relative;
+    padding: 3px;
+    padding-left: 8px;
+}
+
+.dyc-delete-ws {
+	background-image: url("../images/cross.svg");
+	height: 18px;
+	width: 18px;
+	color: #fff;
+	float: right;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.dyc-update-ws {
+    background-image: url("../images/update.svg");
+    height: 18px;
+    width: 18px;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    right: 1px;
+        margin-left: 4px
+}
+.update-pos-app{
+	left: 41px;
+}
+.delete-pos-app{
+	    left: 38px;
+    top: 20px;
+}
+.delete-pos-table{
+	        left: 118px;
+}
+.update-pos-table{
+	left: 41px;
+}
+.delete-pos-card{
+	    margin: 0px;
+    float: NONE;
+    position: absolute;
+    top: 0px;
+    right: -0px;
+    z-index: 1;
+}
+.update-pos-card{
+	    margin: 0px;
+    float: NONE;
+    position: absolute;
+    top: 20px;
+    right: -0px;
+    z-index: 1;
+}
+
+.tab-div-update-close{
+	    background-color:rgba(0,0,0,0.6);
+    display: block;
+    position: absolute;
+    width: 99%;
+    height: 100%;
+    top: 0px;
+    right: 2px;
+}
+.dyc-ws-name {
+	color: #fff;
+	position: absolute;
+	font-size: 12px;
+	clear: both;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-transform: uppercase;
+	height: 30px;
+	background: #009688;
+	vertical-align: middle;
+	padding: 5px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	cursor: help;
+}
+
+/*!
+ * StyleSheet for JQuery splitter Plugin
+ * Copyright (C) 2010 Jakub Jankiewicz <http://jcubic.pl>
+ *
+ * Same license as plugin
+ */
+.splitter_panel {
+  position: relative;
+}
+.splitter_panel .vsplitter {
+    background-color: grey;
+    cursor: col-resize;
+    z-index:900;
+    width: 4px;
+}
+
+.splitter_panel .hsplitter {
+    background-color: #5F5F5F;
+    cursor: row-resize;
+    z-index: 800;
+    height: 4px;
+}
+.splitter_panel .vsplitter.splitter-invisible,
+.splitter_panel .hsplitter.splitter-invisible {
+    background: none;
+}
+.splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel,
+.splitter_panel .hsplitter, .splitter_panel .top_panel, .splitter_panel .bottom_panel {
+    position: absolute;
+    overflow: auto;
+}
+.splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel {
+  height: 100%;
+}
+.splitter_panel .hsplitter, .splitter_panel .top_panel, .splitter_panel .bottom_panel {
+  width: 100%;
+}
+.splitter_panel .top_panel, .splitter_panel .left_panel, .splitter_panel .vsplitter {
+   top: 0;
+}
+.splitter_panel .top_panel, .splitter_panel .bottom_panel, .splitter_panel .left_panel, .splitter_panel .hsplitter {
+   left: 0;
+}
+.splitter_panel .bottom_panel {
+   bottom: 0;
+}
+.splitter_panel .right_panel {
+   right: 0;
+}
+.splitterMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+        
+/*   Design Your Canvas Modal       */
+			.dyc-modal-container{
+               /*  width: 100%;
+                height: 700px; */
+            }
+            
+            .dyc-modal-sidebar {
+              /*   width: 25%;
+                height: inherit;
+                background-color: #EFEFEF;
+                float: left; */
+            }
+            .dyc-model-panel {
+                /* width: 75%;
+                height: inherit;
+                background: #fff;
+                float: left; */
+            }
+            
+            .dyc-search {
+                    position: absolute;
+    z-index: 1
+            }
+            .dyc-search-cont{
+            padding: 7px;
+                font-size: 18px;
+                float: none;
+    			margin: 0 auto;
+    			  display: table;
+            }
+            
+
+            .dyc-search-box:focus {
+                border: 1px solid #8E8E8E;
+            }
+            
+            .dyc-search {
+                
+                text-align: center;
+            }
+            
+            .dyc-search-result {
+                   top: 60px;
+                   padding-bottom: 70px;
+            }
+            
+            .dyc-search-drop {
+                background: transparent;
+                position: absolute;
+                margin: 0 auto;
+                top: 110px;
+                left: auto;
+                    z-index: 1;
+                
+                
+            }
+           
+            
+            .dyc-app-result {
+				float: none;
+    margin:0 auto;
+    min-width: 270px;
+      margin-bottom: 5px;
+          padding-left: 0px;
+    padding-right: 0px;
+    display:table;
+    text-align:left;
+            }
+            .dyc-search-desc{
+    	background: #efefef;
+    	    padding: 7px;
+            }
+            .dyc-search-preview-btn{
+                 padding: 5px;
+            }
+            .dyc-app-ico {
+                background: #ccc;
+               font-size: 56px;
+               text-align:center;
+            }
+            
+            .dyc-app-desc {
+                background: #efefef;
+                   padding-left: 0px;
+    padding-right: 0px;
+            }
+            
+            .dyc-app {
+                float: left;
+padding-top: 5px;
+    padding-bottom: 5px;
+            }
+
+            
+            .dyc-ico {
+                	width: 124px;
+			    background: #efefef;
+			    font-size: 58px;
+			    text-align: center;
+			        min-width: 124px;
+			        height:85px;
+			        position: relative;
+			        border-top-left-radius: 15px
+            }
+            
+            .dyc-app-name {
+                    min-width: 124px;
+                background: #EFEFEF;
+height :85px;
+            }    
+            
+            .dyc-product-category{
+			    width: 100%;
+			    height: inherit;
+			    list-style: none;
+			    float: left;
+			    padding: 0;
+			    display: inline;
+			    white-space: nowrap;
+			    border-bottom: 1px solid #ccc;
+            }
+            
+            .dyc-product-category li {
+			    padding: 14px;
+			    font-size: 14px;
+			    display: inline-block;
+                
+            } 
+            
+            .dyc-product-category li:hover {
+			   cursor: pointer;
+			}   
+            
+            .dyc-product-category li a {
+    			 color: #555; 
+			}
+			
+			.dyc-hidden {
+    			display: none;
+			}
+			.ct-active-prod-cat{
+			border-bottom: 2px solid #555;
+			}
+			
+			.dyc-show {
+    			display: block;
+			}
+			
+			.dyc-app-marked {
+/*     			border: 2px solid #888888; */
+			}
+			
+			.dyc-app-marked:hover {
+/*     			border: 2px solid #888888; */
+			}
+        
+        
+			.dyc-cancel {
+                padding: 7px;
+			    width: 100px;
+			    border: 1px solid #075F56;
+			    float: right;
+			    background: #075F56;
+            }
+            
+			.dyc-save {
+                padding: 7px;
+			    width: 100px;
+			    border: 1px solid #075F56;
+			    float: left;
+			    background: #075F56;
+            }
+            
+            .dyc-bbar {
+			    width: 100%;
+			    padding: 10px;
+			    display: inline-block;
+			    margin-bottom:0px;
+			}
+			
+			.dyc-app-name-txt {
+			          padding-top: 8px;
+    padding-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #EFEFEF;
+    font-weight: bold;
+    white-space: nowrap;
+			}
+			.dyc-app-name-desc{
+			    font-size: 11px;
+    padding-left: 5px;
+    overflow: hidden;
+    padding-top: 5px;
+			}
+.data-preview-area {
+	background: #efefef;
+	float: none;
+	margin: 0 auto;
+	min-width: 270px;
+	margin-bottom: 5px;
+}
+    
+    .modal-backdrop-dyc-search{
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow:auto;
+    z-index:2;
+    top: 0px;
+    left: 0px;}
+    .index-2{
+    z-index:2;
+    }
+    .dyc-app-marked {
+    /* background-image: url("../images/mark.svg");
+    width: 50px;
+    height: 50px;
+    background-color: #17C8D2;
+    position: absolute;
+    right: 10px;
+    border-radius: 50%;
+    top: 10px; */
+}
+
+.dyc-preview, .dyc-select-btn, .dyc-deselect-btn {
+    margin: 5px;
+    color: #333;
+    font-size: 20px;
+}
+
+.dyc-deselect-btn:before {
+	margin-right: 2px !important;
+    font-size: 16px !important;
+}
+
+   
+.dyc-preview:hover, .dyc-select-btn:hover, .dyc-deselect-btn:hover,
+.dyc-preview:focus, .dyc-select-btn:focus, .dyc-deselect-btn:focus,
+.dyc-preview:active, .dyc-select-btn:active, .dyc-deselect-btn:active {
+	color: #383838;
+} 
+
+.DYC_FORM_WGT, .DYC_CONTENT_WGT {
+    border: 0;
+    box-shadow: none !important;
+    background: none;
+}
+
+.dyc-toggler {
+	float: left;
+    width: 35px;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    height: 35px;
+    background-image: url("../images/more.svg");
+}
+
+@media screen and (max-width:767px) {
+	.modal-backdrop-dyc-search {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+}
+.data-preview-area{
+	padding-left: 2px;
+	padding-right: 2px;
+	}
+.no-pad{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.ct-form__ip-button.DYC_STACK_BTN_btn {
+	background: url("../images/dyc/dyc_stack_in.png");
+	background-position: center;
+	height: 40px;
+	background-color: transparent;
+	width: 40px;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.ct-form__ip-button.DYC_TWO_COLUMN_BTN_btn {
+	background: url("../images/dyc/dyc_two_in.png");
+	background-position: center;
+	height: 40px;
+	background-color: transparent;
+	width: 40px;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.ct-form__ip-button.DYC_STACK_BTN_btn:hover {
+	background: url("../images/dyc/dyc_stack_in.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.ct-form__ip-button.DYC_TWO_COLUMN_BTN_btn:hover {
+	background: url("../images/dyc/dyc_two_in.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;;
+}
+
+.ct-form__ip-button.DYC_THREE_COLUMN_BTN_btn {
+	background: url("../images/dyc/dyc_three_in.png");
+	background-position: center;
+	height: 40px;
+	background-color: transparent;
+	width: 40px;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.ct-form__ip-button.DYC_THREE_COLUMN_BTN_btn:hover {
+	background: url("../images/dyc/dyc_three_in.png") !important;
+	background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.ct-form__ip-button.DYC_SAVE_BTN_btn {
+	background-image: url("../images/dyc/dyc_save_in.png");
+	background-position: center;
+	height: 40px;
+	background-color: transparent;
+	width: 40px;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.ct-form__ip-button.DYC_SAVE_BTN_btn:hover{
+    background: url("../images/dyc/dyc_save_in.png") !important;
+    background-repeat: no-repeat;
+}
+.ct-form__ip-button.DYC_CLEAR_BTN_btn{
+	 background: url("../images/clear.png");
+	  height: 40px;
+    background-color: transparent;
+    width: 40px;
+    background-repeat: no-repeat;
+    border: none;	
+}
+.ct-form__ip-button.DYC_CLEAR_BTN_btn:hover{
+    background: url("../images/clear.png") !important;
+    background-repeat: no-repeat;
+}
+
+
+.ct-formlayout-DYC_TWO_COLUMN_BTN:hover,.ct-formlayout-DYC_STACK_BTN:hover,.ct-formlayout-DYC_THREE_COLUMN_BTN:hover, .ct-formlayout-DYC_SAVE_BTN:hover,.ct-formlayout-DYC_CLEAR_BTN:hover{
+	background : #009688;
+}
+
+
+
+input.ct-ws-title {
+    background: transparent;
+    border: 0;
+    width: 50%;
+}
+
+
+.dyc-app-select{
+	     float: right;
+    padding-right: -20px;
+    background-color: #009688;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    margin-top: 4px;
+    color: #F7FAFF;
+    cursor: pointer;
+}
+.deselect{
+	background-color:#DD4B39;
+}
+.dyc-search-close{
+	    z-index: 1;
+    position: relative;
+}
+.dyc-search-input{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    width: 100%
+}
+
+
+.dyc-clear {
+    width: 60px;
+    background: #DEDEDE;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    height: 35px;
+    float: left;
+    margin-left: 5px;
+}
+
+.dyc-clear:hover {
+	background: #ccc;
+}
+
+@media screen and (max-width:767px) {
+	.dyc-search-result-xs {
+		position: absolute;
+		left: 0px;
+		right: 0px
+	}
+		.modal-backdrop-dyc-search {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+}
+
+[data-item-id=DYC_FORM] .formcontainer .row > div{
+	width: 70px !important;
+    padding: 0px;
+}
+[data-item-id=DYC_FORM] .formcontainer > .row {
+	margin-right:0px;
+    margin-left:0px;
+}
+form[data-item-id=DYC_FORM]{
+	width : 100%
+}
+
+[data-item-id=DYC_FORM] .formcontainer{
+	padding-top: 0px;
+    background: #eee;
+}
+.dyc-button-active{
+	background : #00695C;
+	
+}
+
+	.modal-backdrop-dyc-search {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+
+.ct-dyc-mobile-wstitle {
+    text-align: center;
+    line-height: 2.5;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+	background: #fff;
+}
+

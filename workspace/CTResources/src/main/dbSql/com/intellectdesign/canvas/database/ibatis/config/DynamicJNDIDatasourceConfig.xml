@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<transactionManager type="EXTERNAL">
+		<property name="SetAutoCommitAllowed" value="false" />
+		<dataSource type="JNDI">
+			<property name="DataSource" value="${CONN_JNDI_NAME}" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="com/intellectdesign/canvas/database/ibatis/${CONNECTION_TYPE}/maps/viewdefn/Default_SqlMap.xml" />
+</sqlMapConfig>

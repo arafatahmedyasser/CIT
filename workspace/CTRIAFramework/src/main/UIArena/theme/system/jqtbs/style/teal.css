@@ -1,0 +1,452 @@
+/* #00695C */
+
+.ct-global-menu,
+.ct-al__menu-each.ct-al__menu-is-selected,
+a.ct-al-menu__wslink-txt:hover,
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus,
+.ct-tab .ct-tab__txt:hover,
+.ct-al-card__home-page .ct-al-card__header.ct-al__header-tm
+.ct-al__wslink-txt-tm,
+.ct-al-card__wslinks-txt-tm,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus,
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:hover, 
+.dropdown-menu > .active > a:focus,
+.ct-al__wslink-txt,
+.ct-al__app-each.ct-al__app-is_selected, .ct-al__app-each:HOVER,
+.ct-al__tabletop-each.ct-al__tabletop-is_selected,
+.ct-al__tabletop-each:HOVER,
+.ct-al__excard-each.ct-al__excard-is_selected, .ct-al__excard-each:HOVER 
+{
+	background: #00695C;
+}
+
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus,
+/* .datepicker table tr td.today, */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus,
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-pills > li.active > a,
+.ct-al__app-each,
+.ct-al__tabletop-each,
+.ct-al__excard-each
+ {
+	border-color: #00695C;
+}
+
+.ct-tab .ct-tab__txt:hover {
+	border-color: #00695C;
+}
+a:ACTIVE, a:HOVER, a.active
+{
+	color: #00695C;
+}
+.bootstrap-datetimepicker-widget table td span.active,
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover
+{
+  background-color: #00695C;
+}
+
+/* #009688 */
+
+
+
+.ct-al__menu-sidebar,
+.nav > li > a,
+.ct-al__footer,
+.ct-app-dock__app-name,
+.ct-listview>tbody tr.ct-row-active:hover,
+.table-striped > tbody > tr:nth-of-type(odd).ct-row-active:hover,
+.ct-app-tm .ct-app__header-tm,
+.ct-al__header-tm,
+.ct-al-card__wslink-icon {
+	background: #009688;
+}
+
+.ct-al__menu-ws-mobile-wstitle,
+.ct-app-tm .ct-app__header-tm{
+	border-color: #009688;
+}
+
+.ct-app-dock__notification {
+	color: #009688;
+}
+.ct-app-dock__cancel,
+.ct-app-dock__app-img  {
+	color: #009688 !important;
+}
+/* .datepicker table tr td.today, */
+.ct-listview>tbody td.ct-cell-active,
+.ct-row-highlight,
+.al-excard-tm,
+.nav > li > a:hover
+{
+	    background-color: #009688;
+}
+
+/* #26A69A */
+.text-primary, a,
+.ct_btn,
+.pagination > li > a,
+.pagination > li > span {
+	color: #26A69A;
+}
+
+
+
+.ct-listview>tbody tr:hover,
+.ct_btn,
+.form-control:focus,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.btn-default:hover {
+	border-color: #26A69A;
+}
+
+.ct-listview>tbody tr.ct-row-active,
+.table-striped > tbody > tr:nth-of-type(odd).ct-row-active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover,
+ .ct_btn:hover,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.ct-sortable,.canvas-draggable,
+.ct-app-dock__each,
+.nav-tabs > .dropdown > a:hover
+ {
+	background: #26A69A !important;
+}
+
+.ct-al__menu-each,
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus
+{
+	background-color: #26A69A;
+}
+.ct-listview-mobile__content>tbody tr:hover
+{
+	border-right-color: #26A69A !important;
+}
+/* #555 */
+
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus,
+.form-ct-label,
+.ct-listview th,
+.ct-form-tm .ct-form__fieldset .panel-heading
+{
+	color: #555;
+}
+
+.ct-icon-combo__val {
+    color: #4c4c4c !important;
+}
+ul.dropdown-menu{
+	margin-top: 0px;
+	border-bottom-color: #4c4c4c;
+    border-right-color: #4c4c4c;
+    border-top-color: 1px solid #ccc !important;
+    border-left-color: 1px solid #ccc !important;	
+}
+.ct-form__ip-icon-combo {
+ text-align:left; 
+  border: 1px solid #ccc;
+ border-top-right-radius: 1px !important;
+ border-bottom-left-radius: 4px !important;
+}
+
+
+/*  #ebebeb */
+ .panel-default,
+.frameBody,
+.frameBody p,
+.grouped-column-tags-container,
+.input-daterange .input-group-addon,
+.autocomplete-suggestions,
+.ct_LRMenu-child {
+    border-color:#ebebeb;
+}
+ 
+/* #ccc */
+
+
+
+.ct-form__spinner-down {
+	border-right-color: #ccc;
+}
+
+.ct-padding-top-tr-paging,
+.ct-listview>tbody tr,
+.ct-al-menu__ws-pref_logout_cont {
+	border-top-color: #ccc;
+}
+
+
+.dropdown-submenu>a:after {
+	border-left-color: #ccc;
+}
+
+
+/* #ffffff */
+
+.ct-al__menu-menu-toggler,
+.ct-menu__ws-user-snippet > span > a,
+a.ct-al-menu__wslink-txt,
+a.ct-al-menu__wslink-txt:hover,
+a.ct-al-menu__wslink-txt:focus,
+.ct-menu__ws-user-snippet > div> span > a,
+.ct-menu__ws-user-snippet > span > a,
+.ct-logo.ct-sticky_header,
+.ct-al__footer,
+.ct-app__title-tm,
+.ct-ws-title,
+.ct-al__menu-sidebar,
+.nav > li > a,
+.ct-form__item-sel,
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus,
+.overlay-global_loader,
+.ct-filter-badge,
+.ct-app-dock__title,
+.overlay-loader,
+.ct-bage__txt-active,
+.ct-badge__action:hover,
+.ct-row-highlight,
+.ct-row-highlight a,
+.ct-userperf__txt,.ct-logout__txt,
+.ct-al__header-tm,
+.ct-mobile__title,
+.ct_LRMenu-parent,
+.ct_LRMenu-parent > span > a,
+.ct-app-dock__app-name,
+.ct-listview>tbody td.ct-cell-active,
+.ct-listview>tbody tr.ct-row-active,
+.ct-listview>tbody tr.ct-row-active a,
+.ct-sortable,.canvas-draggable,
+.statusHolder,
+.ct-global-menu__each a,
+.ct-al__menu-desktop-cont a,
+.ct-al__menu-mobile-cont a,
+.ct_btn:hover,
+.ct-user__name.ct-menu__ws-user-name.ct-menu__ws-user-name-mobile,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.ct-listview>tbody td.ct-cell-active span a,
+.ct-al__app-each.ct-al__app-each-js a,
+.ct-al__tabletop-each.ct-al__tabletop-each-js a,
+.ct-al__excard-each.ct-al__excard-each-js a
+ {
+	color: #ffffff;
+}
+.ct-badge__each-tm .ct-badge__txt,
+.ct-app__icon {
+	color: #ffffff;
+}
+
+
+.ct-al-card__wslink-txt-tm,
+.ct-al-card__wslink-icon:before {
+	color: #ffffff;
+}
+
+.ct-al__menu-ws-mobile-wstitle,
+.ct-app-dock__notification,
+.ct-excard__ws-user-snippet,
+.ct-tabletop__ws-user-snippet,
+.ct-app__ws-user-snippet,
+.ct-tab__ws-user-snippet,
+.table-striped > tbody > tr:nth-of-type(odd),
+.rte-zone,
+.ct-app-dock__container,
+.ct-listview th,
+.autocomplete-suggestions,
+.navbar-default .navbar-toggle .icon-bar,
+.ct-tabletop-bg,
+.ct_btn,
+.ct-user.ct-menu-desktop__ws-user-info.ct-al-menu__ws-userinfo_hldr,
+.ct-user.ct-card-desktop__ws-user-info.ct-al-card__ws-userinfo_hldr {
+	background: #ffffff;
+}
+
+.input-daterange .input-group-addon {
+	text-shadow-color: #ffffff;
+}
+
+.navbar-default .navbar-toggle,
+.is_selected {
+	border-color: #ffffff;
+}
+
+.ct-menu-destop__ws-tooltip-arrow,
+.ct-card-destop__ws-tooltip-arrow,.ct-tabletop-destop__ws-tooltip-arrow,.ct-app-destop__ws-tooltip-arrow,.ct-tab-destop__ws-tooltip-arrow,.ct-excard-destop__ws-tooltip-arrow {
+  	border-bottom-color: #ffffff;
+}
+.flaticon_widget_header,
+.flat a:hover,
+.flat a:focus,
+.flaticon_showAsLinear,
+.flaticon_showAsLinear:hover,
+.flaticon-collapse,
+.flaticon-stack,
+.flaticon-modal-close
+{
+	
+	color:#ffffff !important;
+}
+
+.al-excard-mobile-usersnippet
+{
+	background-color: #ffffff;
+}
+
+/* #000000 */
+
+
+.ct-listview>tbody tr.ct-row-active li a,
+.ct-btn-neg,
+.close:hover,
+.close:focus,
+.ct-dropdown .portlet-icon,
+.ct-mobile-ws-title,
+ .ct-user__name.ct-menu__ws-user-name,
+.ct-excard__ws-user-name,
+.ct-excard__ws-login-text,
+.ct-tabletop__ws-login-text,
+.ct-tabletop__ws-user-name,
+.ct-app__ws-user-name,
+.ct-tab__ws-user-name,
+.ct-app__ws-login-text,
+.ct-tab__ws-login-text,
+.ct-user__login-text.ct-menu__ws-login-text{
+	color: #000000;
+}
+
+.statusHolder {
+	border-color: #000000;
+}
+.flat,
+.flaticon-levels,
+.flaticon-filter-o,
+.flaticon-group,
+.flaticon-listGroup,
+.flaticon-filter-o :HOVER,
+.flaticon-fliter-align:hover,
+.flaticon-leftmenu-expclps
+{
+color: #000000 !important;
+}
+
+
+
+
+/* #333 */
+
+.ct-al__menu-ws-list,
+.ct-menu-mobile__ws-user-info {
+	border-top-color: #333;
+}
+
+.tooltip-inner{
+	background: #333;
+}
+
+.tooltip.top .tooltip-arrow,
+.tooltip.top-left .tooltip-arrow,
+.tooltip.top-right .tooltip-arrow {
+ border-top-color: #333;
+}
+
+.tooltip.right .tooltip-arrow { 
+ border-right-color: #333;
+}
+ 
+.tooltip.left .tooltip-arrow {
+ border-left-color: #333;
+}
+   
+.tooltip.bottom .tooltip-arrow,
+.tooltip.bottom-left .tooltip-arrow,
+.tooltip.bottom-right .tooltip-arrow {
+ border-bottom-color: #333;
+}
+
+.navbar-toggle{
+	background-color: #333;
+}
+
+.ct-al-menu__ws-user_txt {
+	color: #333;
+}
+
+.ct-al-menu__ws-userimg_hldr {
+	border: #333;
+}
+
+.ct-filter-badge{
+	color: #333;
+}
+
+.ct-badge__each{
+	background: #333;
+}
+
+.ct-grid-header.pull-left:hover .flaticon-up-down-arrow2,.flaticon-up-arrow,.flaticon-down-arrow {
+    color: #333;
+}
+.ct-dropdown .ct-dropdown-menu a 
+{
+	color: #333;
+}
+.flaticon-up-arrow,
+.flaticon-down-arrow{
+	color : #333;
+}
+
+/*8c8c8c*/
+
+
+.flaticon-up-down-arrow2
+{
+	color: #8c8c8c;
+}
+
+		
+/*999*/	
+.flat_ovrid
+{
+	color: #999 !important;
+	
+}

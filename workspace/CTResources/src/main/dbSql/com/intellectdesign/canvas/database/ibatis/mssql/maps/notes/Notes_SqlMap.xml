@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+
+<sqlMap>
+	<resultMap id="NOTES_DAM_SELECT_MAP" class="java.util.HashMap">
+		<result property="OD_GCIF" column="OD_GCIF" jdbcType="String"
+			javaType="java.lang.String" />
+		<result property="MESSAGE" column="MESSAGE" jdbcType="String"
+			javaType="java.lang.String" />
+		<result property="NOTES_DATE" column="NOTES_DATE" jdbcType="Date"
+			javaType="java.util.Date" />
+		<result property="OD_USER_NO" column="OD_USER_NO" jdbcType="String"
+			javaType="java.lang.String" />
+	</resultMap>
+
+	<select id="NOTES_DAM_SELECT" parameterClass="java.util.HashMap"
+		resultMap="NOTES_DAM_SELECT_MAP">
+		SELECT
+		TAB1.OD_GCIF OD_GCIF,
+		TAB1.MESSAGE MESSAGE,
+		TAB1.NOTES_DATE NOTES_DATE,
+		TAB1.OD_USER_NO OD_USER_NO
+		FROM
+		OD_NOTES TAB1
+		WHERE
+		TAB1.OD_GCIF = #INPUT_GCIF#
+		AND
+		TAB1.OD_USER_NO = #INPUT_USER_NO#
+		<!-- AND TO_CHAR(TAB1.NOTES_DATE,'dd/mm/yyyy') = #CURRENT_DATE# -->
+	</select>
+
+	<parameterMap id="NOTES_DAM_INSERT_MAP" class="java.util.HashMap">
+		<parameter property="INPUT_GCIF" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+		<parameter property="MESSAGE" jdbcType="VARCHAR" javaType="java.lang.String" />
+		<parameter property="CURRENT_DATE" jdbcType="Date" javaType="java.util.Date" />
+		<parameter property="INPUT_USER_NO" jdbcType="VARCHAR"
+			javaType="java.lang.String" />
+	</parameterMap>
+
+	<insert id="NOTES_DAM_INSERT" parameterMap="NOTES_DAM_INSERT_MAP">
+		INSERT INTO OD_NOTES
+		(
+		OD_GCIF,
+		MESSAGE,
+		NOTES_DATE,
+		OD_USER_NO
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?
+		)
+	</insert>
+
+	<resultMap id="NOTES_DAM_SELECT_FOR_INIT_MAP" class="java.util.HashMap">
+		<result property="MESSAGE" column="MESSAGE" jdbcType="String"
+			javaType="java.lang.String" />
+		<result property="NOTES_DATE" column="NOTES_DATE" jdbcType="Date"
+			javaType="java.util.Date" />
+	</resultMap>
+
+	<select id="NOTES_DAM_SELECT_FOR_INIT" parameterClass="java.util.HashMap"
+		resultMap="NOTES_DAM_SELECT_FOR_INIT_MAP">
+		SELECT
+		MESSAGE MESSAGE,
+		NOTES_DATE
+		FROM
+		OD_NOTES
+		WHERE
+		OD_GCIF = #INPUT_GCIF#
+		AND
+		OD_USER_NO = #INPUT_USER_NO#
+		<!-- AND TO_CHAR(NOTES_DATE,'dd/mm/yyyy') = #CURRENT_DATE# -->
+	</select>
+
+	<!-- Delete query -->
+	<delete id="NOTES_DAM_DELETE" parameterClass="java.util.HashMap">
+		DELETE FROM
+		OD_NOTES
+		WHERE
+		OD_GCIF= #INPUT_GCIF#
+		AND
+		OD_USER_NO = #INPUT_USER_NO#
+		<!-- AND TO_CHAR(NOTES_DATE,'dd/mm/yyyy') = #CURRENT_DATE# -->
+	</delete>
+
+
+
+</sqlMap>

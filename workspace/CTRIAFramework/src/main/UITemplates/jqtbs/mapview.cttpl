@@ -1,0 +1,7 @@
+{{!-- embed-responsive containerCls embed-responsive-4by3 begins --}}
+<div data-item-id="map_container" class="embed-responsive containerCls embed-responsive-4by3">
+	{{!-- embed-responsive-item col-md-6 map-holderCls begins --}}
+	<div class="embed-responsive-item col-md-6 map-holderCls"></div>
+	{{!-- embed-responsive-item col-md-6 map-holderCls ends --}}
+</div>
+{{!-- embed-responsive containerCls embed-responsive-4by3 ends --}}

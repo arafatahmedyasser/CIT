@@ -1,0 +1,899 @@
+/*!
+ * Copyright 2014. Intellect Design Arena Limited. All rights reserved.
+ */
+/*
+ * Purpose : Responsive Layout Container, it will render two column layout for Tablet's
+ * Author  : Arun Kumar Sekar - 46046
+ */ 
+ 
+ /* Portrait tablet to landscape and desktop */
+/*CT_MOBILITY_CHGv1.2_OPEN_ITEMS_30_7 Starts*/
+ table.tbl-jquery {
+	font-size:14px;
+ }
+ .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+	font-size: 14px;
+ }
+  table.tbl-jquery {
+	font-size:14px;
+ }
+ .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+	font-size: 14px;
+ }
+ table.footable.tbl-jquery .amountField{
+	font-size:17px;	 
+}
+
+.staticfield .cbx-label
+{
+		width:100%;
+		display:inline-block !important;
+}
+.staticfield span
+{	
+		width:57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+		margin-left: 3%;
+		display:inline-block !important;
+		/*CT_MOBILITY_CHGv1.2 ISSUE_FIXES_493 Starts*/
+		word-wrap: break-word;
+		/*CT_MOBILITY_CHGv1.2 ISSUE_FIXES_493 Ends*/
+		
+		/* CT_MOBILITY_CHGv1.2 FIXES_14_7 Starts*/
+}
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Starts*/
+.staticfield span.cbxstaticfield {
+    margin-left: 3%;
+}
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Ends*/
+/*Newly added*/
+.cbx-date.cbx-date-view .cbx-label.ui-input-text {
+    width: 40%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+    margin-left:0;
+    display:inline-block !important;
+}
+
+
+.cbx-staticdate input {
+font-size: 14px;
+}
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Starts*/
+.cbx-staticdate label.ui-input-text
+{
+	display: inline-block !important;
+    margin-left: 0;
+    width: 40%;
+}
+/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Starts */
+/* CT_MOBILITY_CHGv1.2 FIXES_14_8 starts */
+.cbx-staticdate div.ui-input-text
+{
+	display: inline-block !important;
+    margin-left: 1%;
+    margin-top: -1px;
+    vertical-align: top;
+    width: 50%;
+}
+/* CT_MOBILITY_CHGv1.2 FIXES_14_8 ends */
+/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Ends */
+
+/*.cbx-date.cbx-date-view .ui-input-text
+{
+	width:57%;
+	display:inline-block  !important;
+	padding-top: 0px;
+    vertical-align: top;
+}*/
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Ends*/
+/*Newly added ends*/
+/*theme gold override starts*/
+
+div.ui-input-text input.cbx-date-view {
+    padding: 0;
+}
+
+
+/*theme gold override ends*/
+
+/*jqm override*/
+div.ui-input-text.ui-disabled
+{
+	padding:0;
+}
+
+.ui-field-contain label.ui-input-text
+{
+	margin:0;
+	
+}
+
+.staticfield lable.ui-input-text
+{
+   width:40% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */	
+}
+
+
+/*jqm override ends*/
+
+
+ @media (min-width: 768px) {
+ 	#context-app-panel-popup {
+ 		height : 10%;
+ 	}
+ 	div.responsiveClass{
+ 		clear:both;
+ 		position:relative;
+ 	/*	padding:0px;*/
+ 		margin:0px;
+ 	}
+ 	
+ 	div.responsiveClass .widgetColumns { 
+ 		display: inline-block;
+ 		float:left;
+ 	}
+ 	.widgetColumns .responsiveWidget {
+ 	/*	border:1px solid #fff;*/
+ 		margin: 5px;
+ 	}
+ 	.app-header-text {
+		line-height: 32px;
+		font-size: 14px;
+	}
+ }
+ @media (max-width: 768px) {/*CT_MOBILITY_CHGv1.2 FIXES_9_7 Starts*/
+ 	div.responsiveClass .widgetColumns { 
+ 		width : 100% !important;
+ 	}
+  	.cbx-compositefield .cbx-compositefield_wrap .ui-field-contain{
+		display:inline-block!important;
+		margin-top: .5em;
+	}/* CT_MOBILITY_CHGv1.2 FIXES_9_7 Ends*/
+	.form-wrapper .ui-field-contain{
+		border:0px;
+		padding: 0px 0px 0px 0px;
+	}
+	.ui-field-contain, fieldset.ui-field-contain {
+		padding: .3em 0;
+		border-width: 0 0 0px 0;
+		vertical-align: top;/* CT_MOBILITY_CHGv1.2 FIXES_14_7*/
+	}
+	label.ui-input-text {
+		font-size: 12px;
+		font-weight: normal; /*CHG-MOBILITY-AHLIBLUE 22/08 */
+		margin: 0 0 0em;
+		/*padding-top: 8px;  CT_MOBILITY_CHGv1.2 FIXES_14_7 CT_MOBILITY_CHGv1.2 FIXES_31_7 Starts*/
+	}
+	
+}
+ @media (min-width: 280px) and (max-width: 768px) {
+ 	#context-app-panel-popup {
+ 		height : 10%;
+ 	}
+ }
+ 
+ /* app icons */
+ 
+ @media (max-width: 480px){
+	div.grid_view_icons .x-app-icon {
+		margin: 15px 5px 15px 5px;
+		width: 90px;
+		height: 62px;
+	}
+	#context-app-panel-popup {
+ 		height : 10%;
+ 	}	
+	div.grid_view_icons .x-app-icon > span {
+		height: auto;
+		left: 0;
+		position: relative;
+		text-align: center;
+		top: 0px;
+		width: 90px;
+	}
+	table.tbl-jquery {
+		font-size: 14px;
+	}
+ 	.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
+ 		font-size: 14px;
+ 	}
+ 	.app-header-text {
+		line-height: 32px;
+		font-size: 14px;
+	}	
+	 table.tbl-jquery {
+		font-size:12px;
+	 }
+	 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size: 12px;
+	 }
+	  table.tbl-jquery {
+		font-size:12px;
+	 }
+	 .ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size: 12px;
+	 }
+	 .ui-body-e input, .ui-body-e select, .ui-body-e textarea, .ui-body-e button {
+		font-size: 12px;
+	}
+	 table.footable.tbl-jquery .amountField{
+		font-size:14px;	 
+	}/* CT_MOBILITY_CHGv1.2 FIXES_9_7 start */
+	.ui-select{
+		width:100%;
+	}/* CT_MOBILITY_CHGv1.2 FIXES_9_7 end */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	.amountfieldcontainer
+	{
+		/*width: 100%;*/ 
+	}
+ 	.ccylinkedamount
+	{
+		/*width: 94% !important;
+		display: inline-block;*/
+	}
+	
+	.currencytype 
+	{
+	display: -moz-inline-stack;
+    margin-top: 5px;
+    padding-right: 10px;
+    vertical-align: top;
+    width: 10%;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+ }
+/* pop up window */
+.popupdialogCls {
+	height: 100%;
+}
+
+.popupdialogContCls {
+	height: 320px;
+	overflow: scroll;
+}
+
+.popupCls {
+	height: 360px;
+	width: 500px;
+}
+
+#wrapper {
+	width: 490px;
+	height: 360px;
+	overflow: auto;
+}
+
+@media only screen and (max-width:480px){
+	#HElP_POPUP-popup{
+		width: 86%;
+	 }
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_8_8 Starts */
+	/*Style added for the new amountfield 5_8 Gopal */
+	
+	.currencytype
+	{
+	padding:0 4px 0;
+	display: inline-block;
+	width: 10%;
+	}
+	
+	.ccylinkedamount 
+	{
+		width: 79% !important; /*remove the important rule expecting impact*/
+		display: inline-block;
+	}
+	/*Style added for the new amountfield 6_8 Gopal */
+	/* CT_MOBILITY_CHGv1.2 FIXES_8_8 Ends */
+}
+/* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7 Starts*/
+@media only screen and (max-width:519px) and (orientation : landscape)
+{
+	#context-app-panel-popup {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	 	}
+}
+
+}
+/* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  Ends */
+
+@media all and (min-width: 28em) {
+	.cbx-compositefield .cbx-compositefield_wrap  {
+	   	display: inline-block;
+	    margin: 0;
+	    width: 78%;
+	}
+	.cbx-compositefield .cbx-compositefield_wrap  .ui-field-contain{
+	    margin: 0;
+	    display: inline-block!important;
+	}
+}
+/* CT_MOBILITY_CHGv1.2 -Starts */
+/*.cbx-compositefield .jqm-form-field-c.jqm-cbxRadioGroup{
+	display:inline-block!important;
+}
+*/@media (max-width: 28em){
+	.app-header-text {
+		font-size: 14px; 
+	} 
+	.lazzyformpanel label.ui-input-text {
+	font-size: 12px
+    }
+/* CT_MOBILITY_CHGv1.2 FIXES_8_8 Starts */
+    	.ui-body-e input, .ui-body-e select, .ui-body-e textarea, .ui-body-e button {
+		font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+		font-size: 13px;
+	}
+/* CT_MOBILITY_CHGv1.2 FIXES_8_8 Ends */
+	.form-wrapper .ui-select .ui-btn-inner, .form-wrapper label.ui-input-text,.staticfield span  {
+		font-size: 12px;
+		word-wrap: break-word;/* CT_MOBILITY_CHGv1.2 FIXES_14_7*/
+	}
+	.form-wrapper .cbx-hyperlink{
+		font-size: 12px;
+	}
+	.ui-btn-inner{
+		font-size: 14px;
+	}
+}
+/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+@media (min-width: 28em){
+	
+	.ui-field-contain div.ui-input-text.ccylinkedamount {
+display: inline-block;
+width: 82%
+}
+	
+	
+/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text {
+	width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}	
+	.tblFilter.ui-field-contain input.ui-input-text,.tblFilter.ui-field-contain textarea.ui-input-text, .tblFilter.ui-field-contain .ui-input-search,.tblFilter.ui-field-contain div.ui-input-text {
+	width: 78%; 
+	}
+	.cbx-compositefield .cbx-compositefield_wrap {
+	width: 70%;
+	}
+	.ui-field-contain label.ui-input-text {
+	width: 40%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.ui-field-contain .ui-select {
+   		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	.lazzyformpanel label.ui-input-text {
+	font-size: 14px
+    }
+	.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+	margin: .5em 0;
+	}
+	.ui-field-contain label.ui-input-text {
+	font-weight: bold;
+	}
+	.form-wrapper .cbx-hyperlink{
+		font-size: 14px;
+	}/* CT_MOBILITY_CHGv1.2 FIXES_9_7 start */
+	.cbx-compositefield .cbx-compositefield_wrap .ui-field-contain {
+	margin: .5em 0;
+	}
+	.cbx-compositefield {
+	margin: 0px;
+	}	/* CT_MOBILITY_CHGv1.2 FIXES_9_7 end */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	
+	
+	/* added 6_8 gopal */
+	
+	.amountfieldcontainer 
+	{
+	width: 60%;
+	display: inline-block;
+	}
+	
+	.currencytype
+	{
+	display: -moz-inline-stack;
+    margin-top: 13px;
+    padding-right: 10px;
+    vertical-align: top;
+    width: 10%;
+	}
+
+	.ccylinkedamount 
+	{
+	display: inline-block;
+	width: 83%;
+	}
+	
+	/* added 6_8 gopal ends */
+	
+	
+	.amountfieldcontainer
+	{
+		/*width: 57%;*/ 
+	}
+	.ccylinkedamount
+	{
+		/*width: 94% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+}
+
+/* media query css start */
+
+ /* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	
+	.staticfield span{
+		/*width:100%;gopal*/
+	}
+	
+	
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Starts */
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_8 starts */
+	.cbx-staticdate div.ui-input-text {
+		margin-left: 1%;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_8 ends */
+	/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Ends */
+}
+
+ /* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+	#HElP_POPUP-popup {
+	    width: 80%; 
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.staticfield .cbx-label{
+		width:40%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+		
+	}
+	.staticfield span{
+		width:57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	
+		/* CT_MOBILITY_CHGv1.2 FIXES_14_7 Starts*/
+	}
+	.form-wrapper .ui-select .ui-btn-inner, .form-wrapper label.ui-input-text,.staticfield span  {
+		word-wrap: break-word;
+		font-size:13px; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_7 Ends*/
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	
+	.ccylinkedamount
+	{
+		/*width: 83% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+}
+
+@media only screen
+and (min-width : 481px)
+and (max-width : 768px) {
+
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7*/
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.ui-field-contain .ui-select {
+   		width: 70%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.staticfield .cbx-label{
+		width:38%;
+	}
+	.staticfield span{
+		/*width:90%;gopal*//* CT_MOBILITY_CHGv1.2 FIXES_14_7*/
+		margin-left: 0%;
+	}
+	.ui-field-contain .ui-select {
+   		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+		/* CT_MOBILITY_CHGv1.2 FIXES_14_7 Starts*/
+	}
+	.form-wrapper .ui-select .ui-btn-inner, .form-wrapper label.ui-input-text,.staticfield span  {
+		word-wrap: break-word;
+	}
+	
+	.cbx-staticdate label.cbx-label
+{
+	width:19%;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_7 Ends*/
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	
+	/* added 6_8 gopal */
+	
+	.amountfieldcontainer 
+	{
+	width: 60%;
+	display: inline-block;
+	}
+	
+	.currencytype
+	{
+	padding-right: 10px;
+	display: inline-block;
+	width: 10%;
+	}
+
+	.ccylinkedamount 
+	{
+	display: inline-block;
+	width: 83%;
+	}
+	
+	/* added 6_8 gopal ends */
+	
+	
+	.amountfieldcontainer
+	{
+		/*width: 57%;*/ 
+	}
+	.ccylinkedamount
+	{
+		/*width: 86% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+	/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Starts */
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_8 starts */
+	.cbx-staticdate div.ui-input-text {
+		margin-left: 0.6em;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_14_8 ends */
+	/*CT_MOBILITY_CHGv1.2 FIXES_19_8 Ends */
+}
+
+
+@media screen and (min-width:768px)
+{
+	.cbx-staticdate label.cbx-label
+{
+	width:40%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_19_8 starts */
+	.cbx-staticdate div.ui-input-text {
+		margin-left: 0.9em;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_19_8 ends */
+}
+
+@media screen and (min-width:600px) and landscape
+{
+	.cbx-staticdate label.cbx-label
+	{
+	width:30%;
+	}
+}
+
+
+
+/* Smartphones (landscape) ----------- */
+/*@media only screen
+and (min-width : 321px) {
+	#app{
+		border:2px solid yellow;
+	}
+}*/
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 10%;
+	 		width: 100% !important;/* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7 */
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.ui-field-contain .ui-select {
+   		width: 70%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+		/* CT_MOBILITY_CHGv1.2 -Starts */
+	}
+	.staticfield .cbx-label{
+		/*width:38%;gopal*/
+	}
+	.staticfield span{
+		/*width:58%;gopal*/
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	.amountfieldcontainer
+	{
+		/*width: 70%;*/ 
+	}
+	.ccylinkedamount
+	{
+		/*width: 93% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+/* CT_MOBILITY_CHGv1.2 FIXES_19_8 starts */
+	.cbx-staticdate div.ui-input-text {
+		margin-left: 1em;
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_19_8 ends */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+ 
+	#HElP_POPUP-popup {
+	    width: 80%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 10%;
+	 		
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.ui-field-contain .ui-select {
+   		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		width: 100%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.staticfield .cbx-label{
+		/*width:38%;*/
+	}
+	.staticfield span{
+		/*width:58%;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	.amountfieldcontainer
+	{
+		/*width: 57%;*/ 
+	}
+	.ccylinkedamount
+	{
+		/*width: 94% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+}
+
+@media only screen
+and (min-width: 1024px)
+and (max-width: 1536px)
+and (orientation : landscape){
+	#HElP_POPUP-popup {
+	    width: 60%;
+	}
+	 .popupCls{
+	 	width: 100%;
+	 }
+	 #context-app-panel-popup {
+	 		height : 10%;
+	 	}
+	#wrapper{
+		width:100%;
+		border-radius:10px; 
+	}
+	.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text{
+		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+		.ui-field-contain .ui-select {
+   		width: 57%; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_31_7  */
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	.cbx-compositefield input.ui-input-text, .cbx-compositefield textarea.ui-input-text, .cbx-compositefield .ui-input-search, .cbx-compositefield div.ui-input-text{
+		
+		width: 100%;
+	}
+	/* CT_MOBILITY_CHGv1.2 -Starts */
+	.staticfield .cbx-label{
+		/*width:38%;gopal*/
+	}
+	.staticfield span{
+		/*width:58%;gopal*/
+	}
+	/* CT_MOBILITY_CHGv1.2 -Ends */
+	
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+	.amountfieldcontainer
+	{
+		/*width: 57%;*/ 
+	}
+	.ccylinkedamount
+	{
+		/*width: 94% !important;
+		display: inline-block;*/
+	}
+	/* CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */
+}
+
+/*CT_MOBILITY_CHGv1.2 OPEN_ITEMS_22_7 Starts*/
+.footable-toggle{
+	float: right;
+}
+/*CT_MOBILITY_CHGv1.2 OPEN_ITEMS_22_7 Ends*/
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Starts*/
+/*static field top space */
+@media only screen and (max-device-width: 480px)
+{    
+ .staticfield 
+ {
+    padding: 10px 0 10px !important;
+ }
+ 
+ .cbx-compositefield_wrap .staticfield
+ {
+   padding:0  !important;
+ }
+}
+/*static field top space ends*/
+/*CT_MOBILITY_CHGv1.2 FIXES_31_7 Ends*/
+/*====================================================@@START@@===================================================*/
+  @media screen and (max-width:320px)
+  {
+		  #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  
+  @media screen and (min-width:321px) and (max-width:350px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  @media screen and (min-width:351px) and (max-width:400px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  @media screen and (min-width:401px) and (max-width:450px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  @media screen and (min-width:451px) and (max-width:650px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  @media screen and (min-width:651px) and (max-width:884px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  
+  @media screen and (min-width:885px) and (max-width:1050px)
+  {
+   #context-app-panel-popup 
+ 	 {
+	 		height : 10%;
+	 		width: 100% !important; /* CT_MOBILITY_CHGv1.2 OPEN_ITEMS_18_7  */
+	 } 
+  }
+  
+  
+/*=======================================================**END**==================================================*/
+
+
+ /*media query css end */
+/*CT_MOBILITY_CHGv1.2_OPEN_ITEMS_30_7 Ends*/
+
+
+/*  CT_MOBILITY_CHGv1.2 FIXES_6_8 starts */
+/* css for linked ccy starts */
+.displayinline
+{
+	/*display: inline-block;*/
+}
+.currencytype
+{
+	font-size: 12px; 
+}
+/* css for linked ccy starts */
+/*  CT_MOBILITY_CHGv1.2 FIXES_6_8 ends */

@@ -1,0 +1,225 @@
+/*! * Copyright 2014. Intellect Design Arena Limited. All rights reserved. *//**
+ * <pre>
+ * ===============================================================================================================
+ * CHANGE CODE 		    AUTHOR 				DESCRIPTION 														DATE 
+ * ===============================================================================================================
+ * SIT_ISSUES_FIX_001	Srinivasan.Swamy	Add class for display negative value of comp variance in red color 	14/05/2014
+ * SIT_ISSUES_FIX_002	Srinivasan.Swamy	Add specific class with column id for align the column value in-	21/05/2014 
+ 											-center of cell		
+ * ===============================================================================================================
+ * </pre>
+ */
+html {
+    font-size: 70%;
+    -webkit-text-size-adjust: 80%;
+    -ms-text-size-adjust: 80%;
+}
+#header-holder, #nav-list, #footer-print-block, #footer-menu, .navigation, .optional-mobile , .secondary2 {
+	display: none !important;
+}
+#mobile-header-holder, #footer-options {
+	display: block !important;
+}
+
+#copyrightmsg {
+	text-align: center;
+}
+
+#footer-contrast-block {
+	float: right;
+	margin: 0 !important;
+	text-align: right;
+}
+#footer-resize-block {
+	float: left;
+}
+
+
+.content-left, .content-right {
+	/*display: block !important;
+	width: 100% !important;*/
+}
+
+.bx-viewport {
+	/*height: 105px !important;*/
+}
+
+.slider-content {
+	width: 320px;
+}
+
+.mobile-menus {
+	max-height: 350px;
+	overflow: auto;
+	white-space: nowrap;
+}
+.content-right {
+	/*margin-left: 0;
+	margin-top: 0;*/
+}#content {    width: 98%;}
+.col-center {
+	text-align: center;
+}
+.relatedCompanies .col-one {
+	width: 60px;
+}
+#footer {
+	margin: 0 1% !important;
+	width: 98% !important;
+}
+#footer-options {
+	float: none !important;
+	text-align: right;
+}
+#footer #footer-accessibility #footer-contrast-block {
+	display: block;
+	clear: both;
+	margin: 0;
+	float: left;
+	margin-top: 12px !important;
+}
+#footer p {
+	margin-bottom: 1.5em !important;
+}
+.mobile-menus {
+	max-height: 350px;
+	overflow: auto;
+	white-space: nowrap;
+	right: 0;
+}
+
+.quantScore li.firstChild {
+	display: block;
+	width: 90%;
+	padding-left: 0.5em;
+	margin-bottom: 1em;
+	text-align: left;
+}
+.quantScore li span {
+	width: 6px;
+	height: 6px;
+	margin: 0 1px;
+}
+.quantScore li {
+	width: 31.5% !important;
+}
+.relatedCompanies, .histAnalyst, .earningsOutlook {
+	overflow: auto;
+}
+
+.carousel-img img {
+	width: 80%;
+}
+.arrow-right, .arrow-left{
+	display:none !important;
+}
+.carousel-center-content {
+	width: 98%;
+}
+
+.mobile-only {
+	display: block !important;
+}
+.no-mobile {
+	display: none !important;
+}.analyst-profiles li {
+	width: 50% !important; /* nice 3 columns */
+}
+input[type="checkbox"] {
+	width:	22px !important;
+}
+.advSearchTable-data {
+
+	padding: 5px 3% !important;
+
+	background-color: #EFEFEF;
+}
+.advSearchForm-content {
+
+	padding: 10px 3% !important;
+
+}
+.mobile-only{
+	display:none !important;
+}
+.doubleSlider-2 {
+   width: 75% !important;
+	}
+	
+.criteriabuttons {
+  text-align:left !important;
+}
+.criteriabuttons span {
+   margin-right: 0px !important;
+}
+.slidercontainer {
+	width: 100%;
+}
+.slidercontainer .doubleSlider-1 {
+	width: 100% !important;
+}
+table.treetable tr.collapsed span.indenter a {
+    padding-top: 1px;
+}
+/*Registration page - START*/
+.usrRegOuterDiv {
+   width: 100% !important;
+}
+.GenProfileInfo .col3 {
+	width: 30% !important;
+}
+.GenProfileInfo .col16 {
+	width: 65% !important;
+}
+/*Registration page - END*/
+
+/* Login page - START */
+.fluidHeight {
+	width: 100% !important;
+}
+.iosSlider {
+	width: 100% !important;
+	height: 307px !important;
+}
+.iosSlider img {
+	max-width:100%;
+    max-height:100%;
+}
+.loginLeftContainer {
+	width: 100% !important;
+}
+#streetSmartContainer .slidercontainer {
+	width: 78% !important;
+}
+.loginRightContainer {
+	width: 100% !important;
+	margin-left: 0px !important;
+	margin-bottom: 15px !important;
+}
+#userId-m {
+	width: 100%;
+}
+#password-m {
+	width: 100%;
+}
+#loginSSMContainer {
+	width: 100% !important;
+	margin-left: 0px;
+}
+#streetSmartContainer {
+	width: 100% !important;
+}
+.loginLeftContainer .iosSlider .slider .item .inner img {
+	width: 100%;
+}
+/* Login page - END */
+/*SIT_ISSUES_FIX_001 starts */
+.negativeAmt {
+	color: red !important;
+}
+/*SIT_ISSUES_FIX_001 Ends*/
+/*SIT_ISSUES_FIX_002 starts*/
+.col_VW_COV_COMPANIES_RATING {
+	text-align: center !important; 
+}
+/*SIT_ISSUES_FIX_002 ends*/

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- * * Copyright 2014. Intellect Design Arena Limited. All rights reserved. 
+	* -->
+<sqlMap>
+
+	<select id="USER_ENTITLEMENT_SELECT" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		SELECT top 1 1
+		FROM
+		OD_USER_FUNCTION_MB OUF
+		WHERE
+		OUF.OD_USER_NO = #OD_USER_NO#
+		AND OUF.OD_FUNCTION_CODE IN
+		<iterate property="FUNCTION_LIST" open="(" close=")"
+			conjunction=",">
+			#FUNCTION_LIST[]#
+		</iterate>
+		AND OUF.OD_SUBPROD_CODE IN
+		<iterate property="SUB_PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#SUB_PRODUCT_LIST[]#
+		</iterate>
+		AND OUF.OD_PRODUCT_CODE IN
+		<iterate property="PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#PRODUCT_LIST[]#
+		</iterate>
+		AND OUF.OD_GCIF = #OD_GCIF#
+			<isNotEmpty property="USER_ROLE"  prepend="AND" > 
+				<isNotEqual property="USER_ROLE" compareValue="ALL">
+					OUF.USER_ROLE = #USER_ROLE#
+				</isNotEqual >
+			</isNotEmpty>
+	</select>
+
+
+	<select id="ENTITLED_FUNCTION_READONLY_SELECT" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		SELECT
+		OFPMM.OD_FUNCTION_CODE OD_FUNCTION_CODE,
+		OFPMM.OD_PRODUCT_CODE OD_PRODUCT_CODE,
+		OFPMM.OD_SUBPROD_CODE OD_SUBPROD_CODE,
+		CASE FLG_IS_READONLY when 'N' then (
+		CASE Coalesce (
+		(SELECT top 1 criteria_type FROM OO_CRITERIA_TYPE_MASTER
+		WHERE PRODUCT_CODE IN
+		<iterate property="PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#PRODUCT_LIST#
+		</iterate>
+		AND SUBPRODUCT_CODE IN
+		<iterate property="SUB_PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#SUB_PRODUCT_LIST#
+		</iterate>
+		), 'Y') when 'Y' then 'Y' else FLG_IS_READONLY end
+		)
+		else FLG_IS_READONLY end FLG_IS_READONLY
+		FROM OD_FUNCTION_PRODUCT_MAP_MB
+		OFPMM
+		WHERE EXISTS
+
+  			(SELECT 1
+  				FROM OD_USER_FUNCTION_MB OUFM
+  				WHERE OUFM.OD_GCIF         = #OD_GCIF#
+  				AND OUFM.OD_USER_NO        = #OD_USER_NO# 
+  				AND OFPMM.OD_FUNCTION_CODE = OUFM.OD_FUNCTION_CODE
+  				AND OFPMM.OD_PRODUCT_CODE  = OUFM.OD_PRODUCT_CODE
+  				AND OFPMM.OD_SUBPROD_CODE  = OUFM.OD_SUBPROD_CODE
+  				<isNotEmpty property="USER_ROLE"  prepend="AND" > 
+					<isNotEqual property="USER_ROLE" compareValue="ALL">
+					OUFM.USER_ROLE = #USER_ROLE#
+					</isNotEqual >
+				</isNotEmpty>
+  			)
+
+		AND OFPMM.OD_FUNCTION_CODE IN
+		<iterate property="FUNCTION_LIST" open="(" close=")"
+			conjunction=",">
+			#FUNCTION_LIST#
+		</iterate>
+		AND OFPMM.OD_SUBPROD_CODE IN
+		<iterate property="SUB_PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#SUB_PRODUCT_LIST#
+		</iterate>
+
+		AND OFPMM.OD_PRODUCT_CODE in
+		<iterate property="PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#PRODUCT_LIST#
+		</iterate>
+	</select>
+
+	<resultMap id="ENTITLED_CRITERIA_VALUES_RESULTMAP" class="java.util.HashMap">
+		<result property="CRITERIA_VALUE" nullValue="" column="OD_ACC_NO"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="CRITERIA_TYPE" nullValue="" column="CRITERIA_TYPE"
+			javaType="java.lang.String" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="ENTITLED_CRITERIA_VALUES_SELECT" parameterClass="java.util.HashMap"
+		resultMap="ENTITLED_CRITERIA_VALUES_RESULTMAP">
+		SELECT
+		OUFM.OD_ACC_NO,
+		OUFM.CRITERIA_TYPE
+		FROM
+		OD_USER_FUNCTION_MB OUFM,
+		OO_CRITERIA_TYPE_MASTER OCTM
+		WHERE
+		OUFM.OD_PRODUCT_CODE = OCTM.PRODUCT_CODE
+		AND OUFM.OD_SUBPROD_CODE = OCTM.SUBPRODUCT_CODE
+		AND OUFM.CRITERIA_TYPE = OCTM.CRITERIA_TYPE
+		AND OCTM.ENABLE_FLAG = 'Y'
+		AND OUFM.OD_USER_NO = #OD_USER_NO#
+		AND OUFM.OD_FUNCTION_CODE IN
+		<iterate property="FUNCTION_LIST" open="(" close=")"
+			conjunction=",">
+			#FUNCTION_LIST#
+		</iterate>
+		AND OUFM.OD_SUBPROD_CODE in
+		<iterate property="SUB_PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#SUB_PRODUCT_LIST#
+		</iterate>
+		AND OUFM.OD_PRODUCT_CODE in
+		<iterate property="PRODUCT_LIST" open="(" close=")"
+			conjunction=",">
+			#PRODUCT_LIST#
+		</iterate>
+		AND OUFM.OD_GCIF = #OD_GCIF#
+			<isNotEmpty property="USER_ROLE"  prepend="AND" > 
+				<isNotEqual property="USER_ROLE" compareValue="ALL">
+					OUFM.USER_ROLE = #USER_ROLE#
+				</isNotEqual >
+			</isNotEmpty>
+			ORDER BY OUFM.CRITERIA_TYPE, OUFM.OD_ACC_NO
+	</select>
+	
+	<select id = "USER_FUNCTION_CHANNEL_SELECT"  resultClass="java.util.HashMap">
+		select case when (SELECT top 1  1
+			FROM OD_FUNCTION_CHANNEL_MAP_MB OFCM
+			JOIN OD_USER_CHANNEL_MB OUC ON(OFCM.OD_CHANNEL_ID=OUC.OD_CHANNEL_ID)
+			JOIN OD_CHANNEL_MASTER_MB OCM ON (OFCM.OD_CHANNEL_ID = OCM.OD_CHANNEL_ID)
+      WHERE 
+				OFCM.OD_FUNCTION_CODE IN
+				<iterate property="FUNCTION_LIST" open="(" close=")" conjunction=",">
+					#FUNCTION_LIST[]#
+				</iterate> 
+			AND OUC.OD_GCIF = #OD_GCIF#
+			AND OUC.OD_USER_NO = #OD_USER_NO# 
+			AND OFCM.OD_CHANNEL_ID = #INPUT_CHANNEL_ID#) = 1 THEN 'Y'
+			ELSE 'N' END as IS_CHANNEL_AVAIL;
+	</select>
+</sqlMap>

@@ -1,0 +1,11 @@
+<div class="form-group ct-form__group ct-form__group-tm {{#condchk visibleInd 'N'}}hidden{{/condchk}}  ct-{{xtype}}-bs {{itemId}}-bs">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		{{!--col-sm-12 begins--}} 
+		<span class='ct-form__label-individual'>
+		{{!--{{MandatoryLabel}}:--}}
+			{{{MandatorySpan}}} 
+			<span class='mandatory requiredInd'>{{MandatoryText}}</span>
+		</span>
+	</div>
+	<div class='clearfix'></div>
+</div>
